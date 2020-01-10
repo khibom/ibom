@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="121" height="121" viewBox="0 0 121 121">
+    <defs>
+        <path id="b" d="M60.5 71.758L51.384 74l-6.054-7.162-8.696-3.533-.68-9.345L31 46l4.954-7.96.68-9.345 8.696-3.533L51.384 18l9.116 2.242L69.616 18l6.054 7.162 8.696 3.533.68 9.345L90 46l-4.954 7.96-.68 9.345-8.696 3.533L69.616 74z"/>
+        <filter id="a" width="123.7%" height="125%" x="-11.9%" y="-16.1%" filterUnits="objectBoundingBox">
+            <feOffset dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.217815897 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(-1336 -2149)">
+        <path fill="#EDEDED" d="M-4 1863h1928v734H-4z"/>
+        <rect width="208" height="322" x="1292" y="2124" fill="#FFF" rx="4"/>
+        <g transform="translate(1336 2149)">
+            <circle cx="60.5" cy="60.5" r="60.5" fill="#F6F6F6"/>
+            <path fill="#585858" d="M69.178 53.345l-13.856 8 17.5 30.31 3.949-8h9.907z"/>
+            <path fill="#585858" d="M53.822 53.345l13.856 8-17.5 30.31-3.949-8h-9.907z"/>
+            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+            <use fill="#FF7626" xlink:href="#b"/>
+            <circle cx="60.5" cy="46.5" r="21.5" fill="#FFF"/>
+            <path fill="#FF7626" d="M60 54.433L51.348 58l.671-9.446L46 41.314l9.068-2.272L60 31l4.932 8.042L74 41.313l-6.02 7.241.672 9.446z"/>
+            <path fill="#D8D8D8" d="M21.5 82.15L16.865 84l.36-4.898L14 75.348l4.858-1.178L21.5 70l2.642 4.17L29 75.348l-3.225 3.754.36 4.898zM101.5 82.15L96.865 84l.36-4.898L94 75.348l4.858-1.178L101.5 70l2.642 4.17L109 75.348l-3.225 3.754.36 4.898zM34.5 102.15L29.865 104l.36-4.898L27 95.348l4.858-1.178L34.5 90l2.642 4.17L42 95.348l-3.225 3.754.36 4.898zM86.5 102.15L81.865 104l.36-4.898L79 95.348l4.858-1.178L86.5 90l2.642 4.17L94 95.348l-3.225 3.754.36 4.898z"/>
+        </g>
+        <text fill="#4F4F4F" font-family="NotoSansCJKkr-Bold, Noto Sans CJK KR" font-size="24" font-weight="bold">
+            <tspan x="1343.432" y="2178">5</tspan>
+        </text>
+    </g>
+</svg>

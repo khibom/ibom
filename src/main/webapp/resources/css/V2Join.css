@@ -1,0 +1,237 @@
+@charset 'utf-8';
+
+.input_chk {
+    position: relative;
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.input_chk input {
+    position: absolute;
+    top: 50%;
+    left: 1px;
+    width: 18px;
+    height: 18px;
+    margin-top: -10px;
+    outline: 0;
+}
+@media (max-width: 1024px)
+:root .terms_chk_all .input_chk input:checked+label:before {
+    background: #f5f6f7 url(/ibom/resources/images/m_check_on_l_24.png) no-repeat 0 0;
+    -webkit-background-size: 24px 24px;
+    background-size: 24px 24px;
+}
+:root .terms_chk_all .input_chk input:checked+label:before {
+    content: '';
+    background: #f5f6f7 url(/ibom/resources/images/pc_check_on_l_24.png) no-repeat 0 0;
+    -webkit-background-size: 24px 24px;
+    background-size: 24px 24px;
+}
+@media (max-width: 1024px)
+:root .input_chk input:checked+label:before {
+    background: #f5f6f7 url(/ibom/resources/images/m_chcek_on_s_20.png) no-repeat 0 0;
+    -webkit-background-size: 20px 20px;
+    background-size: 20px 20px;
+}
+:root .input_chk input:checked+label:before {
+    content: '';
+    background: #f5f6f7 url(/ibom/resources/images/pc_chcek_on_s_20.png) no-repeat 0 0;
+    -webkit-background-size: 20px 20px;
+    background-size: 20px 20px;
+}
+@media (max-width: 1024px)
+:root .terms_chk_all .input_chk label:before {
+    background: #f5f6f7 url(/ibom/resources/images/m_check_off_24.png) no-repeat 0 0;
+    -webkit-background-size: 24px 24px;
+    background-size: 24px 24px;
+}
+:root .terms_chk_all .input_chk label:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 1px;
+    width: 24px;
+    height: 24px;
+    margin-top: -14px;
+    background: #f5f6f7 url(/ibom/resources/images/pc_check_off_24.png) no-repeat 0 0;
+    -webkit-background-size: 24px 24px;
+    background-size: 24px 24px;
+}
+@media (max-width: 1024px)
+:root .input_chk label:before {
+    width: 20px;
+    height: 20px;
+    background: #f5f6f7 url(/ibom/resources/images/m_chcek_off_s_20.png) no-repeat 0 0;
+    -webkit-background-size: 20px 20px;
+    background-size: 20px 20px;
+}
+:root .input_chk label:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 1px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    background: #f5f6f7 url(/ibom/resources/images/pc_chcek_off_s_20.png) no-repeat 0 0;
+    -webkit-background-size: 20px 20px;
+    background-size: 20px 20px;
+}
+.terms_chk_all .input_chk label {
+    padding-left: 34px;
+    line-height: 21px;
+}
+.input_chk label {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-left: 29px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    cursor: pointer;
+    color: #333;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.m_br {
+    display: none;
+}
+.terms_bx_list {
+    margin-top: 4px;
+}
+
+.terms_bx {
+    display: block;
+    padding-top: 30px;
+}
+
+.input_chk {
+    position: relative;
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.input_chk input {
+    position: absolute;
+    top: 50%;
+    left: 1px;
+    width: 18px;
+    height: 18px;
+    margin-top: -10px;
+    outline: 0;
+}
+
+.input_chk label {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-left: 29px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    cursor: pointer;
+    color: #333;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.terms_necessary {
+    font-size: 12px;
+    font-weight: 400;
+    display: inline-block;
+    color: #f37233;
+}
+
+.terms_box {
+    position: relative;
+    overflow: auto;
+    height: 88px;
+    margin-top: 8px;
+    padding: 12px;
+    border: 1px solid #dadada;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    scrollbar-base-color: #d9d9d9;
+    scrollbar-arrow-color: #8e8e8e;
+    scrollbar-3dlight-color: #d9d9d9;
+    scrollbar-darkshadow-color: #d9d9d9;
+    scrollbar-face-color: #d9d9d9;
+    scrollbar-highlight-color: #d9d9d9;
+    scrollbar-shadow-color: #d9d9d9;
+    scrollbar-track-color: #f2f2f2;
+    -webkit-overflow-scrolling: touch;
+}
+
+.article:first-child {
+    margin-top: 0;
+}
+.terms_box .article {
+    font-size: 12px;
+    line-height: 16px;
+    color: #666;
+}
+.article {
+    margin-top: 15px;
+}
+.article, .policy_summary {
+    font-size: 12px;
+    line-height: 16px;
+    color: #666;
+}
+
+.article .article__title, .clause .clause__title, .paragraph .paragraph__title {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+}
+.article .article__title {
+    padding-bottom: 8px;
+}
+
+.terms_box .article {
+    font-size: 12px;
+    line-height: 16px;
+    color: #666;
+}
+
+.article__text+.article__text {
+    margin-top: 8px;
+}
+
+.input_chk label .terms_no {
+    color: #8e8e8e;
+}
+
+.input_chk label .terms_choice {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.error {
+    display: block;
+    margin: 8px 0 -1px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #f37233;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

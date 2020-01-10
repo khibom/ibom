@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* ************************************** *
+ * JT FONT
+ * ************************************** */
+@font-face {
+    font-family:'jt_font';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/jt_font.eot');
+    src: local("?"),
+         url('../font/jt_font.woff') format('woff');
+}
+/* ************************************** *
+ * nanumsquare_acb
+ * ************************************** */
+@font-face {
+    font-family:'nanumsquare_acb';
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"),
+         url('/ibom/resources/font/nanumsquare_acb-webfont.woff') format('woff');
+}
+
+
+/* ************************************** *
+ * nanumsquare_acl
+ * ************************************** */
+@font-face {
+    font-family:'nanumsquare_acl';
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"),
+         url('/ibom/resources/font/nanumsquare_acl-webfont.woff') format('woff');
+}
+
+/* ************************************** *
+ * nanumsquare_acr
+ * ************************************** */
+@font-face {
+    font-family:'nanumsquare_acr';
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"),
+         url('/ibom/resources/font/nanumsquare_acr-webfont.woff') format('woff');
+}

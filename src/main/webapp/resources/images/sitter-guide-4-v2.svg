@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="121" height="121" viewBox="0 0 121 121">
+    <defs>
+        <path id="a" d="M61.5 104c23.472 0 42.5-19.028 42.5-42.5S84.972 19 61.5 19 19 38.028 19 61.5 38.028 104 61.5 104z"/>
+        <mask id="b" width="85" height="85" x="0" y="0" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <circle id="d" cx="22" cy="21" r="14"/>
+        <filter id="c" width="150%" height="150%" x="-25%" y="-32.1%" filterUnits="objectBoundingBox">
+            <feOffset dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.217815897 0"/>
+        </filter>
+        <circle id="f" cx="22" cy="21" r="14"/>
+        <filter id="e" width="150%" height="150%" x="-25%" y="-32.1%" filterUnits="objectBoundingBox">
+            <feOffset dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.217815897 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(-826 -179)">
+        <path fill="#EDEDED" d="M0 0h1440v654H0z"/>
+        <rect width="208" height="388" x="782" y="154" fill="#FFF" rx="4"/>
+        <g transform="translate(826 179)">
+            <circle cx="61" cy="46" r="10" fill="#D8D8D8"/>
+            <circle cx="60.5" cy="60.5" r="60.5" fill="#F6F6F6"/>
+            <use stroke="#DBDBDB" stroke-dasharray="5" stroke-width="4" mask="url(#b)" xlink:href="#a"/>
+            <g transform="matrix(-1 0 0 1 103 54)">
+                <circle cx="21.5" cy="21.5" r="21.5" fill="#E05707"/>
+                <path fill="#E05707" d="M34.242 52.821c-1.55 0-21.226-7.377-28.72-16.975-7.494-9.598-3.72-12.36-.512-19.425 2.14-4.71 12.06-1.664 29.76 9.14-3.231 5.107-4.848 9.835-4.848 14.184 0 6.524 5.87 13.076 4.32 13.076z"/>
+                <use fill="#000" filter="url(#c)" xlink:href="#d"/>
+                <use fill="#FFF" xlink:href="#d"/>
+                <path stroke="#4F4F4F" stroke-width="2" d="M19.267 24c.619 1.131 2.248 2 4.233 2 1.985 0 3.614-.869 4.233-2h-8.466z"/>
+                <circle cx="18" cy="19" r="2" fill="#4F4F4F"/>
+                <circle cx="29" cy="19" r="2" fill="#4F4F4F"/>
+            </g>
+            <g transform="translate(20 20)">
+                <circle cx="21.5" cy="21.5" r="21.5" fill="#FF7626"/>
+                <path fill="#FF7626" d="M34.242 52.821c-1.55 0-21.226-7.377-28.72-16.975-7.494-9.598-3.72-12.36-.512-19.425 2.14-4.71 12.06-1.664 29.76 9.14-3.231 5.107-4.848 9.835-4.848 14.184 0 6.524 5.87 13.076 4.32 13.076z"/>
+                <use fill="#000" filter="url(#e)" xlink:href="#f"/>
+                <use fill="#FFF" xlink:href="#f"/>
+                <path stroke="#4F4F4F" stroke-width="2" d="M19.267 24c.619 1.131 2.248 2 4.233 2 1.985 0 3.614-.869 4.233-2h-8.466z"/>
+                <circle cx="18" cy="19" r="2" fill="#4F4F4F"/>
+                <circle cx="29" cy="19" r="2" fill="#4F4F4F"/>
+            </g>
+        </g>
+        <text fill="#4F4F4F" font-family="NotoSansCJKkr-Bold, Noto Sans CJK KR" font-size="24" font-weight="bold">
+            <tspan x="833.432" y="208">4</tspan>
+        </text>
+    </g>
+</svg>
