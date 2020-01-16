@@ -35,7 +35,19 @@ public interface DolbomiService {
 		ArrayList<Dolbomi> selectDolSalList();
 		//돌보미 급여지급 후 급여 초기화 작업
 		int deleteDolSalary();
+		//돌보미 마지막 회원가입자 조회
+		String selectMaxDolEnroll(String date);
+		// 돌보미 월별 회원가입수 카운트
+		int selectDateCount(String rollDate);
+		//돌보미 전체조회
+		ArrayList<Dolbomi> dolbomiSalarySelectList();
+		
 // --은수 추가 끝 =========================================
+
+
+		
+
+		
 
 	
 }// end class

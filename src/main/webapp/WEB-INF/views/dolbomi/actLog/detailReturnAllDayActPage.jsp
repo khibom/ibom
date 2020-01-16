@@ -53,7 +53,8 @@ function fromDataCheck(event){
 	if(confirm("제출 하시면 수정 하실수 없습니다. 제출 하시겠습니까?")){
 		return true;
 	}else{
-		
+		event.stopPropagation();
+		event.preventDefault();
 		return false;
 	}
 	event.stopPropagation();

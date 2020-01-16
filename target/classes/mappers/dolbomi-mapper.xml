@@ -52,11 +52,21 @@
 	<update id="deleteDolSalary">
 		update DOLBOMI SET SALARY = 0
 	</update>
-	<select parameterType="string" id="selectMaxDolEnroll" resultType="string">SELECT max(SUBSTR(DOL_ENROLLDATE,4,2))FROM DOLBOMIWHERE DOL_ENROLLDATE LIKE '%'|| #{value} ||'%' </select>
-
-<select parameterType="string" id="selectDateCount" resultType="int">SELECT COUNT(*)FROM DOLBOMIWHERE DOL_ENROLLDATE LIKE '%'|| #{value} ||'%' </select>
-
-<select id="dolbomiSalarySelectList" resultType="Dolbomi">SELECT * FROM DOLBOMI </select>
+	<select id="selectMaxDolEnroll" parameterType="string" resultType="string">
+	 SELECT max(SUBSTR(DOL_ENROLLDATE,4,2))
+	 FROM DOLBOMI
+	 WHERE DOL_ENROLLDATE LIKE '%'|| #{value} ||'%'
+	</select>
+	
+	<select id="selectDateCount" parameterType="string" resultType="int">
+	 SELECT COUNT(*)
+	 FROM DOLBOMI
+	 WHERE DOL_ENROLLDATE LIKE '%'|| #{value} ||'%'
+	</select>
+	<select id="dolbomiSalarySelectList" resultType="Dolbomi">
+	SELECT * FROM DOLBOMI
+	</select>
+	
 	<!-- 은수 추가 끝 -->
 
 	<!-- 미영 추가 시작 -->

@@ -54,6 +54,8 @@ function fromDataCheck(){
 		return true;
 	
 	}else{
+		event.stopPropagation();
+		event.preventDefault();
 		return false;
 	}
 }

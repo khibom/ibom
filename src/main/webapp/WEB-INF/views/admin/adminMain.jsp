@@ -109,7 +109,7 @@ var options = {
     title: date + '년 아이돌봄 가입 현황'
   },
   height: 300,
-  width: '100%',
+  width: 1200,
   axes: {
     x: {
       0: {side: 'top'}
@@ -150,6 +150,7 @@ chart.draw(data, google.charts.Line.convertOptions(options));
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
+        
                     <div class="panel-heading">
                         <i class="fa fa-bar-chart-o fa-fw"></i> 이용자 통계
                         
@@ -161,6 +162,7 @@ chart.draw(data, google.charts.Line.convertOptions(options));
                     <!-- /.panel-body -->
                 </div>
                 <!-- /.panel -->
+                </div>
                 <!-- =========================================================================================== -->
 
 
@@ -381,7 +383,7 @@ chart.draw(data, google.charts.Line.convertOptions(options));
 
             </div>
             <!-- /.row -->
-        </div>
+       
         </div>
         <!-- /#page-wrapper -->
 <!-- ======================================================================================================= -->

@@ -141,7 +141,7 @@ function specifications(obj) {
  		win.document.write('</body></html>'); */
 		
 		win.document.write("<html><head><title></title><style>");
-		win.document.write("table th{30%; background:rgb(243, 114, 51);}");
+		win.document.write("table th{30%; }");
 		win.document.write("table td{30%;}");
 		win.document.write("</style></haed><body>");
 		win.document.write("<h1 align='center'>우리 아이봄 급여 명세서</h1><br><h4 style='float:right;margin:0;'>지급일:${dols.payoff_month}</h4>");

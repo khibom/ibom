@@ -12,7 +12,7 @@
 		select * from SERVICE_APPLY2 where dolbomi_id = #{value}
 	</select>
 	<select id="selectDetailAct" parameterType="ServiceApplyNumbers" resultType="ServiceApply2">
-		select * from SERVICE_APPLY2 where service1_no = #{service1_no} and service2_no = #{service2_no}
+		select * from SERVICE_APPLY2 where service2_no = #{service2_no}
 	</select>
 	<select id="selectOneDetailAct" parameterType="string" resultType="ServiceApply1">
 		select * from SERVICE_APPLY1 where service1_no = #{value}
@@ -47,6 +47,10 @@
 		LEFT JOIN SERVICE_APPLY3 E ON D.SERVICE2_NO = E.SERVICE2_NO
 		where dolbomi_id = #{value}
 	</select>
-	<select resultType="int" parameterType="string" id="selectTotalUsingTime">SELECT sum(USING_TIME)FROM SERVICE_APPLY2WHERE APPLY_DATE LIKE '__/' ||#{using_time} ||'%' AND DOLBOMI_ID = #{dolbomi_id} </select>
+	<select id="selectTotalUsingTime" parameterType="string" resultType="int">
+		SELECT sum(USING_TIME)
+		FROM SERVICE_APPLY2
+		WHERE APPLY_DATE LIKE '__/' ||#{using_time} ||'%' AND DOLBOMI_ID = #{dolbomi_id}
+	</select>
 	<!--  은수 끝 ============================================================= -->
 </mapper>

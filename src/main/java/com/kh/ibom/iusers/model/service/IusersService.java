@@ -48,5 +48,8 @@ public interface IusersService {
 
 	// 예치금을 0원으로 초기화
 	int updateDepoPay(String user_id);
-
+	//유저 마지막 회원가입자 조회
+		String selectMaxDolEnroll(String date);
+		//이용자 회원가입수 카운트
+		int selectDateCount(String rollDate);
 }

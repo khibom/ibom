@@ -477,7 +477,7 @@ function back(event){
                 </tr>
                  <tr>
                     <th scope="col" class="type">건강및심리상태<font color="orange">*</font></th>
-                    <td class="type" colspan="4"><textarea name="healhandpsy" style="border:none; height:100px;" ></textarea></td>
+                    <td class="type" colspan="4"><textarea name="healhandpsy" style="border:none; height:100px;" required></textarea></td>
                 </tr>
            </tbody>
         </table>
@@ -488,15 +488,15 @@ function back(event){
             <tbody>
 				<tr>
                     <th scope="col" class="type">배변내용<font color="orange">*</font></th>
-                   	<td class="type"><textarea name="poop_cnt" style="border:none; height:100px;" ></textarea></td>
+                   	<td class="type"><textarea name="poop_cnt" style="border:none; height:100px;" required></textarea></td>
                    	<th scope="col" class="type">수유내용<font color="orange">*</font></th>
-                   	<td class="type"><textarea name="rice_cnt" style="border:none; height:100px;" ></textarea></td>
+                   	<td class="type"><textarea name="rice_cnt" style="border:none; height:100px;" required></textarea></td>
                 </tr>
                 <tr>
                     <th scope="col" class="type">수면내용<font color="orange">*</font></th>
-                   	<td class="type"><textarea name="sleep_cnt" style="border:none; height:100px;" ></textarea></td>
+                   	<td class="type"><textarea name="sleep_cnt" style="border:none; height:100px;" required></textarea></td>
                    	<th scope="col" class="type">활동내용<font color="orange">*</font></th>
-                   	<td class="type"><textarea name="ac_cnt" style="border:none; height:100px;" ></textarea></td>
+                   	<td class="type"><textarea name="ac_cnt" style="border:none; height:100px;" required></textarea></td>
                 </tr>
                  <tr>
                    <tr>

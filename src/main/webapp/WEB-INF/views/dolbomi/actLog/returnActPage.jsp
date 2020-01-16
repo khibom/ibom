@@ -75,7 +75,7 @@ function moveDetailReturnAct(value){
 
             <div class="article_body">
                 <div class="wrap_narrow" id="result_wrap">
-                    <h3 style=" color:rgb(243, 114, 51); float:left; width:49%; margin-left:5px; margin-top:5px;">급여조회</h3>
+                    <h5 style=" color:rgb(243, 114, 51); float:left; width:49%; margin-left:5px; margin-top:5px;">급여조회</h5>
                     <form action="${pageContext.request.contextPath}/dolbomi/searchReturnAct.do" method="post">
                     <input type="hidden" value="${loginDolbomi.dol_id}" name="dol_id">
                    <table class="jt_board_list">	
@@ -125,7 +125,7 @@ function moveDetailReturnAct(value){
           </table>
           <input type="submit"value="검색"style="float:right; margin-top:10px;" class="btn waves-effect orange darken-3" >
           </form>
-          <p style=" color:rgb(243, 114, 51);  float:left; width:49%; margin-left:5px;">※조회할 년월을 선택해 주세요.</p>
+          <p style=" color:rgb(243, 114, 51);  float:left; width:49%; margin-left:5px;margin-top:5px;">※조회할 년월을 선택해 주세요.</p>
           <div style="width:100%; height:150px; position:relative;"></div>
 					<div class="jt_board_list_wrap">
         <table class="jt_board_list">

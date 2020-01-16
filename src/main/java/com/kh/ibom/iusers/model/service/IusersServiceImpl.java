@@ -106,6 +106,16 @@ public class IusersServiceImpl implements IusersService{
 			
 			return iusersDao.updateDepoPay(user_id);
 		}
-	
+		@Override
+		public String selectMaxDolEnroll(String date) {
+			// 유저 마지막 회원가입자 조회
+			return iusersDao.selectMaxDolEnroll(date);
+		}
+
+		@Override
+		public int selectDateCount(String rollDate) {
+			//이용자 회원가입수 카운트
+			return iusersDao.selectDateCount(rollDate);
+		}
 
 }// end class

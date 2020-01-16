@@ -18,6 +18,15 @@
    update iusers set depo_pay = 0
    where user_id = #{value}    
    </update>
-   
+   <select id="selectMaxDolEnroll" parameterType="string" resultType="string">
+   	 SELECT max(SUBSTR(ENROLL_DATE,4,2))
+	 FROM IUSERS
+	 WHERE ENROLL_DATE LIKE '%'|| #{value} || '%'
+   </select>
+   <select id="selectDateCount" parameterType="string" resultType="int">
+     SELECT count(*)
+	 FROM IUSERS
+	 WHERE ENROLL_DATE LIKE '%'|| #{value} || '%'
+   </select>
    
 </mapper>
