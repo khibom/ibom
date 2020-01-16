@@ -74,6 +74,12 @@ public class SynthesisActLogServiceImpl implements SynthesisActLogService{
 		return synDao.updateReturnSynAct(synLog);
 	}
 
+	@Override
+	public ArrayList<ReturnActVo> selectSearchMySynReturnActLog(AlldayActLog acLog) {
+		// 급여반려 검색
+		return synDao.selectSearchMySynReturnActLog(acLog);
+	}
+
 	
 
 }

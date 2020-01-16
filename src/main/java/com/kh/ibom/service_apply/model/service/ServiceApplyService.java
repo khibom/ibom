@@ -31,7 +31,8 @@ public interface ServiceApplyService {
 // 은수 시작 =======================================
 	ArrayList<ServiceApply1> selectDolService1List(String dolId);
 	ArrayList<ServiceApply2> selectDolService2List(String dolId);
-	ServiceApply2 selectDetailAct(ServiceApplyNumbers sNum);
+	//활동일지 상세보기 페이지로 가기전 정보조회
+	ServiceApply2 selectDetailAct(String serviceNoList);
 	ServiceApply1 selectOneDetailAct(String service1_no);
 	//관리자 활동일지 상세보기 처리용 메소드
 	ServiceApply3 selectOneA3DetailAct(ServiceCalendar sc);
@@ -45,8 +46,10 @@ public interface ServiceApplyService {
 	ArrayList<ServiceCalendar> selectServiceCalendar(String dolId);
 	//돌보미 일지제출후 서비스2 서비스완료처리
 	int updateLogCategory2(ServiceApply2 ap2);
+	// 이번달 총근무시간 조회
+	Integer selectTotalUsingTime(ServiceApply2 ap2);
 	
-// 은수 시작 ================================================
+// 은수 끝 ================================================
 	
 	
 	

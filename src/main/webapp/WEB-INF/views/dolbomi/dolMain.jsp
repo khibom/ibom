@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,6 +58,7 @@
 
 <script type="text/javascript">
 $(function(){
+	
 	var dolId = '${loginDolbomi.dol_id}';
     var srcCalendarEl = document.getElementById('source-calendar');
     var today = new Date();
@@ -72,11 +73,24 @@ $(function(){
 	      editable: false,
 	      defaultDate: date,
 	      eventClick: function(event) {
-	    	 if(event.event.title != "제출"){
-	    	  location.href='${pageContext.request.contextPath}/dolbomi/moveAct.do?serviceId=' + event.event.id;
+	    	  event.jsEvent.preventDefault();
+	    	  var days = new Date();
+	    	
+	    	  var yyyy = event.event.url.substr(0,4);
+	    	  var mm = event.event.url.substr(5,2);
+	    	  event.jsEvent.preventDefault();
+	    	  var dd = event.event.url.substr(event.event.url.length - 2);
+	    	  event.jsEvent.preventDefault();
+	    	  var com_ymd = new Date(yyyy, mm-1, dd);
+	    	  if(event.event.title != "제출"){
+	    		 if(com_ymd <= days){
+	    			 location.href='${pageContext.request.contextPath}/dolbomi/moveAct.do?serviceId=' + event.event.id;
+	    		 }else{
+	    			 alert("일지는 작성 당일 혹은 이전 날짜에 작성 가능 합니다.")
+	    		 }
 	    	 }else{
 	    		alert("이미 기 제출된 건 입니다.") 
-	    	 }
+	    	 } 
 	    	 
 	      },
 	      locale: 'ko',
@@ -98,12 +112,12 @@ $(function(){
 		    	   						
 		    	   						if(json.list[i].title == "Y"){
 		    	   							
-		    	   							events.push({id:json.list[i].id1 + "," + json.list[i].id2 + "," + json.list[i].fmCode,
-		    	   								title:"제출",start: json.list[i].start, color: "orange"})
+		    	   							events.push({id:json.list[i].id2 + "," + json.list[i].fmCode,
+		    	   								title:"제출",start: json.list[i].start, color: "#f37233", url:json.list[i].start})
 		    	   						}else if(json.list[i].title == "N"){
 		    	   							
-		    	   							events.push({id:json.list[i].id1 + "," + json.list[i].id2 + "," + json.list[i].fmCode
-		    	   								,title:"미제출",start: json.list[i].start, color: "blue"})
+		    	   							events.push({id:json.list[i].id2 +  "," + json.list[i].fmCode
+		    	   								,title:"미제출",start: json.list[i].start, color: "#23b9ce", url:json.list[i].start})
 		    	   						}
 		    						 }
 		    	   					
@@ -125,6 +139,26 @@ $(function(){
 		srcCalendar.render();
    
   });
+</script>
+<script type="text/javascript">
+$(function(){
+	
+	
+	$("#calendars").click(function(){
+	var scrollPosition = $("#listTarget").offset().top;
+ 		$("html,body").animate({
+ 		scrollTop: scrollPosition    //id가 target 인 일레먼트의 상단위치로 페이지 스크롤
+	}, 1000);
+	});
+	
+	$("#list").click(function(){
+		var scrollPosition = $("#selects").offset().top;
+	 		$("html,body").animate({
+	 		scrollTop: scrollPosition    //id가 target 인 일레먼트의 상단위치로 페이지 스크롤
+		}, 1000);
+		});
+ 	
+});
 </script>
 <style>
 	.fc-button-primary:disabled{
@@ -149,6 +183,13 @@ $(function(){
   #source-calendar td{
   cursor:pointer;
   }
+  /* :target{
+  border: 2px solid #D4D4D4;
+  background-color: #e5eecc;
+  transition: all 2s ease-out 5s;
+   
+  }*/
+ 
   /* #header{
   background:rgba(235, 235, 235, 0.8);
   width:100%;
@@ -165,6 +206,8 @@ $(function(){
   background:white;
   cursor:default;
   }
+  .fc-sun {color:#e31b23}
+  .fc-sat {color:#007dc3}
 </style>
 </head>
 <body>
@@ -172,18 +215,15 @@ $(function(){
 
 <!--  main =================================================================== -->
 <main id="main" class="main_container">
-
+	<div id="selects"></div>
     <div id="main_container_inner" class="notice_list">
 
         <div class="article">
-        
             <div class="article_header">
                 <div class="wrap_narrow">
                     <h1 data-font="secondary" class="article_title">활동내역조회(달력)</h1>
-                    
                 </div><!-- .wrap_narrow -->
             </div><!-- .article_header -->
-
             <div class="article_body">
                 <div class="wrap_narrow" id="result_wrap">
                 <br>
@@ -193,26 +233,42 @@ $(function(){
 			<div style="position:relative; width:100%;">
 					<ul style=" display:inline-block; postion:relative; width:100%;">
 						<li style="float:left; width:49%; margin-left:5px; margin-top:5px;">
-						<p style=" color:rgb(243, 114, 51); font-size:9pt;">* 미제출 을 클릭하면 활동일지로 이동합니다.<br>
+						<p style=" color:rgb(243, 114, 51); font-size:10pt;">* 미제출 을 클릭하면 활동일지로 이동합니다.<br>
 						* 날짜를 클릭하면 해당일의 돌봄일정 목록을 보실 수 있습니다.</p>
 						</li>
 					
-					<li style="float:left; width:49%;">
-						급여: <fmt:formatNumber type="number" maxFractionDigits="3" value="${loginDolbomi.salary}" />&nbsp;원
-						총근무시간:<input type="text" id="dol-time" style="width:17%;" readonly>&nbsp;
-						일지미제출건:&nbsp;<input type="text" id="dol-mi" style="width:10%;" value="${count}" readonly>건
+					<li style="float:right; margin-top:10px;">
+					<c:if test="${not empty loginDolbomi.salary }">
+						<font color="orange">급여:</font> <fmt:formatNumber type="number" maxFractionDigits="3" value="${loginDolbomi.salary}" />&nbsp;원
+					</c:if>
+					<c:if test="${empty loginDolbomi.salary }">
+						<font color="orange">급여:</font> 0&nbsp;원
+					</c:if>
+					<c:if test="${not empty totUsing}">
+						<font color="orange">이번달 총 근무시간:</font>&nbsp;${totUsing}&nbsp;시간&nbsp;
+						</c:if>
+					<c:if test="${empty totUsing}">
+						<font color="orange">이번달 총 근무시간:</font>&nbsp;0&nbsp;시간&nbsp;
+						</c:if>
+					<c:if test="${not empty count}">
+						<font color="orange">일지미제출건:</font>&nbsp;${count} &nbsp;건
+					</c:if>
+					<c:if test="${empty count}">
+						<font color="orange">일지미제출건:</font>&nbsp;0&nbsp;건
+					</c:if>
 					</li>
 					</ul>
 					<div style="clear: both;"></div><br /><br />
 					<div id='source-calendar'></div>
+					<div id="listTarget"></div>
 					<div style="width:100%; height:50px; position:relative;"></div>
 					
 					<!-- 리스트형  -->
 					
 					<ul style=" display:inline-block; postion:relative; width:100%;">
-						<li style="float:left; width:49%; margin-left:5px;"><h4 id="selectAct"style="margin:0;">활동내역 조회</h4>
+						<li style="float:left; width:49%; margin-left:5px;"><h5 id="selectAct"style="margin:0;color:rgb(243, 114, 51);">활동내역 조회</h5>
 						</li>
-					<li style="float:right; width:12%; margin-top:16px;">
+					<li style="float:right; width:12%; margin-top:8px;">
 						 <a href="#calendars" style="float:right;" target="_self" id="list"><i class="fa fa-calendar"></i> 캘린더로 보기</a>
 					</li>
 					</ul>
@@ -234,7 +290,7 @@ $(function(){
                       <input id="resident_no2"name="endDate" type="date" class="validate" style="width:20%;">
                  </div>
                  
-                    <p style=" color:rgb(243, 114, 51); font-size:10pt;">※조회기간은 최대 1개월 입니다.</p>
+                    <p style=" color:rgb(243, 114, 51); font-size:11pt;">※조회기간은 최대 1개월 입니다.</p>
                     </td>
                 </tr>
            		 <tr>
@@ -249,8 +305,8 @@ $(function(){
 			</thead>
           </table>
           <ul style=" display:inline-block; postion:relative; width:100%; margin-top:5px;">
-			<li style="float:left; width:49%; margin-left:5px;">
-			  <p style=" color:rgb(243, 114, 51); font-size:9pt;">* 돌봄일자 당일 또는 이후 일자에만 활동일지가 작성가능합니다.<br>
+			<li style="float:left; width:89%; margin-left:5px;">
+			  <p style=" color:rgb(243, 114, 51); font-size:10pt;">* 돌봄일자 당일 또는 이후 일자에만 활동일지가 작성가능합니다.<br>
 				 * 신청상태가 서비스 접수 완료(미입금 포함) 상태일 때만 활동일지가 작성가능합니다.</p>
 			</li>
 			<li style="float:right; width:6%; margin-top: 3px;">
@@ -280,16 +336,26 @@ $(function(){
             <tbody>
             <c:set var="i" value="${0}"/>
             <c:forEach var="s" items="${alist}" varStatus="status">
-            	
+            	<jsp:useBean id="now" class="java.util.Date" />
 				<tr class="js_full_click  jq_click click_a">
-                    <td class="type">
                     <c:if test="${s.log_category eq 'N'}">
-                    	미작성
+                    <td class="type">
+                    	<fmt:parseDate value="${s.apply_date}" pattern="yyyy-MM-dd" var="service"/>
+                    	<fmt:formatDate value="${service}" pattern="yyyy-MM-dd" var="sdate" />
+                    	<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="nowDate" />
+                    	<c:if test="${sdate <= nowDate}">
+                    	<a href="${pageContext.request.contextPath}/dolbomi/moveAct.do?serviceId=${s.service2_no},${s.family_code}" style="color:#23b9ce;">미작성</a>
+                    	</c:if>
+                    	<c:if test="${sdate > nowDate}">
+                    	<a onclick="javascript:alert('일지는 작성 당일 혹은 이전 날짜에 작성 가능 합니다.')" style="color:#23b9ce;">미작성</a>
+                    	</c:if>
+                    	 </td>
                     </c:if>
-                     <c:if test="${s.log_category eq 'Y'}">
+                     <c:if test="${s.log_category eq 'Y'}" >
+                      <td class="type" style="color:rgb(243, 114, 51);">
                     	작성
+                      </td>
                     </c:if>
-                    </td>
                     <td class="type" id="child-name">
                     <c:out value="${ s.family_name }" />
                     </td>
@@ -298,12 +364,7 @@ $(function(){
                      <td class="type"><fmt:formatNumber type="number" maxFractionDigits="3" value="${s.total_pay}" /></td>
                     <td class="type">${s.apply_status }</td>
                     <td class="type">${s.transferor }</td>
-                    <c:if test="${ s.dolbom_place eq '이용자가정' }">
-               		<td class="type">${ s.user_address }</td> 
-               		</c:if>
-                    <c:if test="${ s.dolbom_place eq '돌보미가정' }">
-               		<td class="type">${ s.dol_address }</td> 
-               </c:if>
+               		<td class="type">${ s.dolbom_place }</td> 
                 </tr>
            </c:forEach>
             </tbody>

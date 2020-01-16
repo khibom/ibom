@@ -26,5 +26,7 @@ public interface AlldayActLogService {
 	ArrayList<ReturnActVo> alldayReturnActVoActService(CommonPaging comPage);
 	// 반려 종일제 활동일지 수정 등록
 	int updateReturnAlldayAct(AlldayActLog allLog);
+	//급여반려 활동일지검색
+	ArrayList<ReturnActVo> selectSearchMyReturnActLog(AlldayActLog acLog);
 
 }

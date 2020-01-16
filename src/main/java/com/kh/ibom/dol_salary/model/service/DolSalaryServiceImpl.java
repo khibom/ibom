@@ -47,4 +47,5 @@ public class DolSalaryServiceImpl implements DolSalaryService{
 		return dolSalDao.selectDateDolSal(dol);
 	}
 
+	
 }

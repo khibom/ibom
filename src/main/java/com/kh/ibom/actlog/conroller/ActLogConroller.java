@@ -41,7 +41,6 @@ import com.kh.ibom.service_apply.model.service.ServiceApplyService;
 import com.kh.ibom.service_apply.model.vo.ServiceApply1;
 import com.kh.ibom.service_apply.model.vo.ServiceApply2;
 import com.kh.ibom.service_apply.model.vo.ServiceApply3;
-import com.kh.ibom.service_apply.model.vo.ServiceApplyNumbers;
 import com.kh.ibom.service_apply.model.vo.ServiceCalendar;
 import com.kh.ibom.synthesis_actlog.model.service.SynthesisActLogService;
 import com.kh.ibom.synthesis_actlog.model.vo.SynthesisActLog;
@@ -117,11 +116,9 @@ public class ActLogConroller {
 		logger.info("돌보미 활동일지 상세 페이지로 이동");
 		String serviceNo = request.getParameter("serviceId");
 		String[] serviceNoList = serviceNo.split(",");
-		
-		ServiceApply2 ap2 = applyService.selectDetailAct(new ServiceApplyNumbers(serviceNoList[0], serviceNoList[1]));
+		ServiceApply2 ap2 = applyService.selectDetailAct(serviceNoList[0]);
 		ServiceApply1 ap1 = applyService.selectOneDetailAct(ap2.getService1_no());
-		
-		UserFamily uFm = ufamilyService.userServiceList(serviceNoList[2]);
+		UserFamily uFm = ufamilyService.userServiceList(serviceNoList[1]);
 		
 		Iusers user = iusersService.selectOne(ap2.getUser_id()); 
 		mv.addObject("ap2", ap2);
@@ -308,11 +305,53 @@ public class ActLogConroller {
 	@RequestMapping(value="dolbomi/upReturnSynAct.do", method=RequestMethod.POST)
 	public void updateReturnSynAct(SynthesisActLog synLog, HttpServletResponse response) throws IOException {
 		logger.info("돌보미 반려 종합형 활동일지 수정");
+		
+		
 		int result = synActService.updateReturnSynAct(synLog);
 		if(result == 0) {
 			response.sendRedirect("/ibom/views/common/error.jsp");
 		}
 		response.sendRedirect("/ibom/loginsuccess.do");
+		
+	}
+	@RequestMapping(value="dolbomi/searchReturnAct.do", method=RequestMethod.POST)
+	public ModelAndView searchReturnAct(String shYear,String shMonth,String dol_id, ModelAndView mv) throws IOException {
+		logger.info("돌보미 반려 조회");
+		String ym = shYear + "/" + shMonth;
+		
+		AlldayActLog acLog = new AlldayActLog();
+		String process_ctgry = "반려";
+		acLog.setDol_id(dol_id);
+		acLog.setProcess_ctgry(process_ctgry);
+		acLog.setCond_date("Y");
+		acLog.setCond_date(ym);
+		
+		ArrayList<ReturnActVo> alist = alldayActService.selectSearchMyReturnActLog(acLog);
+		ArrayList<ReturnActVo> nlist = nomalActService.selectSearchMyNomalReturnActLog(acLog);
+		ArrayList<ReturnActVo> slist = synActService.selectSearchMySynReturnActLog(acLog);
+		if(nlist != null) {
+			for(ReturnActVo v : nlist) {
+				alist.add(v);
+				}
+			
+		}
+		if(slist != null) {
+			
+			for(ReturnActVo r : slist) {
+				alist.add(r);
+				}
+		}
+		
+		if(alist == null) {
+			mv.setViewName("/ibom/views/common/error.jsp");
+		}else {
+		System.out.println("담은값 찍어봄[===========" + alist);
+		mv.setViewName("dolbomi/actLog/returnActPage");
+		mv.addObject("list", alist);
+		
+		
+		}
+		return mv;
 		
 	}
 	
@@ -550,7 +589,7 @@ public class ActLogConroller {
 				mv.setViewName("admin/actLog/detailNomalActPage");
 			}else { 
 				SynthesisActLog sa = synActService.selectOne(sc);
-				
+				if(sa != null) {
 				HashMap<String, String> map = new HashMap<String, String>();
 				String[] ac_time = sa.getAc_time().split(",");
 				String[] ac_content = sa.getAc_content().split(",");
@@ -558,19 +597,22 @@ public class ActLogConroller {
 				for(int i = 0; i < ac_time.length; i++) {
 					map.put(ac_time[i], ac_content[i]);
 				}
-				
 				mv.addObject("ac", map);
 				mv.addObject("syn", sa);
+				
+				}// null check close
 				mv.setViewName("admin/actLog/detailSynthesisActPage");
 			}
 			
 		}else if(uFm.getDolbom_type().trim().equals("종일제")){
 			AlldayActLog aa = alldayActService.selectOne(sc);
+			if(aa != null) {
 			String[] dosageTime = aa.getDosage_time().split(",");
 			String[] dosage = aa.getDosage().split(",");
 			mv.addObject("dosageTime", dosageTime);
 			mv.addObject("dosage", dosage);
 			mv.addObject("allday", aa);
+			}
 		mv.setViewName("admin/actLog/detailAllDayActPage");	
 		}
 		

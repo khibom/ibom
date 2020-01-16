@@ -149,7 +149,7 @@ function moveDetail(val){
                </form>
             </div>
             <select class="form-control" id="id-lang" name="lang" onchange="chageLangSelect()" style="float:right; width:200px; margin-right:15px;">
-                		<option value="종합형" selected disabled>--유형선택--</option>
+                		<option value="종합형" selected disabled>--유형을 선택해 주세요--</option>
                 		<option value="종합형">종합형</option>
                 		<option value="일반형">일반형</option>
                 		<option value="종일제">종일제</option>
@@ -189,6 +189,11 @@ function moveDetail(val){
                                         	<td>${a.process_ctgry }</td>
                                         	</tr>
                                         </c:forEach>
+                                    </c:if>
+                                     <c:if test="${empty list and empty nlist and empty slist}">
+                                        	<tr>
+                                        	<td colspan="5" align="center" style="font-weight:bold;">조회할 활동일지가 없습니다</td>
+                                        	</tr>
                                     </c:if>
                                      <c:if test="${not empty nlist }">
                                      <input type="hidden" value="일반형" id="result">
@@ -230,16 +235,18 @@ function moveDetail(val){
                                 <a href="${pageContext.request.contextPath }/admin/moveAcloglist.do?page=${commonPage.beginPage-commonPage.pageSize}&logCategory=${val}">&lt;</a>
                                 </c:if>
                                 </li>
-                                <li tabindex="0" class="paginate_button active" aria-controls="dataTables-example">
                                 <c:forEach var="p" begin="${commonPage.beginPage }" end="${commonPage.endPage }">
                                 <c:if test="${p == commonPage.currentPage }">
+                                <li tabindex="0" class="paginate_button active" aria-controls="dataTables-example">
 							 		<a href="${pageContext.request.contextPath }/admin/moveAcloglist.do?page=${p}&logCategory=${val}">${p}</a>
+							 		</li>
 								</c:if>
 								<c:if test="${p != commonPage.currentPage}">
+								<li tabindex="0" class="paginate_button" aria-controls="dataTables-example">
 								<a href="${pageContext.request.contextPath }/admin/moveAcloglist.do?page=${p}&logCategory=${val}">${p }</a>
+								</li>
 								</c:if>
                                 </c:forEach>
-                                </li>
                                 <li tabindex="0" class="paginate_button next" id="dataTables-example_next" aria-controls="dataTables-example">
                                  <c:if test="${(commonPage.endPage+commonPage.pageSize) > commonPage.maxPage }">
 									<a href="${pageContext.request.contextPath }/admin/moveAcloglist.do?page=${commonPage.maxPage}&logCategory=${val}">&gt;</a>

@@ -40,6 +40,10 @@
 <!-- 로그인 기능 -->
 <script type="text/javascript">
 	$("document").ready(function() {
+		var enabled = "${enabled}";
+		if(enabled == "Y"){
+			alert("비밀번호 5회 오류로 계정이 비활성화 되었습니다. 관리자에게 문의하세요.")
+		}
 
 		var userInputId = getCookie("userInputId");
 		$("input[name='user_id']").val(userInputId);

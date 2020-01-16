@@ -62,8 +62,8 @@ $(function(){
                + "<td class='type'>"
 			   + "<label><input type='checkbox'name='chk' class='chk'/>"
 			   + "<span></span></label></td>"
-               + "<td class='type'><input type='text' name='ac_time'style='width:20%;'></td>"
-               + "<td class='type'><textarea name='ac_content' style='border:none; height:100px;resize: none;' ></textarea></td>"
+               + "<td class='type'><input type='text' name='ac_time'style='width:20%;' required></td>"
+               + "<td class='type'><textarea name='ac_content' style='border:none; height:100px;resize: none;' required></textarea></td>"
                + "</tr>");
 		return false;
 	});
@@ -209,7 +209,7 @@ function fromDataCheck(event){
 			      </label>
                 	</th>
                     <th scope="col" class="type">시간</th>
-                    <th scope="col" class="type">내용</th>
+                    <th scope="col" class="type">내용 <font color="orange">*</font></th>
                 </tr>
                
             </thead>
@@ -222,8 +222,8 @@ function fromDataCheck(event){
 			        <span></span>
 			      </label>
 			      </td>
-                  <td class="type"><input type="text" name="ac_time"style="width:20%;" value="${i.key}"></td>
-                  <td class="type"><textarea name="ac_content" style="border:none; height:100px;resize: none;">${i.value}</textarea></td>
+                  <td class="type"><input type="text" name="ac_time"style="width:20%;" value="${i.key}" required></td>
+                  <td class="type"><textarea name="ac_content" style="border:none; height:100px;resize: none;" required>${i.value}</textarea></td>
                 </tr>
            </c:forEach>
             </tbody>

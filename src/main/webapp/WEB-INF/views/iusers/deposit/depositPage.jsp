@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -203,7 +204,7 @@ function searchDepo(){
                     <th scope="col" class="title" style="width:3%; ">환불요청계좌</th>
                     <td scope="col" class="type" >
                     <c:if test="${not empty re}">
-                    <p style="display:inline-block;margin-top:10px;">(${re.bank_name})${re.refund_account}예금주: ${re.refund_name}</p>
+                    <p style="display:inline-block;margin-top:10px;">(${re.bank_name})<c:out value="${fn:substring(re.refund_account, 0, fn:length(re.refund_account) - 4)}" /> **** 예금주: ${re.refund_name}</p>
                     <button onclick="refundDel();" class="btn waves-effect orange darken-3"style="float:right;" name="action">계좌삭제
                		<i class="material-icons right">delete_forever</i>
                		</button>

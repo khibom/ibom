@@ -71,12 +71,28 @@ public class DolbomiDao {
 
 	public ArrayList<Dolbomi> selectDolSalList() {
 		// 공제처리용 돌보미 리스트 조회
-		return session.selectOne("dolbomiMapper.selectDolSalList");
+		List<Dolbomi> list = session.selectList("dolbomiMapper.selectDolSalList");
+		return (ArrayList<Dolbomi>) list;
 	}
 
 	public int deleteDolSalary() {
 		// 돌보미 급여지급후 급여 초기화 작업
 		return session.update("dolbomiMapper.deleteDolSalary");
+	}
+
+	public String selectMaxDolEnroll(String date) {
+		// 돌보미 마지막 회원가입자 조회
+		return session.selectOne("dolbomiMapper.selectMaxDolEnroll",date);
+	}
+
+	public int selectDateCount(String rollDate) {
+		// 돌보미 월별 회원가입수 카운트
+		return session.selectOne("dolbomiMapper.selectDateCount",rollDate);
+	}
+
+	public ArrayList<Dolbomi> dolbomiSalarySelectList() {
+		List<Dolbomi> list = session.selectList("dolbomiMapper.dolbomiSalarySelectList");
+		return (ArrayList<Dolbomi>) list;
 	}
 	
 	

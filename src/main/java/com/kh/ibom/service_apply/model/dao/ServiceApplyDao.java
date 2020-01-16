@@ -71,8 +71,8 @@ public class ServiceApplyDao {
 		return (ArrayList<ServiceApply2>)s1list;
 	}
 
-	public ServiceApply2 selectDetailAct(ServiceApplyNumbers sNum) {
-		
+	public ServiceApply2 selectDetailAct(String sNum) {
+		//활동일지 상세보기 페이지로 가기전 정보조회
 		return session.selectOne("applyMapper.selectDetailAct", sNum);
 	}
 
@@ -111,6 +111,11 @@ public class ServiceApplyDao {
 	public int updateLogCategory2(ServiceApply2 ap2) {
 		// TODO Auto-generated method stub
 		return session.update("applyMapper.updateLogCategory2", ap2);
+	}
+
+	public Integer selectTotalUsingTime(ServiceApply2 ap2) {
+		// 이번달 총 근무시간 조회
+		return session.selectOne("applyMapper.selectTotalUsingTime", ap2);
 	}
 
 	

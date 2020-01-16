@@ -75,4 +75,10 @@ public class NomalActLogServiceImpl implements NomalActLogService{
 		return nomalActDao.updateReturnNomalAct(noLog);
 	}
 
+	@Override
+	public ArrayList<ReturnActVo> selectSearchMyNomalReturnActLog(AlldayActLog acLog) {
+		// 급여반려 검색
+		return nomalActDao.selectSearchMyNomalReturnActLog(acLog);
+	}
+
 }

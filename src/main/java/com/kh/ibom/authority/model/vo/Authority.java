@@ -17,21 +17,20 @@ public class Authority implements Serializable , UserDetails{
 	private String ibom_id;
 	private String ibom_pwd;
 	private String authority;
+	private boolean enabled;
+	private int enabled_count;
 	
 	public Authority() {}
 	
-	
-	
-	
-	
-	public Authority(String ibom_id, String ibom_pwd, String authority) {
+
+	public Authority(String ibom_id, String ibom_pwd, String authority, boolean enabled, int enabled_count) {
 		super();
 		this.ibom_id = ibom_id;
 		this.ibom_pwd = ibom_pwd;
 		this.authority = authority;
+		this.enabled = enabled;
+		this.enabled_count = enabled_count;
 	}
-
-
 
 
 
@@ -75,10 +74,8 @@ public class Authority implements Serializable , UserDetails{
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return true;
+		return enabled;
 	}
-
-
 
 
 
@@ -127,14 +124,13 @@ public class Authority implements Serializable , UserDetails{
 	}
 
 
-
-
-
 	@Override
 	public String toString() {
-		return "Authority [ibom_id=" + ibom_id + ", ibom_pwd=" + ibom_pwd + ", authority=" + authority + "]";
+		return "Authority [ibom_id=" + ibom_id + ", ibom_pwd=" + ibom_pwd + ", authority=" + authority + ", enabled="
+				+ enabled + ", enabled_count=" + enabled_count + "]";
 	}
-	
+
+
 	
 	
 	

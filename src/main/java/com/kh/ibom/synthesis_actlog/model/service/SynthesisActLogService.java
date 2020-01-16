@@ -24,6 +24,8 @@ public interface SynthesisActLogService {
 	ArrayList<ReturnActVo> selectMySynReturnActLog(AlldayActLog acLog);
 	//돌보미 반려 종합형 활동일지 수정
 	int updateReturnSynAct(SynthesisActLog synLog);
+	//급여반려 검색
+	ArrayList<ReturnActVo> selectSearchMySynReturnActLog(AlldayActLog acLog);
 	
 
 }
