@@ -345,7 +345,7 @@ public class ActLogConroller {
 		if(alist == null) {
 			mv.setViewName("/ibom/views/common/error.jsp");
 		}else {
-		System.out.println("담은값 찍어봄[===========" + alist);
+		
 		mv.setViewName("dolbomi/actLog/returnActPage");
 		mv.addObject("list", alist);
 		

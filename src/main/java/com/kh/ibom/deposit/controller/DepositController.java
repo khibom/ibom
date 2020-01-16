@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kh.ibom.allday_actlog.model.vo.AlldayActLog;
 import com.kh.ibom.common.CommonPaging;
 import com.kh.ibom.common.CommonSearchDate;
 import com.kh.ibom.deposit.model.service.DepositService;
@@ -104,6 +105,7 @@ public class DepositController {
 		ArrayList<Deposit> list = depoService.selectSearchList(act);
 		RefundAccount re = reaccountService.selectOne(act.getIbom_id());
 		String message = "";
+		
 		if(list.size() > 0) {
 			if(re != null) {
 				ArrayList<Deposit> dList = depoService.selectList(act.getIbom_id());

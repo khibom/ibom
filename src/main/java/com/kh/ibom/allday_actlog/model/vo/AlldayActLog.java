@@ -42,7 +42,11 @@ public class AlldayActLog implements Serializable{
 	
 	
 	public AlldayActLog () {}
-
+	
+	public static AlldayActLog getInstance() {
+		
+			return new AlldayActLog();
+	}
 
 	public AlldayActLog(String allday_no, String service2_no,String family_code, String dol_id, Date create_date, String dosage_time,
 			String dosage, String symotom, String dos_method, String stg_condition, String etc, String bodytemp_time,
