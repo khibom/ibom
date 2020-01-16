@@ -203,10 +203,11 @@ public class DepositController {
 			request.setAttribute("depo", dList);
 			request.setAttribute("commonPage", comPage);
 			request.getRequestDispatcher("/WEB-INF/views/admin/deposit/adminDepositPage.jsp").forward(request, response);
-		}
+		}else {
 		
 		request.setAttribute("commonPage", comPage);
 		request.getRequestDispatcher("/WEB-INF/views/admin/deposit/adminDepositPage.jsp").forward(request, response);
+		}
 		
 	}
 	@RequestMapping("admin/moveDepolist.do")

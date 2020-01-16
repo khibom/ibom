@@ -127,7 +127,7 @@ function back(event){
 		</td>
 	</tr>
 	<tr>
-		<th colspan="1"rowspan="4">활동내역</th>
+		<th colspan="1"rowspan="4">활동내역 <font color="orange">*</font></th>
 		<td colspan="3"rowspan="4" class="nopadding">
 		<textarea name="ac_content" style="border:none; height:100px;resize: none;"></textarea>
 		</td>

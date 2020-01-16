@@ -79,4 +79,10 @@ public class AlldayActLogServiceImpl implements AlldayActLogService{
 		return allActDao.updateReturnAlldayAct(allLog);
 	}
 
+	@Override
+	public ArrayList<ReturnActVo> selectSearchMyReturnActLog(AlldayActLog acLog) {
+		// 급여반려 검색
+		return allActDao.selectSearchMyReturnActLog(acLog);
+	}
+
 }

@@ -214,7 +214,6 @@ function chageLangSelect(){
           <div style="width:100%; height:150px; position:relative;"></div>
          <div class="jt_board_list_wrap">
           <p style=" color:rgb(243, 114, 51); float:left; width:49%; margin-left:5px; margin-top:5px;"> ＊ 정산월을 클릭하면 급여 상세내역을 볼 수 있습니다.</p>
-          <form action="${pageContext.request.contextPath}/iusers/searchdepo.do">
           <input type="hidden" name="ibom_id"value="${ loginIuser.user_id}">
           	<table class="jt_board_list">
 					 <thead>
@@ -244,7 +243,6 @@ function chageLangSelect(){
             </c:forEach>
             </tbody>
           </table>
-          </form>
           </div>
           <div style="width:100%; height:100px; position:relative;"></div>
          

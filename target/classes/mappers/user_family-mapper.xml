@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user_familyMapper">
+
+
+	<select id="selectServiceFmList" parameterType="string" resultType="UserFamily">
+		select * from USER_FAMILY where family_code = #{value}
+	</select>
+	
+	<!-- 서비스2에 아이 목록 조회해 오기 -->
+	<select id="selectChildList" parameterType="String" resultType="UserFamily">
+		select * from user_family where user_id = #{value}
+	</select>
+	
+</mapper>

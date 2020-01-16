@@ -468,7 +468,7 @@ function back(event){
                      </td>
                 </tr>
                 <tr>
-                    <th scope="col" class="type">체온</th>
+                    <th scope="col" class="type">체온<font color="orange">*</font></th>
                    	<td class="type"><input type="text"class="bodytemp1" name="bodytemp" style="width:25%;" >℃</td>
                    	<td class="type"><input type="text"class="bodytemp2" name="bodytemp" style="width:25%;">℃</td>
                    	<td class="type"><input type="text"class="bodytemp3" name="bodytemp" style="width:25%;">℃</td>
@@ -476,7 +476,7 @@ function back(event){
                     
                 </tr>
                  <tr>
-                    <th scope="col" class="type">건강및심리상태</th>
+                    <th scope="col" class="type">건강및심리상태<font color="orange">*</font></th>
                     <td class="type" colspan="4"><textarea name="healhandpsy" style="border:none; height:100px;" ></textarea></td>
                 </tr>
            </tbody>
@@ -487,15 +487,15 @@ function back(event){
           		<table class="jt_board_list">
             <tbody>
 				<tr>
-                    <th scope="col" class="type">배변내용</th>
+                    <th scope="col" class="type">배변내용<font color="orange">*</font></th>
                    	<td class="type"><textarea name="poop_cnt" style="border:none; height:100px;" ></textarea></td>
-                   	<th scope="col" class="type">수유내용</th>
+                   	<th scope="col" class="type">수유내용<font color="orange">*</font></th>
                    	<td class="type"><textarea name="rice_cnt" style="border:none; height:100px;" ></textarea></td>
                 </tr>
                 <tr>
-                    <th scope="col" class="type">수면내용</th>
+                    <th scope="col" class="type">수면내용<font color="orange">*</font></th>
                    	<td class="type"><textarea name="sleep_cnt" style="border:none; height:100px;" ></textarea></td>
-                   	<th scope="col" class="type">활동내용</th>
+                   	<th scope="col" class="type">활동내용<font color="orange">*</font></th>
                    	<td class="type"><textarea name="ac_cnt" style="border:none; height:100px;" ></textarea></td>
                 </tr>
                  <tr>

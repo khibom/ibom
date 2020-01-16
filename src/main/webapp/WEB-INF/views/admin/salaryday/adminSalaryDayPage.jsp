@@ -62,13 +62,17 @@ function checkSalaryDay(){
 		return false;
 		}
 }
-function checkDolTimePay(){
+function checkDolTimePay(event){
 	 var re = /^[0-9]{1,}$/;
 	var dol_time_pay = $("#dol_time_pay").val(); 
 	
 	
 	if(!re.test(dol_time_pay)){
 		alert("숫자만 입력해주세요")
+		$("#dol_time_pay").val("")
+		$("#dol_time_pay").focus()
+		event.stopPropagation();
+		event.preventDefault();
 		return false;
 	}
 	
@@ -184,11 +188,11 @@ function checkdolSal(){
                                    		<th>변경할  돌보미 시급</th>
                                    		<td>
                                    			<input type="text" name="dol_time_pay" id="dol_time_pay" class="text" style="border:none; width:60px;"> 원
-                                   			<p style="color:rgb(243, 114, 51); display:inline-block;">&nbsp;,없이 숫자로만 입력해주세요</p>
+                                   			<p style="color:rgb(243, 114, 51); display:inline-block;">&nbsp;&nbsp;",없이 숫자로만 입력해주세요"</p>
                                    		</td>
                                    </tr>
                                 </table>
-                                <button style="float:right; margin-right:15px;"onclick="checkDolTimePay();" class="btn btn-warning">변경</button>
+                                <button style="float:right; margin-right:15px;"onclick="checkDolTimePay(event);" class="btn btn-warning">변경</button>
                               </form><br/><br/>
                               <div style="width:100%; height:50px; position:relative;"></div>
                               <div id="salaryDays">
@@ -209,8 +213,8 @@ function checkdolSal(){
                                    			<c:if test="${not empty dol_totalSalary}">
                                    			<fmt:formatNumber type="number" maxFractionDigits="3" value="${dol_totalSalary}" /> 원
                                    			</c:if>
-                                   			<c:if test="${empty salDay.salary_day}">
-                                   			&nbsp;
+                                   			<c:if test="${empty dol_totalSalary}">
+                                   			0&nbsp;
                                    			</c:if>
                                    		</td>
                                    </tr>
@@ -220,7 +224,7 @@ function checkdolSal(){
                                    			<fmt:formatNumber type="number" maxFractionDigits="3" value="${totalDeduction}" /> 원
                                    			</c:if>
                                    			<c:if test="${empty totalDeduction}">
-                                   				&nbsp;
+                                   				0&nbsp;
                                    			</c:if>
                                    		</td>
                                    </tr>
@@ -231,13 +235,14 @@ function checkdolSal(){
                                    			<fmt:formatNumber type="number" maxFractionDigits="3" value="${resultSalary}" /> 원
                                    			</c:if>
                                    			<c:if test="${empty resultSalary}">
-                                   			 &nbsp;
+                                   			0 &nbsp;
                                    			</c:if>
                                    		</td>
                                    </tr>
                                 </table>
+                                <c:if test="${not empty dol_totalSalary}">
                                 <button onclick="checkdolSal();" style="float:right; margin-right:15px;" class="btn btn-warning">일괄지급</button>
-                               
+                               </c:if>
                                 </div>
                             </div>
                             <!-- /.table-responsive -->

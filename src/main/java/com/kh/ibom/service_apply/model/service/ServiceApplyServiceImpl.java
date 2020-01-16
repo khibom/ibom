@@ -9,7 +9,6 @@ import com.kh.ibom.service_apply.model.dao.ServiceApplyDao;
 import com.kh.ibom.service_apply.model.vo.ServiceApply1;
 import com.kh.ibom.service_apply.model.vo.ServiceApply2;
 import com.kh.ibom.service_apply.model.vo.ServiceApply3;
-import com.kh.ibom.service_apply.model.vo.ServiceApplyNumbers;
 import com.kh.ibom.service_apply.model.vo.ServiceCalendar;
 import com.kh.ibom.synthesis_actlog.model.vo.SynthesisActLog;
 
@@ -79,7 +78,7 @@ public class ServiceApplyServiceImpl implements ServiceApplyService{
 	}
 
 	@Override
-	public ServiceApply2 selectDetailAct(ServiceApplyNumbers sNum) {
+	public ServiceApply2 selectDetailAct(String sNum) {
 		//활동일지 상세페이지로 이동하기전 서비스2 상세정보 가져오기위한 서비스
 		return applyDao.selectDetailAct(sNum);
 	}
@@ -124,6 +123,12 @@ public class ServiceApplyServiceImpl implements ServiceApplyService{
 	public int updateLogCategory2(ServiceApply2 ap2) {
 		// 돌보미 일지제출후 서비스완료 업데이트처리
 		return applyDao.updateLogCategory2(ap2);
+	}
+
+	@Override
+	public Integer selectTotalUsingTime(ServiceApply2 ap2) {
+		//이번달 총 근무시간 조회
+		return applyDao.selectTotalUsingTime(ap2);
 	}
 	
 	// 은수 끈 ===========================================

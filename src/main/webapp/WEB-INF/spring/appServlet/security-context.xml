@@ -36,7 +36,7 @@
                 password-parameter="user_pwd"
                 login-processing-url="/login.do"
                 login-page="/loginPage.do"
-                default-target-url="/loginsuccess.do"
+                authentication-success-handler-ref="loginSuccessHandler"
                 authentication-failure-handler-ref="loginFailureHandler"
              	/>
         <!--  로그아웃할 url 및 로그아웃성공시 이동할 url invalidate-session="true" 로그아웃시 세션삭제유무-->
@@ -45,7 +45,7 @@
           <!-- invalid-session-url="/main.do" 세션이 끊어 졌을때 이동할 URL 
           	   session-fixation-protection=세션 고정공격 방어 
           -->
-          <security:session-management invalid-session-url="/main.do" session-fixation-protection="changeSessionId">
+          <security:session-management session-fixation-protection="changeSessionId" >
                   <security:concurrency-control  max-sessions="1" expired-url="/login_duplicate.do"/>
           </security:session-management> 
           
@@ -64,12 +64,23 @@
       <security:authentication-provider user-service-ref="AuthorityService" />
       
  	</security:authentication-manager>
+ 	<!-- 로그인 실패 -->
  	<bean id="loginFailureHandler" class="com.kh.ibom.security.LoginFailureHandler">
     <property name="loginidname" value="user_id"/>
     <property name="loginpwdname" value="user_pwd"/>
     <property name="errormsgname" value="ERRORMSG"/>
     <property name="defaultFailureUrl" value="/loginPage.do?error"/>
 	</bean>
+	<!-- 로그인 성공 -->
+	<bean id="loginSuccessHandler" class="com.kh.ibom.security.LoginSuccessHandler">
+    <property name="loginidname" value="user_id"/>
+    <property name="defaultUrl" value="/loginsuccess.do"/>
+	</bean>
+
+
+
+	
+	
 
  	<beans:bean class="com.kh.ibom.security.CustomAuthenticationProvider" id="customAuthenticationProvider" />
  	<beans:bean class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" id="bcryptPasswordEncoder" /> 

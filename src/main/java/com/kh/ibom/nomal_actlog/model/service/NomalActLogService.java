@@ -29,6 +29,8 @@ public interface NomalActLogService {
 	ArrayList<ReturnActVo> selectMyNomalReturnActLog(AlldayActLog acLog);
 	//돌보미 급여반려 제 등록
 	int updateReturnNomalAct(NomalActLog noLog);
+	//급여반려 검색
+	ArrayList<ReturnActVo> selectSearchMyNomalReturnActLog(AlldayActLog acLog);
 
 
 }

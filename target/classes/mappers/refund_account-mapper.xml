@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="refund_accountMapper">
+	
+	<select id="selectOne" parameterType="string" resultType="RefundAccount">
+		select * from REFUND_ACCOUNT where user_id = #{value}
+	</select>
+	<delete id="deleteRestrict" parameterType="string">
+		delete from REFUND_ACCOUNT where user_id = #{value}
+	</delete>
+	<insert id="insertReAccount" parameterType="RefundAccount">
+		insert into REFUND_ACCOUNT values(#{user_id},#{bank_name},#{refund_account},#{refund_name})
+	</insert>
+	
+</mapper>

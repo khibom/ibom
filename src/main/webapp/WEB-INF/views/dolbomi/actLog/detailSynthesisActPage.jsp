@@ -59,9 +59,11 @@ $(function(){
 		//로그행 추가
 		$("#synLog").append(
 				 "<tr class='js_full_click  jq_click click_a'>"
-               + "<td class='type'><input name='chk' class='chk' type='checkbox'></td>"
-               + "<td class='type'><input type='text' name='ac_time'></td>"
-               + "<td class='type'><textarea name='ac_content' ></textarea></td>"
+               + "<td class='type'>"
+			   + "<label><input type='checkbox'name='chk' class='chk'/>"
+			   + "<span></span></label></td>"
+               + "<td class='type'><input type='text' name='ac_time'style='width:60%;'></td>"
+               + "<td class='type'><textarea name='ac_content' style='border:none; height:100px;resize: none;' ></textarea></td>"
                + "</tr>");
 		return false;
 	});
@@ -194,8 +196,8 @@ function fromDataCheck(){
 			        <span></span>
 			      </label>
                 	</th>
-                    <th scope="col" class="type">시간</th>
-                    <th scope="col" class="type">내용</th>
+                    <th scope="col" style="width:5%;">시간</th>
+                    <th scope="col" class="type">내용 <font color="orange">*</font></th>
                 </tr>
                
             </thead>
@@ -209,7 +211,7 @@ function fromDataCheck(){
 			        <span></span>
 			      </label>
                   </td>
-                  <td class="type"><input type="text"style="width:20%;" name="ac_time"></td>
+                  <td class="type"><input type="text"style="width:60%;" name="ac_time"></td>
                   <td class="type"><textarea name="ac_content"style="border:none; height:100px;resize: none;" ></textarea></td>
                 </tr>
             </tbody>

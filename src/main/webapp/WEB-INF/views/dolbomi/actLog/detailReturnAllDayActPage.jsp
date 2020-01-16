@@ -194,7 +194,7 @@ function back(event){
 								</tr>
 								<tr>
 									<th>특이사항</th>
-									<td colspan="4"><textarea name="etc" rows="4" style=" border:none;">${etc }</textarea></td>
+									<td colspan="4"><textarea name="etc" rows="4" style=" border:none;">${allday.etc}</textarea></td>
 								</tr> 
                           </tbody>
         </table>
@@ -215,7 +215,7 @@ function back(event){
 							</c:forTokens>
 					</tr>
 					<tr>
-					<th >체온</th>
+					<th >체온 <font color="orange">*</font></th>
 					<c:forTokens  var="i" items="${allday.bodytemp}" delims=",">
 						<td class="nopadding">
 							<input type="text" name="bodytemp" value="${i}" style="width:15%;" required>℃
@@ -223,7 +223,7 @@ function back(event){
 					</c:forTokens>
 					</tr>
 					<tr>
-						<th>건강및심리상태</th>
+						<th>건강및심리상태 <font color="orange">*</font></th>
 						<td colspan="5"><textarea name="healhandpsy" style="border:none;" required>${allday.healhandpsy}</textarea></td>
 					</tr>
            </tbody>
@@ -234,22 +234,22 @@ function back(event){
           		<table class="jt_board_list">
             <tbody>
                  <tr>
-				  <th scope="col" class="type">배변내용</th>
+				  <th scope="col" class="type">배변내용 <font color="orange">*</font></th>
 				  	<td class="type"><textarea name="poop_cnt" style="border:none;" required>${allday.poop_cnt }</textarea></td>
-				    	<th scope="col" class="type">수유내용</th>
+				    	<th scope="col" class="type">수유내용 <font color="orange">*</font></th>
 				   	<td class="type"><textarea name="rice_cnt" style="border:none;" required>${allday.rice_cnt }</textarea></td>
 				   </tr>
 				   <tr>
-				     <th scope="col" class="type">수면내용</th>
+				     <th scope="col" class="type">수면내용 <font color="orange">*</font></th>
 		        	<td class="type"><textarea name="sleep_cnt" style="border:none;" required>${allday.sleep_cnt }</textarea></td>
-			    	<th scope="col" class="type">활동내용</th>
+			    	<th scope="col" class="type">활동내용 <font color="orange">*</font></th>
 				   	<td class="type"><textarea name="ac_cnt" style="border:none;" required>${allday.ac_cnt }</textarea></td>
 			    </tr>
 				      <tr>
 				        <tr>
-				         <th scope="col" class="type">관찰내용</th>
+				         <th scope="col" class="type">관찰내용 </th>
 				          	<td class="type"><textarea name="observe_cnt" style="border:none;">${allday.observe_cnt }</textarea></td>
-				            <th scope="col" class="type">전달사항</th>
+				            <th scope="col" class="type">전달사항 </th>
 				            <td class="type"><textarea name="pass_cnt" style="border:none;">${allday.pass_cnt}</textarea></td>
 				       </tr>
             </tbody>
@@ -264,7 +264,7 @@ function back(event){
             <tbody>
 			                 <tr>
 			                    <th scope="col" class="type">실내환기</th>
-			                    <td class="type" colspan="5"><textarea name="ventiration" style="border:none;">${allday.ventiration}</textarea></td>
+			                    <td class="type" colspan="4"><textarea name="ventiration" style="border:none;">${allday.ventiration}</textarea></td>
 			                </tr>
 			                <tr>
 			                    <th>시간</th>
@@ -284,8 +284,9 @@ function back(event){
 							  <c:forTokens  var="i" items="${allday.ven_humidity}" delims=",">
 			                  <td><input type="text" name="ven_humidity" value="${i}" style="width:20%;">℃</td>
 			                	</c:forTokens>
+			                 </c:if><c:if test="${empty allday.ven_humidity}">
+							  <td colspan="3"><input type="hidden" name="ven_humidity" value="0" style="width:20%;"></td>
 			                 </c:if>
-			   					<td colspan="5"><input type="hidden" name="ven_humidity" value="0" style="width:20%;"></td>
 			                </tr> 
                           </tbody>
         </table>

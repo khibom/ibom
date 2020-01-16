@@ -265,7 +265,7 @@
         	</tbody>
         	</table>
         	<div style="width:100%; height:20px; position:relative;"></div>
-          <input type="submit" value="승인" class="btn btn-primary" style="float:right;">
+          <input type="submit" value="반려" class="btn btn-primary" style="float:right;">
          </form>
         <br><br><br>
       </div>
