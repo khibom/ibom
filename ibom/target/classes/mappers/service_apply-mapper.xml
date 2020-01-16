@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="applyMapper">
+
+	<!--  은수 시작 =============================================== -->
+	<select id="selectDolService1List" parameterType="string" resultType="ServiceApply1">
+		select * from SERVICE_APPLY1 where dolbomi_id = #{value}
+	</select>
+	<select id="selectDolService2List" parameterType="string" resultType="ServiceApply2">
+		select * from SERVICE_APPLY2 where dolbomi_id = #{value}
+	</select>
+	<select id="selectDetailAct" parameterType="ServiceApplyNumbers" resultType="ServiceApply2">
+		select * from SERVICE_APPLY2 where service1_no = #{service1_no} and service2_no = #{service2_no}
+	</select>
+	<select id="selectOneDetailAct" parameterType="string" resultType="ServiceApply1">
+		select * from SERVICE_APPLY1 where service1_no = #{value}
+	</select>
+	<select id="selectOneA3DetailAct" parameterType="ServiceApply2" resultType="ServiceApply3">
+		select *
+		 from SERVICE_APPLY3
+		 where service1_no = #{service1_no} and FAMILY_CODE = #{family_code} AND SERVICE2_NO = #{service2_no}
+	</select>
+	<update id="updateLogCategory" parameterType="SynthesisActLog">
+		update SERVICE_APPLY3 set LOG_CATEGORY = 'Y'
+		where SERVICE2_NO = #{service2_no} AND FAMILY_CODE = #{family_code}
+	</update>
+	<update id="updateLogCategory2" parameterType="ActListView">
+		update SERVICE_APPLY2 set APPLY_STATUS = '서비스완료'
+		where service1_no = #{service1_no} and service2_no = #{service2_no}
+	</update>
+	<select id="LogCount" parameterType="string" resultType="_int">
+		SELECT COUNT(*)
+		FROM SERVICE_APPLY2
+		JOIN SERVICE_APPLY3 USING(SERVICE2_NO)
+		WHERE LOG_CATEGORY = 'N' AND DOLBOMI_ID  = #{value}
+	</select>
+	<select id="selectAdminActLogService" parameterType="string" resultType="ServiceApply2">
+		select *
+		from SERVICE_APPLY2 
+		where service2_no = #{value}
+	</select>
+	<select id="selectServiceCalendar" parameterType="string" resultType="ServiceCalendar">
+		select APPLY_DATE, D.SERVICE2_NO, E.SERVICE1_NO, E.LOG_CATEGORY,E.FAMILY_CODE
+		from SERVICE_APPLY2 D
+		LEFT JOIN SERVICE_APPLY3 E ON D.SERVICE2_NO = E.SERVICE2_NO
+		where dolbomi_id = #{value}
+	</select>
+	<!--  은수 끝 ============================================================= -->
+</mapper>

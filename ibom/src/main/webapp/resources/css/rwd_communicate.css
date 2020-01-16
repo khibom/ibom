@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+/*
+ * File       : rwd_communicate.css
+ * Author     : STUDIO-JT (HEE)
+ * Guideline  : JTstyle.1.1
+ *
+ * SUMMARY:
+ * 01) 1023px
+ * 02) 768px
+ * 03) 640px
+ * 04) 540px
+ * 05) 480px
+ * 06) 380px
+ */
+
+
+
+/* **************************************** *
+ * 1023px
+ * **************************************** */
+@media (max-width: 1023px){
+	/* 게시판 */
+	.jt_grid_tab li {font-size: 15px;}
+	.jt_grid_list_wrap:before {height: 3px}
+
+	/* 작성하기 */
+	.board_form_content:before {height: 3px;}
+	.board_form_content:after {height: 3px;}
+	.board_form_content .board_character .jt_form_label_wrap {padding-top: 16px;}
+
+	.jt_form_data_character .jt_icheck_label span {font-size: 13px;}
+}
+
+
+
+/* **************************************** *
+ * 768px
+ * **************************************** */
+@media (max-width: 768px){
+	/* 게시판 */
+	.jt_grid_tab li {font-size: 14px; padding-right: 25px;}
+	.jt_grid_tab li:after {top: 8px; right: 11px;}
+
+	.jt_grid_item { width: 48%; margin-right: 4%; margin-bottom: 4%; }
+	.jt_grid_item:nth-child(2n) {margin-right: 0;}
+	.jt_grid_item:nth-child(3n) { margin-right: 4%; }
+	.jt_grid_item:nth-child(3n+1) { clear: none; }
+	.jt_grid_item:nth-child(6n) {margin-right: 0;}
+	.jt_grid_type {font-size: 13px; padding: 8px 16px;}
+	.jt_grid_icon_best { width: 40px; height: 45px; background-size: cover; right: 16px; bottom: -20px;}
+	.jt_grid_icon_best span { line-height: 35px;font-size: 11px;}
+	html.ios .jt_grid_icon_best span {line-height: 40px;}
+	.jt_grid_content {padding: 22px 25px;}
+	.jt_grid_title {font-size: 17px;}
+	.jt_grid_desc {font-size: 15px; line-height: 1.6; max-height: 3.2em;}
+	.jt_grid_meta {margin-top: 16px; margin-bottom: 13px;}
+	.jt_grid_meta span {display: inline-block; vertical-align: middle;}
+	.jt_grid_meta span.author {font-size: 13px;}
+	.jt_grid_meta span.date {font-size: 13px;}
+	.jt_grid_meta span.date:before {top: 9px;}
+	.jt_grid_meta_view span {font-size: 14px; padding-left: 26px;}
+	.jt_grid_meta_view span.view:before {top: 0px;}
+	.jt_grid_meta_view span.reply:before {top: 1px;}
+
+	html.ios .jt_grid_meta {margin-bottom: 12px;}
+	html.ios .jt_grid_meta span.date {margin-top: 3px;}
+	html.ios .jt_grid_meta span.date:before {top: 6px;}
+	html.ios .jt_grid_meta_view span.view:before {top: -2px;}
+	html.ios .jt_grid_meta_view span.reply:before {top: 0px;}
+
+	/* 작성하기 */
+	.board_form_content {padding-top: 32px; padding-bottom: 43px;}
+	.board_form_content .jt_form_data {margin-bottom: 26px;}
+	.board_form_content textarea.jt_form_field {height: 220px; padding-left: 15px; padding-right: 15px;}
+	.jt_form_data_character .jt_icheck_label span {font-size: 12px;}
+
+	.board_form_control {margin-top: 40px}
+
+	.board_list .article_desc br {display: none;}
+}
+
+
+
+/* **************************************** *
+ * 640px
+ * **************************************** */
+@media (max-width: 640px){
+	/* 게시판 */
+	.jt_grid_list_wrap {padding-top: 32px;}
+
+	/* 작성하기 */
+	.jt_form_data_character {margin: 0 -4% -25px;}
+	.jt_form_data_character .jt_icheck_label {margin-right: 0; width: 17%; margin: 0 4% 25px;}
+	.jt_form_data_character .jt_icheck_label figure img {max-width: 100%;}
+}
+
+
+
+/* **************************************** *
+ * 540px
+ * **************************************** */
+@media (max-width: 540px){
+	/* 게시판 */
+	.jt_grid_tab { float: none; padding: 0; text-align: center; }
+	.jt_grid_tab li {font-size: 13px; padding-right: 19px;}
+	.jt_grid_tab li:after {top: 8px; right: 8px;}
+	.jt_grid_btn_control { float: none; text-align: right; }
+	.jt_grid_list_wrap {padding-top: 29px;}
+	.jt_grid_item { width: 48.5%; margin-right: 3%; margin-bottom: 3%; }
+	.jt_grid_item:nth-child(3n) { margin-right: 3%; }
+	.jt_grid_item:nth-child(6n) {margin-right: 0;}
+	.jt_grid_content {padding: 20px 18px 20px;}
+	.jt_grid_title {font-size: 16px;}
+	.jt_grid_desc {font-size: 14px;}
+	.jt_grid_meta_view span {padding-left: 22px;}
+	.jt_grid_meta_view span:before {font-size: 16px;}
+	.jt_grid_meta_view span.reply:before {font-size: 14px; top: 2px;}
+
+	html.ios .jt_grid_content {padding: 20px 18px 17px;}
+	html.ios .jt_grid_meta_view span.reply:before {top: -1px;}
+
+	/* 작성하기 */
+	.board_form_content {padding-top: 22px; padding-bottom: 32px;}
+	.board_form_content .jt_form_data {margin-bottom: 22px;}
+	.board_form_content .board_character .jt_form_label_wrap {padding-top: 0;}
+
+	.jt_form_data_character {margin: 0 -3% -25px;}
+	.jt_form_data_character .jt_icheck_label {width: 14%; margin: 0 3% 25px;}
+	.jt_form_data_character .jt_icheck_label span {line-height: 1.4; margin-top: 8px;}
+
+	.board_form_control {margin-top: 25px;}
+	.board_form_control > * {margin-right: 10px;}
+
+	.jt_grid_btn_control { width: 100%; height: 100%; position: fixed; z-index: 100; top: 0; left: 0; right: 0; bottom: 0; background: transparent; pointer-events: none;}
+}
+
+
+
+/* **************************************** *
+ * 480px
+ * **************************************** */
+@media (max-width: 480px){
+	/* 게시판 */
+	.jt_grid_item {width: 100%; margin-right: 0; margin-bottom: 15px;}
+
+	.jt_form_data_character {margin: 0 -4% -20px;}
+	.jt_form_data_character .jt_icheck_label {width: 17%; margin: 0 4% 20px;}
+}
+
+
+
+/* **************************************** *
+ * 380px
+ * **************************************** */
+@media (max-width: 380px){
+	/* 작성하기 */
+	.jt_form_data_character {margin: 0 -2.5% -18px;}
+	.jt_form_data_character .jt_icheck_label {width: 20%; margin: 0 2.5% 18px;}
+}

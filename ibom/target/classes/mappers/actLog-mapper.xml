@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="actLogMapper">
+	
+	<insert id="insertNomalAct" parameterType="NomalActLog">
+		insert into nomal_actlog values(SEQ_TIME_NO.NEXTVAL, #{service2_no},#{family_code}, #{dol_id}, sysdate, #{ac_content}, null, #{process_ctgry}, null)
+	</insert>
+	<insert id="insertAlldayActLog" parameterType="AlldayActLog">
+		insert into ALLDAY_ACTLOG values(SEQ_ALLDAY_NO.NEXTVAL,#{service2_no},#{family_code}, #{dol_id}, sysdate, #{dosage_time}, #{dosage}, #{symotom}, 
+		#{dos_method}, #{stg_condition}, #{etc}, #{bodytemp_time}, #{bodytemp}, #{healhandpsy}, #{poop_cnt}, #{sleep_cnt}, #{rice_cnt},
+		#{ac_cnt}, #{pass_cnt}, #{observe_cnt}, #{ventiration},#{ven_time}, #{ven_temp}, #{ven_humidity}, null, #{process_ctgry}, null)
+	</insert>
+	<insert id="insertSynthesisAct" parameterType="SynthesisActLog">
+		insert into SYNTHESIS_ACTLOG values(SEQ_SYNTHESIS_NO.NEXTVAL, #{service2_no},#{family_code}, #{dol_id}, sysdate, null,#{ac_time},#{ac_content}, #{process_ctgry}, null)
+	</insert>
+	<select id="AlldaySelectList" resultType="AlldayActLog">
+		select ALLDAY_NO, SERVICE2_NO,FAMILY_CODE, DOL_NAME, CREATE_DATE, DOSAGE_TIME, DOSAGE, SYMOTOM, DOS_METHOD, STG_CONDITION, ETC, 
+		BODYTEMP_TIME, BODYTEMP, HEALTHANDPSY, POOP_CNT, SLEEP_CNT, RICE_CNT, AC_CNT, PASS_CNT, OBSERVE_CNT, VENTIRATION, VEN_TIME,
+		VEN_TEMP, VEN_HUMIDITY, COND_DATE, PROCESS_CTGRY, COND_CONTENT
+		 from ALLDAY_ACTLOG 
+     	JOIN DOLBOMI  using(dol_id)
+	</select>
+	<select id="NomalSelectList" resultType="NomalActLog">
+		select TIME_NO, SERVICE2_NO, DOL_NAME, FAMILY_CODE, CREATE_DATE, AC_CONTENT, COND_DATE, PROCESS_CTGRY, COND_CNT 
+		from NOMAL_ACTLOG
+		JOIN DOLBOMI  using(dol_id)
+	</select>
+	<select id="SynSelectList" resultType="SynthesisActLog">
+		select SYNTHESIS_NO, SERVICE2_NO, FAMILY_CODE, DOL_NAME, CREATE_DATE, COND_DATE, AC_TIME, AC_CONTENT, PROCESS_CTGRY, COND_CNT 
+		from SYNTHESIS_ACTLOG
+		JOIN DOLBOMI  using(dol_id)
+	</select>
+	<select id="alldayActPaging" parameterType="CommonPaging" resultType="AlldayActLog">
+	<![CDATA[
+				select SERVICE2_NO,DOL_NAME AS DOL_ID, CREATE_DATE,SYMOTOM, 
+        	  	VEN_TIME,  PROCESS_CTGRY, FAMILY_CODE
+        		from (
+				select rownum rnum, SERVICE2_NO, CREATE_DATE, VEN_TIME,DOL_id, 
+				SYMOTOM, PROCESS_CTGRY, FAMILY_CODE
+       		    from ALLDAY_ACTLOG)
+ 				JOIN DOLBOMI USING (DOL_ID) 
+ 				where rnum >= #{startList} and rnum <= #{endList}
+		]]>
+	</select>
+	<select id="nomalActPaging" parameterType="CommonPaging" resultType="NomalActLog">
+	<![CDATA[
+				select CREATE_DATE, SERVICE2_NO, FAMILY_CODE,
+				AC_CONTENT, PROCESS_CTGRY, DOL_NAME AS DOL_ID 
+       		 	from (
+				select rownum rnum, CREATE_DATE, SERVICE2_NO, 
+				AC_CONTENT, PROCESS_CTGRY, DOL_ID, FAMILY_CODE
+       			from NOMAL_ACTLOG)
+				JOIN DOLBOMI USING (DOL_ID)
+                where rnum >= #{startList} and rnum <= #{endList}  
+		]]>
+	</select>
+	<select id="synActPaging" parameterType="CommonPaging" resultType="SynthesisActLog">
+	<![CDATA[
+				select SERVICE2_NO, DOL_NAME AS DOL_ID, CREATE_DATE, AC_CONTENT, PROCESS_CTGRY,FAMILY_CODE
+				from (
+				select rownum rnum, SERVICE2_NO, DOL_ID, CREATE_DATE,
+				AC_CONTENT, PROCESS_CTGRY, FAMILY_CODE
+        		from SYNTHESIS_ACTLOG)
+				JOIN DOLBOMI USING (DOL_ID)  
+ 				where rnum >= #{startList} and rnum <= #{endList}
+		]]>
+	</select>
+	<select id="alldayReturnActVoActService" parameterType="CommonPaging" resultType="ReturnActVo">
+			<![CDATA[
+				select SERVICE2_NO, START_TIME, END_TIME, TRANSFEROR, FAMILY_NAME, DOLBOM_TYPE, LOG_CATEGORY,PROCESS_CTGRY,FAMILY_CODE
+				from (
+				select rownum rnum, SERVICE2_NO, START_TIME, END_TIME, TRANSFEROR, FAMILY_NAME, E.DOLBOM_TYPE, LOG_CATEGORY,PROCESS_CTGRY,FAMILY_CODE
+        		from DOLBOMI D
+        		JOIN SERVICE_APPLY2 E ON D.DOL_ID = E.DOLBOMI_ID
+			    JOIN SERVICE_APPLY1 USING(SERVICE1_NO)
+			    JOIN SERVICE_APPLY3 USING(SERVICE1_NO)
+			    JOIN USER_FAMILY USING(FAMILY_CODE)
+			    JOIN ALLDAY_ACTLOG USING(FAMILY_CODE)
+          		where D.DOL_ID = #{ibom_id} and process_ctgry like '%' || '반려' || '%')  
+ 				where rnum >= #{startList} and rnum <= #{endList}
+		]]>
+	</select>
+	<select id="selectOne" parameterType="ServiceCalendar" resultType="NomalActLog">
+		 SELECT *
+		 FROM NOMAL_ACTLOG
+		 WHERE SERVICE2_NO = #{service2_no} AND FAMILY_CODE = #{family_code}
+	</select>
+	<select id="selectSynOne" parameterType="ServiceCalendar" resultType="SynthesisActLog">
+		 SELECT *
+		 FROM SYNTHESIS_ACTLOG
+		 WHERE SERVICE2_NO = #{service2_no} AND FAMILY_CODE = #{family_code}
+	</select>
+	<select id="selectAlldayOne" parameterType="ServiceCalendar" resultType="AlldayActLog">
+		 SELECT *
+		 FROM ALLDAY_ACTLOG
+		 WHERE SERVICE2_NO = #{service2_no} AND FAMILY_CODE = #{family_code}
+	</select>
+	<update id="sucUpdateDolNomalActLog" parameterType="string" >
+		update NOMAL_ACTLOG set PROCESS_CTGRY = '승인완료', COND_DATE = sysdate
+		 where time_no = #{value}
+	</update>
+	<update id="cancelDolNomalActLog" parameterType="NomalActLog" >
+		update NOMAL_ACTLOG set PROCESS_CTGRY = '승인반려', COND_DATE = sysdate, COND_CNT = #{cond_cnt}
+		 where time_no = #{time_no}
+	</update>
+	<update id="sucUpdateDolSynActLog" parameterType="string" >
+		update SYNTHESIS_ACTLOG set PROCESS_CTGRY = '승인완료', COND_DATE = sysdate
+		 where SYNTHESIS_NO = #{value}
+	</update>
+	<update id="cancelDolSynActLog" parameterType="SynthesisActLog" >
+		update SYNTHESIS_ACTLOG set PROCESS_CTGRY = '승인반려', COND_DATE = sysdate, COND_CNT = #{cond_cnt}
+		 where SYNTHESIS_NO = #{synthesis_no}
+	</update>
+	<update id="sucUpdateDolAlldayActLog" parameterType="string" >
+		update ALLDAY_ACTLOG set PROCESS_CTGRY = '승인완료', COND_DATE = sysdate
+		 where allday_no = #{value}
+	</update>
+	<update id="cancelDolAlldayActLog" parameterType="AlldayActLog" >
+		update ALLDAY_ACTLOG set PROCESS_CTGRY = '승인반려', COND_DATE = sysdate, COND_CONTENT = #{cond_content}
+		 where allday_no = #{allday_no}
+	</update>
+	<select id="searchNomalActLog" parameterType="NomalActLog" resultType="NomalActLog">
+		select TIME_NO, SERVICE2_NO, DOL_NAME as dol_id, FAMILY_CODE, CREATE_DATE, AC_CONTENT, COND_DATE, PROCESS_CTGRY, COND_CNT
+		from NOMAL_ACTLOG
+		join dolbomi using(dol_id)
+		where <if test="dol_id != null">
+			 	dol_name like '%' || #{dol_id} || '%'
+			 </if>
+			 <if test="process_ctgry != null">
+				AND process_ctgry = #{process_ctgry}
+			 </if>
+	</select>
+	<select id="searchSynActLog" parameterType="SynthesisActLog" resultType="SynthesisActLog">
+		select SYNTHESIS_NO, SERVICE2_NO, FAMILY_CODE, DOL_NAME as dol_id, CREATE_DATE, COND_DATE, AC_TIME, AC_CONTENT, PROCESS_CTGRY, COND_CNT 
+		from SYNTHESIS_ACTLOG
+		join dolbomi using(dol_id)
+		where <if test="dol_id != null">
+			 	dol_name like '%' || #{dol_id} || '%'
+			 </if>
+			 <if test="process_ctgry != null">
+				AND process_ctgry = #{process_ctgry}
+			 </if>
+	</select>
+	<select id="searchAlldayActLog" parameterType="AlldayActLog" resultType="AlldayActLog">
+		select ALLDAY_NO, SERVICE2_NO,FAMILY_CODE, DOL_NAME as dol_id, CREATE_DATE, DOSAGE_TIME, DOSAGE, SYMOTOM, DOS_METHOD, STG_CONDITION, ETC, 
+		BODYTEMP_TIME, BODYTEMP, HEALTHANDPSY, POOP_CNT, SLEEP_CNT, RICE_CNT, AC_CNT, PASS_CNT, OBSERVE_CNT, VENTIRATION, VEN_TIME,
+		VEN_TEMP, VEN_HUMIDITY, COND_DATE, PROCESS_CTGRY, COND_CONTENT
+		from ALLDAY_ACTLOG
+		join dolbomi using(dol_id)
+		where <if test="dol_id != null">
+			 	dol_name like '%' || #{dol_id} || '%'
+			 </if>
+			 <if test="process_ctgry != null">
+				AND process_ctgry = #{process_ctgry}
+			 </if>
+	</select>
+	
+	<select id="selectMyReturnActLog" parameterType="AlldayActLog" resultType="ReturnActVo">
+		  SELECT SERVICE2_NO, START_TIME, END_TIME, TRANSFEROR, FAMILY_NAME, E.DOLBOM_TYPE, LOG_CATEGORY,PROCESS_CTGRY,FAMILY_CODE
+		  FROM DOLBOMI D
+		  JOIN SERVICE_APPLY2 E ON D.DOL_ID = E.DOLBOMI_ID
+		  JOIN SERVICE_APPLY1 USING(SERVICE1_NO)
+		  JOIN SERVICE_APPLY3 USING(SERVICE1_NO)
+		  JOIN USER_FAMILY USING(FAMILY_CODE)
+		  JOIN ALLDAY_ACTLOG USING(FAMILY_CODE)
+		  WHERE D.DOL_ID =#{dol_id} and process_ctgry like '%' || #{process_ctgry} || '%'
+	</select>
+	<select id="selectMySynReturnActLog" parameterType="AlldayActLog" resultType="ReturnActVo">
+		  SELECT SERVICE2_NO, START_TIME, END_TIME, TRANSFEROR, FAMILY_NAME, E.DOLBOM_TYPE, LOG_CATEGORY,PROCESS_CTGRY,FAMILY_CODE
+		  FROM DOLBOMI D
+		  JOIN SERVICE_APPLY2 E ON D.DOL_ID = E.DOLBOMI_ID
+		  JOIN SERVICE_APPLY1 USING(SERVICE1_NO)
+		  JOIN SERVICE_APPLY3 USING(SERVICE1_NO)
+		  JOIN USER_FAMILY USING(FAMILY_CODE)
+		  JOIN SYNTHESIS_ACTLOG USING(FAMILY_CODE)
+		  WHERE D.DOL_ID =#{dol_id} and process_ctgry like '%' || #{process_ctgry} || '%'
+	</select>
+	<select id="selectMyNomalReturnActLog" parameterType="AlldayActLog" resultType="ReturnActVo">
+		  SELECT SERVICE2_NO, START_TIME, END_TIME, TRANSFEROR, FAMILY_NAME, E.DOLBOM_TYPE, LOG_CATEGORY,PROCESS_CTGRY,FAMILY_CODE
+		  FROM DOLBOMI D
+		  JOIN SERVICE_APPLY2 E ON D.DOL_ID = E.DOLBOMI_ID
+		  JOIN SERVICE_APPLY1 USING(SERVICE1_NO)
+		  JOIN SERVICE_APPLY3 USING(SERVICE1_NO)
+		  JOIN USER_FAMILY USING(FAMILY_CODE)
+		  JOIN NOMAL_ACTLOG USING(FAMILY_CODE)
+		  WHERE D.DOL_ID =#{dol_id} and process_ctgry like '%' ||#{process_ctgry} || '%' AND LOG_CATEGORY = #{cond_date}
+	</select>
+	
+	
+	<update id="updateReturnAlldayAct" parameterType="AlldayActLog">
+		UPDATE ALLDAY_ACTLOG 
+		SET ALLDAY_NO = #{allday_no}, SERVICE2_NO = #{service2_no}, FAMILY_CODE = #{family_code}, DOL_ID = #{dol_id}, CREATE_DATE = SYSDATE,
+        DOSAGE_TIME = #{dosage_time}, DOSAGE = #{dosage}, SYMOTOM = #{symotom}, DOS_METHOD = #{dos_method}, STG_CONDITION = #{stg_condition} , ETC = #{etc}, BODYTEMP_TIME = #{bodytemp_time}, 
+        BODYTEMP = #{bodytemp}, HEALTHANDPSY = #{healhandpsy}, POOP_CNT = #{poop_cnt}, SLEEP_CNT = #{sleep_cnt}, RICE_CNT = #{rice_cnt}, AC_CNT = #{ac_cnt}, PASS_CNT = #{pass_cnt}, OBSERVE_CNT = #{observe_cnt}, 
+        VENTIRATION =#{ventiration}, VEN_TIME = #{ven_time}, VEN_TEMP =#{ven_temp}, VEN_HUMIDITY =#{ven_humidity}, PROCESS_CTGRY = #{process_ctgry}
+		WHERE ALLDAY_NO = #{allday_no}
+	</update>
+	<update id="updateReturnNomalAct" parameterType="NomalActLog">
+		 UPDATE NOMAL_ACTLOG
+  		 SET TIME_NO = #{time_no}, SERVICE2_NO = #{service2_no}, FAMILY_CODE = #{family_code}, DOL_ID = #{dol_id}, 
+         CREATE_DATE = SYSDATE, AC_CONTENT = #{ac_content}, PROCESS_CTGRY = '대기'
+ 		 WHERE TIME_NO = #{time_no}
+	</update>
+	<update id="updateReturnSynAct" parameterType="SynthesisActLog">
+		UPDATE SYNTHESIS_ACTLOG
+		SET SYNTHESIS_NO = #{synthesis_no}, SERVICE2_NO = #{service2_no}, FAMILY_CODE = #{family_code}, DOL_ID = #{dol_id}, CREATE_DATE = SYSDATE , AC_TIME = #{ac_time}, 
+        AC_CONTENT = #{ac_content}, PROCESS_CTGRY = '대기'
+		WHERE SYNTHESIS_NO = #{synthesis_no}
+	</update>
+	
+</mapper>

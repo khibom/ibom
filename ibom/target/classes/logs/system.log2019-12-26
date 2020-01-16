@@ -1,0 +1,138 @@
+[02:31:56][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[02:32:04][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8120 ms
+[02:32:04][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[02:32:07][INFO ][FrameworkServlet.java:546]- Completed initialization in 3500 ms
+[02:47:08][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[02:47:16][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 7683 ms
+[02:47:16][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[02:47:19][INFO ][FrameworkServlet.java:546]- Completed initialization in 3343 ms
+[02:48:01][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'admin'
+[02:48:01][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[02:48:01][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY |
+[02:48:01][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[02:48:01][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[02:48:01][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'admin'
+[02:48:01][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[02:48:01][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY |
+[02:48:01][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[02:48:01][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[02:49:01][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'admin01'
+[02:49:01][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[02:49:01][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY  |
+[02:49:01][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[02:49:01][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01  |ROLE_ADMIN |
+[02:49:01][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[02:56:49][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[02:56:57][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8550 ms
+[02:56:57][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[02:57:01][INFO ][FrameworkServlet.java:546]- Completed initialization in 3810 ms
+[02:57:13][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'admin01'
+[02:57:14][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[02:57:14][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY  |
+[02:57:14][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[02:57:14][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01  |ROLE_ADMIN |
+[02:57:14][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[03:15:55][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[03:16:02][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 7606 ms
+[03:16:03][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[03:16:06][INFO ][FrameworkServlet.java:546]- Completed initialization in 3377 ms
+[15:38:18][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[15:38:25][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 7615 ms
+[15:38:25][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[15:38:29][INFO ][FrameworkServlet.java:546]- Completed initialization in 3443 ms
+[20:12:35][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[20:12:42][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 7461 ms
+[20:12:42][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[20:12:45][INFO ][FrameworkServlet.java:546]- Completed initialization in 3211 ms
+[20:13:10][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'admin01'
+[20:13:10][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[20:13:10][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY  |
+[20:13:10][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[20:13:10][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01  |ROLE_ADMIN |
+[20:13:10][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[20:25:00][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[20:25:07][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 7368 ms
+[20:25:08][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[20:25:11][INFO ][FrameworkServlet.java:546]- Completed initialization in 3208 ms
+[20:52:20][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[20:52:29][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8072 ms
+[20:52:29][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[20:52:32][INFO ][FrameworkServlet.java:546]- Completed initialization in 3599 ms
+[20:53:22][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[20:53:31][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8230 ms
+[20:53:31][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[20:53:34][INFO ][FrameworkServlet.java:546]- Completed initialization in 3726 ms
+[20:54:11][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'admin01'
+[20:54:11][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[20:54:11][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY  |
+[20:54:11][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[20:54:11][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01  |ROLE_ADMIN |
+[20:54:11][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[20:54:12][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from emp
+ where emp_id = 'admin01'
+[20:54:12][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[20:54:12][INFO ][ResultSetCollectorPrinter.java:108]- |EMP_ID  |EMP_PWD |EMP_NAME |EMP_TEL    |EMP_PHONE   |EMP_EMAIL         |EMP_ADDRESS              |ENROLL_DATE |LASTMODIFIED |
+[20:54:12][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[20:54:12][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01 |김관리      |0250302032 |01080016812 |ADMIN01@NAVER.COM |06232, 서울특별시 강남구 역삼동 858 |2019-12-26  |2019-12-26   |
+[20:54:12][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[20:55:15][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from emp
+ where emp_id = 'admin01'
+[20:55:15][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[20:55:15][INFO ][ResultSetCollectorPrinter.java:108]- |EMP_ID  |EMP_PWD |EMP_NAME |EMP_TEL    |EMP_PHONE   |EMP_EMAIL         |EMP_ADDRESS              |ENROLL_DATE |LASTMODIFIED |
+[20:55:15][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[20:55:15][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01 |김관리      |0250302032 |01080016812 |ADMIN01@NAVER.COM |06232, 서울특별시 강남구 역삼동 858 |2019-12-26  |2019-12-26   |
+[20:55:15][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[20:57:25][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[20:57:33][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8299 ms
+[20:57:33][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[20:57:37][INFO ][FrameworkServlet.java:546]- Completed initialization in 3504 ms
+[20:57:51][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'admin01'
+[20:57:52][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[20:57:52][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY  |
+[20:57:52][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[20:57:52][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01  |ROLE_ADMIN |
+[20:57:52][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[20:57:52][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from emp
+ where emp_id = 'admin01'
+[20:57:52][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[20:57:52][INFO ][ResultSetCollectorPrinter.java:108]- |EMP_ID  |EMP_PWD |EMP_NAME |EMP_TEL    |EMP_PHONE   |EMP_EMAIL         |EMP_ADDRESS              |ENROLL_DATE |LASTMODIFIED |
+[20:57:52][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[20:57:52][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01 |김관리      |0250302032 |01080016812 |ADMIN01@NAVER.COM |06232, 서울특별시 강남구 역삼동 858 |2019-12-26  |2019-12-26   |
+[20:57:52][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[21:21:22][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[21:21:31][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9002 ms
+[21:21:31][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[21:21:35][INFO ][FrameworkServlet.java:546]- Completed initialization in 4253 ms
+[21:21:45][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'admin01'
+[21:21:45][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[21:21:45][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY  |
+[21:21:45][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[21:21:45][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01  |ROLE_ADMIN |
+[21:21:45][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[21:21:46][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from emp
+ where emp_id = 'admin01'
+[21:21:46][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[21:21:46][INFO ][ResultSetCollectorPrinter.java:108]- |EMP_ID  |EMP_PWD |EMP_NAME |EMP_TEL    |EMP_PHONE   |EMP_EMAIL         |EMP_ADDRESS              |ENROLL_DATE |LASTMODIFIED |
+[21:21:46][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[21:21:46][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01 |김관리      |0250302032 |01080016812 |ADMIN01@NAVER.COM |06232, 서울특별시 강남구 역삼동 858 |2019-12-26  |2019-12-26   |
+[21:21:46][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|

@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+/*
+ * File       : sub_communicate.css
+ * Author     : STUDIO-JT (JDY)
+ * Guideline  : JTstyle.1.1
+ *
+ * Dependency : css/reset.css
+ *              css/jt_strap.css
+ *
+ * SUMMARY:
+ * 1) CONTACT
+ */
+
+
+
+/* **************************************** *
+ * CONTACT
+ * **************************************** */
+.contact_container {position:relative;padding-top: 54px;padding-bottom: 64px;}
+.contact_container:before,
+.contact_container:after {content: '';display: block;width: 100%;height: 5px;position: absolute;left: 0;border-radius: 25px;overflow: hidden;}
+.contact_container:before {top: 0;background-color:#f07e23;}
+.contact_container:after {bottom:0; background-color:#222;}
+.dankkum_sub_info {background-color:#f8f8f8;border:1px solid #ddd;border-radius:5px;padding: 33px 40px;}
+.dankkum_sub_info b {font-size: 18px;line-height: 1.7;color: #222;letter-spacing: -0.025em;display: block;margin-bottom:16px;}
+.dankkum_sub_info li {position:relative;padding-left: 13px;padding-bottom: 7px;}
+.dankkum_sub_info li:before {content:'';position:absolute;top: 13px;left: 0px;width:4px;height:4px;background-color:#f07e23;border-radius:50%;}
+.dankkum_sub_info li:last-child {padding-bottom:0;}
+.dankkum_sub_info p {font-size:16px; line-height: 1.75; color:#666; letter-spacing:-0.025em; word-break:keep-all;}
+.contact_container .jt_form_data_wrap {padding-top: 41px;}
+.contact_container .jt_form_data {padding-right:20px;}
+.contact_container .jt_form_field_wrap .jt_form_field {width:100%;}
+.contact_container .jt_form_field_wrap textarea.jt_form_field {height: 368px;}

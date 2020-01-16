@@ -1,0 +1,178 @@
+[20:50:32][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[20:50:37][WARN ][AbstractApplicationContext.java:557]- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.mybatis.spring.SqlSessionTemplate#0' defined in class path resource [root-context.xml]: Cannot resolve reference to bean 'sqlSession' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSession' defined in class path resource [root-context.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'AccountSumary'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.kh.ibom.account_sumary.model.vo.AccountSumary
+[20:50:37][ERROR][ContextLoader.java:312]- Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.mybatis.spring.SqlSessionTemplate#0' defined in class path resource [root-context.xml]: Cannot resolve reference to bean 'sqlSession' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSession' defined in class path resource [root-context.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'AccountSumary'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.kh.ibom.account_sumary.model.vo.AccountSumary
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:378)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:110)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:676)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:188)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1325)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1171)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:400)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:291)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:103)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4699)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5165)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1412)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1402)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSession' defined in class path resource [root-context.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'AccountSumary'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.kh.ibom.account_sumary.model.vo.AccountSumary
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:338)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:367)
+	... 26 more
+Caused by: org.springframework.core.NestedIOException: Failed to parse config resource: class path resource [mybatis-config.xml]; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'AccountSumary'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.kh.ibom.account_sumary.model.vo.AccountSumary
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:511)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:424)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1821)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1758)
+	... 31 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'AccountSumary'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.kh.ibom.account_sumary.model.vo.AccountSumary
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:121)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parse(XMLConfigBuilder.java:98)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:508)
+	... 34 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error registering typeAlias for 'AccountSumary'. Cause: java.lang.ClassNotFoundException: Cannot find class: com.kh.ibom.account_sumary.model.vo.AccountSumary
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.typeAliasesElement(XMLConfigBuilder.java:176)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration(XMLConfigBuilder.java:109)
+	... 36 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.kh.ibom.account_sumary.model.vo.AccountSumary
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.builder.xml.XMLConfigBuilder.typeAliasesElement(XMLConfigBuilder.java:169)
+	... 37 more
+[20:58:53][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[20:58:59][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 6022 ms
+[20:58:59][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[20:59:02][INFO ][FrameworkServlet.java:546]- Completed initialization in 2860 ms
+[21:07:04][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[21:07:11][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 6434 ms
+[21:07:11][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[21:07:14][INFO ][FrameworkServlet.java:546]- Completed initialization in 2692 ms
+[21:07:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'dol01'
+[21:07:55][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-------------|
+[21:07:55][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY    |
+[21:07:55][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-------------|
+[21:07:55][INFO ][ResultSetCollectorPrinter.java:108]- |dol01   |dol01    |ROLE_DOLBOMI |
+[21:07:55][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-------------|
+[21:07:56][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from dolbomi
+ where dol_id = 'dol01'
+[21:07:56][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[21:07:56][INFO ][ResultSetCollectorPrinter.java:108]- |DOL_ID |DOL_PWD |DOL_NAME |RESIDENT_NO    |DOL_PHONE   |TERM_CODE |DOL_TERMYESNO |DOL_EMAIL         |DOL_ADDRESS                                   |DOL_ENROLLDATE |DOL_LASTMODIFIED |BANK |DOL_ACCOUNT  |DOL_TOTALTIME |SALARY |LICENSE_CODE |OFFICE_CODE |DGRADE_NO |
+[21:07:56][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[21:07:56][INFO ][ResultSetCollectorPrinter.java:108]- |dol01  |dol01   |김돌봄      |640830-2475697 |01080016812 |T001      |Y             |dolbom01@ibom.com |06121, 서울특별시 강남구 논현동 196 거평프리젠아파트 2303동 1902호 |2019-12-22     |2019-12-22       |신한은행 |110170879001 |[unread]      |336000 |s_02         |SC0001      |DG001     |
+[21:07:56][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[21:08:01][WARN ][DispatcherServlet.java:1248]- No mapping for GET /ibom/access_denied_page.do
+[21:08:32][WARN ][DispatcherServlet.java:1248]- No mapping for GET /ibom/access_denied_page.do
+[21:10:10][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[21:10:17][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 6379 ms
+[21:10:17][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[21:10:19][INFO ][FrameworkServlet.java:546]- Completed initialization in 2730 ms
+[21:10:39][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'dol01'
+[21:10:39][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-------------|
+[21:10:39][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY    |
+[21:10:39][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-------------|
+[21:10:39][INFO ][ResultSetCollectorPrinter.java:108]- |dol01   |dol01    |ROLE_DOLBOMI |
+[21:10:39][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-------------|
+[21:10:40][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from dolbomi
+ where dol_id = 'dol01'
+[21:10:40][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[21:10:40][INFO ][ResultSetCollectorPrinter.java:108]- |DOL_ID |DOL_PWD |DOL_NAME |RESIDENT_NO    |DOL_PHONE   |TERM_CODE |DOL_TERMYESNO |DOL_EMAIL         |DOL_ADDRESS                                   |DOL_ENROLLDATE |DOL_LASTMODIFIED |BANK |DOL_ACCOUNT  |DOL_TOTALTIME |SALARY |LICENSE_CODE |OFFICE_CODE |DGRADE_NO |
+[21:10:40][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[21:10:40][INFO ][ResultSetCollectorPrinter.java:108]- |dol01  |dol01   |김돌봄      |640830-2475697 |01080016812 |T001      |Y             |dolbom01@ibom.com |06121, 서울특별시 강남구 논현동 196 거평프리젠아파트 2303동 1902호 |2019-12-22     |2019-12-22       |신한은행 |110170879001 |[unread]      |336000 |s_02         |SC0001      |DG001     |
+[21:10:40][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[21:10:49][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from dolbomi
+ where dol_id = 'dol01'
+[21:10:49][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[21:10:49][INFO ][ResultSetCollectorPrinter.java:108]- |DOL_ID |DOL_PWD |DOL_NAME |RESIDENT_NO    |DOL_PHONE   |TERM_CODE |DOL_TERMYESNO |DOL_EMAIL         |DOL_ADDRESS                                   |DOL_ENROLLDATE |DOL_LASTMODIFIED |BANK |DOL_ACCOUNT  |DOL_TOTALTIME |SALARY |LICENSE_CODE |OFFICE_CODE |DGRADE_NO |
+[21:10:49][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[21:10:49][INFO ][ResultSetCollectorPrinter.java:108]- |dol01  |dol01   |김돌봄      |640830-2475697 |01080016812 |T001      |Y             |dolbom01@ibom.com |06121, 서울특별시 강남구 논현동 196 거평프리젠아파트 2303동 1902호 |2019-12-22     |2019-12-22       |신한은행 |110170879001 |[unread]      |336000 |s_02         |SC0001      |DG001     |
+[21:10:49][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[21:11:04][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'user01'
+[21:11:04][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[21:11:04][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY |
+[21:11:04][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[21:11:04][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |user01   |ROLE_USER |
+[21:11:04][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[21:14:17][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[21:14:23][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 6050 ms
+[21:14:23][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[21:14:26][INFO ][FrameworkServlet.java:546]- Completed initialization in 2784 ms
+[21:14:40][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'user01'
+[21:14:41][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[21:14:41][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY |
+[21:14:41][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[21:14:41][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |user01   |ROLE_USER |
+[21:14:41][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[21:14:41][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from iusers
+ where user_id = 'user01'
+[21:14:41][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|------------------------------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|----------|----------------|------------|------------------|-----|-----|---------|
+[21:14:41][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |RESIDENT_NO    |USER_PWD |USER_NAME |USER_TEL     |USER_PHONE  |USER_EMAIL       |USER_ADDRESS                  |CCTV_ALTER |PET_ALTER |MULTICULTURAL_ALTER |LATCHKEY_ALTER |MULTICHILD_ALTER |FATHER_ALTER |MOTHER_ALTER |GRAND_ALTER |BASICLIFE_ALTER |MEDICAL_ALTER |WORKING_ALTER |DISABLED_ALTER |SECOND_CLASS |ETC_REARING |REQST_COURS |CARD_SMS |LICENSE_ALTER |SERVICE_PLACE |LIMIT_CODE |IGRADE_NO |OFFICE_CODE |TERM_CODE |IUSER_TERMYESNO |ENROLL_DATE |USER_LASTMODIFIED |LA   |LO   |DEL_DATE |
+[21:14:41][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|------------------------------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|----------|----------------|------------|------------------|-----|-----|---------|
+[21:14:41][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |800101-2543425 |user01   |김엄마       |02-5304-2030 |01080016812 |ibom01@naver.com |06252, 서울특별시 강남구 역삼동 832 SM타워 |Y          |N         |N                   |Y              |Y                |N            |N            |N           |N               |N             |Y             |N              |N            |N           |주변권유        |Y        |보육관련자격소지자     |이용자가정         |LG001      |UG004     |SC0001      |T001      |Y               |2019-12-22  |2019-12-22        |null |null |null     |
+[21:14:41][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|------------------------------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|----------|----------------|------------|------------------|-----|-----|---------|
+[21:15:50][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'dol01'
+[21:15:50][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-------------|
+[21:15:50][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY    |
+[21:15:50][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-------------|
+[21:15:50][INFO ][ResultSetCollectorPrinter.java:108]- |dol01   |dol01    |ROLE_DOLBOMI |
+[21:15:50][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-------------|
+[21:15:50][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from dolbomi
+ where dol_id = 'dol01'
+[21:15:50][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[21:15:50][INFO ][ResultSetCollectorPrinter.java:108]- |DOL_ID |DOL_PWD |DOL_NAME |RESIDENT_NO    |DOL_PHONE   |TERM_CODE |DOL_TERMYESNO |DOL_EMAIL         |DOL_ADDRESS                                   |DOL_ENROLLDATE |DOL_LASTMODIFIED |BANK |DOL_ACCOUNT  |DOL_TOTALTIME |SALARY |LICENSE_CODE |OFFICE_CODE |DGRADE_NO |
+[21:15:50][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[21:15:50][INFO ][ResultSetCollectorPrinter.java:108]- |dol01  |dol01   |김돌봄      |640830-2475697 |01080016812 |T001      |Y             |dolbom01@ibom.com |06121, 서울특별시 강남구 논현동 196 거평프리젠아파트 2303동 1902호 |2019-12-22     |2019-12-22       |신한은행 |110170879001 |[unread]      |336000 |s_02         |SC0001      |DG001     |
+[21:15:50][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[21:27:51][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[21:27:59][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8487 ms
+[21:27:59][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[21:28:02][INFO ][FrameworkServlet.java:546]- Completed initialization in 3276 ms
+[21:28:26][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'dol01'
+[21:28:27][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-------------|
+[21:28:27][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY    |
+[21:28:27][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-------------|
+[21:28:27][INFO ][ResultSetCollectorPrinter.java:108]- |dol01   |dol01    |ROLE_DOLBOMI |
+[21:28:27][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-------------|
+[21:28:27][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from dolbomi
+ where dol_id = 'dol01'
+[21:28:27][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[21:28:27][INFO ][ResultSetCollectorPrinter.java:108]- |DOL_ID |DOL_PWD |DOL_NAME |RESIDENT_NO    |DOL_PHONE   |TERM_CODE |DOL_TERMYESNO |DOL_EMAIL         |DOL_ADDRESS                                   |DOL_ENROLLDATE |DOL_LASTMODIFIED |BANK |DOL_ACCOUNT  |DOL_TOTALTIME |SALARY |LICENSE_CODE |OFFICE_CODE |DGRADE_NO |
+[21:28:27][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[21:28:27][INFO ][ResultSetCollectorPrinter.java:108]- |dol01  |dol01   |김돌봄      |640830-2475697 |01080016812 |T001      |Y             |dolbom01@ibom.com |06121, 서울특별시 강남구 논현동 196 거평프리젠아파트 2303동 1902호 |2019-12-22     |2019-12-22       |신한은행 |110170879001 |[unread]      |336000 |s_02         |SC0001      |DG001     |
+[21:28:27][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|

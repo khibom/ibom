@@ -1,0 +1,1136 @@
+[15:36:05][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[15:36:13][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 7319 ms
+[15:36:13][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[15:36:16][INFO ][FrameworkServlet.java:546]- Completed initialization in 2984 ms
+[15:36:29][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from notice
+[15:36:29][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:36:29][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:36:29][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:36:29][INFO ][ResultSetCollectorPrinter.java:108]- |6        |
+[15:36:29][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:36:29][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, notice_no, emp_name, notice_title, original_filepath, rename_filepath, notice_date, notice_check, notice_content
+          
+ from 
+ (select *
+ from notice
+                     
+                   
+                    order by notice_date desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:36:29][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:36:29][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH          |RENAME_FILEPATH                          |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT                      |
+[15:36:29][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:36:29][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |7         |김관리      |제목이빈다.       |1073 (1).html              |1073 (1).html-1578654478838              |2020-01-10  |7            |제 ㅁㄱ 입 니당
+ㅇㅇㅎㅎ
+ㅎㅎ
+ㅎ
+ㅎ
+
+ㅎ
+ㅎ
+ |
+[15:36:29][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2         |이관리      |공지사항2        |null                       |null                                     |2020-01-10  |0            |이렇습니다2                              |
+[15:36:29][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3         |박관리      |공지사항3        |null                       |null                                     |2020-01-10  |4            |이렇습니다3                              |
+[15:36:29][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4         |김관리      |공지사항4        |null                       |null                                     |2020-01-10  |0            |이렇습니다4                              |
+[15:36:29][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5         |이관리      |공지사항5        |null                       |null                                     |2020-01-10  |0            |이렇습니다5                              |
+[15:36:29][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1         |김관리      |공지사항1        |이클립스_→_github_연동_및_업로드.pdf |이클립스_→_github_연동_및_업로드.pdf-1578647308945 |2020-01-10  |0            |이렇습니다1                              |
+[15:36:29][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:36:32][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]update notice set notice_check = notice_check + 1
+			where notice_no = 2
+[15:36:32][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from notice
+			where notice_no = 2
+[15:36:32][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:36:32][INFO ][ResultSetCollectorPrinter.java:108]- |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH |RENAME_FILEPATH |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT |
+[15:36:32][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:36:32][INFO ][ResultSetCollectorPrinter.java:108]- |2         |이관리      |공지사항2        |null              |null            |2020-01-10  |1            |이렇습니다2         |
+[15:36:32][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:36:35][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from notice
+[15:36:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:36:35][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:36:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:36:35][INFO ][ResultSetCollectorPrinter.java:108]- |6        |
+[15:36:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:36:35][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, notice_no, emp_name, notice_title, original_filepath, rename_filepath, notice_date, notice_check, notice_content
+          
+ from 
+ (select *
+ from notice
+                     
+                   
+                    order by notice_date desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:36:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:36:35][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH          |RENAME_FILEPATH                          |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT                      |
+[15:36:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:36:35][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |7         |김관리      |제목이빈다.       |1073 (1).html              |1073 (1).html-1578654478838              |2020-01-10  |7            |제 ㅁㄱ 입 니당
+ㅇㅇㅎㅎ
+ㅎㅎ
+ㅎ
+ㅎ
+
+ㅎ
+ㅎ
+ |
+[15:36:35][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2         |이관리      |공지사항2        |null                       |null                                     |2020-01-10  |1            |이렇습니다2                              |
+[15:36:35][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3         |박관리      |공지사항3        |null                       |null                                     |2020-01-10  |4            |이렇습니다3                              |
+[15:36:35][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4         |김관리      |공지사항4        |null                       |null                                     |2020-01-10  |0            |이렇습니다4                              |
+[15:36:35][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5         |이관리      |공지사항5        |null                       |null                                     |2020-01-10  |0            |이렇습니다5                              |
+[15:36:35][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1         |김관리      |공지사항1        |이클립스_→_github_연동_및_업로드.pdf |이클립스_→_github_연동_및_업로드.pdf-1578647308945 |2020-01-10  |0            |이렇습니다1                              |
+[15:36:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:36:48][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'user01'
+[15:36:48][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[15:36:48][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY |
+[15:36:48][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[15:36:48][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |user01   |ROLE_USER |
+[15:36:48][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[15:36:48][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from iusers
+ where user_id = 'user01'
+[15:36:48][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|---------|-------------|------------|-----------------|------------------------------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|----------|----------------|------------|------------------|-----|-----|---------|
+[15:36:48][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |RESIDENT_NO    |USER_PWD |USER_NAME |DEPO_PAY |USER_TEL     |USER_PHONE  |USER_EMAIL       |USER_ADDRESS                  |CCTV_ALTER |PET_ALTER |MULTICULTURAL_ALTER |LATCHKEY_ALTER |MULTICHILD_ALTER |FATHER_ALTER |MOTHER_ALTER |GRAND_ALTER |BASICLIFE_ALTER |MEDICAL_ALTER |WORKING_ALTER |DISABLED_ALTER |SECOND_CLASS |ETC_REARING |REQST_COURS |CARD_SMS |LICENSE_ALTER |SERVICE_PLACE |LIMIT_CODE |IGRADE_NO |OFFICE_CODE |TERM_CODE |IUSER_TERMYESNO |ENROLL_DATE |USER_LASTMODIFIED |LA   |LO   |DEL_DATE |
+[15:36:48][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|---------|-------------|------------|-----------------|------------------------------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|----------|----------------|------------|------------------|-----|-----|---------|
+[15:36:48][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |800101-2543425 |user01   |김엄마       |48000    |02-5304-2030 |01080016812 |ibom01@naver.com |06252, 서울특별시 강남구 역삼동 832 SM타워 |Y          |N         |N                   |Y              |Y                |N            |N            |N           |N               |N             |Y             |N              |N            |N           |주변권유        |Y        |보육관련자격소지자     |이용자가정         |LG001      |UG004     |SC0001      |T001      |Y               |2020-01-10  |2020-01-10        |null |null |null     |
+[15:36:48][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|---------|-------------|------------|-----------------|------------------------------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|----------|----------------|------------|------------------|-----|-----|---------|
+[15:36:53][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:36:53][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:36:53][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:36:53][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:36:53][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[15:36:53][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:36:53][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:36:53][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:36:53][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE                |QNA_DATE   |QNA_STATE |QNA_CONTENT |USER_NAME |QNA_ANSWER |
+[15:36:53][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:36:53][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2      |서비스 변경         |서비스 변경 건에 대하여 질문하고 싶습니다. |2020-01-10 |미처리       |내용은 이렇습니다.  |김엄마       |null       |
+[15:36:53][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:36:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from questions
+		where qna_no = 2
+[15:36:55][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|-------------------------|-----------|----------|------------|-----------|----------|---------|----------|
+[15:36:55][INFO ][ResultSetCollectorPrinter.java:108]- |QNA_NO |PERSONAL_INFO |USE_SERVICE |CIVIL_PETITION |QNA_TITLE                |QNA_DATE   |QNA_STATE |QNA_CONTENT |QNA_ANSWER |USER_NAME |DOL_NAME |TERM_CODE |
+[15:36:55][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|-------------------------|-----------|----------|------------|-----------|----------|---------|----------|
+[15:36:55][INFO ][ResultSetCollectorPrinter.java:108]- |2      |Y             |[unread]    |서비스 변경         |서비스 변경 건에 대하여 질문하고 싶습니다. |2020-01-10 |미처리       |내용은 이렇습니다.  |null       |김엄마       |null     |T003      |
+[15:36:55][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|-------------------------|-----------|----------|------------|-----------|----------|---------|----------|
+[15:37:01][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:37:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:37:01][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:37:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:37:01][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[15:37:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:37:01][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:37:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:37:01][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE                |QNA_DATE   |QNA_STATE |QNA_CONTENT |USER_NAME |QNA_ANSWER |
+[15:37:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:37:01][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2      |서비스 변경         |서비스 변경 건에 대하여 질문하고 싶습니다. |2020-01-10 |미처리       |내용은 이렇습니다.  |김엄마       |null       |
+[15:37:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:39:41][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:39:41][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:39:41][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:39:41][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:39:41][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[15:39:41][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:39:41][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:39:41][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:39:41][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE                |QNA_DATE   |QNA_STATE |QNA_CONTENT |USER_NAME |QNA_ANSWER |
+[15:39:41][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:39:41][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2      |서비스 변경         |서비스 변경 건에 대하여 질문하고 싶습니다. |2020-01-10 |미처리       |내용은 이렇습니다.  |김엄마       |null       |
+[15:39:41][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:40:09][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:40:09][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:09][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:40:09][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:09][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[15:40:09][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:09][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:40:09][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:40:09][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE                |QNA_DATE   |QNA_STATE |QNA_CONTENT |USER_NAME |QNA_ANSWER |
+[15:40:09][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:40:09][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2      |서비스 변경         |서비스 변경 건에 대하여 질문하고 싶습니다. |2020-01-10 |미처리       |내용은 이렇습니다.  |김엄마       |null       |
+[15:40:09][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:40:11][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from questions
+		where qna_no = 2
+[15:40:11][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|-------------------------|-----------|----------|------------|-----------|----------|---------|----------|
+[15:40:11][INFO ][ResultSetCollectorPrinter.java:108]- |QNA_NO |PERSONAL_INFO |USE_SERVICE |CIVIL_PETITION |QNA_TITLE                |QNA_DATE   |QNA_STATE |QNA_CONTENT |QNA_ANSWER |USER_NAME |DOL_NAME |TERM_CODE |
+[15:40:11][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|-------------------------|-----------|----------|------------|-----------|----------|---------|----------|
+[15:40:11][INFO ][ResultSetCollectorPrinter.java:108]- |2      |Y             |[unread]    |서비스 변경         |서비스 변경 건에 대하여 질문하고 싶습니다. |2020-01-10 |미처리       |내용은 이렇습니다.  |null       |김엄마       |null     |T003      |
+[15:40:11][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|-------------------------|-----------|----------|------------|-----------|----------|---------|----------|
+[15:40:19][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:40:19][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:19][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:40:19][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:19][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[15:40:19][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:19][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:40:19][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:40:19][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE                |QNA_DATE   |QNA_STATE |QNA_CONTENT |USER_NAME |QNA_ANSWER |
+[15:40:19][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:40:19][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2      |서비스 변경         |서비스 변경 건에 대하여 질문하고 싶습니다. |2020-01-10 |미처리       |내용은 이렇습니다.  |김엄마       |null       |
+[15:40:19][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:43:01][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:43:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:01][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:43:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:01][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[15:43:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:01][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:43:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:43:01][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE                |QNA_DATE   |QNA_STATE |QNA_CONTENT |USER_NAME |QNA_ANSWER |
+[15:43:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:43:01][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2      |서비스 변경         |서비스 변경 건에 대하여 질문하고 싶습니다. |2020-01-10 |미처리       |내용은 이렇습니다.  |김엄마       |null       |
+[15:43:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:43:03][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:43:03][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:03][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:43:03][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:03][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[15:43:03][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:03][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:43:03][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:43:03][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE                |QNA_DATE   |QNA_STATE |QNA_CONTENT |USER_NAME |QNA_ANSWER |
+[15:43:03][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:43:03][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2      |서비스 변경         |서비스 변경 건에 대하여 질문하고 싶습니다. |2020-01-10 |미처리       |내용은 이렇습니다.  |김엄마       |null       |
+[15:43:03][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:43:24][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:43:24][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:24][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:43:24][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:24][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[15:43:24][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:24][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:43:24][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:43:24][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE                |QNA_DATE   |QNA_STATE |QNA_CONTENT |USER_NAME |QNA_ANSWER |
+[15:43:24][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:43:24][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2      |서비스 변경         |서비스 변경 건에 대하여 질문하고 싶습니다. |2020-01-10 |미처리       |내용은 이렇습니다.  |김엄마       |null       |
+[15:43:24][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-------------------------|-----------|----------|------------|----------|-----------|
+[15:44:40][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]delete
+ from questions
+ where qna_no = 2
+[15:44:41][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:44:41][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:44:41][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:44:41][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:44:41][INFO ][ResultSetCollectorPrinter.java:108]- |0        |
+[15:44:41][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:44:41][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:44:41][INFO ][ResultSetCollectorPrinter.java:108]- |-----|-------|---------------|----------|---------|----------|------------|----------|-----------|
+[15:44:41][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM |QNA_NO |CIVIL_PETITION |QNA_TITLE |QNA_DATE |QNA_STATE |QNA_CONTENT |USER_NAME |QNA_ANSWER |
+[15:44:41][INFO ][ResultSetCollectorPrinter.java:108]- |-----|-------|---------------|----------|---------|----------|------------|----------|-----------|
+[15:44:41][INFO ][ResultSetCollectorPrinter.java:108]- |-----|-------|---------------|----------|---------|----------|------------|----------|-----------|
+[15:45:17][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into questions values (questions_seq.nextval, 'Y', '해당사항 없음', '서비스 변경', '서비스 변경건에 대하여 질문하고 싶습니다.', sysdate, '미처리', '이러이러한 변경건에 대하여 질문이 있습니다.', null, '김엄마', null, 'T003')
+[15:45:18][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:45:18][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:45:18][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:45:18][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:45:18][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[15:45:18][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:45:18][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:45:18][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-----------|
+[15:45:18][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |USER_NAME |QNA_ANSWER |
+[15:45:18][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-----------|
+[15:45:18][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |미처리       |이러이러한 변경건에 대하여 질문이 있습니다. |김엄마       |null       |
+[15:45:18][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-----------|
+[15:45:19][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from questions
+		where qna_no = 3
+[15:45:19][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-----------|----------|---------|----------|
+[15:45:19][INFO ][ResultSetCollectorPrinter.java:108]- |QNA_NO |PERSONAL_INFO |USE_SERVICE |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |QNA_ANSWER |USER_NAME |DOL_NAME |TERM_CODE |
+[15:45:19][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-----------|----------|---------|----------|
+[15:45:19][INFO ][ResultSetCollectorPrinter.java:108]- |3      |Y             |[unread]    |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |미처리       |이러이러한 변경건에 대하여 질문이 있습니다. |null       |김엄마       |null     |T003      |
+[15:45:19][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-----------|----------|---------|----------|
+[15:45:22][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:45:22][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:45:22][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:45:22][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:45:22][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[15:45:22][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:45:22][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:45:22][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-----------|
+[15:45:22][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |USER_NAME |QNA_ANSWER |
+[15:45:22][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-----------|
+[15:45:22][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |미처리       |이러이러한 변경건에 대하여 질문이 있습니다. |김엄마       |null       |
+[15:45:22][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-----------|
+[15:46:24][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from notice
+[15:46:24][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:46:24][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:46:24][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:46:24][INFO ][ResultSetCollectorPrinter.java:108]- |6        |
+[15:46:24][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:46:24][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, notice_no, emp_name, notice_title, original_filepath, rename_filepath, notice_date, notice_check, notice_content
+          
+ from 
+ (select *
+ from notice
+                     
+                   
+                    order by notice_date desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:46:24][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:46:24][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH          |RENAME_FILEPATH                          |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT                      |
+[15:46:24][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:46:24][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |7         |김관리      |제목이빈다.       |1073 (1).html              |1073 (1).html-1578654478838              |2020-01-10  |7            |제 ㅁㄱ 입 니당
+ㅇㅇㅎㅎ
+ㅎㅎ
+ㅎ
+ㅎ
+
+ㅎ
+ㅎ
+ |
+[15:46:24][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2         |이관리      |공지사항2        |null                       |null                                     |2020-01-10  |1            |이렇습니다2                              |
+[15:46:24][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3         |박관리      |공지사항3        |null                       |null                                     |2020-01-10  |4            |이렇습니다3                              |
+[15:46:24][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4         |김관리      |공지사항4        |null                       |null                                     |2020-01-10  |0            |이렇습니다4                              |
+[15:46:24][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5         |이관리      |공지사항5        |null                       |null                                     |2020-01-10  |0            |이렇습니다5                              |
+[15:46:24][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1         |김관리      |공지사항1        |이클립스_→_github_연동_및_업로드.pdf |이클립스_→_github_연동_및_업로드.pdf-1578647308945 |2020-01-10  |0            |이렇습니다1                              |
+[15:46:24][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:46:39][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]update notice set notice_check = notice_check + 1
+			where notice_no = 7
+[15:46:39][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from notice
+			where notice_no = 7
+[15:46:39][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------------------|------------|-------------|------------------------------------|
+[15:46:39][INFO ][ResultSetCollectorPrinter.java:108]- |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH |RENAME_FILEPATH             |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT                      |
+[15:46:39][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------------------|------------|-------------|------------------------------------|
+[15:46:39][INFO ][ResultSetCollectorPrinter.java:108]- |7         |김관리      |제목이빈다.       |1073 (1).html     |1073 (1).html-1578654478838 |2020-01-10  |8            |제 ㅁㄱ 입 니당
+ㅇㅇㅎㅎ
+ㅎㅎ
+ㅎ
+ㅎ
+
+ㅎ
+ㅎ
+ |
+[15:46:39][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------------------|------------|-------------|------------------------------------|
+[15:46:43][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from notice
+[15:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |6        |
+[15:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:46:43][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, notice_no, emp_name, notice_title, original_filepath, rename_filepath, notice_date, notice_check, notice_content
+          
+ from 
+ (select *
+ from notice
+                     
+                   
+                    order by notice_date desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH          |RENAME_FILEPATH                          |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT                      |
+[15:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |7         |김관리      |제목이빈다.       |1073 (1).html              |1073 (1).html-1578654478838              |2020-01-10  |8            |제 ㅁㄱ 입 니당
+ㅇㅇㅎㅎ
+ㅎㅎ
+ㅎ
+ㅎ
+
+ㅎ
+ㅎ
+ |
+[15:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2         |이관리      |공지사항2        |null                       |null                                     |2020-01-10  |1            |이렇습니다2                              |
+[15:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3         |박관리      |공지사항3        |null                       |null                                     |2020-01-10  |4            |이렇습니다3                              |
+[15:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4         |김관리      |공지사항4        |null                       |null                                     |2020-01-10  |0            |이렇습니다4                              |
+[15:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5         |이관리      |공지사항5        |null                       |null                                     |2020-01-10  |0            |이렇습니다5                              |
+[15:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1         |김관리      |공지사항1        |이클립스_→_github_연동_및_업로드.pdf |이클립스_→_github_연동_및_업로드.pdf-1578647308945 |2020-01-10  |0            |이렇습니다1                              |
+[15:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:51:42][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from notice
+[15:51:42][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:51:42][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:51:42][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:51:42][INFO ][ResultSetCollectorPrinter.java:108]- |6        |
+[15:51:42][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:51:42][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, notice_no, emp_name, notice_title, original_filepath, rename_filepath, notice_date, notice_check, notice_content
+          
+ from 
+ (select *
+ from notice
+                     
+                   
+                    order by notice_date desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:51:42][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:51:42][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH          |RENAME_FILEPATH                          |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT                      |
+[15:51:42][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:51:42][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |7         |김관리      |제목이빈다.       |1073 (1).html              |1073 (1).html-1578654478838              |2020-01-10  |8            |제 ㅁㄱ 입 니당
+ㅇㅇㅎㅎ
+ㅎㅎ
+ㅎ
+ㅎ
+
+ㅎ
+ㅎ
+ |
+[15:51:42][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2         |이관리      |공지사항2        |null                       |null                                     |2020-01-10  |1            |이렇습니다2                              |
+[15:51:42][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3         |박관리      |공지사항3        |null                       |null                                     |2020-01-10  |4            |이렇습니다3                              |
+[15:51:42][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4         |김관리      |공지사항4        |null                       |null                                     |2020-01-10  |0            |이렇습니다4                              |
+[15:51:42][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5         |이관리      |공지사항5        |null                       |null                                     |2020-01-10  |0            |이렇습니다5                              |
+[15:51:42][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1         |김관리      |공지사항1        |이클립스_→_github_연동_및_업로드.pdf |이클립스_→_github_연동_및_업로드.pdf-1578647308945 |2020-01-10  |0            |이렇습니다1                              |
+[15:51:42][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:51:53][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'admin01'
+[15:51:53][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[15:51:53][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY  |
+[15:51:53][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[15:51:53][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01  |ROLE_ADMIN |
+[15:51:53][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[15:51:54][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from emp
+ where emp_id = 'admin01'
+[15:51:54][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[15:51:54][INFO ][ResultSetCollectorPrinter.java:108]- |EMP_ID  |EMP_PWD |EMP_NAME |EMP_TEL    |EMP_PHONE   |EMP_EMAIL         |EMP_ADDRESS              |ENROLL_DATE |LASTMODIFIED |
+[15:51:54][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[15:51:54][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01 |김관리      |0250302032 |01080016812 |ADMIN01@NAVER.COM |06232, 서울특별시 강남구 역삼동 858 |2020-01-10  |2020-01-10   |
+[15:51:54][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[15:51:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:51:55][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:51:55][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:51:55][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:51:55][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:51:55][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:52:47][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from notice
+[15:52:47][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:52:47][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:52:47][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:52:47][INFO ][ResultSetCollectorPrinter.java:108]- |6        |
+[15:52:47][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:52:47][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, notice_no, emp_name, notice_title, original_filepath, rename_filepath, notice_date, notice_check, notice_content
+          
+ from 
+ (select *
+ from notice
+                     
+                   
+                    order by notice_date desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:52:47][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:52:47][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH          |RENAME_FILEPATH                          |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT                      |
+[15:52:47][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:52:47][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |7         |김관리      |제목이빈다.       |1073 (1).html              |1073 (1).html-1578654478838              |2020-01-10  |8            |제 ㅁㄱ 입 니당
+ㅇㅇㅎㅎ
+ㅎㅎ
+ㅎ
+ㅎ
+
+ㅎ
+ㅎ
+ |
+[15:52:47][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2         |이관리      |공지사항2        |null                       |null                                     |2020-01-10  |1            |이렇습니다2                              |
+[15:52:47][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3         |박관리      |공지사항3        |null                       |null                                     |2020-01-10  |4            |이렇습니다3                              |
+[15:52:47][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4         |김관리      |공지사항4        |null                       |null                                     |2020-01-10  |0            |이렇습니다4                              |
+[15:52:47][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5         |이관리      |공지사항5        |null                       |null                                     |2020-01-10  |0            |이렇습니다5                              |
+[15:52:47][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1         |김관리      |공지사항1        |이클립스_→_github_연동_및_업로드.pdf |이클립스_→_github_연동_및_업로드.pdf-1578647308945 |2020-01-10  |0            |이렇습니다1                              |
+[15:52:47][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[15:52:48][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:52:48][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:52:48][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:52:48][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:52:48][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:52:48][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:52:56][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:52:56][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:52:56][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:52:56][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:52:56][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[15:52:56][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:52:56][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:52:56][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-----------|
+[15:52:56][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |USER_NAME |QNA_ANSWER |
+[15:52:56][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-----------|
+[15:52:56][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |미처리       |이러이러한 변경건에 대하여 질문이 있습니다. |김엄마       |null       |
+[15:52:56][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-----------|
+[15:52:56][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:52:56][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:52:56][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:52:56][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:52:56][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:52:56][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:52:59][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from questions
+		where qna_no = 3
+[15:52:59][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-----------|----------|---------|----------|
+[15:52:59][INFO ][ResultSetCollectorPrinter.java:108]- |QNA_NO |PERSONAL_INFO |USE_SERVICE |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |QNA_ANSWER |USER_NAME |DOL_NAME |TERM_CODE |
+[15:52:59][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-----------|----------|---------|----------|
+[15:52:59][INFO ][ResultSetCollectorPrinter.java:108]- |3      |Y             |[unread]    |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |미처리       |이러이러한 변경건에 대하여 질문이 있습니다. |null       |김엄마       |null     |T003      |
+[15:52:59][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-----------|----------|---------|----------|
+[15:53:00][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:53:00][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:53:00][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:53:00][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:53:00][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:53:00][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:54:15][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:54:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:54:15][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:54:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:54:15][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[15:54:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:54:15][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:54:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-----------|
+[15:54:15][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |USER_NAME |QNA_ANSWER |
+[15:54:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-----------|
+[15:54:15][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |미처리       |이러이러한 변경건에 대하여 질문이 있습니다. |김엄마       |null       |
+[15:54:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-----------|
+[15:54:15][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:54:15][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:54:15][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:54:15][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:54:15][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:54:15][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:54:20][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from questions
+		where qna_no = 3
+[15:54:20][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-----------|----------|---------|----------|
+[15:54:20][INFO ][ResultSetCollectorPrinter.java:108]- |QNA_NO |PERSONAL_INFO |USE_SERVICE |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |QNA_ANSWER |USER_NAME |DOL_NAME |TERM_CODE |
+[15:54:20][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-----------|----------|---------|----------|
+[15:54:20][INFO ][ResultSetCollectorPrinter.java:108]- |3      |Y             |[unread]    |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |미처리       |이러이러한 변경건에 대하여 질문이 있습니다. |null       |김엄마       |null     |T003      |
+[15:54:20][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-----------|----------|---------|----------|
+[15:54:20][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:54:20][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:54:20][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:54:20][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:54:20][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:54:20][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:40:30][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[16:40:36][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 5579 ms
+[16:40:36][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[16:40:38][INFO ][FrameworkServlet.java:546]- Completed initialization in 2386 ms
+[16:40:59][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'admin01'
+[16:41:00][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[16:41:00][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY  |
+[16:41:00][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[16:41:00][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01  |ROLE_ADMIN |
+[16:41:00][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[16:41:00][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from emp
+ where emp_id = 'admin01'
+[16:41:00][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[16:41:00][INFO ][ResultSetCollectorPrinter.java:108]- |EMP_ID  |EMP_PWD |EMP_NAME |EMP_TEL    |EMP_PHONE   |EMP_EMAIL         |EMP_ADDRESS              |ENROLL_DATE |LASTMODIFIED |
+[16:41:00][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[16:41:00][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01 |김관리      |0250302032 |01080016812 |ADMIN01@NAVER.COM |06232, 서울특별시 강남구 역삼동 858 |2020-01-10  |2020-01-10   |
+[16:41:00][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[16:41:01][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[16:41:01][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:41:01][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[16:41:01][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:41:01][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[16:41:01][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:41:04][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[16:41:04][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:41:04][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[16:41:04][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:41:04][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[16:41:04][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:41:04][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[16:41:04][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-----------|
+[16:41:04][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |USER_NAME |QNA_ANSWER |
+[16:41:04][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-----------|
+[16:41:04][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |미처리       |이러이러한 변경건에 대하여 질문이 있습니다. |김엄마       |null       |
+[16:41:04][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-----------|
+[16:41:05][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[16:41:05][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:41:05][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[16:41:05][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:41:05][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[16:41:05][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:41:06][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from questions
+		where qna_no = 3
+[16:41:06][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-----------|----------|---------|----------|
+[16:41:06][INFO ][ResultSetCollectorPrinter.java:108]- |QNA_NO |PERSONAL_INFO |USE_SERVICE |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |QNA_ANSWER |USER_NAME |DOL_NAME |TERM_CODE |
+[16:41:06][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-----------|----------|---------|----------|
+[16:41:06][INFO ][ResultSetCollectorPrinter.java:108]- |3      |Y             |[unread]    |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |미처리       |이러이러한 변경건에 대하여 질문이 있습니다. |null       |김엄마       |null     |T003      |
+[16:41:06][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-----------|----------|---------|----------|
+[16:41:08][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[16:41:08][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:41:08][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[16:41:08][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:41:08][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[16:41:08][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:41:16][WARN ][DispatcherServlet.java:1248]- No mapping for POST /ibom/qnaeupdate.do
+[16:42:02][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from questions
+		where qna_no = 3
+[16:42:02][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-----------|----------|---------|----------|
+[16:42:02][INFO ][ResultSetCollectorPrinter.java:108]- |QNA_NO |PERSONAL_INFO |USE_SERVICE |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |QNA_ANSWER |USER_NAME |DOL_NAME |TERM_CODE |
+[16:42:02][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-----------|----------|---------|----------|
+[16:42:02][INFO ][ResultSetCollectorPrinter.java:108]- |3      |Y             |[unread]    |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |미처리       |이러이러한 변경건에 대하여 질문이 있습니다. |null       |김엄마       |null     |T003      |
+[16:42:02][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-----------|----------|---------|----------|
+[16:42:02][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[16:42:02][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:42:02][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[16:42:02][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:42:02][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[16:42:02][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:42:11][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]update questions set qna_answer = '이러이러한 답변입니다.'
+ where qna_no = '3'
+[16:42:11][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[16:42:11][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:42:11][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[16:42:11][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:42:11][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[16:42:11][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:42:11][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[16:42:11][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:42:11][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |USER_NAME |QNA_ANSWER   |
+[16:42:11][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:42:11][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |미처리       |이러이러한 변경건에 대하여 질문이 있습니다. |김엄마       |이러이러한 답변입니다. |
+[16:42:11][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:42:11][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[16:42:11][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:42:11][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[16:42:11][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:42:11][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[16:42:11][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:42:13][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from questions
+		where qna_no = 3
+[16:42:13][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-------------|----------|---------|----------|
+[16:42:13][INFO ][ResultSetCollectorPrinter.java:108]- |QNA_NO |PERSONAL_INFO |USE_SERVICE |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |QNA_ANSWER   |USER_NAME |DOL_NAME |TERM_CODE |
+[16:42:13][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-------------|----------|---------|----------|
+[16:42:13][INFO ][ResultSetCollectorPrinter.java:108]- |3      |Y             |[unread]    |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |미처리       |이러이러한 변경건에 대하여 질문이 있습니다. |이러이러한 답변입니다. |김엄마       |null     |T003      |
+[16:42:13][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-------------|----------|---------|----------|
+[16:42:13][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[16:42:13][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:42:13][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[16:42:13][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:42:13][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[16:42:13][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:42:15][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[16:42:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:42:15][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[16:42:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:42:15][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[16:42:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:42:15][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[16:42:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:42:15][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |USER_NAME |QNA_ANSWER   |
+[16:42:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:42:15][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |미처리       |이러이러한 변경건에 대하여 질문이 있습니다. |김엄마       |이러이러한 답변입니다. |
+[16:42:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:42:15][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[16:42:15][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:42:15][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[16:42:15][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:42:15][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[16:42:15][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:42:21][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from emp
+ where emp_id = 'admin01'
+[16:42:21][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[16:42:21][INFO ][ResultSetCollectorPrinter.java:108]- |EMP_ID  |EMP_PWD |EMP_NAME |EMP_TEL    |EMP_PHONE   |EMP_EMAIL         |EMP_ADDRESS              |ENROLL_DATE |LASTMODIFIED |
+[16:42:21][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[16:42:21][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01 |김관리      |0250302032 |01080016812 |ADMIN01@NAVER.COM |06232, 서울특별시 강남구 역삼동 858 |2020-01-10  |2020-01-10   |
+[16:42:21][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[16:42:22][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[16:42:22][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:42:22][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[16:42:22][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:42:22][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[16:42:22][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[16:42:37][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'user01'
+[16:42:37][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[16:42:37][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY |
+[16:42:37][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[16:42:37][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |user01   |ROLE_USER |
+[16:42:37][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[16:42:37][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from iusers
+ where user_id = 'user01'
+[16:42:37][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|---------|-------------|------------|-----------------|------------------------------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|----------|----------------|------------|------------------|-----|-----|---------|
+[16:42:37][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |RESIDENT_NO    |USER_PWD |USER_NAME |DEPO_PAY |USER_TEL     |USER_PHONE  |USER_EMAIL       |USER_ADDRESS                  |CCTV_ALTER |PET_ALTER |MULTICULTURAL_ALTER |LATCHKEY_ALTER |MULTICHILD_ALTER |FATHER_ALTER |MOTHER_ALTER |GRAND_ALTER |BASICLIFE_ALTER |MEDICAL_ALTER |WORKING_ALTER |DISABLED_ALTER |SECOND_CLASS |ETC_REARING |REQST_COURS |CARD_SMS |LICENSE_ALTER |SERVICE_PLACE |LIMIT_CODE |IGRADE_NO |OFFICE_CODE |TERM_CODE |IUSER_TERMYESNO |ENROLL_DATE |USER_LASTMODIFIED |LA   |LO   |DEL_DATE |
+[16:42:37][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|---------|-------------|------------|-----------------|------------------------------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|----------|----------------|------------|------------------|-----|-----|---------|
+[16:42:37][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |800101-2543425 |user01   |김엄마       |48000    |02-5304-2030 |01080016812 |ibom01@naver.com |06252, 서울특별시 강남구 역삼동 832 SM타워 |Y          |N         |N                   |Y              |Y                |N            |N            |N           |N               |N             |Y             |N              |N            |N           |주변권유        |Y        |보육관련자격소지자     |이용자가정         |LG001      |UG004     |SC0001      |T001      |Y               |2020-01-10  |2020-01-10        |null |null |null     |
+[16:42:37][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|---------|-------------|------------|-----------------|------------------------------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|----------|----------------|------------|------------------|-----|-----|---------|
+[16:42:39][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[16:42:39][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:42:39][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[16:42:39][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:42:39][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[16:42:39][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:42:39][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[16:42:39][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:42:39][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |USER_NAME |QNA_ANSWER   |
+[16:42:39][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:42:39][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |미처리       |이러이러한 변경건에 대하여 질문이 있습니다. |김엄마       |이러이러한 답변입니다. |
+[16:42:39][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:42:40][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from questions
+		where qna_no = 3
+[16:42:40][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-------------|----------|---------|----------|
+[16:42:40][INFO ][ResultSetCollectorPrinter.java:108]- |QNA_NO |PERSONAL_INFO |USE_SERVICE |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |QNA_ANSWER   |USER_NAME |DOL_NAME |TERM_CODE |
+[16:42:40][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-------------|----------|---------|----------|
+[16:42:40][INFO ][ResultSetCollectorPrinter.java:108]- |3      |Y             |[unread]    |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |미처리       |이러이러한 변경건에 대하여 질문이 있습니다. |이러이러한 답변입니다. |김엄마       |null     |T003      |
+[16:42:40][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-------------|----------|---------|----------|
+[16:43:05][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[16:43:05][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:43:05][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[16:43:05][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:43:05][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[16:43:05][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:43:05][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[16:43:05][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:43:05][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |USER_NAME |QNA_ANSWER   |
+[16:43:05][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:43:05][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |미처리       |이러이러한 변경건에 대하여 질문이 있습니다. |김엄마       |이러이러한 답변입니다. |
+[16:43:05][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:44:38][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[16:44:45][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 6502 ms
+[16:44:45][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[16:44:47][INFO ][FrameworkServlet.java:546]- Completed initialization in 2749 ms
+[16:45:34][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[16:45:40][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 5773 ms
+[16:45:40][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[16:45:42][INFO ][FrameworkServlet.java:546]- Completed initialization in 2453 ms
+[16:46:42][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'user01'
+[16:46:42][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[16:46:42][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY |
+[16:46:42][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[16:46:42][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |user01   |ROLE_USER |
+[16:46:42][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[16:46:43][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from iusers
+ where user_id = 'user01'
+[16:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|---------|-------------|------------|-----------------|------------------------------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|----------|----------------|------------|------------------|-----|-----|---------|
+[16:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |RESIDENT_NO    |USER_PWD |USER_NAME |DEPO_PAY |USER_TEL     |USER_PHONE  |USER_EMAIL       |USER_ADDRESS                  |CCTV_ALTER |PET_ALTER |MULTICULTURAL_ALTER |LATCHKEY_ALTER |MULTICHILD_ALTER |FATHER_ALTER |MOTHER_ALTER |GRAND_ALTER |BASICLIFE_ALTER |MEDICAL_ALTER |WORKING_ALTER |DISABLED_ALTER |SECOND_CLASS |ETC_REARING |REQST_COURS |CARD_SMS |LICENSE_ALTER |SERVICE_PLACE |LIMIT_CODE |IGRADE_NO |OFFICE_CODE |TERM_CODE |IUSER_TERMYESNO |ENROLL_DATE |USER_LASTMODIFIED |LA   |LO   |DEL_DATE |
+[16:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|---------|-------------|------------|-----------------|------------------------------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|----------|----------------|------------|------------------|-----|-----|---------|
+[16:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |800101-2543425 |user01   |김엄마       |48000    |02-5304-2030 |01080016812 |ibom01@naver.com |06252, 서울특별시 강남구 역삼동 832 SM타워 |Y          |N         |N                   |Y              |Y                |N            |N            |N           |N               |N             |Y             |N              |N            |N           |주변권유        |Y        |보육관련자격소지자     |이용자가정         |LG001      |UG004     |SC0001      |T001      |Y               |2020-01-10  |2020-01-10        |null |null |null     |
+[16:46:43][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|---------|-------------|------------|-----------------|------------------------------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|----------|----------------|------------|------------------|-----|-----|---------|
+[16:46:45][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[16:46:45][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:46:45][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[16:46:45][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:46:45][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[16:46:45][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:46:45][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[16:46:45][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:46:45][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |USER_NAME |QNA_ANSWER   |
+[16:46:45][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:46:45][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |처리        |이러이러한 변경건에 대하여 질문이 있습니다. |김엄마       |이러이러한 답변입니다. |
+[16:46:45][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:46:47][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from questions
+		where qna_no = 3
+[16:46:47][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-------------|----------|---------|----------|
+[16:46:47][INFO ][ResultSetCollectorPrinter.java:108]- |QNA_NO |PERSONAL_INFO |USE_SERVICE |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |QNA_ANSWER   |USER_NAME |DOL_NAME |TERM_CODE |
+[16:46:47][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-------------|----------|---------|----------|
+[16:46:47][INFO ][ResultSetCollectorPrinter.java:108]- |3      |Y             |[unread]    |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |처리        |이러이러한 변경건에 대하여 질문이 있습니다. |이러이러한 답변입니다. |김엄마       |null     |T003      |
+[16:46:47][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------------|-----------|----------|-------------------------|-------------|----------|---------|----------|
+[16:46:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[16:46:55][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:46:55][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[16:46:55][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:46:55][INFO ][ResultSetCollectorPrinter.java:108]- |1        |
+[16:46:55][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:46:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[16:46:55][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:46:55][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE               |QNA_DATE   |QNA_STATE |QNA_CONTENT              |USER_NAME |QNA_ANSWER   |
+[16:46:55][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:46:55][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |서비스 변경         |서비스 변경건에 대하여 질문하고 싶습니다. |2020-01-15 |처리        |이러이러한 변경건에 대하여 질문이 있습니다. |김엄마       |이러이러한 답변입니다. |
+[16:46:55][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------------|-----------|----------|-------------------------|----------|-------------|
+[16:47:30][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from notice
+[16:47:30][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:47:30][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[16:47:30][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:47:30][INFO ][ResultSetCollectorPrinter.java:108]- |6        |
+[16:47:30][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:47:30][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, notice_no, emp_name, notice_title, original_filepath, rename_filepath, notice_date, notice_check, notice_content
+          
+ from 
+ (select *
+ from notice
+                     
+                   
+                    order by notice_date desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[16:47:30][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[16:47:30][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH          |RENAME_FILEPATH                          |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT                      |
+[16:47:30][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|
+[16:47:30][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |7         |김관리      |제목이빈다.       |1073 (1).html              |1073 (1).html-1578654478838              |2020-01-10  |8            |제 ㅁㄱ 입 니당
+ㅇㅇㅎㅎ
+ㅎㅎ
+ㅎ
+ㅎ
+
+ㅎ
+ㅎ
+ |
+[16:47:30][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2         |이관리      |공지사항2        |null                       |null                                     |2020-01-10  |1            |이렇습니다2                              |
+[16:47:30][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3         |박관리      |공지사항3        |null                       |null                                     |2020-01-10  |4            |이렇습니다3                              |
+[16:47:30][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4         |김관리      |공지사항4        |null                       |null                                     |2020-01-10  |0            |이렇습니다4                              |
+[16:47:30][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5         |이관리      |공지사항5        |null                       |null                                     |2020-01-10  |0            |이렇습니다5                              |
+[16:47:30][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1         |김관리      |공지사항1        |이클립스_→_github_연동_및_업로드.pdf |이클립스_→_github_연동_및_업로드.pdf-1578647308945 |2020-01-10  |0            |이렇습니다1                              |
+[16:47:30][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|---------------------------|-----------------------------------------|------------|-------------|------------------------------------|

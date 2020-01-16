@@ -1,0 +1,66 @@
+[00:06:18][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[00:06:24][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 5924 ms
+[00:06:24][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[00:06:27][WARN ][AbstractApplicationContext.java:557]- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'outiusersController' method 
+public java.lang.String com.kh.ibom.out_iusers.controller.OutiusersController.moveOutIusersIn()
+to { /iusers/moveOutIusersInPage.do}: There is already 'iusersController' bean method
+public java.lang.String com.kh.ibom.iusers.controller.IusersController.moveOutIusersIn() mapped.
+[00:06:27][ERROR][FrameworkServlet.java:533]- Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'outiusersController' method 
+public java.lang.String com.kh.ibom.out_iusers.controller.OutiusersController.moveOutIusersIn()
+to { /iusers/moveOutIusersInPage.do}: There is already 'iusersController' bean method
+public java.lang.String com.kh.ibom.iusers.controller.IusersController.moveOutIusersIn() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:701)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:667)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:715)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:529)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:169)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1132)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1079)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:973)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4885)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5199)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1412)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1402)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'outiusersController' method 
+public java.lang.String com.kh.ibom.out_iusers.controller.OutiusersController.moveOutIusersIn()
+to { /iusers/moveOutIusersInPage.do}: There is already 'iusersController' bean method
+public java.lang.String com.kh.ibom.iusers.controller.IusersController.moveOutIusersIn() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.assertUniqueMethodMapping(AbstractHandlerMethodMapping.java:618)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:586)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:312)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$1(AbstractHandlerMethodMapping.java:282)
+	at java.util.LinkedHashMap.forEach(Unknown Source)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:280)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:252)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:211)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:199)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:164)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1821)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1758)
+	... 28 more
+[00:14:33][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[00:14:38][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 5449 ms
+[00:14:39][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[00:14:44][INFO ][FrameworkServlet.java:546]- Completed initialization in 5008 ms
+[03:37:14][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[03:37:17][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 3173 ms
+[03:37:17][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[03:37:20][INFO ][FrameworkServlet.java:546]- Completed initialization in 3034 ms

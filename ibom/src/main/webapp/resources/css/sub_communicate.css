@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+/*
+ * File       : sub_communicate.css
+ * Author     : STUDIO-JT (HEE)
+ * Guideline  : JTstyle.1.1
+ *
+ * Dependency : css/reset.css
+ *              css/jt_strap.css
+ *
+ * SUMMARY:
+ * 1) BOARD LIST
+ * 2) BOARD FORM
+ */
+
+
+
+/* **************************************** *
+ * BOARD LIST
+ * **************************************** */
+.jt_grid_list_wrap {padding-top: 41px;position: relative;}
+.jt_grid_list_wrap:before {content:''; display: block; width: 100%; height: 5px; position: absolute;top: 0; left: 0; border-radius: 25px; overflow: hidden; background-color: #f07e23}
+.jt_grid_list_wrap:after {content:''; display: block; clear: both;}
+.jt_grid_tab {font-size: 0; float: left; padding: 20px 0;}
+.jt_grid_tab li {display: inline-block; font-size: 16px; letter-spacing: -0.025em; padding-right: 33px; position: relative;}
+.jt_grid_tab li:after {content:''; display: block; width: 4px; height: 4px;border-radius: 50%; background: #ddd; position: absolute; top: 9px; right: 14px;}
+.jt_grid_tab li:last-child {padding-right: 0;}
+.jt_grid_tab li:last-child:after {display: none;}
+.jt_grid_tab li.active a {color: #f07e23}
+.jt_grid_tab li a {color: #666; transition: color 300ms; -webkit-transition: color 300ms;}
+.jt_grid_btn_control {float: right; display: inline-block; text-align: right;}
+.jt_grid_tab + * {clear: both;}
+
+html.desktop .jt_grid_tab li a:hover {color: #222}
+html.desktop .jt_grid_tab li.active a:hover {color: #f07e23}
+
+.jt_grid_list {float: left; margin-bottom: -4%;position: relative; width: 100%; margin-top: 26px;}
+.jt_grid_list:after {content: '';display: table;clear: both;}
+
+.jt_grid_item {float: left;width: 31%;margin-right: 3.5%;margin-bottom: 4%; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;}
+.jt_grid_item:nth-child(3n) {margin-right: 0;}
+.jt_grid_item:nth-child(3n+1) {clear: both;}
+.jt_grid_item.best {background: #fef9f5}
+
+.jt_grid_link {display: block;position: relative;}
+.jt_grid_link:after {content: '';border: 2px solid #f07e23;opacity: 0;margin: auto;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position: absolute;top: 0;left: 0;bottom: 0;right: 0;z-index: 2; pointer-events: none;}
+
+html.desktop .jt_grid_link:hover .jt_grid_title span {border-bottom-color: #222;}
+
+.jt_grid_thumb {display: block; position: relative; overflow: hidden;}
+.jt_grid_thumb img {display: block;width: 100%;}
+.jt_grid_type {font-size: 14px; color: #fff; position: absolute; background-color: #f07e23; top: 0; left: 0;border-radius: 8px 0 8px 0; text-align: center; letter-spacing: -0.025em; padding: 8px 20px 8px 19px; z-index: 2;}
+.jt_grid_type.review {background-color: #23b9ce;}
+.jt_grid_type.letter {background-color: #f07e23;}
+.jt_grid_icon_best {width: 45px;height: 51px;background: url(../img/sub/communicate/best_icon.png) no-repeat;position: absolute;right: 12px;top: 0;text-align: center;z-index:1;}
+.jt_grid_icon_best span {display: inline-block;font-size: 12px;color: #fff;line-height: 39px;}
+html.ios .jt_grid_icon_best span {line-height: 44px;}
+
+.jt_grid_content {padding: 27px 28px 33px;position: relative;}
+.jt_grid_title {font-size: 18px;font-weight: 600;line-height: 1.5;color: #222;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;letter-spacing: -0.025em;}
+.jt_grid_title span {border-bottom: 1px solid transparent; -webkit-transition: border 300ms; transition: border 300ms;}
+.jt_grid_title span br {display: none;}
+.jt_grid_desc {display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;letter-spacing: -0.025em;max-height: 3.5em;margin-top: 8px;font-size: 16px;font-weight: 400;line-height: 1.75;color: #666;text-overflow: ellipsis;overflow: hidden;}
+.jt_grid_meta { margin-top: 25px; margin-bottom: 15px; font-size: 0; }
+.jt_grid_meta span.author {font-size: 14px;color: #666;letter-spacing: -0.05em;}
+.jt_grid_meta span.date {font-size: 14px;color: #888;letter-spacing: -0.025em;margin-left: 19px; position: relative;}
+.jt_grid_meta span.date:before { content: ''; display: block; width: 3px; height: 3px; background: #bbb; position: absolute; top: 10px; left: -11px; border-radius: 50%; }
+
+/* 아랍어닉 위치깨짐 보정 */
+.jt_grid_meta.float_left:after {content:'';display:block;clear:both;}
+.jt_grid_meta.float_left span  {float:left;}
+
+.jt_grid_meta_view {border-top: 1px solid #eee; font-size: 0; padding-top: 13px;}
+.jt_grid_meta_view span {font-size: 15px; color: #888; position: relative; padding-left: 28px;}
+.jt_grid_meta_view span:before {display: block; width: 20px; height: 20px; position: absolute; left: 0; top: 50%; font-family: 'jt_font'; font-size: 18px; font-weight: normal; line-height: 20px; color: #f07e23;}
+.jt_grid_meta_view span.view:before {content:'\e91f'; top: 2px;}
+.jt_grid_meta_view span.reply {margin-left: 19px;}
+.jt_grid_meta_view span.reply:before {content:'\e942'; top: 3px; font-size: 17px; line-height: 17px; width: 17px; height: 17px;}
+
+.board_list .jt_grid_list_wrap .list_nothing {border-top: 0;}
+
+
+
+/* **************************************** *
+ * BOARD FORM
+ * **************************************** */
+.board_form_content {position: relative; padding-top: 54px; padding-bottom: 65px;}
+.board_form_content:before {content:''; display: block; width: 100%; height: 5px; position: absolute;top: 0; left: 0; border-radius: 25px; overflow: hidden; background-color: #f07e23}
+.board_form_content:after {content:''; display: block; width: 100%; height: 5px; position: absolute;bottom: 0; left: 0; border-radius: 25px; overflow: hidden; background-color: #222;}
+
+.board_form_content .jt_form_data {margin-bottom: 40px;}
+.board_form_content .jt_form_data:last-child {margin-bottom: 0;}
+.board_form_content textarea.jt_form_field {height: 368px;}
+
+.jt_form_data_type .jt_selectric_wrap { width: 170px; }
+
+.jt_form_data_character {margin-bottom: -30px;}
+.jt_form_data_character .jt_icheck_label { position: relative; margin-right: 30px; margin-bottom: 30px; vertical-align: top;}
+.jt_form_data_character .jt_icheck_label figure {cursor: pointer;max-width: 78px;}
+.jt_form_data_character .jt_icheck_label figure img {max-width: 100%}
+.jt_form_data_character .jt_icheck_label span { font-size: 14px; letter-spacing: -0.025em; color: #222; font-weight: 400; display: block; margin-top: 10px; text-align: center; line-height: 1; word-break: keep-all;}
+.jt_form_data_character .iradio_minimal { position: absolute !important; top: 0; left: 0; background-color: #fff; border-radius: 50%;}
+
+.board_form_control {margin-top: 40px; font-size: 0; text-align: center;}
+.board_form_control > * {margin-right: 15px;}
+.board_form_control > *:last-child {margin-right: 0;}
+
+.board_form_content .board_character .jt_form_label_wrap {padding-top: 44px;}

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="121" height="121" viewBox="0 0 121 121">
+    <defs>
+        <rect id="b" width="48" height="80" x="14" rx="5"/>
+        <filter id="a" width="147.9%" height="128.8%" x="-24%" y="-11.9%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3.5"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.393738678 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(-682 -2149)">
+        <path fill="#EDEDED" d="M-4 1863h1928v734H-4z"/>
+        <rect width="208" height="322" x="638" y="2124" fill="#FFF" rx="4"/>
+        <g transform="translate(682 2149)">
+            <circle cx="60.5" cy="60.5" r="60.5" fill="#F6F6F6"/>
+            <g transform="translate(22 16)">
+                <rect width="22" height="9" x="2.544" y="11.606" fill="#FFC292" rx="4.5" transform="rotate(36 13.544 16.106)"/>
+                <path fill="#FFC292" d="M59.745 97c-24.235-8.183-38.21-19.345-41.927-33.486-3.716-14.14 5.233-20.97 26.848-20.49l24.109 10.543L79 82.023 59.745 97z"/>
+                <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+                <use fill="#4C4C4C" xlink:href="#b"/>
+                <rect width="42" height="65" x="17" y="6" fill="#FFF" rx="4"/>
+                <path fill="#D8D8D8" d="M22 31h32v2H22zM22 37h32v2H22z"/>
+                <path fill="#F57A33" d="M22 53h32v9H22z"/>
+                <path fill="#D8D8D8" d="M28 43h19v2H28z"/>
+                <circle cx="37.5" cy="18.5" r="6.5" fill="#D8D8D8"/>
+                <path fill="#FFC292" d="M54.938 42.289a5.459 5.459 0 0 1-2.339-6.018 5.454 5.454 0 0 1 6.678-3.86 5.438 5.438 0 0 1 3.583 3.085c9.442 9.796 15.087 16.55 16.935 20.263 1.894 3.805 3.278 13.69 4.154 29.653l-23.855 7.264c-2.491-11.312-2.489-20.424.008-27.336 2.368-6.556.647-14.24-5.164-23.051z"/>
+                <rect width="22" height="9" x=".544" y="54.606" fill="#FFC292" rx="4.5" transform="rotate(36 11.544 59.106)"/>
+                <rect width="22" height="9" x="2.544" y="40.606" fill="#FFC292" rx="4.5" transform="rotate(36 13.544 45.106)"/>
+                <rect width="22" height="9" x="2.544" y="26.606" fill="#FFC292" rx="4.5" transform="rotate(36 13.544 31.106)"/>
+                <path fill="#FFC292" d="M59 96.86c5.727.49 10.289-.307 13.686-2.394 3.398-2.087 7.169-4.973 11.314-8.656L69.184 80l-8.928 10.865L59 96.86z"/>
+            </g>
+        </g>
+        <text fill="#4F4F4F" font-family="NotoSansCJKkr-Bold, Noto Sans CJK KR" font-size="24" font-weight="bold">
+            <tspan x="689.432" y="2178">2</tspan>
+        </text>
+    </g>
+</svg>

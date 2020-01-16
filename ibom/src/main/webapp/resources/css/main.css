@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+/*
+ * File       : main.css
+ * Author     : STUDIO-JT (KMS)
+ * Guideline  : JTstyle.1.1
+ *
+ * Dependency : css/reset.css
+ *              css/jt_strap.css
+ *
+ * SUMMARY:
+ * 1) Global
+ * 2) Visual
+ * 3) Media
+ * 4) Project
+ * 5) Introduce
+ * 6) Character
+ * 7) Bottom
+ */
+
+
+
+/* **************************************** *
+ * Global
+ * **************************************** */
+/* reset layout style (fullpage type) */
+.body_home .main_container {padding-bottom: 0;}
+
+/* fullpage setting */
+#fp-nav {width: 16px;-webkit-transition: opacity 300ms;transition: opacity 300ms;-webkit-transition-delay: 350ms;transition-delay: 350ms;}
+#fp-nav.right {right: 32px;}
+#fp-nav ul {display: block;width: 100%;position: relative;}
+#fp-nav ul li {width: 100%;height: auto;margin: 0;padding: 23px 0;}
+#fp-nav ul li:last-child {display: none;}
+#fp-nav ul li a {height: 16px;margin-top: -8px;margin-left: -8px;position: absolute;top: 50%;left: 50%;border-radius: 50%;}
+#fp-nav ul li a span {height: 6px;width: 6px;margin: 0;background: #ddd;border-radius: 100%;-webkit-transform: translate3d(-50%, -50%, 0);transform: translate3d(-50%, -50%, 0);-webkit-transition: all 400ms;transition: all 400ms;}
+#fp-nav ul li:hover a span {width: 6px;height: 6px;margin: 0;}
+#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span {width: 16px;height: 16px;margin: 0;background: #f07e23;}
+#fp-nav ul li .fp-tooltip {min-width: 164px;height: 47px;padding-right: 25px;top: 50%;margin-top: -23px;overflow: visible;visibility: hidden;}
+#fp-nav ul li .fp-tooltip.right {right: 0;}
+#fp-nav ul li .fp-tooltip span {display: block;width: 100%;height: 100%;padding: 0 23px;position: relative;font-family: 'Binggrae', sans-serif;font-size: 12px;text-align: center;line-height: 47px;color: #fff;background: #222;border-radius: 25px;}
+#fp-nav ul li .fp-tooltip span:after {content: '';display: block;width: 0px;height: 0px;position: absolute;right: -10px;top: 50%;margin-top: -6px;border: 6px solid transparent;border-left-color: #222;}
+#fp-nav ul li:hover .fp-tooltip {visibility: visible;}
+
+.body_home.fp-viewing-5 #fp-nav {opacity: 0;visibility: hidden;-webkit-transition-delay: 0ms;transition-delay: 0ms;} /* hide nav footer section */
+html.ie #fp-nav ul li a span {-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%)}
+
+/* layout */
+.home_container {position: relative;overflow: hidden;opacity: 0;}
+.main_section {padding-top: 97px;}
+.main_section > .wrap {height: 100%;}
+
+.main_section_circle {width: 700px;height: 700px;position: absolute;right: -99px;top: 50%;-webkit-transform: translateY(-50%);-ms-transform: translateY(-50%);transform: translateY(-50%);z-index: 1;}
+.main_section_circle > svg {width: 125%;height: 125%;position: absolute;left: 50%;top: 50%;-webkit-transform: translateX(-50%) translateY(-50%);-ms-transform: translateX(-50%) translateY(-50%);transform: translateX(-50%) translateY(-50%);z-index: 1;}
+
+.main_section_content {height: 100%;position: relative;z-index: 2;}
+.main_content_cover {display: table;table-layout: fixed;width: 100%;height: 100%;position: relative;}
+.main_content_cover_inner {display: table-cell;vertical-align: middle;}
+.main_section_content.secondary {width: 50%;}
+.main_section_content.secondary .main_content_cover_inner {padding-right: 36px;}
+
+.main_txt_wrap > span {display: inline-block;padding: 8px 17px 7px;margin-bottom: 19px;font-size: 13px;letter-spacing: -0.025em;line-height: 1.35;color: #fff;background: #23b9ce;border-radius: 25px;}
+.main_txt_wrap > h2 {margin-left: -0.05em;font-size: 46px;line-height: 1.35;letter-spacing: -0.04em;word-wrap: break-word;word-break: keep-all;color: #f07e23;}
+.main_txt_wrap > p {padding: 18px 0 25px;font-size: 16px;font-weight: 400;letter-spacing: -0.025em;line-height: 1.75;word-wrap: break-word;word-break: keep-all;color: #666;}
+.main_txt_wrap.secondary {margin-bottom: 66px;text-align: center;}
+
+.home_illust_item {position: fixed;left: 0;top: 0;z-index: -1;}
+.home_illust_item_inner {position: relative;width: 100%;height: 100%;background: no-repeat center center;background-size: cover;}
+.home_illust_primary .home_illust_item_inner {background-image: url(/ibom/resources/images/icon/circle_primary.svg);}
+.home_illust_secondary .home_illust_item_inner {background-image: url(/ibom/resources/images/icon/circle_secondary.svg);}
+
+.home_illust_point {position: absolute;z-index: -1;}
+
+
+
+/* **************************************** *
+ * Visual
+ * **************************************** */
+.main_visual {padding-bottom: 27px;}
+
+.main_visual .home_illust_primary_point {width: 752px;height: 752px;right: -12.5%;top: 67.1%;}
+.main_visual .home_illust_secondary_point {width: 752px;height: 752px;right: -63.7%;top: 67.1%;}
+
+.main_visual_slider_wrap {width: 100%;height: 100%;}
+.main_visual_slider {width: 50%;height: 100%;}
+.main_visual_item {display: none;width: 100%;height: 100%;position: relative;}
+.main_visual_item_inner {width: 100%;height: 100%;position: relative;}
+.main_visual_item:first-child {display: block;}
+.main_visual_image {display: none;}
+.main_visual_content {display: table;width: 100%;height: 100%;position: relative;}
+.main_visual_content_inner {display: table-cell;vertical-align: middle;}
+
+.main_visual_state {position: absolute;left: -230px;bottom: 91px;font-size: 0;line-height: 1;z-index: 2;}
+.main_visual_state .cycle_caption {width: 30px;text-align: center;opacity: 0;-webkit-transition: opacity 400ms;transition: opacity 400ms;}
+.main_visual_state .cycle_caption.loaded {opacity: 1;}
+.main_visual_state .cycle_pager {display: none;}
+
+
+
+/* **************************************** *
+ * Media
+ * **************************************** */
+.main_media .home_illust_primary_point {width: 928px;height: 928px;left: -62.8%;top: -48.8%;}
+.main_media .home_illust_secondary_point {width: 497px;height: 497px;right: -44.4%;top: 63.1%;}
+
+.main_media_list {margin-left: -18px;margin-right: -18px;overflow: hidden;}
+.main_media_item {float: left;width: 20%;padding: 0 18px;}
+.main_media_item > a {display: block;}
+.main_media_thumb {position: relative;overflow: hidden;border-radius: 8px;}
+.main_media_thumb img {display: block;max-width: 100%;}
+.main_media_txt {padding: 25px 20px 0;}
+.main_media_txt h3 {font-size: 18px;letter-spacing: -0.05em;line-height: 1.66;color: #222;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.main_media_txt h3 > span {border-bottom: 1px solid transparent;-webkit-transition: border 300ms;transition: border 300ms;}
+.main_media_txt p {font-size: 15px; line-height: 1.74; font-weight: 400; letter-spacing: -0.025em; color: #666; margin-top: 5px;}
+.main_media_type {width: 46px;height: 46px;position: absolute;left: 0;bottom: 0;font-size: 24px;line-height: 46px;text-align: center;color: #fff;overflow: hidden;border-radius: 0 4px 0 4px;}
+.main_media_type:after {font-family: 'jt_font';}
+.main_media_type.video {background: #f07e23; padding-right: 1px;}
+.main_media_type.video:after {content: '\e92b';}
+.main_media_type.sound {font-size: 30px;background: #23b9ce;}
+.main_media_type.sound:after {content: '\e939';}
+
+html.desktop .main_media_item > a:hover .main_media_txt h3 > span {border-bottom-color: #222;}
+
+
+
+/* **************************************** *
+ * Project
+ * **************************************** */
+.main_project .home_illust_primary_point {width: 718px;height: 718px;left: -71%;top: 5%;}
+.main_project .home_illust_secondary_point {width: 761px;height: 761px;right: -57%;top: 66.8%;}
+
+
+
+/* **************************************** *
+ * Introduce
+ * **************************************** */
+.main_introduce .home_illust_primary_point {width: 921px;height: 921px;left: -60.3%;top: -76.7%;}
+.main_introduce .home_illust_secondary_point {width: 447px;height: 447px;right: -40.6%;top: 75.7%;}
+
+
+
+/* **************************************** *
+ * Character
+ * **************************************** */
+.main_character .home_illust_primary_point {width: 606px;height: 606px;left: -59.5%;top: -1.4%;}
+.main_character .home_illust_secondary_point {width: 1013px;height: 1013px;right: -24.3%;top: 64.6%;}
+
+
+
+/* **************************************** *
+ * Bottom
+ * **************************************** */
+.main_bottom_overlay {position: fixed;top: 0;bottom: 0;left: 0;right: 0;background: #ffffff;background: rgba(255, 255, 255, .9);opacity: 0;visibility: hidden;-webkit-transition: all 400ms;transition: all 400ms;z-index: 2;}
