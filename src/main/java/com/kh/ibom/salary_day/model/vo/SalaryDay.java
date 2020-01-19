@@ -8,13 +8,22 @@ import org.springframework.stereotype.Component;
 public class SalaryDay implements Serializable{
 	private static final long serialVersionUID = 8190L;
 	
+	public static SalaryDay salVo = new SalaryDay();
 	
 	private String salary_day;
 	private int dol_time_pay;
 	
 	
-	public SalaryDay() {}
-
+	private SalaryDay() {}
+	
+	public static SalaryDay getInstance() {
+		
+		if(salVo == null) {
+			salVo = new SalaryDay();
+		}
+		
+		return salVo;
+	}
 
 	public SalaryDay(String salary_day, int dol_time_pay) {
 		super();

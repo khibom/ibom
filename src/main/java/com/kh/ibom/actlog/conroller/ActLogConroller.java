@@ -238,18 +238,9 @@ public class ActLogConroller {
 		String process_ctgry = "반려";
 		acLog.setDol_id(dol_id);
 		acLog.setProcess_ctgry(process_ctgry);
-		acLog.setCond_date("Y");
 		
-		ArrayList<ReturnActVo> alist = alldayActService.selectMyReturnActLog(acLog);
-		ArrayList<ReturnActVo> nlist = nomalActService.selectMyNomalReturnActLog(acLog);
-		ArrayList<ReturnActVo> slist = synActService.selectMySynReturnActLog(acLog);
 		
-		for(ReturnActVo v : nlist) {
-			alist.add(v);
-		}
-		for(ReturnActVo r : slist) {
-			alist.add(r);
-		}
+		ArrayList<ReturnActVo> alist = commonReturnAct(acLog);
 		
 		if(alist != null) {
 		
@@ -262,9 +253,10 @@ public class ActLogConroller {
 			mv.setViewName("dolbomi/actLog/returnActPage");
 		}
 		return mv;
-		
-		
 	}
+	
+	
+	
 	
 	@RequestMapping(value="dolbomi/insynAct.do", method=RequestMethod.POST)
 	public void insertSynthesisAct(SynthesisActLog synLog, HttpServletResponse response, String service1_no) throws IOException {
@@ -323,12 +315,42 @@ public class ActLogConroller {
 		String process_ctgry = "반려";
 		acLog.setDol_id(dol_id);
 		acLog.setProcess_ctgry(process_ctgry);
-		acLog.setCond_date("Y");
 		acLog.setCond_date(ym);
 		
-		ArrayList<ReturnActVo> alist = alldayActService.selectSearchMyReturnActLog(acLog);
-		ArrayList<ReturnActVo> nlist = nomalActService.selectSearchMyNomalReturnActLog(acLog);
-		ArrayList<ReturnActVo> slist = synActService.selectSearchMySynReturnActLog(acLog);
+		
+		ArrayList<ReturnActVo> alist = commonReturnAct(acLog);
+		
+		
+		if(alist == null) {
+			mv.setViewName("/ibom/views/common/error.jsp");
+		}else {
+		
+		mv.setViewName("dolbomi/actLog/returnActPage");
+		mv.addObject("list", alist);
+		
+		
+		}
+		return mv;
+		
+	}
+	
+	
+	public ArrayList<ReturnActVo> commonReturnAct(AlldayActLog acLog){
+		
+		ArrayList<ReturnActVo> alist = null;
+		ArrayList<ReturnActVo> nlist = null;
+		ArrayList<ReturnActVo> slist = null;
+		
+		if(acLog.getCond_date() != null) {
+		 alist = alldayActService.selectSearchMyReturnActLog(acLog);
+		 nlist = nomalActService.selectSearchMyNomalReturnActLog(acLog);
+		 slist = synActService.selectSearchMySynReturnActLog(acLog);
+		}else {
+		 alist = alldayActService.selectMyReturnActLog(acLog);
+		 nlist = nomalActService.selectMyNomalReturnActLog(acLog);
+		 slist = synActService.selectMySynReturnActLog(acLog);
+		}
+		
 		if(nlist != null) {
 			for(ReturnActVo v : nlist) {
 				alist.add(v);
@@ -342,17 +364,7 @@ public class ActLogConroller {
 				}
 		}
 		
-		if(alist == null) {
-			mv.setViewName("/ibom/views/common/error.jsp");
-		}else {
-		
-		mv.setViewName("dolbomi/actLog/returnActPage");
-		mv.addObject("list", alist);
-		
-		
-		}
-		return mv;
-		
+		return alist;
 	}
 	
 	
