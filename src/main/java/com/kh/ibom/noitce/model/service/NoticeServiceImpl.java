@@ -37,10 +37,10 @@ public class NoticeServiceImpl implements NoticeService {
 		
 		//로그인 세션 가져오기
 		HttpSession session = request.getSession(false);
-		Emp emp = (Emp)session.getAttribute("loginAdmin");
+		Emp emp = (Emp)session.getAttribute("loginEmp");
 		
 		Notice nt = new Notice();
-		nt.setEmp_id(emp.getEmp_id());
+		nt.setEmp_name(emp.getEmp_name());
 		nt.setNotice_no(notice.getNotice_no());
 		nt.setNotice_content(notice.getNotice_content());
 		nt.setNotice_check(0);
@@ -69,10 +69,10 @@ public class NoticeServiceImpl implements NoticeService {
 		//로그인 세션 가져오기
 		HttpSession session = request.getSession(false);
 		
-		Emp emp = (Emp)session.getAttribute("loginAdmin");
+		Emp emp = (Emp)session.getAttribute("loginEmp");
 		
 		Notice nt = new Notice();
-		nt.setEmp_id(emp.getEmp_id());
+		nt.setEmp_name(emp.getEmp_name());
 		nt.setNotice_content(notice.getNotice_content());
 		nt.setNotice_check(0);
 		nt.setNotice_date(notice.getNotice_date());

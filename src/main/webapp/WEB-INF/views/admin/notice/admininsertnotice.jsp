@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -14,9 +15,6 @@
     <meta name="author" content="">
 
     <title>관리자 공지사항 상세보기</title>
-	<script>
-  	document.getElementById('notice_date').value = new Date().toISOString().substring(0, 10);
-	</script>
     <!-- Bootstrap Core CSS -->
     <link href="/ibom/resources/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -41,29 +39,8 @@
 </head>
 <!-- CSS -->
 <style type="text/css">
-table.type05 {
-    border-collapse: separate;
-    border-spacing: 1px;
-    text-align: center;
-    line-height: 1.5;
-    border-top: 1px solid #ccc;
-    margin: 20px 10px;
-}
-table.type05 th {
-    width: 150px;
-    padding: 10px;
-    font-weight: bold;
-    text-align: center;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-    background: #efefef;
-}
-table.type05 td {
-    width: 350px;
-    padding: 10px;
-    vertical-align: top;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
+.table>tbody>tr.info22>td, .table>tbody>tr.info22>th, .table>tbody>tr>td.info2, .table>tbody>tr>th.info2, .table>tfoot>tr.info2>td, .table>tfoot>tr.info2>th, .table>tfoot>tr>td.info2, .table>tfoot>tr>th.info2, .table>thead>tr.info2>td, .table>thead>tr.info2>th, .table>thead>tr>td.info2, .table>thead>tr>th.info2 {
+    background-color: #eee; text-align: center;
 }
 <!-- ============================= -->
 </style>
@@ -90,27 +67,29 @@ table.type05 td {
         		<form action="noticeinsert.do" id="writeForm" method="post" enctype="multipart/form-data">
                 <table class="table">
 			    <tr>
-			        <th scope="row">글쓴이</th>
-			        <td><input type="text" name="emp_id" value="${loginAdmin.emp_name}" readonly></td>
-			        <th scope="row">등록일</th>
-			        <td><input type="date" id="notice_date" name="notice_date"></td>
+			        <th scope="row" class="info2">글쓴이</th>
+			        <td>${emp.emp_name}</td>
+			        <th scope="row" class="info2">등록일</th>
+			        <td><jsp:useBean id="toDay" class="java.util.Date" />
+			        	<fmt:formatDate value="${toDay}" pattern="yyyy-MM-dd" />
+			        </td>
 			    </tr>
 			    <tr>
-			        <th scope="row">제목</th>
-			        <td colspan="4"><input type="text" name="notice_title"></td>
+			        <th scope="row" class="info2">제목</th>
+			        <td colspan="4"><input type="text" class="form-control" name="notice_title"></td>
 			    </tr>
 			    <tr>
-			        <th scope="row">첨부파일</th>
+			        <th scope="row" class="info2">첨부파일</th>
 			        <td colspan="4"><input type="file" name="upfile"></td>
 			    </tr>
 			    <tr>
-			    	<th scope="row" style="height:300px; line-height: 16;">내용</th>
-			    	<td colspan="4"><textarea style="width: 830px" rows="10" cols="10" name="notice_content"></textarea></td>
+			    	<th scope="row" class="info2">내용</th>
+			    	<td colspan="4"><textarea style="width: 100%" rows="10" cols="10" class="form-control" name="notice_content"></textarea></td>
 			    </tr>
 			</table>
-			<div align="right">
+			<div style="text-align:right;">
 			<input type="submit" class="btn btn-warning" value="등록">
-			<input type="button" class="btn btn-default"  onclick="location.href='moveadminnotice.do'" value="목록">
+			<input type="button" class="btn btn-default" onclick="location.href='moveadminnotice.do'" value="목록">
 			</div>
                </form>
                </div>

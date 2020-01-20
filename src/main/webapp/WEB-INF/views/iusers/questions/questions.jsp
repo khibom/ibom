@@ -115,10 +115,10 @@
                     <td class="date">${row.qna_date}</td>
                     <td class="hit">${row.qna_state}</td>
                     <c:choose>
-                    <c:when test="${row.qna_state == '미처리' && row.user_id == iuser.user_id && row.dol_id == dol.dol_id}">
+                    <c:when test="${row.qna_state == '미처리' && row.user_name == iuser.user_name && row.dol_name == dol.dol_name}">
                     <td class="hit"><button type="button" id="button1" onclick="location.href='qnadelete.do?anum=${row.qna_no}'" class="jt_search3_button search">취소하기</button></td>
                     </c:when>
-                    <c:when test="${row.qna_state == '처리완료' || row.user_id != iuser.user_id || row.dol_id != dol.dol_id }">
+                    <c:when test="${row.qna_state == '처리완료' || row.user_name != iuser.user_name || row.dol_name != dol.dol_name }">
                     <td class="hit"></td>
                     </c:when>
                     </c:choose>
@@ -154,16 +154,49 @@
     			</div>
     		</div>
     	</div>
-
+<!--footer  =================================================== -->
+	<c:import url="../../common/footer.jsp"/> 
+           <!--  =================================================================== -->
 
 	</div>	<!-- #main_container_inner --> 
 	</main>	<!-- .main_container -->
 
-<!--footer  =================================================== -->
-	<c:import url="../../common/footer.jsp"/> 
-<!--  =================================================================== -->
 
-	
+
+	<!--  js -->
+
+	<script src="/ibom/resources/js/vendors/jquery/jquery.easing.1.3.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/jquery/jquery.requestAnimationFrame.min.js"></script>
+	<script src="/ibom/resources/js/vendors/greensock/TweenMax.min.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/greensock/ScrollToPlugin.min.js"></script>
+	<script src="/ibom/resources/js/vendors/greensock/findShapeIndex.js"></script>
+	<script src="/ibom/resources/js/vendors/greensock/MorphSVGPlugin.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/fullpage/jquery.fullPage.min.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/popup/jquery.magnific_popup.min.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/scroll/jquery.nicescroll.min.js"></script>
+	<script src="/ibom/resources/js/vendors/icheck/icheck.min.js"></script>
+	<script src="/ibom/resources/js/vendors/select/jquery.selectric.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/file/jquery.customFile_custom_jt.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/slider/cycle2/jquery.cycle2.min.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/slider/cycle2/jquery.cycle2.swipe.min.js"></script>
+	<script src="/ibom/resources/js/vendors/slider/slick/slick.min.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+	<script src="/ibom/resources/js/vendors/isotope/isotope.pkgd.min.js"></script>
+	<script src="/ibom/resources/js/vendors/clipboard/clipboard.min.js"></script>
+	<script src="/ibom/resources/js/player.js"></script>
+	<script src="/ibom/resources/js/main.js"></script>
+
+	<!-- 추가 -->
+	<script src="/ibom/resources/LIB/js/js.cookie.js"></script>
 
 </body>
 </html>

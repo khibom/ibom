@@ -102,7 +102,7 @@
 	    <tr>
 	        <td>${row.notice_no}</td>
 	        <td><a href="adminnoticedetail.do?anum=${row.notice_no}&page=${commonPage.currentPage}">${row.notice_title}</a></td>
-	        <td>${row.emp_id}</td>
+	        <td>${row.emp_name}</td>
 	        <c:choose>
 	        <c:when test="${!empty row.original_filepath}">
 	        <td><i class="fa fa-folder-o fa-fw"></i></td>
@@ -135,10 +135,14 @@
                                 <li tabindex="0" class="paginate_button active" aria-controls="dataTables-example">
                                 <c:forEach var="p" begin="${commonPage.beginPage }" end="${commonPage.endPage }">
                                 <c:if test="${p == commonPage.currentPage }">
+                                <li tabindex="0" class="paginate_button active" aria-controls="dataTables-example">
                             <a href="moveadminnotice.do?page=${p}&selectoption=${selectoption}&searchtext=${searchtext}">${p}</a>
+                            </li>
                         </c:if>
                         <c:if test="${p != commonPage.currentPage}">
+                        <li tabindex="0" class="paginate_button" aria-controls="dataTables-example">
                         <a href="moveadminnotice.do?page=${p}&selectoption=${selectoption}&searchtext=${searchtext}">${p}</a>
+                        </li>
                         </c:if>
                                 </c:forEach>
                                 </li>

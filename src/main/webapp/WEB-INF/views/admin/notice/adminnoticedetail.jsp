@@ -69,7 +69,7 @@
                 <table class="table" style="margin:0;">
 			    <tr>
 			        <th scope="row" class="info2">글쓴이</th>
-			        <td>${dto.emp_id}</td>
+			        <td>${dto.emp_name}</td>
 			        <th scope="row" class="info2">등록일</th>
 			        <td><input type="hidden" name="notice_date" value="${dto.notice_date}">${dto.notice_date}</td>
 			    </tr>
