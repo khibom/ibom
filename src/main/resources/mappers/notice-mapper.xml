@@ -10,20 +10,20 @@
       where notice_title like '%'||#{stitle}||'%'
    </if>
    <if test="user_id != null and user_id !=''">
-      where emp_id like '%'||#{user_id}||'%'
+      where emp_name like '%'||#{user_id}||'%'
    </if>
 	</select>
 
 	<select id="selectList" resultType="notice" parameterType="com.kh.ibom.common.CommonPaging">
    
       select *
-      from (select rownum rnum, notice_no, emp_id, notice_title, original_filepath, rename_filepath, notice_date, notice_check, notice_content
+      from (select rownum rnum, notice_no, emp_name, notice_title, original_filepath, rename_filepath, notice_date, notice_check, notice_content
            from (select * from notice
                     <if test="stitle != null and stitle !=''">
                   where notice_title like '%'||#{stitle}||'%'
                   </if>
                   <if test="user_id != null and user_id !=''">
-                  where emp_id like '%'||#{user_id}||'%'
+                  where emp_name like '%'||#{user_id}||'%'
                   </if>
                     order by notice_date desc))
                     <![CDATA[
@@ -42,12 +42,12 @@
 		</update>
 		<!-- 게시글 작성 -->
 		<insert id="insertNotice" parameterType="Notice">
-		insert into notice values (notice_seq.nextval, #{emp_id}, #{notice_title}, #{original_filepath}, #{rename_filepath}, #{notice_date}, 0, #{notice_content})
+		insert into notice values (notice_seq.nextval, #{emp_name}, #{notice_title}, #{original_filepath}, #{rename_filepath}, sysdate, 0, #{notice_content})
 		</insert>
 		<!-- 게시글 수정 -->
 		<update id="updateNotice" parameterType="Notice">
-		update notice set emp_id = #{emp_id}, notice_title = #{notice_title}, original_filepath = #{original_filepath}, rename_filepath = #{rename_filepath},
-		notice_date = #{notice_date}, notice_check = 0, notice_content = #{notice_content} where notice_no = #{notice_no}
+		update notice set emp_name = #{emp_name}, notice_title = #{notice_title}, original_filepath = #{original_filepath}, rename_filepath = #{rename_filepath},
+		notice_date = sysdate, notice_check = 0, notice_content = #{notice_content} where notice_no = #{notice_no}
 		</update>
 		<!-- 게시글 삭제 -->
 		<delete id="deleteNotice">
