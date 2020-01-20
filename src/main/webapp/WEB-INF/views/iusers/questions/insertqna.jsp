@@ -90,6 +90,8 @@ select::-ms-expand {
         }
         return false;
    	 };
+   	 
+   	 
 </script>
 <script src="/ibom/resources/js/vendors/browser_selector.js"></script>
 
@@ -145,14 +147,8 @@ select::-ms-expand {
 			        </c:choose>
 			    </tr>
 			    <tr>
-			        <th scope="row">이용서비스 조회</th>
-			        <td><select name="user_service">
-			        <option selected value="해당사항 없음">--해당사항 없음--</option>
-			        </select>
-			        <input type="button" style="width:90px ;height:44px;margin-left: 20px;" class="jt_search3_button search" value="서비스 조회">
-			        </td>
 			        <th scope="row">민원구분</th>
-			        <td><select name="civil_petition">
+			        <td colspan="4"><select name="civil_petition">
 			        <option value="서비스 신청">서비스 신청</option>
 			        <option value="서비스 변경">서비스 변경</option>
 			        <option value="서비스 취소">서비스 취소</option>
@@ -186,14 +182,48 @@ select::-ms-expand {
     	</div>
     	</div>	<!-- #main_container_inner --> 
 	</main>	<!-- .main_container -->
-
 <!--footer  =================================================== -->
 	<c:import url="../../common/footer.jsp"/> 
            <!--  =================================================================== -->
+
 	
 
 
 
+	<!--  js -->
+
+	<script src="/ibom/resources/js/vendors/jquery/jquery.easing.1.3.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/jquery/jquery.requestAnimationFrame.min.js"></script>
+	<script src="/ibom/resources/js/vendors/greensock/TweenMax.min.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/greensock/ScrollToPlugin.min.js"></script>
+	<script src="/ibom/resources/js/vendors/greensock/findShapeIndex.js"></script>
+	<script src="/ibom/resources/js/vendors/greensock/MorphSVGPlugin.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/fullpage/jquery.fullPage.min.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/popup/jquery.magnific_popup.min.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/scroll/jquery.nicescroll.min.js"></script>
+	<script src="/ibom/resources/js/vendors/icheck/icheck.min.js"></script>
+	<script src="/ibom/resources/js/vendors/select/jquery.selectric.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/file/jquery.customFile_custom_jt.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/slider/cycle2/jquery.cycle2.min.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/slider/cycle2/jquery.cycle2.swipe.min.js"></script>
+	<script src="/ibom/resources/js/vendors/slider/slick/slick.min.js"></script>
+	<script
+		src="/ibom/resources/js/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+	<script src="/ibom/resources/js/vendors/isotope/isotope.pkgd.min.js"></script>
+	<script src="/ibom/resources/js/vendors/clipboard/clipboard.min.js"></script>
+	<script src="/ibom/resources/js/player.js"></script>
+	<script src="/ibom/resources/js/main.js"></script>
+
+	<!-- 추가 -->
+	<script src="/ibom/resources/LIB/js/js.cookie.js"></script>
 
 </body>
 </html>

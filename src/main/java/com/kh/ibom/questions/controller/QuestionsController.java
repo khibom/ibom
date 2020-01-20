@@ -3,6 +3,7 @@ package com.kh.ibom.questions.controller;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -26,6 +27,7 @@ import com.kh.ibom.iusers.model.vo.Iusers;
 import com.kh.ibom.noitce.model.vo.Notice;
 import com.kh.ibom.questions.model.service.QuestionsService;
 import com.kh.ibom.questions.model.vo.Questions;
+import com.kh.ibom.service_apply.model.vo.ServiceApply2;
 
 @Controller
 public class QuestionsController {
@@ -42,14 +44,22 @@ public class QuestionsController {
 		Iusers iuser = (Iusers)session.getAttribute("loginIuser");
 		
 		if(dol == null && iuser != null) {
-			qna.setUser_id(iuser.getUser_id());
+			qna.setUser_name(iuser.getUser_name());
 			qservice.iuserinsertQuestions(qna);
 		} else {
-			qna.setDol_id(dol.getDol_id());
+			qna.setDol_name(dol.getDol_name());
 			qservice.dolinsertQuestions(qna);
 		}
 		
 		ModelAndView mv = new ModelAndView("redirect:/movequestions.do");
+		
+		return mv;
+	}
+	
+	@RequestMapping(value="qnaupdate.do", method=RequestMethod.POST)
+	public ModelAndView QuestionsUpdateMethod(Questions qna) {
+		qservice.updateQuestions(qna);
+		ModelAndView mv = new ModelAndView("redirect:/moveadminquestions.do");
 		
 		return mv;
 	}
@@ -74,13 +84,21 @@ public class QuestionsController {
 	}
 	
 	@RequestMapping("qnadetail.do")
-	public ModelAndView QuestionsAdminDetailMethod(HttpSession session, @RequestParam int anum) {
+	public ModelAndView QuestionsAdminDetailMethod(HttpServletRequest request, HttpSession session, @RequestParam int anum) {
+		HttpSession httpsession = request.getSession(false);
+		
+		Dolbomi dol = (Dolbomi)httpsession.getAttribute("loginDolbomi");
+		Iusers iuser = (Iusers)httpsession.getAttribute("loginIuser");
+		
 		//모델(데이터)+뷰(화면)를 함께 전달하는 객체
 		ModelAndView mav = new ModelAndView();
 		//뷰의 이름
 		mav.setViewName("iusers/questions/qnadetail");
 		//뷰에 전달할 데이터
 		mav.addObject("dto", qservice.questionsDetailView(anum));
+		mav.addObject("dol", dol);
+	    mav.addObject("iuser", iuser);
+		
 		return mav;
 	}
 	

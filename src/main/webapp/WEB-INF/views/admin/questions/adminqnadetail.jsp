@@ -64,8 +64,8 @@
         <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-        <form action="noticeupdate.do" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="notice_no" value="${dto.qna_no}">
+        <form action="qnaupdate.do" method="post">
+        <input type="hidden" name="qna_no" value="${dto.qna_no}"> 
                 <table class="table" style="margin:0;">
 			    <tr>
 			        <th scope="row" class="info2">민원구분</th>
@@ -79,16 +79,16 @@
 			    </tr>
 			    <tr>
 			    <th scope="row" class="info2" style="line-height: 10;">내용</th>
-			    <td colspan="2">${dto.qna_content }</td>
+			    <td colspan="2">${dto.qna_content}</td>
 			    </tr>
 			    <tr>
-			    	<th scope="row" class="info2" style="line-height: 10;">내용</th>
+			    	<th scope="row" class="info2" style="line-height: 10;">답변</th>
 			    	<td colspan="3"><textarea style="width: 100%;" rows="8" id="content" name="qna_answer"></textarea>
 			    	</td>
 			    </tr>
 			</table>
 			<input type="submit" class="btn btn-warning" style="float:right; margin: 5px;" value="수정">
-			<input type="button" class="btn btn-warning" style="float:right; margin: 5px;" onclick="location.href='moveadminnotice.do'" value="목록">
+			<input type="button" class="btn btn-warning" style="float:right; margin: 5px;" onclick="location.href='moveadminquestions.do'" value="목록">
                </form>
                </div>
             </div>

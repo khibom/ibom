@@ -13,12 +13,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>관리자 1:1문의사항</title>
-	
-	<style>
-	.table th{text-align:center;}
-	.table td{text-align:center;}		
-	</style>
+    <title>고객전화 서면민원</title>
+
     <!-- Bootstrap Core CSS -->
     <link href="/ibom/resources/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -42,6 +38,10 @@
     <![endif]-->
 </head>
 <body>
+<style>
+.table th{text-align:center;}
+.table td{text-align:center;}
+</style>
 <div id="wrapper">
 <!-- =================================== -->
 <!--  nav 시작 -->
@@ -53,7 +53,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">1:1문의 관리</h1>
+                <h1 class="page-header">고갠전화 서면민원 관리</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -72,6 +72,7 @@
                            <i class="fa fa-search"></i>
                      </span>
                 </div>
+                <button type="button" class="btn btn-warning" style="float:right;" onclick="location.href='moveinsertnotice.do'">등록</button>
                  </form>
             </div>
     <!--===========================================================================-->
@@ -80,7 +81,7 @@
                     <div class="panel panel-default">
                     
                         <div class="panel-heading">
-                             1:1문의 목록
+                             활동일지 목록
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -89,27 +90,18 @@
                                     <thead>
 	    <tr>
 	        <th style="width:5%">번호</th>
-	        <th style="width:7%">민원구분</th>
-	        <th style="width:40%">제목</th>
-	        <th style="width:7%">답변여부</th>
+	        <th style="width:50%">제목</th>
+	        <th style="width:7%">글쓴이</th>
 	        <th style="width:7%">작성일</th>
 	    </tr>
 	    </thead>
-	    <c:forEach var="row" items="${questionList}">
+	    <c:forEach var="row" items="${complaintList}">
 	    <tbody>
 	    <tr>
-	        <td>${row.qna_no}</td>
-	        <td>${row.civil_petition}</td>
-	        <td><a href="qnaadmindetail.do?anum=${row.qna_no}&page=${commonPage.currentPage}">${row.qna_title}</a></td>
-	        <c:choose>
-	        <c:when test="${row.qna_state == '미처리' }">
-	        <td><button type="button" class="btn btn-warning btn-xs" onclick="location.href='qnaadmindetail.do?anum=${row.qna_no}&page=${commonPage.currentPage}'">답변하기</button></td>
-	        </c:when>
-	        <c:when test="${row.qna_state == '처리완료' }">
-	        <td><p class="fa fa-check"></p></td>
-	        </c:when>
-	        </c:choose>
-	        <td>${row.qna_date}</td>
+	        <td>${row.com_no}</td>
+	        <td><a href="adminnoticedetail.do?anum=${row.com_no}&page=${commonPage.currentPage}">${row.com_title}</a></td>
+	        <td>${row.emp_name}</td>
+	        <td>${row.com_date}</td>
 	    </tr>
 	    </tbody>
 	    </c:forEach>

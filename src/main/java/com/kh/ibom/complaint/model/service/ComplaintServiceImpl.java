@@ -1,10 +1,13 @@
 package com.kh.ibom.complaint.model.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kh.ibom.common.CommonPaging;
 import com.kh.ibom.complaint.model.dao.ComplaintDao;
 import com.kh.ibom.complaint.model.vo.Complaint;
 
@@ -27,16 +30,6 @@ public class ComplaintServiceImpl implements ComplaintService{
 	}
 
 	@Override
-	public ArrayList<Complaint> selectComplaintList() {
-		return comDao.selectComplaintList();
-	}
-
-	@Override
-	public ArrayList<Complaint> selectComplaintSearch(String keyword) {
-		return comDao.selectComplaintSearch(keyword);
-	}
-
-	@Override
 	public int insertComplaint(Complaint com) {
 		return comDao.insertComplaint(com);
 	}
@@ -44,6 +37,16 @@ public class ComplaintServiceImpl implements ComplaintService{
 	@Override
 	public Complaint selectComplaint(Complaint com) {
 		return comDao.selectComplaint(com);
+	}
+
+	@Override
+	public int selectAllListCount(HashMap<String, Object> map) {
+		return comDao.selectAllListCount(map);
+	}
+
+	@Override
+	public List<Complaint> selectList(CommonPaging commonPage) {
+		return comDao.selectList(commonPage);
 	}
 
 

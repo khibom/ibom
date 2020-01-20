@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.kh.ibom.common.CommonPaging;
 import com.kh.ibom.questions.model.vo.Questions;
+import com.kh.ibom.service_apply.model.vo.ServiceApply2;
 
 @Repository("qnaDao")
 public class QuestionsDao {
@@ -40,4 +41,9 @@ public class QuestionsDao {
 	public int dolinsertQuestions(Questions qna) {
 		return session.insert("questionsMapper.iuserinsertQuestions", qna);
 	}
+
+	public int updateQuestions(Questions qna) {
+		return session.update("questionsMapper.updateQuestions", qna);
+	}
+
 }
