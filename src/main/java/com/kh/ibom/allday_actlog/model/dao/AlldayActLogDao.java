@@ -85,6 +85,14 @@ public class AlldayActLogDao {
 		// 반려 종일제 활동일지 수정 등록
 		return session.update("actLogMapper.updateReturnAlldayAct", allLog);
 	}
+
+	public ArrayList<ReturnActVo> selectSearchMyReturnActLog(AlldayActLog acLog) {
+		// 급여반려검색
+		List<ReturnActVo> list = session.selectList("actLogMapper.selectSearchMyReturnActLog", acLog);
+		
+		
+		return (ArrayList<ReturnActVo>)list;
+	}
 	
 	
 	

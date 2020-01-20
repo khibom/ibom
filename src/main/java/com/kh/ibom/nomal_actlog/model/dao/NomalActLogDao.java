@@ -72,6 +72,11 @@ public class NomalActLogDao {
 		// 돌보미 급여반려 제 등록
 		return session.update("actLogMapper.updateReturnNomalAct", noLog);
 	}
+
+	public ArrayList<ReturnActVo> selectSearchMyNomalReturnActLog(AlldayActLog acLog) {
+		List<ReturnActVo> list = session.selectList("actLogMapper.selectSearchMyNomalReturnActLog", acLog);
+		return (ArrayList<ReturnActVo>)list;
+	}
 	
 	
 }

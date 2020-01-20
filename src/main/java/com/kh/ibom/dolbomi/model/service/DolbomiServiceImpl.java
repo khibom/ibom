@@ -90,6 +90,24 @@ public class DolbomiServiceImpl implements DolbomiService{
 		// 돌보미 급여지급후 급여 초기화 작업
 		return dDao.deleteDolSalary();
 	}
+
+	@Override
+	public String selectMaxDolEnroll(String date) {
+		//돌보미 마지막 회원가입자 조회
+		return dDao.selectMaxDolEnroll(date);
+	}
+
+	@Override
+	public int selectDateCount(String rollDate) {
+		// 돌보미 월별 회원가입수 카운트
+		return dDao.selectDateCount(rollDate);
+	}
+
+	@Override
+	public ArrayList<Dolbomi> dolbomiSalarySelectList() {
+		// 돌보미 급여조회
+		return dDao.dolbomiSalarySelectList();
+	}
 	
 	
 

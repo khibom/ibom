@@ -22,8 +22,9 @@ public class ActListView implements Serializable{
 	private String dolbom_place;
 	private String user_address;
 	private String dol_address;
-	private String service1_no;
+	private String service2_no;
 	private String log_category;
+	private String family_code;
 	
 	
 	public ActListView() {}
@@ -31,7 +32,7 @@ public class ActListView implements Serializable{
 
 	public ActListView(String apply_status, String family_name, Date apply_date, String care_day, String start_time,
 			String end_time, String dolbomi_id, int total_pay, String transferor, String dolbom_place,
-			String user_address, String dol_address, String service1_no, String log_category) {
+			String user_address, String dol_address, String service2_no, String log_category, String family_code) {
 		super();
 		this.apply_status = apply_status;
 		this.family_name = family_name;
@@ -45,8 +46,9 @@ public class ActListView implements Serializable{
 		this.dolbom_place = dolbom_place;
 		this.user_address = user_address;
 		this.dol_address = dol_address;
-		this.service1_no = service1_no;
+		this.service2_no = service2_no;
 		this.log_category = log_category;
+		this.family_code = family_code;
 	}
 
 
@@ -170,13 +172,13 @@ public class ActListView implements Serializable{
 	}
 
 
-	public String getService1_no() {
-		return service1_no;
+	public String getService2_no() {
+		return service2_no;
 	}
 
 
-	public void setService1_no(String service1_no) {
-		this.service1_no = service1_no;
+	public void setService2_no(String service2_no) {
+		this.service2_no = service2_no;
 	}
 
 
@@ -190,13 +192,24 @@ public class ActListView implements Serializable{
 	}
 
 
+	public String getFamily_code() {
+		return family_code;
+	}
+
+
+	public void setFamily_code(String family_code) {
+		this.family_code = family_code;
+	}
+
+
 	@Override
 	public String toString() {
 		return "ActListView [apply_status=" + apply_status + ", family_name=" + family_name + ", apply_date="
 				+ apply_date + ", care_day=" + care_day + ", start_time=" + start_time + ", end_time=" + end_time
 				+ ", dolbomi_id=" + dolbomi_id + ", total_pay=" + total_pay + ", transferor=" + transferor
 				+ ", dolbom_place=" + dolbom_place + ", user_address=" + user_address + ", dol_address=" + dol_address
-				+ ", service1_no=" + service1_no + ", log_category=" + log_category + "]";
+				+ ", service2_no=" + service2_no + ", log_category=" + log_category + ", family_code=" + family_code
+				+ "]";
 	}
 
 

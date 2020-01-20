@@ -12,14 +12,14 @@ public class ReturnActVo implements Serializable{
 	private String end_time;
 	private String transferor;
 	private String family_name;
-	private String dolbom_type;
+	private String dolbom;
 	private String log_category;
 	private String process_ctgry;
 	
 	public ReturnActVo () {}
 
 	public ReturnActVo(String service2_no, String family_code, String start_time, String end_time, String transferor,
-			String family_name, String dolbom_type, String log_category, String process_ctgry) {
+			String family_name, String dolbom, String log_category, String process_ctgry) {
 		super();
 		this.service2_no = service2_no;
 		this.family_code = family_code;
@@ -27,7 +27,7 @@ public class ReturnActVo implements Serializable{
 		this.end_time = end_time;
 		this.transferor = transferor;
 		this.family_name = family_name;
-		this.dolbom_type = dolbom_type;
+		this.dolbom = dolbom;
 		this.log_category = log_category;
 		this.process_ctgry = process_ctgry;
 	}
@@ -80,12 +80,12 @@ public class ReturnActVo implements Serializable{
 		this.family_name = family_name;
 	}
 
-	public String getDolbom_type() {
-		return dolbom_type;
+	public String getDolbom() {
+		return dolbom;
 	}
 
-	public void setDolbom_type(String dolbom_type) {
-		this.dolbom_type = dolbom_type;
+	public void setDolbom(String dolbom) {
+		this.dolbom = dolbom;
 	}
 
 	public String getLog_category() {
@@ -107,10 +107,11 @@ public class ReturnActVo implements Serializable{
 	@Override
 	public String toString() {
 		return "ReturnActVo [service2_no=" + service2_no + ", family_code=" + family_code + ", start_time=" + start_time
-				+ ", end_time=" + end_time + ", transferor=" + transferor + ", family_name=" + family_name
-				+ ", dolbom_type=" + dolbom_type + ", log_category=" + log_category + ", process_ctgry=" + process_ctgry
-				+ "]";
+				+ ", end_time=" + end_time + ", transferor=" + transferor + ", family_name=" + family_name + ", dolbom="
+				+ dolbom + ", log_category=" + log_category + ", process_ctgry=" + process_ctgry + "]";
 	}
+
+	
 
 	
 	

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
@@ -48,6 +48,7 @@
 			});
 			if(str != ""){
 			if(confirm("환불요청 건을 승인하시겠습니까?")){
+				alert("승인이 완료 되었습니다.")
 				location.href="${pageContext.request.contextPath}/admin/admitUsepay.do?user_id=" + str;
 				return false;
 			}else{
@@ -154,16 +155,23 @@ function searchDepo(){
                                         </tr>
                                     </thead>
                                     <tbody>
+                                     <c:if test="${not empty depo}">
                                         <c:forEach var="de" items="${depo}" varStatus="status">
                                         <tr>
                                             <td><input type="checkbox" class="chk" value="${ de.user_id}"></td>
                                             <td>${de.user_name}</td>
                                             <td>${de.depo_pay}</td>
                                             <td>${de.use_day }</td>
-                                            <td>${de.refund_account }</td>
+                                            <td><c:out value="${fn:substring(de.refund_account, 0, fn:length(de.refund_account) - 4)}" /> ****</td>
                                             <td>대기</td>
                                         </tr>
                                         </c:forEach>
+                                    </c:if>
+                                        <c:if test="${empty depo}">
+                                        	<tr>
+                                        	<td colspan="6" align="center" style="font-weight:bold;">조회할 예치금이 없습니다</td>
+                                        	</tr>
+                                    	</c:if>
                                     </tbody>
                                 </table>
                                <div class="col-sm-6">
@@ -180,16 +188,18 @@ function searchDepo(){
                                 <a href="${pageContext.request.contextPath }/admin/moveDepolist.do?page=${commonPage.beginPage-commonPage.pageSize}">&lt;</a>
                                 </c:if>
                                 </li>
-                                <li tabindex="0" class="paginate_button active" aria-controls="dataTables-example">
                                 <c:forEach var="p" begin="${commonPage.beginPage }" end="${commonPage.endPage }">
                                 <c:if test="${p == commonPage.currentPage }">
+                                 <li tabindex="0" class="paginate_button active" aria-controls="dataTables-example">
 							 		<a href="${pageContext.request.contextPath }/admin/moveDepolist.do?page=${p}">${p}</a>
+							 		</li>
 								</c:if>
 								<c:if test="${p != commonPage.currentPage}">
+								 <li tabindex="0" class="paginate_button" aria-controls="dataTables-example">
 								<a href="${pageContext.request.contextPath }/admin/moveDepolist.do?page=${p}">${p }</a>
+								</li>
 								</c:if>
                                 </c:forEach>
-                                </li>
                                 <li tabindex="0" class="paginate_button next" id="dataTables-example_next" aria-controls="dataTables-example">
                                  <c:if test="${(commonPage.endPage+commonPage.pageSize) > commonPage.maxPage }">
 									<a href="${pageContext.request.contextPath }/admin/moveDepolist.do?page=${commonPage.maxPage}">&gt;</a>

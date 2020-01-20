@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kh.ibom.allday_actlog.model.vo.AlldayActLog;
 import com.kh.ibom.common.CommonPaging;
 import com.kh.ibom.common.CommonSearchDate;
 import com.kh.ibom.deposit.model.service.DepositService;
@@ -103,10 +104,21 @@ public class DepositController {
 		System.out.println(act.getStDate().toString() + "," + act.getEndDate().toString());
 		ArrayList<Deposit> list = depoService.selectSearchList(act);
 		RefundAccount re = reaccountService.selectOne(act.getIbom_id());
+		String message = "";
 		
 		if(list.size() > 0) {
 			if(re != null) {
-			
+				ArrayList<Deposit> dList = depoService.selectList(act.getIbom_id());
+				if(dList.size() > 0) {
+				for(Deposit de : dList) {
+					if(de.getDepo_category().equals("환불요청")) {
+						message = "Y";
+						break;
+					}
+						
+					}	
+				}
+			mv.addObject("ms", message);
 			mv.setViewName("iusers/deposit/depositPage");
 			mv.addObject("depo", list);
 			mv.addObject("re", re);
@@ -117,6 +129,7 @@ public class DepositController {
 				mv.addObject("depo", list);
 				return mv;
 			}
+			
 		}else {
 		
 		mv.setViewName("iusers/deposit/depositPage");
@@ -203,10 +216,11 @@ public class DepositController {
 			request.setAttribute("depo", dList);
 			request.setAttribute("commonPage", comPage);
 			request.getRequestDispatcher("/WEB-INF/views/admin/deposit/adminDepositPage.jsp").forward(request, response);
-		}
+		}else {
 		
 		request.setAttribute("commonPage", comPage);
 		request.getRequestDispatcher("/WEB-INF/views/admin/deposit/adminDepositPage.jsp").forward(request, response);
+		}
 		
 	}
 	@RequestMapping("admin/moveDepolist.do")

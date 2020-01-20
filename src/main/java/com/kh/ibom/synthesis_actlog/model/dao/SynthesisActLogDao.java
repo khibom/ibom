@@ -71,6 +71,11 @@ public class SynthesisActLogDao {
 		// 돌보미 반려 종합형 활동일지 수정
 		return session.update("actLogMapper.updateReturnSynAct", synLog);
 	}
+
+	public ArrayList<ReturnActVo> selectSearchMySynReturnActLog(AlldayActLog acLog) {
+		// 급여반려 검색
+		return null;
+	}
 	
 	
 	

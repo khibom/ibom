@@ -30,13 +30,101 @@
     <!-- Custom Fonts -->
     <link href="/ibom/resources/admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+<!-- google charts -->
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+var length = 0;
+var total = [];
+var iUser = [];
+var dolbomi = [];
+var month = [];
+$(function(){
+	var date = new Date().getFullYear();
+	$.ajax({
+		url : "${pageContext.request.contextPath}/admin/dolAndUser.do",
+		data : {date : date},
+		type : "get",
+		dataType: "json",
+		success : function(data){
+			
+			var jsonStr = JSON.stringify(data);
+			var json = JSON.parse(jsonStr);
+			length = json.list.length;
+			
+			 for(var i in json.list){
+				 	total.push(json.list[i].total);
+		            iUser.push(json.list[i].user);
+		            dolbomi.push(json.list[i].dolbom);
+		            month.push(json.list[0].month);
+		            
+		          }
+			 
+			 google.charts.load('current', {'packages':['line']});
+			 google.charts.setOnLoadCallback(drawChart);
+	    
+			},
+		error : function(jqXHR, textStatus, errorThrown){
+			console.log("error : "+jqXHR+", "+textStatus+", "+errorThrown);
+			}
+		
+		});
+});
+function drawChart() {
 
+var data = new google.visualization.DataTable();
+data.addColumn('string', '');
+data.addColumn('number', '이용자');
+data.addColumn('number', '돌보미');
+data.addColumn('number', '합계');
+	var tot = 0;
+    var bom = 0;
+    var use = 0;
+	var date = new Date().getFullYear();
+	var b = 1;
+for(var i = 0; i < 12; i++){ //디비에서 조회해온값 담아넣기
+	
+	if(total[i] == "undefined" || total[i] == null || total[i] == ""){
+		tot = 0;
+		bom = 0;
+		use = 0;
+	}else{
+	tot = total[i];
+	bom = dolbomi[i];
+	use = iUser[i];
+	}
+	if(b >= 10){
+	dataRow = ["" + b++ + "월",use ,bom, tot];
+	}else{
+	dataRow = ["0" + b++ + "월",use ,bom, tot];
+	}
+		
+	data.addRow(dataRow);
+
+}
+
+var options = {
+  chart: {
+    title: date + '년 아이돌봄 가입 현황'
+  },
+  height: 300,
+  width: 1200,
+  axes: {
+    x: {
+      0: {side: 'top'}
+    }
+  },
+
+};
+
+var chart = new google.charts.Line(document.getElementById('line_top_x'));
+
+chart.draw(data, google.charts.Line.convertOptions(options));
+
+
+}
+</script>
 </head>
 <body>
 
@@ -52,7 +140,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Dashboard</h1>
+                <h1 class="page-header">이용자 월별 가입현황</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -62,17 +150,19 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
+        
                     <div class="panel-heading">
                         <i class="fa fa-bar-chart-o fa-fw"></i> 이용자 통계
                         
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
-                        <div id="morris-area-chart"></div>
+			 		<div id="line_top_x" ></div>
                     </div>
                     <!-- /.panel-body -->
                 </div>
                 <!-- /.panel -->
+                </div>
                 <!-- =========================================================================================== -->
 
 
@@ -210,7 +300,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Hover Rows
+                          &nbsp;&nbsp;&nbsp;&nbsp;
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -218,7 +308,7 @@
                          <section class="finedust-live">
                             <h3 class="hd-element">실시간 대기환경정보</h3>
                             <div class="finedust-time-wrap">
-                                <div id="air_msrdate" class="finedust-time">${dataTime}(목)</div> <a href="http://cleanair.seoul.go.kr/main.htm" target="_blank" title="새창" class="cleanair">대기환경정보 바로가기</a> </div>
+                                <div id="air_msrdate" class="finedust-time">${dataTime}(${week})</div> <a href="http://cleanair.seoul.go.kr/main.htm" target="_blank" title="새창" class="cleanair">대기환경정보 바로가기</a> </div>
                                 <div class="finedust-cont">
 
                                     <div class="finedust-wrap">
@@ -293,6 +383,7 @@
 
             </div>
             <!-- /.row -->
+       
         </div>
         <!-- /#page-wrapper -->
 <!-- ======================================================================================================= -->

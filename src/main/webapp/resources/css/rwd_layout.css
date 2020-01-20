@@ -61,7 +61,7 @@
     /* LAYOUT */
     .main_container_illust {width: 580px;height: 580px;left: -187px;top: -328px;}
 
-    .article_header {padding-top: 75px;}
+   /*  .article_header {padding-top: 75px;} */
 
     /* HEADER */
     #logo {width: 140px;height: 39px;top: 32px;}
@@ -80,8 +80,8 @@
     .main_container {padding-top: 90px;padding-bottom: 13%;}
     .main_container_illust {width: 520px;height: 520px;left: -168px;top: -292px;}
 
-    .article_header {padding-top: 55px;}
-    .article_title {font-size: 42px;}
+    /* .article_header {padding-top: 55px;} */
+    .article_title {font-size: 32px;}
 
     /* HEADER */
     #header {height: 90px;}

@@ -116,7 +116,7 @@ public class DolSalaryController {
 	@RequestMapping("admin/dolSalin.do")
 	public void insertDolSalary(HttpServletResponse response) throws IOException {
 		logger.info("돌보미 급여지급");
-		ArrayList<Dolbomi> dlist = dService.dolbomiSelectList();
+		ArrayList<Dolbomi> dlist = dService.dolbomiSalarySelectList();
 		DolSalary dSal = null;
 		//매월 소득 건강보험 적용기준
 		int nhis = 278950;
@@ -208,7 +208,37 @@ public class DolSalaryController {
 		
 	}
 	
-	
+	//popup
+	/*@RequestMapping("dolbomi/specificationsPopup.do")
+	public ModelAndView specificationsPopupMethod(String dol_id, String date, ModelAndView mv) throws ParseException{
+		System.out.println("급여상세 인쇄");
+		System.out.println(dol_id + date);
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
+		Date dates = fmt.parse(date);
+		SimpleDateFormat fmt2 = new SimpleDateFormat("yy/MM/dd");
+		
+		CommonSearchDate dSal = new CommonSearchDate();
+		dSal.setIbom_id(dol_id);
+		dSal.setDate(fmt2.format(dates));
+		System.out.println("값 찍어봄=" + dSal);
+		DolSalary ds = dolsalServie.selectDateDolSal(dSal);
+		Dolbomi dol = dService.selectLoginOne(dol_id);
+		System.out.println("돌보미정보까지 가져옴======" + dol);
+		if(ds != null) {
+			mv.addObject("ds", ds);
+		}
+		if(dol == null) {
+			mv.addObject("dol", dol);
+			
+		}
+		Office of = offService.selectOne(dol.getOffice_code());
+		if(of == null) {
+			mv.addObject("of", of);
+		}
+		mv.setViewName("dolbomi/dolsalary/specification");
+		
+		return mv;
+	}*/
 	
 	
 

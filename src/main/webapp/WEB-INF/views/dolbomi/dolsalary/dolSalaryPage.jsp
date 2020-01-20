@@ -181,7 +181,7 @@ function chageLangSelect(){
             <div class="article_body">
             
                 <div class="wrap_narrow" id="result_wrap">
-                <h3 style=" color:rgb(243, 114, 51); float:left; width:49%; margin-left:5px; margin-top:5px;">급여조회</h3>
+                <h5 style=" color:rgb(243, 114, 51); float:left; width:49%; margin-left:5px; margin-top:5px;">급여조회</h5>
                    <table class="jt_board_list">
 					<thead>
 					<tr>
@@ -209,12 +209,11 @@ function chageLangSelect(){
 			</thead>
           </table>
           
-           <p style=" color:rgb(243, 114, 51);  float:left; width:49%; margin-left:5px;">※조회할 년도를 선택해 주세요.</p>
+           <p style=" color:rgb(243, 114, 51);  float:left; width:49%; margin-left:5px; margin-top:5px;">※조회할 년도를 선택해 주세요.</p>
            
           <div style="width:100%; height:150px; position:relative;"></div>
          <div class="jt_board_list_wrap">
           <p style=" color:rgb(243, 114, 51); float:left; width:49%; margin-left:5px; margin-top:5px;"> ＊ 정산월을 클릭하면 급여 상세내역을 볼 수 있습니다.</p>
-          <form action="${pageContext.request.contextPath}/iusers/searchdepo.do">
           <input type="hidden" name="ibom_id"value="${ loginIuser.user_id}">
           	<table class="jt_board_list">
 					 <thead>
@@ -244,7 +243,6 @@ function chageLangSelect(){
             </c:forEach>
             </tbody>
           </table>
-          </form>
           </div>
           <div style="width:100%; height:100px; position:relative;"></div>
          

@@ -62,7 +62,7 @@ private Logger logger = LoggerFactory.getLogger(this.getClass());
 		int salDay = Integer.parseInt(sal.getSalary_day());
 		System.out.println("오늘 날짜 값 =" + today + "디비에서 조회해온 급여일=" + salDay);
 		ArrayList<Dolbomi> dol = dService.selectDolSalList();
-		if(dol != null) {
+		if(dol != null && dol.size() > 0) {
 			System.out.println("del 급여정보 =" + dol);
 		if(today == salDay) {
 			

@@ -10,7 +10,8 @@
 	content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 
 <meta name="format-detection" content="telephone=no" />
-
+<!--Import Google Icon Font-->
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="icon" href="/ibom/resources/images/favicon_83.png"
 	sizes="32x32" />
 <link rel="icon" href="/ibom/resources/images/favicon_300.png"
@@ -24,7 +25,7 @@
 
 <!-- CSS -->
 <link rel="stylesheet" href="/ibom/resources/css/styles.css" />
-
+<link rel="stylesheet" href="/ibom/resources/materialize/css/materialize2.css" />
 <!--  js -->
 <script src="/ibom/resources/js/jquery-3.4.1.min.js"></script>
 
@@ -74,21 +75,58 @@ function moveDetailReturnAct(value){
 
             <div class="article_body">
                 <div class="wrap_narrow" id="result_wrap">
-                    <div class="jt_search preserve">
-                        <div class="jt_search_category jt_selectric_wrap" >
-                            <select name="search_type" class="jt_selectric search_data" style="height:49px;margin:0 49px 0 18px; line-height:49px;">
-                                <option value="all">전체</option>
-                                <option value="bo_title">제목</option>
-                                <option value="bo_content">내용</option>
-                            </select>
-                        </div><!-- .jt_search_category -->
-                        <div class="jt_search_field">
-                            <label class="jt_search_label"><input type="text" name="search_str" value="" class="jt_search_input jt_form_field search_data jq_keydown enter-search" placeholder="검색어를 입력하세요"/></label>
-                            <button class="jt_search_button jq_click search">검색하기</button>
-                        </div><!-- .jt_search_field -->
-                    </div><!-- .jt_search -->
-					
-					
+                    <h5 style=" color:rgb(243, 114, 51); float:left; width:49%; margin-left:5px; margin-top:5px;">급여조회</h5>
+                    <form action="${pageContext.request.contextPath}/dolbomi/searchReturnAct.do" method="post">
+                    <input type="hidden" value="${loginDolbomi.dol_id}" name="dol_id">
+                   <table class="jt_board_list">	
+					<thead>
+					<tr>
+                    <th scope="col" class="title" style="width:3%;">조회년월</th>
+                    <td scope="col" class="type" style="">
+                    <select name="shYear" class="jt_selectric search_data"style="width:80px;height:49px; line-height:49px;">
+                    			<option selected disabled>--년도선택--</option>
+                    			<option value="20">2020년</option>
+                                <option value="19">2019년</option>
+                                <option value="18">2018년</option>
+                                <option value="17">2017년</option>
+                                <option value="16">2016년</option>
+                                <option value="15">2015년</option>
+                                <option value="14">2014년</option>
+                                <option value="13">2013년</option>
+                                <option value="12">2012년</option>
+                                <option value="11">2011년</option>
+                                <option value="10">2010년</option>
+                                <option value="09">2009년</option>
+                                <option value="08">2008년</option>
+                                <option value="07">2007년</option>
+                     </select>
+                    </td>
+                    <td scope="col" class="type">
+                    	<select name="shMonth" class="jt_selectric search_data"style="width:80px;height:49px; line-height:49px;">
+                     			<option selected disabled>--월선택--</option>
+                    			<option value="01">01월</option>
+                                <option value="02">02월</option>
+                                <option value="03">03월</option>
+                                <option value="04">04월</option>
+                                <option value="05">05월</option>
+                                <option value="06">06월</option>
+                                <option value="07">07월</option>
+                                <option value="08">08월</option>
+                                <option value="09">09월</option>
+                                <option value="10">10월</option>
+                                <option value="11">11월</option>
+                                <option value="12">12월</option>
+                     </select>
+                    </td>
+                    
+                	</tr>
+                
+			</thead>
+          </table>
+          <input type="submit"value="검색"style="float:right; margin-top:10px;" class="btn waves-effect orange darken-3" >
+          </form>
+          <p style=" color:rgb(243, 114, 51);  float:left; width:49%; margin-left:5px;margin-top:5px;">※조회할 년월을 선택해 주세요.</p>
+          <div style="width:100%; height:150px; position:relative;"></div>
 					<div class="jt_board_list_wrap">
         <table class="jt_board_list">
             <caption>게시판 목록</caption>
@@ -105,20 +143,15 @@ function moveDetailReturnAct(value){
             </thead>
             <tbody>
             <c:forEach var="i" items="${list}">
-                <tr  id="${i.service2_no},${i.family_code},${i.dolbom_type}" onclick="moveDetailReturnAct(this.id);">
+                <tr  id="${i.service2_no},${i.family_code},${i.dolbom}" onclick="moveDetailReturnAct(this.id);">
                     <td scope="col" class="type">${i.service2_no}</td>
                     <td scope="col" class="type">${i.start_time} ~ ${i.end_time}</td>
                     <td scope="col" class="type">${i.transferor }</td>
                     <td scope="col" class="type">${i.family_name }</td>
-                    <td scope="col" class="type">${i.dolbom_type }</td>
-                    <c:if test="${i.log_category eq 'Y'}">
+                    <td scope="col" class="type">${i.dolbom }</td>
                     <td scope="col" class="type">제출</td>
-                    </c:if>
-                    <c:if test="${i.log_category eq 'N'}">
-                    <td scope="col" class="type">미제출</td>
-                    </c:if>
                     <td scope="col" class="type">${i.process_ctgry }</td>
-                   
+   
                 </tr>
                 </c:forEach>                            
             </tbody>

@@ -90,6 +90,14 @@ public class IusersDao {
 	public int updateDepoPay(String user_id) {
 		return session.delete("iusersMapper.updateDepoPay", user_id);
 	}
-	
+	public String selectMaxDolEnroll(String date) {
+		// 유저 마지막 회원가입자 조회
+		return session.selectOne("iusersMapper.selectMaxDolEnroll", date);
+	}
+
+	public int selectDateCount(String rollDate) {
+		// 이용자 회원가입수 카운트
+		return session.selectOne("iusersMapper.selectDateCount", rollDate);
+	}
 	
 } // end class
