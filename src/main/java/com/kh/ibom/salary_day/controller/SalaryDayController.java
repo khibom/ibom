@@ -37,7 +37,7 @@ private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@RequestMapping("admin/checkSalaryDay.do")
 	public void checkSalaryDay(String day, HttpServletResponse response) throws IOException {
-		System.out.println("오늘날짜 날아온값 =" + day);
+		
 		SalaryDay sal = saldayService.selectOne();
 		int today = Integer.parseInt(day);
 		int salDay = Integer.parseInt(sal.getSalary_day());
@@ -56,11 +56,11 @@ private Logger logger = LoggerFactory.getLogger(this.getClass());
 		
 		SalaryDay sal = saldayService.selectOne();
 		SimpleDateFormat fmt = new SimpleDateFormat("d");
-		System.out.println("급여페이지로 이동 실행됨" + sal);
+		
 		String day = fmt.format(new Date(System.currentTimeMillis()));
 		int today = Integer.parseInt(day);
 		int salDay = Integer.parseInt(sal.getSalary_day());
-		System.out.println("오늘 날짜 값 =" + today + "디비에서 조회해온 급여일=" + salDay);
+		
 		ArrayList<Dolbomi> dol = dService.selectDolSalList();
 		if(dol != null && dol.size() > 0) {
 			System.out.println("del 급여정보 =" + dol);
@@ -94,9 +94,9 @@ private Logger logger = LoggerFactory.getLogger(this.getClass());
 	@RequestMapping(value="admin/salDayup.do", method=RequestMethod.POST)
 	public void updateSalaryDay(String salary_day, HttpServletResponse response) throws IOException {
 		logger.info("돌보미 급여일 변경");
-		System.out.println("급여일변경 실행됨 =" + salary_day);
+		
 		int result = saldayService.updateSalaryDay(salary_day);
-		System.out.println(result);
+	
 		if(result > 0) {
 			response.sendRedirect("/ibom/admin/moveSalary.do");
 		}else{

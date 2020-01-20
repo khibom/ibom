@@ -45,8 +45,11 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler{
         if(savedRequest!= null) {
         	
             String targetUrl = savedRequest.getRedirectUrl();
-            redirectStratgy.sendRedirect(request, response, targetUrl);
+            
+            redirectStratgy.sendRedirect(request, response, defaultUrl);
+            
         } else {
+        	
             redirectStratgy.sendRedirect(request, response, defaultUrl);
         }
 

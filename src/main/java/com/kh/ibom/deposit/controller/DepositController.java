@@ -47,7 +47,6 @@ public class DepositController {
 			
 		Iusers user = (Iusers)session.getAttribute("loginIuser");
 		
-		System.out.println(user);
 		ArrayList<Deposit> dList = depoService.selectList(user.getUser_id());
 		RefundAccount re = reaccountService.selectOne(user.getUser_id());
 		if(dList.size() == 0 && re == null) {
@@ -101,7 +100,7 @@ public class DepositController {
 	@RequestMapping("iusers/searchdepo.do")
 	public ModelAndView searchDeposit(CommonSearchDate act, ModelAndView mv) {
 		logger.info("예치금 사용내역 조회");
-		System.out.println(act.getStDate().toString() + "," + act.getEndDate().toString());
+	
 		ArrayList<Deposit> list = depoService.selectSearchList(act);
 		RefundAccount re = reaccountService.selectOne(act.getIbom_id());
 		String message = "";
@@ -148,7 +147,7 @@ public class DepositController {
 		depo.setDepo_etc("환불요청");
 		depo.setDepo_category("환불요청");
 		int result = depoService.insertDeposit(depo);
-		System.out.println(result);
+		
 		if(result >0) {
 			response.sendRedirect("/ibom/iusers/moveDeposit.do");
 		}else {
@@ -198,7 +197,7 @@ public class DepositController {
 	@RequestMapping("admin/searchdepo.do")
 	public void searchAdminDepoMethod(String user_name, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		logger.info("관리자 환불 목록 이름으로 조회");
-		System.out.println("관리자환불목록");
+		
 		ArrayList<DepositAdmin> dList = depoService.searchAdminDepoName(user_name);
 		int currentPage = 1;
 		if(request.getParameter("page") != null){

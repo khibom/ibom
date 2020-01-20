@@ -87,10 +87,10 @@ public class HomeController {
 		
 		Authority au = (Authority)SecurityContextHolder.getContext().getAuthentication().getDetails();
 		HttpSession session = request.getSession(false);
-		if(au == null) {
+		if(au != null) {
 			
-			response.sendRedirect("/ibom/views/common/error.jsp");
-		}
+			
+		
 		if(au.getAuthority().trim().equals("ROLE_ADMIN")) {
 				Emp emp = empService.selectOne(au.getIbom_id());
 				if(emp == null) {
@@ -100,6 +100,7 @@ public class HomeController {
 				if(session.getAttribute("loginAdmin") == null) {
 				session.setAttribute("loginAdmin", emp);
 				}
+				
 				mv.setViewName("admin/adminMain");
 				
 				//미세먼지정보 가져오기
@@ -227,7 +228,12 @@ public class HomeController {
 			if(session.getAttribute("loginIuser") == null) {
 			session.setAttribute("loginIuser", iuser);
 			}
+			
 			mv.setViewName("iusers/iusersMain");
+			return mv;
+			}
+		}else {
+			mv.setViewName("common/error.jsp");
 			return mv;
 		}
 		
