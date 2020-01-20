@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.kh.ibom.common.CommonPaging;
 import com.kh.ibom.questions.model.dao.QuestionsDao;
 import com.kh.ibom.questions.model.vo.Questions;
+import com.kh.ibom.service_apply.model.vo.ServiceApply2;
 
 @Service("qservice")
 public class QuestionsServiceImpl implements QuestionsService{
@@ -49,5 +50,9 @@ public class QuestionsServiceImpl implements QuestionsService{
 		return qnaDao.deleteQuestions(anum);
 	}
 
+	@Override
+	public int updateQuestions(Questions qna) {
+		return qnaDao.updateQuestions(qna);
+	}
 
 }

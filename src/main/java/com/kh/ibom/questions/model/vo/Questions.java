@@ -19,16 +19,15 @@ public class Questions implements Serializable{
 	private String qna_state;
 	private String qna_content;
 	private String qna_answer;
-	private String user_id;
-	private String dol_id;
-	private String emp_id;
+	private String user_name;
+	private String dol_name;
 	private String term_code;
 	
 	public Questions() {}
 
 	public Questions(String qna_no, String personal_info, String user_service, String civil_petition, String qna_title,
-			Date qna_date, String qna_state, String qna_content, String qna_answer, String user_id, String dol_id,
-			String emp_id, String term_code) {
+			Date qna_date, String qna_state, String qna_content, String qna_answer, String user_name, String dol_name,
+			String term_code) {
 		super();
 		this.qna_no = qna_no;
 		this.personal_info = personal_info;
@@ -39,9 +38,8 @@ public class Questions implements Serializable{
 		this.qna_state = qna_state;
 		this.qna_content = qna_content;
 		this.qna_answer = qna_answer;
-		this.user_id = user_id;
-		this.dol_id = dol_id;
-		this.emp_id = emp_id;
+		this.user_name = user_name;
+		this.dol_name = dol_name;
 		this.term_code = term_code;
 	}
 
@@ -117,28 +115,20 @@ public class Questions implements Serializable{
 		this.qna_answer = qna_answer;
 	}
 
-	public String getUser_id() {
-		return user_id;
+	public String getUser_name() {
+		return user_name;
 	}
 
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
-	public String getDol_id() {
-		return dol_id;
+	public String getDol_name() {
+		return dol_name;
 	}
 
-	public void setDol_id(String dol_id) {
-		this.dol_id = dol_id;
-	}
-
-	public String getEmp_id() {
-		return emp_id;
-	}
-
-	public void setEmp_id(String emp_id) {
-		this.emp_id = emp_id;
+	public void setDol_name(String dol_name) {
+		this.dol_name = dol_name;
 	}
 
 	public String getTerm_code() {
@@ -154,7 +144,7 @@ public class Questions implements Serializable{
 		return "Questions [qna_no=" + qna_no + ", personal_info=" + personal_info + ", user_service=" + user_service
 				+ ", civil_petition=" + civil_petition + ", qna_title=" + qna_title + ", qna_date=" + qna_date
 				+ ", qna_state=" + qna_state + ", qna_content=" + qna_content + ", qna_answer=" + qna_answer
-				+ ", user_id=" + user_id + ", dol_id=" + dol_id + ", emp_id=" + emp_id + ", term_code=" + term_code
+				+ ", user_id=" + user_name + ", dol_id=" + dol_name + ", term_code=" + term_code
 				+ "]";
 	}
 	

@@ -11,17 +11,17 @@ public class Complaint implements Serializable{
 	private static final long serialVersionUID = 6001L;
 	
 	private String com_no;
-	private String emp_id;
+	private String emp_name;
 	private String com_title;
 	private java.sql.Date com_date;
 	private String com_content;
 
 	public Complaint() {}
 
-	public Complaint(String com_no, String emp_id, String com_title, Date com_date, String com_content) {
+	public Complaint(String com_no, String emp_name, String com_title, Date com_date, String com_content) {
 		super();
 		this.com_no = com_no;
-		this.emp_id = emp_id;
+		this.emp_name = emp_name;
 		this.com_title = com_title;
 		this.com_date = com_date;
 		this.com_content = com_content;
@@ -35,12 +35,12 @@ public class Complaint implements Serializable{
 		this.com_no = com_no;
 	}
 
-	public String getEmp_id() {
-		return emp_id;
+	public String getemp_name() {
+		return emp_name;
 	}
 
-	public void setEmp_id(String emp_id) {
-		this.emp_id = emp_id;
+	public void setemp_name(String emp_name) {
+		this.emp_name = emp_name;
 	}
 
 	public String getCom_title() {
@@ -69,7 +69,7 @@ public class Complaint implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Complaint [com_no=" + com_no + ", emp_id=" + emp_id + ", com_title=" + com_title + ", com_date="
+		return "Complaint [com_no=" + com_no + ", emp_name=" + emp_name + ", com_title=" + com_title + ", com_date="
 				+ com_date + ", com_content=" + com_content + "]";
 	}
 	

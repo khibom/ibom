@@ -55,8 +55,7 @@
 		<a href="#main">메인 콘텐츠 바로가기</a>
 	</div>
 	<!--  header 시작 ============================================= -->
-	    <c:import url="../mainHeader.jsp"/>
-	
+	  <c:import url="../mainHeader.jsp"></c:import>
 	<!--  header 끝 ============================================= -->
 
 <!--  메인 ================================================================== -->
@@ -108,7 +107,7 @@
                                                         <a href="noticedetail.do?anum=${row.notice_no}&page=${commonPage.currentPage}">${row.notice_title}</a>
                         </div><!-- .jt_board_title_wrap -->
                     </td>
-                    <td class="hit">${row.emp_id}</td>
+                    <td class="hit">${row.emp_name}</td>
                    	<c:choose>
 			        <c:when test="${!empty row.original_filepath}">
 			        <td><i class="fa fa-folder-o fa-fw"></i></td>

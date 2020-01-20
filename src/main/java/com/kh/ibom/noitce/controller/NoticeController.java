@@ -110,7 +110,7 @@ public class NoticeController {
 	public String moveNoitceInsertMethod(HttpServletRequest request, Model model) {
 		HttpSession session = request.getSession(false);
 		
-		Emp emp = (Emp)session.getAttribute("loginEmp");
+		Emp emp = (Emp)session.getAttribute("loginAdmin");
 		
 		model.addAttribute("emp", emp);
 		return "admin/notice/admininsertnotice";

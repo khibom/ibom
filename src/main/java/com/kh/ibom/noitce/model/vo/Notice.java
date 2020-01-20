@@ -11,7 +11,7 @@ public class Notice implements Serializable{
 	private static final long serialVersionUID = 6002L;
 	
 	private String notice_no;
-	private String emp_id;
+	private String emp_name;
 	private String notice_title;
 	private String original_filepath;
 	private String rename_filepath;
@@ -21,11 +21,11 @@ public class Notice implements Serializable{
 	
 	public Notice() {}
 
-	public Notice(String notice_no, String emp_id, String notice_title, String original_filepath,
+	public Notice(String notice_no, String emp_name, String notice_title, String original_filepath,
 			String rename_filepath, Date notice_date, int notice_check, String notice_content) {
 		super();
 		this.notice_no = notice_no;
-		this.emp_id = emp_id;
+		this.emp_name = emp_name;
 		this.notice_title = notice_title;
 		this.original_filepath = original_filepath;
 		this.rename_filepath = rename_filepath;
@@ -42,12 +42,12 @@ public class Notice implements Serializable{
 		this.notice_no = notice_no;
 	}
 
-	public String getEmp_id() {
-		return emp_id;
+	public String getEmp_name() {
+		return emp_name;
 	}
 
-	public void setEmp_id(String emp_id) {
-		this.emp_id = emp_id;
+	public void setEmp_name(String emp_name) {
+		this.emp_name = emp_name;
 	}
 
 	public String getNotice_title() {
@@ -100,7 +100,7 @@ public class Notice implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Notice [notice_no=" + notice_no + ", emp_id=" + emp_id + ", notice_title=" + notice_title
+		return "Notice [notice_no=" + notice_no + ", emp_name=" + emp_name + ", notice_title=" + notice_title
 				+ ", original_filepath=" + original_filepath + ", rename_filepath=" + rename_filepath + ", notice_date="
 				+ notice_date + ", notice_check=" + notice_check + ", notice_content=" + notice_content + "]";
 	}
