@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +14,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.kh.ibom.common.CommonPaging;
 import com.kh.ibom.complaint.model.service.ComplaintService;
@@ -47,16 +50,16 @@ public class ComplaintController {
 		return result;
 	}
 	
-	public ArrayList<Questions>ComplaintListMethod() {
-		return null;
-	}
-	
-	public ArrayList<Questions>ComplaintSearchMethod() {
-		return null;
-	}
-	
-	public String ComplaintDetailMethod(HttpServletRequest request, Model model) {
-		return null;
+	@RequestMapping("admincomplaintdetail.do")
+	public ModelAndView ComplaintDetailMethod(@RequestParam int anum, HttpSession session) {
+		//모델(데이터)+뷰(화면)를 함께 전달하는 객체
+		ModelAndView mav = new ModelAndView();
+		//뷰의 이름
+		mav.setViewName("admin/complaint/admindetailcomplaint");
+		//뷰에 전달할 데이터
+		mav.addObject("dto", cservice.complaintdetailview(anum));
+		
+		return mav;
 	}
 	
 	public String MoveComplaintInsertMethod() {

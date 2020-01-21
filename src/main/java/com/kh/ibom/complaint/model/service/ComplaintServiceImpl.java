@@ -35,11 +35,6 @@ public class ComplaintServiceImpl implements ComplaintService{
 	}
 
 	@Override
-	public Complaint selectComplaint(Complaint com) {
-		return comDao.selectComplaint(com);
-	}
-
-	@Override
 	public int selectAllListCount(HashMap<String, Object> map) {
 		return comDao.selectAllListCount(map);
 	}
@@ -47,6 +42,11 @@ public class ComplaintServiceImpl implements ComplaintService{
 	@Override
 	public List<Complaint> selectList(CommonPaging commonPage) {
 		return comDao.selectList(commonPage);
+	}
+
+	@Override
+	public Complaint complaintdetailview(int num) {
+		return comDao.complaintdetailview(num);
 	}
 
 

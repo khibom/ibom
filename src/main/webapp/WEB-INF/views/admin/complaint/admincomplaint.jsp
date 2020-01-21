@@ -99,7 +99,7 @@
 	    <tbody>
 	    <tr>
 	        <td>${row.com_no}</td>
-	        <td><a href="adminnoticedetail.do?anum=${row.com_no}&page=${commonPage.currentPage}">${row.com_title}</a></td>
+	        <td><a href="admincomplaintdetail.do?anum=${row.com_no}&page=${commonPage.currentPage}">${row.com_title}</a></td>
 	        <td>${row.emp_name}</td>
 	        <td>${row.com_date}</td>
 	    </tr>

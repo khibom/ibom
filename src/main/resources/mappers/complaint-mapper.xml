@@ -30,7 +30,11 @@
         where rnum >= #{startList} and rnum <= #{endList}
                ]]>
 		</select>
-	
+	<!-- complaint 상세보기 조회 -->
+	<select id="complaintdetailview" resultType="complaint">
+		select * from written_complaint
+		where com_no = #{com_no}
+	</select>
 
 	
 
