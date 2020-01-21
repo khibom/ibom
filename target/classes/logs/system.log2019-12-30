@@ -1,4 +1,0 @@
-[19:57:17][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
-[19:57:25][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 7651 ms
-[19:57:25][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
-[19:57:28][INFO ][FrameworkServlet.java:546]- Completed initialization in 3134 ms
