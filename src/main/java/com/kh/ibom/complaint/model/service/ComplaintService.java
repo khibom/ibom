@@ -12,7 +12,7 @@ public interface ComplaintService {
 	int updateComplaint(Complaint com);
 	int deleteComplaint(Complaint com);
 	int insertComplaint(Complaint com);
-	Complaint selectComplaint(Complaint com);
+	Complaint complaintdetailview(int num);
 	int selectAllListCount(HashMap<String, Object> map);
 	List<Complaint> selectList(CommonPaging commonPage);
 }

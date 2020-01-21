@@ -42,16 +42,15 @@ public class ComplaintDao {
 		return 0;
 	}
 
-	public Complaint selectComplaint(Complaint com) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public int selectAllListCount(HashMap<String, Object> map) {
 		return session.selectOne("complaintMapper.selectAllListCount", map);
 	}
 
 	public List<Complaint> selectList(CommonPaging commonPage) {
 		return session.selectList("complaintMapper.selectList", commonPage);
+	}
+
+	public Complaint complaintdetailview(int num) {
+		return session.selectOne("complaintMapper.complaintdetailview", num);
 	}
 }

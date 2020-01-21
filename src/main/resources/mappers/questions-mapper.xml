@@ -37,10 +37,10 @@
 	</select>
 	<!-- qna 작성 -->
 	<insert id="iuserinsertQuestions" parameterType="com.kh.ibom.questions.model.vo.Questions">
-	insert into questions values (questions_seq.nextval, 'Y', #{user_service}, #{civil_petition}, #{qna_title}, sysdate, '미처리', #{qna_content}, null, #{user_name}, null, #{term_code})
+	insert into questions values (questions_seq.nextval, 'Y', #{user_service, jdbcType=VARCHAR}, #{civil_petition}, #{qna_title}, sysdate, '미처리', #{qna_content}, null, #{user_name}, null, #{term_code})
 	</insert>
 	<insert id="dolinsertQuestions" parameterType="com.kh.ibom.questions.model.vo.Questions">
-	insert into questions values (questions_seq.nextval, 'Y', #{user_service}, #{civil_petition}, #{qna_title}, sysdate, '미처리', #{qna_content}, null, null, #{dol_name}, #{term_code})
+	insert into questions values (questions_seq.nextval, 'Y', #{user_service, jdbcType=VARCHAR}, #{civil_petition}, #{qna_title}, sysdate, '미처리', #{qna_content}, null, null, #{dol_name}, #{term_code})
 	</insert>
 	<!-- qna 삭제 -->
 	<delete id="deleteQuestions">
