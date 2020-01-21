@@ -199,10 +199,10 @@ $(function(){
                         <a href="#"><i class="fa fa-exclamation-circle fa-fw"></i> 헬프데스크<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="flot.html"><i class="fa  fa-pencil fa-fw"></i>&nbsp;고객전화서면민원</a>
+                                <a href="${pageContext.request.contextPath}/moveadmincomplaint.do"><i class="fa  fa-pencil fa-fw"></i>&nbsp;고객전화서면민원</a>
                             </li>
                             <li>
-                                <a href="moveadminquestions.do"><i class="fa fa-question-circle fa-fw"></i>&nbsp;1:1문의관리</a>
+                                <a href="${pageContext.request.contextPath}/moveadminquestions.do"><i class="fa fa-question-circle fa-fw"></i>&nbsp;1:1문의관리</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
@@ -210,7 +210,7 @@ $(function(){
                     <!-- =================================================================================-->
                     <!-- 4.공지사항 관리-->
                     <li class="a-gray">
-                        <a href="moveadminnotice.do"><i class="fa fa-bullhorn fa-fw"></i> 공지사항관리</a>
+                        <a href="${pageContext.request.contextPath}/moveadminnotice.do"><i class="fa fa-bullhorn fa-fw"></i> 공지사항관리</a>
                     </li>
                     <!-- =================================================================================-->
                     <!--5. 통계 -->
