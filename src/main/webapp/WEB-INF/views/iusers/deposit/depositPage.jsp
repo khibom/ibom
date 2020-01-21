@@ -197,7 +197,7 @@ function searchDepo(){
             <div class="article_body">
             
                 <div class="wrap_narrow" id="result_wrap">
-                <h3 style=" color:rgb(243, 114, 51); float:left; width:49%; margin-left:5px; margin-top:5px;">예치금관리</h3>
+                <h5 style=" color:rgb(243, 114, 51); float:left; width:49%; margin-left:5px; margin-top:5px;">예치금관리</h5>
                    <table class="jt_board_list">
 					<thead>
 					<tr>
@@ -281,10 +281,10 @@ function searchDepo(){
         <br><br><br>
       </div>
  	</div>
-           <p style=" color:rgb(243, 114, 51); font-size:9pt; float:left; width:49%; margin-left:5px;">※'환불요청'한 예치금은 서비스제공기관에서 확인 후 이체시 등록된 계좌로 환불됩니다.</p>
+           <p style=" color:rgb(243, 114, 51); font-size:10pt; float:left; width:52%; margin-left:5px;">※'환불요청'한 예치금은 서비스제공기관에서 확인 후 이체시 등록된 계좌로 환불됩니다.</p>
           <div style="width:100%; height:150px; position:relative;"></div>
          <div class="jt_board_list_wrap">
-          <h3 style=" color:rgb(243, 114, 51); float:left; width:49%; margin-left:5px; margin-top:5px;">예치금 내역</h3>
+          <h5 style=" color:rgb(243, 114, 51); float:left; width:49%; margin-left:5px; margin-top:5px;">예치금 내역</h5>
           <form action="${pageContext.request.contextPath}/iusers/searchdepo.do" id="searchDepo">
           <input type="hidden" name="ibom_id"value="${ loginIuser.user_id}">
           	<table class="jt_board_list">

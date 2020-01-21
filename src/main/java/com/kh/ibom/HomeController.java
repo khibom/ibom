@@ -87,9 +87,7 @@ public class HomeController {
 		
 		Authority au = (Authority)SecurityContextHolder.getContext().getAuthentication().getDetails();
 		HttpSession session = request.getSession(false);
-		if(au != null) {
-			
-			
+	
 		
 		if(au.getAuthority().trim().equals("ROLE_ADMIN")) {
 				Emp emp = empService.selectOne(au.getIbom_id());
@@ -232,10 +230,7 @@ public class HomeController {
 			mv.setViewName("iusers/iusersMain");
 			return mv;
 			}
-		}else {
-			mv.setViewName("common/error.jsp");
-			return mv;
-		}
+		
 		
 	}
 	
