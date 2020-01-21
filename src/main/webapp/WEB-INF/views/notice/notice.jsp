@@ -55,7 +55,7 @@
 		<a href="#main">메인 콘텐츠 바로가기</a>
 	</div>
 	<!--  header 시작 ============================================= -->
-	  <c:import url="../mainHeader.jsp"></c:import>
+	  <c:import url="../mainHeader.jsp"/>
 	<!--  header 끝 ============================================= -->
 
 <!--  메인 ================================================================== -->
@@ -65,7 +65,7 @@
             <div class="article_header">
                 <div class="wrap_narrow">
                     <h1 data-font="secondary" class="article_title">공지사항</h1>
-                    <p class="article_desc">단꿈아이에서 전해드리는 중요한 소식들이 올라옵니다.</p>
+                    <p class="article_desc">우리 i 봄에서 전해드리는 중요한 소식들이 올라옵니다.</p>
                 </div><!-- .wrap_narrow -->
             </div><!-- .article_header -->
 
