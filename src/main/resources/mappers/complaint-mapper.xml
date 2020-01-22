@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="complaintMapper">
+
+<select id ="selectAllListCount" parameterType="hashmap" resultType="int">
+   select count(*) from written_complaint
+   <if test="stitle != null and stitle !=''">
+      where com_title like '%'||#{stitle}||'%'
+   </if>
+   <if test="user_id != null and user_id !=''">
+      where emp_name like '%'||#{user_id}||'%'
+   </if>
+	</select>
+
+	<select id="selectList" resultType="complaint" parameterType="com.kh.ibom.common.CommonPaging">
+   
+      select *
+      from (select rownum rnum, com_no, emp_name, com_title, com_date, com_content
+           from (select * from written_complaint
+                    <if test="stitle != null and stitle !=''">
+                  where com_title like '%'||#{stitle}||'%'
+                  </if>
+                  <if test="user_id != null and user_id !=''">
+                  where emp_name like '%'||#{user_id}||'%'
+                  </if>
+                    order by com_date desc))
+                    <![CDATA[
+        where rnum >= #{startList} and rnum <= #{endList}
+               ]]>
+		</select>
+	<!-- complaint 상세보기 조회 -->
+	<select id="complaintdetailview" resultType="complaint">
+		select * from written_complaint
+		where com_no = #{com_no}
+	</select>
+
+	
+
+</mapper>
