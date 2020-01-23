@@ -62,9 +62,9 @@
         </div>
         <!-- /.row -->
         <div class="row">
+        <form action="noticeinsert.do" id="writeForm" method="post" enctype="multipart/form-data">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-        		<form action="noticeinsert.do" id="writeForm" method="post" enctype="multipart/form-data">
                 <table class="table">
 			    <tr>
 			        <th scope="row" class="info2">글쓴이</th>
@@ -87,13 +87,13 @@
 			    	<td colspan="4"><textarea style="width: 100%" rows="10" cols="10" class="form-control" name="notice_content"></textarea></td>
 			    </tr>
 			</table>
-			<div style="text-align:right;">
+               </div>
+            </div>
+            <div style="text-align:right;">
 			<input type="submit" class="btn btn-warning" value="등록">
 			<input type="button" class="btn btn-default" onclick="location.href='moveadminnotice.do'" value="목록">
 			</div>
-               </form>
-               </div>
-            </div>
+            </form>
            </div>
             <!-- /.row -->
         </div>
