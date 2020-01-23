@@ -55,4 +55,9 @@ public class QuestionsServiceImpl implements QuestionsService{
 		return qnaDao.updateQuestions(qna);
 	}
 
+	@Override
+	public List<Questions> adminselectList(CommonPaging commonPage) {
+		return qnaDao.adminselectList(commonPage);
+	}
+
 }

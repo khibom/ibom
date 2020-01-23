@@ -198,7 +198,7 @@ public class QuestionsController {
 	         else
 	            commonPage.setUser_id(sText);
 	      }
-	      List<Questions> questionList = qservice.selectList(commonPage);
+	      List<Questions> questionList = qservice.adminselectList(commonPage);
 	      System.out.println(commonPage.toString());
 	      model.addAttribute("selectoption", sOption);
 	      model.addAttribute("searchtext", sText);

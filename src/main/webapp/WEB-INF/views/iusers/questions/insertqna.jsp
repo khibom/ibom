@@ -113,7 +113,7 @@ select::-ms-expand {
 
 <!--  메인 ================================================================== -->
 	<main id="main" class="main_container">
-	<div id="main_container_inner" class="home">
+	<div id="main_container_inner" class="notice_list">
 			<div class="article">
             <div class="article_header">
                 <div class="wrap_narrow">
@@ -185,45 +185,6 @@ select::-ms-expand {
 <!--footer  =================================================== -->
 	<c:import url="../../common/footer.jsp"/> 
            <!--  =================================================================== -->
-
-	
-
-
-
-	<!--  js -->
-
-	<script src="/ibom/resources/js/vendors/jquery/jquery.easing.1.3.js"></script>
-	<script
-		src="/ibom/resources/js/vendors/jquery/jquery.requestAnimationFrame.min.js"></script>
-	<script src="/ibom/resources/js/vendors/greensock/TweenMax.min.js"></script>
-	<script
-		src="/ibom/resources/js/vendors/greensock/ScrollToPlugin.min.js"></script>
-	<script src="/ibom/resources/js/vendors/greensock/findShapeIndex.js"></script>
-	<script src="/ibom/resources/js/vendors/greensock/MorphSVGPlugin.js"></script>
-	<script
-		src="/ibom/resources/js/vendors/fullpage/jquery.fullPage.min.js"></script>
-	<script
-		src="/ibom/resources/js/vendors/popup/jquery.magnific_popup.min.js"></script>
-	<script
-		src="/ibom/resources/js/vendors/scroll/jquery.nicescroll.min.js"></script>
-	<script src="/ibom/resources/js/vendors/icheck/icheck.min.js"></script>
-	<script src="/ibom/resources/js/vendors/select/jquery.selectric.js"></script>
-	<script
-		src="/ibom/resources/js/vendors/file/jquery.customFile_custom_jt.js"></script>
-	<script
-		src="/ibom/resources/js/vendors/slider/cycle2/jquery.cycle2.min.js"></script>
-	<script
-		src="/ibom/resources/js/vendors/slider/cycle2/jquery.cycle2.swipe.min.js"></script>
-	<script src="/ibom/resources/js/vendors/slider/slick/slick.min.js"></script>
-	<script
-		src="/ibom/resources/js/vendors/isotope/imagesloaded.pkgd.min.js"></script>
-	<script src="/ibom/resources/js/vendors/isotope/isotope.pkgd.min.js"></script>
-	<script src="/ibom/resources/js/vendors/clipboard/clipboard.min.js"></script>
-	<script src="/ibom/resources/js/player.js"></script>
-	<script src="/ibom/resources/js/main.js"></script>
-
-	<!-- 추가 -->
-	<script src="/ibom/resources/LIB/js/js.cookie.js"></script>
 
 </body>
 </html>

@@ -83,7 +83,7 @@
 			    </tr>
 			    <tr>
 			    	<th scope="row" class="info2" style="line-height: 10;">답변</th>
-			    	<td colspan="3"><textarea style="width: 100%;" rows="8" id="content" name="qna_answer"></textarea>
+			    	<td colspan="3"><textarea style="width: 100%;" rows="8" id="content" name="qna_answer">${dto.qna_answer}</textarea>
 			    	</td>
 			    </tr>
 			</table>

@@ -46,4 +46,8 @@ public class QuestionsDao {
 		return session.update("questionsMapper.updateQuestions", qna);
 	}
 
+	public List<Questions> adminselectList(CommonPaging commonPage) {
+		return session.selectList("questionsMapper.adminselectList", commonPage);
+	}
+
 }
