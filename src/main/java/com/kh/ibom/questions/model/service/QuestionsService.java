@@ -18,4 +18,5 @@ public interface QuestionsService {
 	List<Questions> selectList(CommonPaging commonPage);
 	Questions questionsDetailView(int anum);
 	int updateQuestions(Questions qna);
+	List<Questions> adminselectList(CommonPaging commonPage);
 }

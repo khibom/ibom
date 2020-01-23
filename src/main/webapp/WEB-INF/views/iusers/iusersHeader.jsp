@@ -21,7 +21,7 @@
             <nav class="main_menu_container">
                 <ul id="menu" class="main_menu">
                     <li class="menu_item_has_children ">
-                        <a href="/Introduction" data-font="secondary"><span>처음 오셨나요?</span></a>
+                        <a href="*" data-font="secondary"><span>처음 오셨나요?</span></a>
                         <ul class="menu_child_group">
                             <li class=""><a href="/Introduction/Friend" ><span>아이돌봄서비스 종류</span></a></li>
                             <li class=""><a href="/Introduction/Teacher"><span>서비스신청방법</span></a></li>

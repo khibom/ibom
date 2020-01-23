@@ -30,6 +30,23 @@
                ]]>
 </select>
 
+<select id="adminselectList" resultType="questions" parameterType="com.kh.ibom.common.CommonPaging">
+   
+      select *
+      from (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+           from (select * from questions
+                    <if test="stitle != null and stitle !=''">
+                  where qna_title like '%'||#{stitle}||'%'
+                  </if>
+                  <if test="user_id != null and user_id !=''">
+                  where user_name like '%'||#{user_id}||'%'
+                  </if>
+                    order by qna_no desc))
+                    <![CDATA[
+        where rnum >= #{startList} and rnum <= #{endList}
+               ]]>
+</select>
+
 	<!-- qna 상세보기 조회 -->
 	<select id="questionsDetailView" resultType="com.kh.ibom.questions.model.vo.Questions">
 		select * from questions
