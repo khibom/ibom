@@ -72,7 +72,7 @@
 		<!-- ======================================================================================-->
 		<nav class="other_menu_container">
 			<ul class="other_menu" data-font="secondary">
-				<li class="other_menu_point"><a href="movequestions.do" >1:1문의</a></li> 
+				<li class="other_menu_point"><a href="${pageContext.servletContext.contextPath}/movequestions.do" >1:1문의</a></li> 
                 <li class="other_menu_point"><a href="${pageContext.servletContext.contextPath}/movenotice.do">공지사항</a></li>
 
 				<!-- ======================================================================================-->

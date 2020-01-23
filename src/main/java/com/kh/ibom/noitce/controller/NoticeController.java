@@ -23,7 +23,9 @@ import org.springframework.web.multipart.MultipartRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.kh.ibom.common.CommonPaging;
+import com.kh.ibom.dolbomi.model.vo.Dolbomi;
 import com.kh.ibom.emp.model.vo.Emp;
+import com.kh.ibom.iusers.model.vo.Iusers;
 import com.kh.ibom.noitce.model.dao.NoticeDao;
 import com.kh.ibom.noitce.model.service.NoticeService;
 import com.kh.ibom.noitce.model.vo.Notice;
@@ -94,7 +96,11 @@ public class NoticeController {
 	}
 	
 	@RequestMapping("adminnoticedetail.do")
-	public ModelAndView adminnoitceDetailMethod(@RequestParam int anum, HttpSession session) throws Exception {
+	public ModelAndView adminnoitceDetailMethod(@RequestParam int anum, HttpSession session, HttpServletRequest request,  Model model) throws Exception {
+		HttpSession session2 = request.getSession(false);
+		
+		Emp emp = (Emp)session2.getAttribute("loginAdmin");
+		
 		//조회수 s증가 처리
 		nservice.noitceViewCnt(anum, session);
 		//모델(데이터)+뷰(화면)를 함께 전달하는 객체
@@ -103,6 +109,7 @@ public class NoticeController {
 		mav.setViewName("admin/notice/adminnoticedetail");
 		//뷰에 전달할 데이터
 		mav.addObject("dto", nservice.noticeDetailView(anum));
+		model.addAttribute("emp", emp);
 		return mav;
 	}
 	
@@ -156,6 +163,11 @@ public class NoticeController {
 	
 	@RequestMapping("movenotice.do")
 	public String NoticePaging(HttpServletRequest request, Model model) {
+		HttpSession session = request.getSession(false);
+		
+		Dolbomi dol = (Dolbomi)session.getAttribute("loginDolbomi");
+		Iusers iuser = (Iusers)session.getAttribute("loginIuser");
+		
 	      //현재페이지 설정
 	      int currentPage = 1;
 	      if(request.getParameter("page") != null)
@@ -189,6 +201,8 @@ public class NoticeController {
 	      model.addAttribute("searchtext", sText);
 	      model.addAttribute("commonPage", commonPage);
 	      model.addAttribute("noticeList", noticeList);
+	      model.addAttribute("dol", dol);
+	      model.addAttribute("user", iuser);
 	      return "notice/notice";
 	   }
 

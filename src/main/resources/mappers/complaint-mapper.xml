@@ -35,7 +35,18 @@
 		select * from written_complaint
 		where com_no = #{com_no}
 	</select>
-
+	<!-- complaint 작성 -->
+	<insert id="insertComplaint" parameterType="complaint">
+	insert into written_complaint values (questions_seq.nextval, #{emp_name}, sysdate, #{com_title}, #{com_content})
+	</insert>
+	<!-- complaint 삭제 -->
+	<delete id="deleteComplaint">
+	delete from written_complaint where com_no = #{com_no}
+	</delete>
+	<!-- complaint 수정 -->
+	<update id="updateComplaint">
+	update written_complaint set com_title = #{com_title}, com_date = sysdate, com_content = #{com_content} where com_no = #{com_no}
+	</update>
 	
 
 </mapper>

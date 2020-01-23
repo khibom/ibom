@@ -87,10 +87,13 @@
 			    	</td>
 			    </tr>
 			</table>
-			<input type="submit" class="btn btn-warning" style="float:right; margin: 5px;" value="수정">
 			<input type="button" class="btn btn-warning" style="float:right; margin: 5px;" onclick="location.href='moveadminnotice.do'" value="목록">
+			<c:choose>
+			<c:when test="${dto.emp_name == emp.emp_name }">
+			<input type="submit" class="btn btn-warning" style="float:right; margin: 5px;" value="수정">
 			<input type="button" class="btn btn-warning" style="float:right; margin: 5px;" onclick="location.href='adminnoticedelete.do?anum=${dto.notice_no}'" value="삭제">
-			    	
+			 </c:when>
+			 </c:choose>
                </form>
                </div>
             </div>

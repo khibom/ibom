@@ -21,6 +21,9 @@ import com.kh.ibom.common.CommonPaging;
 import com.kh.ibom.complaint.model.service.ComplaintService;
 import com.kh.ibom.complaint.model.service.ComplaintServiceImpl;
 import com.kh.ibom.complaint.model.vo.Complaint;
+import com.kh.ibom.dolbomi.model.vo.Dolbomi;
+import com.kh.ibom.emp.model.vo.Emp;
+import com.kh.ibom.iusers.model.vo.Iusers;
 import com.kh.ibom.noitce.model.vo.Notice;
 import com.kh.ibom.questions.model.service.QuestionsServiceImpl;
 import com.kh.ibom.questions.model.vo.Questions;
@@ -33,37 +36,62 @@ public class ComplaintController {
 	public ComplaintService cservice;
 	
 	@RequestMapping(value="complaintupdate.do", method=RequestMethod.POST)
-	public int ComplaintUpdateMethod(Complaint com, Model model) {
-		int result = cservice.updateComplaint(com);
-		return result;
+	public ModelAndView ComplaintUpdateMethod(Complaint com) {
+		cservice.updateComplaint(com);
+		ModelAndView mv = new ModelAndView("redirect:/moveadmincomplaint.do");
+		
+		return mv;
 	}
 	
 	@RequestMapping(value="complaintinsert.do", method=RequestMethod.POST)
-	public int ComplaintInsertMethod(Complaint com, Model model) {
-		int result = cservice.insertComplaint(com);
-		return result;
+	public ModelAndView ComplaintInsertMethod(Complaint com, HttpServletRequest request) {
+		
+		HttpSession session = request.getSession(false);
+		
+		Emp emp = (Emp)session.getAttribute("loginAdmin");
+		
+		com.setemp_name(emp.getEmp_name());
+		
+		cservice.insertComplaint(com);
+		ModelAndView mv = new ModelAndView("redirect:/moveadmincomplaint.do");
+			
+		return mv;
 	}
 	
-	@RequestMapping(value="complaintdelete.do", method=RequestMethod.POST)
-	public int ComplaintDeleteMethod(Complaint com, Model model) {
-		int result = cservice.updateComplaint(com);
-		return result;
+	@RequestMapping("complaintdelete.do")
+	public ModelAndView ComplaintDeleteMethod(@RequestParam int anum) {
+		cservice.deleteComplaint(anum);
+		ModelAndView mv = new ModelAndView("redirect:/moveadmincomplaint.do");
+		
+		return mv;
 	}
 	
 	@RequestMapping("admincomplaintdetail.do")
-	public ModelAndView ComplaintDetailMethod(@RequestParam int anum, HttpSession session) {
+	public ModelAndView ComplaintDetailMethod(@RequestParam int anum, HttpSession session, HttpServletRequest request,  Model model) {
+		HttpSession session2 = request.getSession(false);
+		
+		Emp emp = (Emp)session2.getAttribute("loginAdmin");
+		
 		//모델(데이터)+뷰(화면)를 함께 전달하는 객체
 		ModelAndView mav = new ModelAndView();
 		//뷰의 이름
 		mav.setViewName("admin/complaint/admindetailcomplaint");
 		//뷰에 전달할 데이터
 		mav.addObject("dto", cservice.complaintdetailview(anum));
+		model.addAttribute("emp", emp);
 		
 		return mav;
 	}
 	
-	public String MoveComplaintInsertMethod() {
-		return null;
+	@RequestMapping("moveadmininsertcomplaint.do")
+	public String MoveComplaintInsertMethod(HttpServletRequest request,  Model model) {
+		HttpSession session = request.getSession(false);
+		
+		Emp emp = (Emp)session.getAttribute("loginAdmin");
+		
+		model.addAttribute("emp", emp);
+		
+		return ("admin/complaint/admininsertcomplaint");
 	}
 	
 	public String MoveComplaintDetailMethod() {

@@ -18,28 +18,15 @@ public class ComplaintDao {
 	private SqlSessionTemplate session;
 
 	public int updateComplaint(Complaint com) {
-		// TODO Auto-generated method stub
-		return 0;
+		return session.update("complaintMapper.updateComplaint", com);
 	}
 
-	public int deleteComplaint(Complaint com) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public ArrayList<Complaint> selectComplaintList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public ArrayList<Complaint> selectComplaintSearch(String keyword) {
-		// TODO Auto-generated method stub
-		return null;
+	public int deleteComplaint(int anum) {
+		return session.delete("complaintMapper.deleteComplaint", anum);
 	}
 
 	public int insertComplaint(Complaint com) {
-		// TODO Auto-generated method stub
-		return 0;
+		return session.insert("complaintMapper.insertComplaint", com);
 	}
 
 	public int selectAllListCount(HashMap<String, Object> map) {

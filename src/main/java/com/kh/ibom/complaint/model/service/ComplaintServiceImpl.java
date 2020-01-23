@@ -25,8 +25,8 @@ public class ComplaintServiceImpl implements ComplaintService{
 	}
 
 	@Override
-	public int deleteComplaint(Complaint com) {
-		return comDao.deleteComplaint(com);
+	public int deleteComplaint(int anum) {
+		return comDao.deleteComplaint(anum);
 	}
 
 	@Override
