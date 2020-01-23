@@ -72,7 +72,7 @@
                            <i class="fa fa-search"></i>
                      </span>
                 </div>
-                <button type="button" class="btn btn-warning" style="float:right;" onclick="location.href='moveinsertnotice.do'">등록</button>
+                <button type="button" class="btn btn-warning" style="float:right;" onclick="location.href='moveadmininsertcomplaint.do'">등록</button>
                  </form>
             </div>
     <!--===========================================================================-->

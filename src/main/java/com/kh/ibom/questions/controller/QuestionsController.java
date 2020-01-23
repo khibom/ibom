@@ -64,7 +64,7 @@ public class QuestionsController {
 		return mv;
 	}
 	
-	@RequestMapping("qnadelete.do")
+	@RequestMapping(value="qnadelete.do", method=RequestMethod.POST)
 	public ModelAndView QuestionsDeleteMethod(@RequestParam int anum) {
 		qservice.deleteQuestions(anum);
 		ModelAndView mv = new ModelAndView("redirect:/movequestions.do");
@@ -148,6 +148,12 @@ public class QuestionsController {
 	         else
 	            commonPage.setUser_id(sText);
 	      }
+	      if(dol == null && iuser != null) {
+				commonPage.setUser_name(iuser.getUser_name());
+			} else {
+				commonPage.setDol_name(dol.getDol_name());
+			}
+	      
 	      List<Questions> questionList = qservice.selectList(commonPage);
 	      System.out.println(commonPage.toString());
 	      model.addAttribute("selectoption", sOption);

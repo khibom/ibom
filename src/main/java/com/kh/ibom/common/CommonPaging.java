@@ -24,7 +24,11 @@ public class CommonPaging {
 	private String in_id;
 	private String in_status;
 	private String in_center;
-
+	
+	//민제 추가
+	private String user_name;
+	private String dol_name;
+	
 	public CommonPaging() {
 	}
 
@@ -59,7 +63,7 @@ public class CommonPaging {
 
 	public CommonPaging(int listCount, int listSize, int pageSize, int currentPage, int maxPage, int beginPage,
 			int endPage, int startList, int endList, String stitle, String ibom_id, String user_id, Date date_begin,
-			Date date_end, String in_id, String in_status, String in_center) {
+			Date date_end, String in_id, String in_status, String in_center, String user_name, String dol_name) {
 		super();
 		this.listCount = listCount;
 		this.listSize = listSize;
@@ -78,6 +82,8 @@ public class CommonPaging {
 		this.in_id = in_id;
 		this.in_status = in_status;
 		this.in_center = in_center;
+		this.user_name = user_name;
+		this.dol_name = dol_name;
 	}
 
 	public int getListCount() {
@@ -215,6 +221,24 @@ public class CommonPaging {
 	public void setIn_center(String in_center) {
 		this.in_center = in_center;
 	}
+	
+	public String getUser_name() {
+		return user_name;
+	}
+
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
+	
+	public String getDol_name() {
+		return dol_name;
+	}
+
+	public void setDol_name(String dol_name) {
+		this.dol_name = dol_name;
+	}
+	
+	
 
 	@Override
 	public String toString() {
@@ -222,7 +246,7 @@ public class CommonPaging {
 				+ ", currentPage=" + currentPage + ", maxPage=" + maxPage + ", beginPage=" + beginPage + ", endPage="
 				+ endPage + ", startList=" + startList + ", endList=" + endList + ", stitle=" + stitle + ", ibom_id="
 				+ ibom_id + ", user_id=" + user_id + ", date_begin=" + date_begin + ", date_end=" + date_end
-				+ ", in_id=" + in_id + ", in_status=" + in_status + ", in_center=" + in_center + "]";
+				+ ", in_id=" + in_id + ", in_status=" + in_status + ", in_center=" + in_center + ", user_name=" + user_name + ", dol_name=" + dol_name +"]";
 	}
 
 	

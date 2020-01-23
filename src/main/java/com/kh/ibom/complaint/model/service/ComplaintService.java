@@ -10,7 +10,7 @@ import com.kh.ibom.complaint.model.vo.Complaint;
 public interface ComplaintService {
 	
 	int updateComplaint(Complaint com);
-	int deleteComplaint(Complaint com);
+	int deleteComplaint(int anum);
 	int insertComplaint(Complaint com);
 	Complaint complaintdetailview(int num);
 	int selectAllListCount(HashMap<String, Object> map);

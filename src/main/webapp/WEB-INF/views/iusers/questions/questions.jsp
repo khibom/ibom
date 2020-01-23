@@ -54,12 +54,19 @@
 		<a href="#main">메인 콘텐츠 바로가기</a>
 	</div>
 	<!--  header 시작 ============================================= -->
-	<c:import url="../iusersHeader.jsp"/> 
+	<c:choose>
+	<c:when test="${!empty iuser.user_id && empty dol.dol_id}">
+	<c:import url="../iusersHeader.jsp"/>
+	</c:when>
+	<c:when test="${empty iuser.user_id && !empty dol.dol_id}">
+	<c:import url="../../dolbomi/dolHeader.jsp"/>
+	</c:when>  
+	</c:choose>
 	<!--  header 끝 ============================================= -->
 
 <!--  메인 ================================================================== -->
 	<main id="main" class="main_container">
-	<div id="main_container_inner" class="home">
+	<div id="main_container_inner" class="notice_list">
 			<div class="article">
             <div class="article_header">
                 <div class="wrap_narrow">

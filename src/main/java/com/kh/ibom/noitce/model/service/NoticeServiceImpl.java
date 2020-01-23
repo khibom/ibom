@@ -62,7 +62,7 @@ public class NoticeServiceImpl implements NoticeService {
 	public int insertNotice(HttpServletRequest request, Notice notice, MultipartFile file) throws IllegalStateException, IOException {
 		String savename = file.getOriginalFilename() +"-"+System.currentTimeMillis(); 
 		File dir = new File("C:"+File.separator+"ibom_workspace"+File.separator+"ibom"+File.separator+"src"+File.separator+"main"
-				+File.separator+"webapp"+File.separator+"resources"+File.separator+"down_files"); 
+				+File.separator+"webapp"+File.separator+"resources"+File.separator+"down_files"); // 경로 문제로 인하여 파일 업로드 안됨
 		File target = new File(dir, savename); 
 		file.transferTo(target);
 		

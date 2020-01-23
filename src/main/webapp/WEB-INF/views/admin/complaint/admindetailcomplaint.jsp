@@ -64,29 +64,32 @@
         <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-        <form action="noticeupdate.do" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="notice_no" value="${dto.com_no}">
+        <form action="complaintupdate.do" method="post">
+        <input type="hidden" name="com_no" value="${dto.com_no}">
                 <table class="table" style="margin:0;">
 			    <tr>
 			        <th scope="row" class="info2">글쓴이</th>
 			        <td>${dto.emp_name}</td>
 			        <th scope="row" class="info2">등록일</th>
-			        <td><input type="hidden" name="notice_date" value="${dto.com_date}">${dto.com_date}</td>
+			        <td><input type="hidden" name="com_date" value="${dto.com_date}">${dto.com_date}</td>
 			    </tr>
 			    <tr>
 			        <th scope="row" class="info2 " style="line-height: 2;">제목</th>
-			        <td colspan="4"><input type="text" class="form-control" style="width: auto;" name="notice_title" value="${dto.com_title}"></td>
+			        <td colspan="4"><input type="text" class="form-control" style="width: auto;" name="com_title" value="${dto.com_title}"></td>
 			    </tr>
 			    <tr>
 			    	<th scope="row" class="info2" style="line-height: 20;">내용</th>
-			    	<td colspan="4"><textarea style="width: 100%; border:none;" rows="16" id="content" name="notice_content"><c:out value="${dto.com_content }"/></textarea>
+			    	<td colspan="4"><textarea class="form-control" style="width: 100%; border:none;" rows="16" id="content" name="com_content"><c:out value="${dto.com_content }"/></textarea>
 			    	</td>
 			    </tr>
 			</table>
+			<input type="button" class="btn btn-warning" style="float:right; margin: 5px;" onclick="location.href='moveadmincomplaint.do'" value="목록">
+			<c:choose>
+			<c:when test="${dto.emp_name == emp.emp_name }">
 			<input type="submit" class="btn btn-warning" style="float:right; margin: 5px;" value="수정">
-			<input type="button" class="btn btn-warning" style="float:right; margin: 5px;" onclick="location.href='moveadminnotice.do'" value="목록">
-			<input type="button" class="btn btn-warning" style="float:right; margin: 5px;" onclick="location.href='adminnoticedelete.do?anum=${dto.com_no}'" value="삭제">
-			    	
+			<input type="button" class="btn btn-warning" style="float:right; margin: 5px;" onclick="location.href='complaintdelete.do?anum=${dto.com_no}'" value="삭제">
+			</c:when>
+			</c:choose>
                </form>
                </div>
             </div>

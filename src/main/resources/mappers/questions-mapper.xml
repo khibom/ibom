@@ -17,12 +17,12 @@
    
       select *
       from (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
-           from (select * from questions
+           from (select * from questions where user_name = #{user_name, jdbcType=VARCHAR} or dol_name = #{dol_name, jdbcType=VARCHAR}
                     <if test="stitle != null and stitle !=''">
-                  where qna_title like '%'||#{stitle}||'%'
+                  and qna_title like '%'||#{stitle}||'%'
                   </if>
                   <if test="user_id != null and user_id !=''">
-                  where user_name like '%'||#{user_id}||'%'
+                  and user_name like '%'||#{user_id}||'%'
                   </if>
                     order by qna_no desc))
                     <![CDATA[
