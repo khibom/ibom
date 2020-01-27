@@ -9,6 +9,8 @@ import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.kh.ibom.common.CommonPaging;
 import com.kh.ibom.interview.model.service.InterviewService;
+import com.kh.ibom.interview.model.vo.InterUpdate;
 import com.kh.ibom.interview.model.vo.Interview;
 
 import oracle.sql.DATE;
@@ -269,6 +272,8 @@ public class InterviewController {
 		PrintWriter out = response.getWriter();
 
 		if (result > 0) {
+			int etc = interService.interUpdateUp(inter);
+			System.out.println("★etc : "+ etc);
 			out.append("ok");
 			out.flush();
 
@@ -280,4 +285,27 @@ public class InterviewController {
 
 	}
 
+	//각 면접 건 수정 내역 가져오기
+	@RequestMapping("admin/interUpList.do")
+	public ModelAndView adminInterUpList(CommonPaging page, ModelAndView mv) {
+		
+		String service2_no = page.getStitle();
+		//select One
+		Interview inter = interService.selectOne(service2_no);		
+		//수정내역 리스트 조회
+		ArrayList<InterUpdate> list = interService.adminInterUpList(service2_no);
+		
+		if (list != null) {
+			mv.addObject("inter", inter);
+			mv.addObject("paging", page);
+			mv.addObject("list", list);
+			mv.setViewName("admin/interview/adminInterPopup");
+		} else {
+			mv.addObject("message", "돌보미 면접 수정하기 실패!");
+			mv.setViewName("common/error");
+		}
+
+		return mv;
+		
+	}
 }

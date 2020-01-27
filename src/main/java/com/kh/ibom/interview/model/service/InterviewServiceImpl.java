@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.kh.ibom.common.CommonPaging;
 import com.kh.ibom.interview.model.dao.InterviewDao;
+import com.kh.ibom.interview.model.vo.InterUpdate;
 import com.kh.ibom.interview.model.vo.Interview;
 
 @Service("interService")
@@ -45,6 +46,21 @@ public class InterviewServiceImpl implements InterviewService{
 	@Override
 	public ArrayList<Interview> InterviewIusersSearchList(HashMap<String, Object> map) {
 		return interDao.InterviewIusersSearchList(map);
+	}
+	@Override
+	public ArrayList<InterUpdate> adminInterUpList(String service2_no) {
+		//면접 수정내역 불러오기
+		return interDao.adminInterUpList(service2_no);
+	}
+	@Override
+	public Interview selectOne(String service2_no) {
+		// selectOne
+		return interDao.selectOne(service2_no);
+	}
+	@Override
+	public int interUpdateUp(Interview inter) {
+		// 수정할 때 수정이력 테이블에 인서트하기
+		return interDao.interUpdateUp(inter);
 	}
 
 }

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kh.ibom.common.CommonPaging;
 import com.kh.ibom.dol_pass.model.vo.DolPass;
 import com.kh.ibom.dolbomi.model.service.DolbomiService;
 import com.kh.ibom.dolbomi.model.vo.Dolbomi;
@@ -57,22 +58,60 @@ public class DolbomiController {
 	}
 	
 	
-	@RequestMapping("admin/dollist.do")//(value="admin/dollist.do", method=RequestMethod.POST)
-	public ModelAndView dolbomiSelectList(ModelAndView mv) {
-		ArrayList<Dolbomi> list = dService.dolbomiSelectList();
-		
-		if(list != null) {				
-			mv.addObject("list", list);
-			mv.setViewName("admin/dolbomi/adminDolList");
+	//관리지가 돌보미 전체 리스트
+		@RequestMapping("admin/dollist.do")//(value="admin/dollist.do", method=RequestMethod.POST)
+		public ModelAndView dolbomiSelectList(CommonPaging page, ModelAndView mv) {
+			int listCount = dService.dolbomiListCount(page);
+			int currentPage = page.getCurrentPage();
 			
-		}else {
-			mv.addObject("message", "관리자 돌보미 리스트  조회 실패!");
-			mv.setViewName("common/error");
+			CommonPaging paging = new CommonPaging(5, 5, listCount, currentPage);
+			
+			
+			
+			
+			ArrayList<Dolbomi> list = dService.dolbomiSelectList(paging);
+			
+			
+			
+			
+			if(list != null) {				
+				mv.addObject("list", list);
+				mv.addObject("paging", paging);
+				mv.setViewName("admin/dolbomi/adminDolList");
+				
+			}else {
+				mv.addObject("message", "관리자 돌보미 리스트  조회 실패!");
+				mv.setViewName("common/error");
+			}
+			
+			return mv;
+			
 		}
-		
-		return mv;
-		
-	}
+		//관리지가 돌보미 검색!!!!!!!!!! 리스트
+		@RequestMapping("admin/dolSearch.do")//(value="admin/dollist.do", method=RequestMethod.POST)
+		public ModelAndView dolbomiSearchList(CommonPaging page, ModelAndView mv) {
+			int listCount = dService.dolbomiListCount(page);
+			int currentPage = page.getCurrentPage();
+			
+			CommonPaging paging = new CommonPaging(5, 5, listCount, currentPage);
+			paging.setCurrentPage(page.getCurrentPage());
+			paging.setSearch(page.getSearch());
+			paging.setKeyword(page.getKeyword());
+			ArrayList<Dolbomi> list = dService.dolbomiSelectList(paging);
+			
+			if(list != null) {				
+				mv.addObject("list", list);
+				mv.addObject("paging", paging);
+				mv.setViewName("admin/dolbomi/adminDolList");
+				
+			}else {
+				mv.addObject("message", "관리자 돌보미 리스트  조회 실패!");
+				mv.setViewName("common/error");
+			}
+			
+			return mv;
+			
+		}
 	
 	//관리자가 돌보미 상세조회 
 		@RequestMapping("admin/dolDetail.do")//(value="admin/dolDetail.do", method=RequestMethod.POST)

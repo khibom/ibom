@@ -37,9 +37,7 @@
 	<select id="userSelectList" parameterType="string"
 		resultType="Interview">
 		select * from
-		(select rownum as num, inter_no,
-		NVL(inter_status,'돌보미배정중') as inter_status, to_char(inter_date,
-		'YYYY-MM-DD ') as inter_date,
+		(select rownum as num, inter_no, inter_status, to_char(inter_date, 'YYYY-MM-DD ') as inter_date,
 		inter_time || '시' as inter_time, nvl(inter_bomi_name,'미배정') as inter_bomi_name,
 		INTER_CENTER, to_char(inter_req_date, 'YYYY-MM-DD ') as inter_req_date
 		from(select *
@@ -50,9 +48,7 @@
 
 	<select id="searchIusersList" resultType="Interview" parameterType="hashmap">
 		select * from
-		(select rownum as num, inter_no,
-		NVL(inter_status,'돌보미배정중') as inter_status, to_char(inter_date,
-		'YYYY-MM-DD ') as inter_date,
+		(select rownum as num, inter_no, inter_status, to_char(inter_date, 'YYYY-MM-DD ') as inter_date,
 		inter_time || '시' as inter_time, nvl(inter_bomi_name,'미배정') as inter_bomi_name,
 		INTER_CENTER, to_char(inter_req_date, 'YYYY-MM-DD ') as inter_req_date
 		from(select *
@@ -77,8 +73,7 @@
 	<select id="adminSelectList" resultType="Interview" parameterType="com.kh.ibom.common.CommonPaging">
 		select * from
 		(select
-		rownum as num, inter_no, inter_user_id, inter_user_name, inter_date,
-		inter_time, NVL(inter_status, '돌보미배정중') as inter_status,
+		rownum as num, inter_no, inter_user_id, inter_user_name, inter_date, inter_time, inter_status,
 		NVL(inter_bomi_id, '미배정') as inter_bomi_id,
 		NVL(inter_bomi_name, '미배정')
 		as inter_bomi_name, inter_req_date, inter_center
@@ -97,105 +92,29 @@
 		<if test="in_center != null and in_center !=''">
 		where inter_center like '%'||#{in_center}||'%'
 		</if>
-		order by inter_req_date, inter_date,
+		order by inter_req_date desc, inter_date,
 		inter_time))
 		<![CDATA[
         where num >= #{startList} and num <= #{endList}
                ]]>
-		order by num desc
+		
 	</select>
 
 
 	<update id="updateInterDate" parameterType="Interview">
 		update interview_maintain_view
-		<if test="inter_date != null">
-			set inter_date = #{inter_date}
-		</if>
-		<if test="inter_time != null">
-			set inter_time = #{inter_time}
-		</if>
-		<if test="inter_status != null">
-			set inter_status = decode(#{inter_status},'1',null,'2','면접예정','3',
-			'면접완료', '0', '면접취소')
-		</if>
+		set inter_date = #{inter_date}, inter_time = #{inter_time}, inter_status = #{inter_status}		
 		where inter_no = #{inter_no}
 	</update>
 	
-<!-- 	<select id="searchDate" parameterType="com.kh.ibom.common.SearchDate" resultType="Interview">
-		select * from
-		(select
-		rownum as num, inter_no, inter_user_id, inter_user_name, inter_date,
-		inter_time, NVL(inter_status, '돌보미배정중') as inter_status,
-		NVL(inter_bomi_id, '미배정') as inter_bomi_id,
-		NVL(inter_bomi_name, '미배정')
-		as inter_bomi_name, inter_req_date, inter_center
-		from(select *
-		from
-		interview_maintain_view order by inter_req_date, inter_date,
-		inter_time))
-		where inter_date between #{begin} and #{end}
-		order by num desc
-		
+	<select id="updateList" parameterType="string" resultType="InterUpdate">
+		select * from interupdate where service2_no = #{value} order by 6 desc
 	</select>
-	<select id="searchId" parameterType="string" resultType="Interview">
-		select * from
-		(select
-		rownum as num, inter_no, inter_user_id, inter_user_name, inter_date,
-		inter_time, NVL(inter_status, '돌보미배정중') as inter_status,
-		NVL(inter_bomi_id, '미배정') as inter_bomi_id,
-		NVL(inter_bomi_name, '미배정')
-		as inter_bomi_name, inter_req_date, inter_center
-		from(select *
-		from
-		interview_maintain_view order by inter_req_date, inter_date,
-		inter_time))
-		where inter_user_id like '%'||#{value}||'%' or inter_bomi_id like '%'||#{value}||'%'
-		order by num desc		
-		
-	</select>
-	<select id="searchStatus" parameterType="string" resultType="Interview">
-		select * from
-		(select
-		rownum as num, inter_no, inter_user_id, inter_user_name, inter_date,
-		inter_time, NVL(inter_status, '돌보미배정중') as inter_status,
-		NVL(inter_bomi_id, '미배정') as inter_bomi_id,
-		NVL(inter_bomi_name, '미배정')
-		as inter_bomi_name, inter_req_date, inter_center
-		from(select *
-		from
-		interview_maintain_view order by inter_req_date, inter_date,
-		inter_time))
-		where inter_status like '%'||#{value}||'%'
-		order by num desc		
-		
-	</select>
-	<select id="searchCenter" parameterType="string" resultType="Interview">
-		select * from
-		(select
-		rownum as num, inter_no, inter_user_id, inter_user_name, inter_date,
-		inter_time, NVL(inter_status, '돌보미배정중') as inter_status,
-		NVL(inter_bomi_id, '미배정') as inter_bomi_id,
-		NVL(inter_bomi_name, '미배정')
-		as inter_bomi_name, inter_req_date, inter_center
-		from(select *
-		from
-		interview_maintain_view order by inter_req_date, inter_date,
-		inter_time))
-		where inter_center like '%'||#{value}||'%'
-		order by num desc		
-		
-	</select>
- -->
-
-
-
-
-
-
-
-
-
-
-
+	
+	<select id="selectone" parameterType="string" resultType="Interview">select * from INTERVIEW_MAINTAIN_VIEW where inter_no = #{value}</select>
+	
+	<insert id="interUpdateUp" parameterType="Interview">
+		insert into interupdate values(#{inter_no}, #{inter_date}, #{inter_time}, #{inter_status}, #{inter_user_id}, to_char(sysdate,'yyyy-mm-dd hh24:mi:ss'))
+	</insert>
 
 </mapper>

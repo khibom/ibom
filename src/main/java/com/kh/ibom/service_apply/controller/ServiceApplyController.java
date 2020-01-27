@@ -41,7 +41,13 @@ public class ServiceApplyController {
 			System.out.println("카드 팝업 페이지 실행됨...");
 			return "iusers/serviceApply/userCard";
 		}
-		
+		//서비스 조회 페이지로 이동
+		@RequestMapping(value="iusers/moveApplySelectPage.do")
+		public String moveInterviewPopPage() {
+			System.out.println("서비스 조회 페이지 실행됨...");
+			return "iusers/serviceApply/serviceApplySelect";
+		}
+				
 	@RequestMapping(value="iusers/apply1.do", method=RequestMethod.POST)
 	public ModelAndView apply1Method(ServiceApply1 apply1, ModelAndView mv) {
 		if(apply1.getBefore_req() == null) {

@@ -18,34 +18,59 @@
 <script type="text/javascript">
     
 $(function(){
-    	
-/*     $("#tbody tr").on("click", function(){
-    	var dolid = $(this).getAttribute('id');
-    	
-    	//window.alert(document.getElementById(test.getAttribute('id')).getAttribute('id'));
-    	
-    	console.log("dolid : "+dolid);
-    	
-    }) */
-    
+
     $('table tbody tr').on('click', function() {
         location.href = $(this).children('.id').children('a').attr('href');
         return false;
     });
     	
+    //검색 부분
+	showDiv();
+	
+	$("select[name=searchselect]").on("change", function() {
+		showDiv();
+	});
+	
+	//검색 서브밋
+	 $("#submitbtn1").click(function(){
+	        $("#searchform1").submit();
+	    });
+	  $("#submitbtn2").click(function(){
+	        $("#searchform2").submit();
+	    });
+	  $("#submitbtn3").click(function(){
+	        $("#searchform3").submit();
+	    });
+	  $("#submitbtn4").click(function(){
+	        $("#searchform4").submit();
+	    });
+	  	
     	
     	
     	
     	
     	
 })//document.ready
-    
-    
-    
-    
-function searchDolbomi(){
-	document.getElementById('searchDolbomi').submit();
-}
+
+function showDiv() {
+	
+	
+	if ($("#searchselect option:eq(0)").is(":selected")) {		
+		$("#id").css("display", "block");
+		$("#name").css("display", "none");
+		$("#center").css("display", "none");
+	}
+	if ($("#searchselect option:eq(1)").is(":selected")) {		
+		$("#id").css("display", "none");
+		$("#name").css("display", "block");
+		$("#center").css("display", "none");
+	}
+	if ($("#searchselect option:eq(2)").is(":selected")) {		
+		$("#id").css("display", "none");
+		$("#name").css("display", "none");
+		$("#center").css("display", "block");
+	}
+}    
     </script>
     
 
@@ -88,19 +113,82 @@ function searchDolbomi(){
         <!--===========================================================================-->
         <div class="row">
             <div class="col-lg-5">
-            <!-- 검색창 시작-->
-           	<form id="searchDolbomi"action="${pageContext.request.contextPath}/admin/searchDolbomi.do">
-                <div class="input-group custom-search-form list-group-item-heading" style="display:inline-flex;">
-                	
-                    <input type="text" name="user_name"class="form-control" placeholder="검색어를 입력하세요">
-                      <span class="input-group-btn">
-                        <button onclick="searchDolbomi();"class="btn btn-default" type="button">
-                           <i class="fa fa-search"></i>
-                         </button>
-                     </span>
-                </div>
-               </form>
-               <!-- 검색창종료 -->
+           <!-- 검색창 시작-->
+					<div class="input-group custom-search-form list-group-item-heading"
+						style="display: inline-flex;">
+
+						<div style="float: left; display: flex;">
+							<div>
+								<select id="searchselect" name="searchselect"
+									style="width: 120px; padding-left: 5px;"
+									class="form-control form-control-sm"> 
+									<option id="opt1"selected="selected">아이디</option>
+									<option id="opt2">이름</option>
+									<option id="opt3">서비스센터</option> 
+								</select>
+							</div>
+							
+							<div id="id">
+								<form
+									action="${ pageContext.request.contextPath }/admin/dolSearch.do"
+									method="get" id="searchform2">
+									<input type="hidden" name="search" value="id">
+									<input type="hidden" name="currentPage" value="1">
+									<div class="input-group" style="margin-left: 5px;">
+										<input type="text" name="keyword"
+											class="form-control form-control-sm"
+											placeholder="검색할 아이디을 입력하세요." style="width: 250px;">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" id="submitbtn2">
+												<i class="fa fa-search"></i>
+											</button>
+										</span>
+									</div>
+								</form>
+							</div>
+							<div id="name">
+								<form
+									action="${ pageContext.request.contextPath }/admin/dolSearch.do"
+									method="get" id="searchform3">
+									<input type="hidden" name="search" value="name">
+									<input type="hidden" name="currentPage" value="1">
+									<div class="input-group" style="margin-left: 5px;">
+										<input type="text" name="keyword"
+											class="form-control form-control-sm"
+											placeholder="검색할 이름을 입력하세요." style="width: 250px;">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" id="submitbtn3">
+												<i class="fa fa-search"></i>
+											</button>
+										</span>
+									</div>
+								</form>
+							</div>
+
+							<div id="center">
+								<form
+									action="${ pageContext.request.contextPath }/admin/dolSearch.do"
+									method="get" id="searchform4">
+									<input type="hidden" name="search" value="center">
+									<input type="hidden" name="currentPage" value="1">
+									<div class="input-group" style="margin-left: 5px;">
+										<select id="searchcenter" name="keyword" style="width: 200px; padding-left: 5px;" class="form-control form-control-sm"> 
+											<option selected="selected">센터선택</option>
+											<option value="SC0001">강남구건강가정지원센터</option>
+											<option value="SC0079">성남시건강가정지원센터</option> 
+										</select>
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button" id="submitbtn4">
+												<i class="fa fa-search"></i>
+											</button>
+										</span>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<!-- 검색창종료 -->
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -144,21 +232,136 @@ function searchDolbomi(){
                                     </tbody>
                                 </table>
                                 <!-- 페이징 시작 -->
-                                <div class="col-sm-6">
-                                <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
-                                <ul class="pagination">
-                                <li tabindex="0" class="paginate_button previous disabled" id="dataTables-example_previous" aria-controls="dataTables-example"><a href="#">Previous</a>
-                                </li><li tabindex="0" class="paginate_button active" aria-controls="dataTables-example"><a href="#">1</a></li>
-                                <li tabindex="0" class="paginate_button " aria-controls="dataTables-example"><a href="#">2</a></li>
-                                <li tabindex="0" class="paginate_button " aria-controls="dataTables-example"><a href="#">3</a></li>
-                                <li tabindex="0" class="paginate_button " aria-controls="dataTables-example"><a href="#">4</a></li>
-                                <li tabindex="0" class="paginate_button " aria-controls="dataTables-example"><a href="#">5</a></li>
-                                <li tabindex="0" class="paginate_button " aria-controls="dataTables-example"><a href="#">6</a></li>
-                                <li tabindex="0" class="paginate_button next" id="dataTables-example_next" aria-controls="dataTables-example"><a href="#">Next</a>
-                                </li>
-                                </ul>
-                                </div>
-                                </div>
+                              <div class="col-sm-6">
+                     <div class="dataTables_paginate paging_simple_numbers"
+                        id="dataTables-example_paginate">
+                        <!-- 검색어 없을 때 시작-->
+                        <c:if test="${ empty paging.search}">
+                        <ul class="pagination">
+                           <li tabindex="0" class="paginate_button previous" id="dataTables-example_previous" aria-controls="dataTables-example">
+                           <c:url var="list1" value="/admin/dollist.do">
+                              <c:param name="currentPage" value="1"/>
+                           </c:url>
+                           <a href="${list1}">&lt;&lt;</a>
+                           </li>
+                           <li tabindex="0" class="paginate_button previous" id="dataTables-example_previous" aria-controls="dataTables-example">
+                           <c:if test="${(paging.beginPage-paging.pageSize)<= 1}">
+                                 <a href="${list1}">&lt;</a>
+                           </c:if> 
+                           <c:if test="${(paging.beginPage-paging.pageSize) > 1}">
+                                 <c:url var = "list2" value="/admin/dollist.do">
+                                    <c:param name="currentPage" value="${paging.beginPage-paging.pageSize}"/>
+                                 </c:url>
+                                 <a href="${list2}">&lt;</a>
+                           </c:if></li>
+                           
+                           
+                           <c:forEach var="p" begin="${paging.beginPage }" end="${paging.endPage }">
+                                 <c:url var="list3" value="/admin/dollist.do">
+                                    <c:param name="currentPage" value="${p }"/>
+                                 </c:url>
+                                 <c:if test="${p == paging.currentPage }">
+                                    <li tabindex="0" class="paginate_button active" aria-controls="dataTables-example">
+                                    <a href="${list3}">${p}</a>
+                                    </li>
+                                 </c:if>
+                                 <c:if test="${p != paging.currentPage}">
+                                  <li tabindex="0" class="paginate_button" aria-controls="dataTables-example">
+                                    <a href="${list3}">${p }</a></li>
+                                 </c:if>
+                           </c:forEach></li>
+                           
+                           <li tabindex="0" class="paginate_button next" id="dataTables-example_next" aria-controls="dataTables-example">
+                           <c:if test="${(paging.endPage+paging.pageSize) > paging.maxPage }">
+                                 <c:url var="list4" value="/admin/dollist.do">
+                                 <c:param name="currentPage" value="${paging.maxPage}"/>
+                                 </c:url>
+                                 <a href="${list4}">&gt;</a>
+                           </c:if> 
+                           <c:if test="${(paging.endPage+paging.pageSize) <= paging.maxPage }">
+                                 <c:url var="list5" value="/admin/dollist.do">
+                                 <c:param name="currentPage" value="${paging.endPage + paging.pageSize}"/>
+                                 </c:url>
+                                 <a href="${list5}">&gt;</a>
+                           </c:if></li>
+                           <li tabindex="0" class="paginate_button next" id="dataTables-example_next" aria-controls="dataTables-example">
+                           <c:url var="list6" value="/admin/dollist.do">
+                           <c:param name="currentPage" value="${paging.maxPage}"/>
+                           </c:url>
+                           <a href="${list6}">&gt;&gt;</a>
+                           </li>
+                        </ul>
+                        </c:if>
+                        <!-- 검색어 없을 때 끝 -->
+                        <c:if test="${ !empty paging.search}">
+                        <!-- 검색어 날짜 아닐 때 시작-->
+                        <c:set var="option" value="${paging.search eq 'id'?'id':paging.search eq 'name'?'name':'center' }"/>
+                        <c:if test="${option eq 'id'}"><c:set var="keyword" value="${paging.keyword }"/></c:if>
+                        <c:if test="${option eq 'name'}"><c:set var="keyword" value="${paging.keyword }"/></c:if>
+                        <c:if test="${option eq 'center'}"><c:set var="keyword" value="${paging.keyword }"/></c:if>
+                        
+                        <ul class="pagination">
+                           <li tabindex="0" class="paginate_button previous" id="dataTables-example_previous" aria-controls="dataTables-example">
+                              <c:url var="sOther1" value="/admin/dolSearch.do">
+                                 <c:param name="currentPage" value="1"/><c:param name="search" value="${option }"/>
+                                 <c:param name="keyword" value="${paging.keyword}"/>
+                              </c:url>
+                              <a href="${sOther1}">&lt;&lt;</a>
+                           </li>
+                           <li tabindex="0" class="paginate_button previous" id="dataTables-example_previous" aria-controls="dataTables-example">
+                           <c:if test="${(paging.beginPage-paging.pageSize)<= 1}">
+                                 <a href="${sOther1}">&lt;</a>
+                              </c:if> 
+                              <c:if test="${(paging.beginPage-paging.pageSize) > 1}">
+                              <c:url var="sOther2" value="/admin/dolSearch.do">
+                                 <c:param name="currentPage" value="${paging.beginPage-paging.pageSize}"/><c:param name="search" value="${option }"/>
+                                 <c:param name="keyword" value="${paging.keyword}"/>
+                              </c:url>
+                                 <a href="${sOther2}">&lt;</a>
+                              </c:if></li>
+                           
+                           <c:forEach var="p" begin="${paging.beginPage }" end="${paging.endPage }">
+                              <c:url var="sOther3" value="/admin/dolSearch.do">
+                                 <c:param name="currentPage" value="${p }"/><c:param name="search" value="${option }"/>
+                                 <c:param name="keyword" value="${paging.keyword}"/>
+                              </c:url>
+                                 <c:if test="${p == paging.currentPage }">
+                                 <li tabindex="0" class="paginate_button active" aria-controls="dataTables-example">
+                                    <a href="${sOther3 }">${p}</a></li>
+                                 </c:if>
+                                 <c:if test="${p != paging.currentPage}">
+                                  <li tabindex="0" class="paginate_button" aria-controls="dataTables-example">
+                                    <a href="${sOther3 }">${p}</a></li>
+                                 </c:if>
+                              </c:forEach>
+                           <li tabindex="0" class="paginate_button next" id="dataTables-example_next" aria-controls="dataTables-example">
+                           <c:if test="${(paging.endPage+paging.pageSize) > paging.maxPage }">
+                              <c:url var="sOther4" value="/admin/dollist.do">
+                                 <c:param name="currentPage" value="${paging.maxPage}"/><c:param name="search" value="${option }"/>
+                                 <c:param name="keyword" value="${paging.keyword}"/>
+                              </c:url>
+                                 <a href="${ sOther4}">&gt;</a>
+                              </c:if> <c:if test="${(paging.endPage+paging.pageSize) <= paging.maxPage }">
+                              <c:url var="sOther5" value="/admin/dolSearch.do">
+                                 <c:param name="currentPage" value="${paging.endPage + paging.pageSize}"/><c:param name="search" value="${option }"/>
+                                 <c:param name="keyword" value="${paging.keyword}"/>
+                              </c:url>
+                                 <a href="${ sOther5}">&gt;</a>
+                              </c:if></li>
+                           <li tabindex="0" class="paginate_button next" id="dataTables-example_next" aria-controls="dataTables-example">
+                              <c:url var="sOther6" value="/admin/dolSearch.do">
+                                 <c:param name="currentPage" value="${paging.maxPage}"/><c:param name="search" value="${option }"/>
+                                 <c:param name="keyword" value="${paging.keyword}"/>
+                              </c:url>
+                              <a href="${ sOther6}">&gt;&gt;</a>
+                           </li>
+                        </ul>
+                       
+                        
+                        <!-- 검색어 날짜 아닐 때 끝 -->
+                        </c:if>
+                     </div>
+                  </div>
                                 <!-- 페이징 종료 -->
                             </div>
                             <!-- /.table-responsive -->

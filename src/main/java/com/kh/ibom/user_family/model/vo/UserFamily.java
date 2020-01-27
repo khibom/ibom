@@ -23,17 +23,34 @@ public class UserFamily implements Serializable{
 	private String family_etc;
 	private java.sql.Date ad_date;
 	private int remaining_time;
-	private int monthly_time;
+	//private int monthly_time;
 	private String impair_type;
 	private String foster_pay;
 	private String child_batrec;
 	private String child_carepay;
 	
 	public UserFamily() {}
+	
+	public UserFamily(String user_id, String family_relationship, String family_name, String kor_yesno,
+			String family_no, String family_gender, String family_blood, String dolbom_type, String ad_level,
+			String select_type, String family_etc) {
+		super();
+		this.user_id = user_id;
+		this.family_relationship = family_relationship;
+		this.family_name = family_name;
+		this.kor_yesno = kor_yesno;
+		this.family_no = family_no;
+		this.family_gender = family_gender;
+		this.family_blood = family_blood;
+		this.dolbom_type = dolbom_type;
+		this.ad_level = ad_level;
+		this.select_type = select_type;
+		this.family_etc = family_etc;
+	}
 
 	public UserFamily(String family_code, String user_id, String family_relationship, String family_name,
 			String kor_yesno, String family_no, String family_gender, String family_blood, String dolbom_type,
-			String ad_level, String select_type, String family_etc, Date ad_date, int remaining_time, int monthly_time,
+			String ad_level, String select_type, String family_etc, Date ad_date, int remaining_time,
 			String impair_type, String foster_pay, String child_batrec, String child_carepay) {
 		super();
 		this.family_code = family_code;
@@ -50,7 +67,6 @@ public class UserFamily implements Serializable{
 		this.family_etc = family_etc;
 		this.ad_date = ad_date;
 		this.remaining_time = remaining_time;
-		this.monthly_time = monthly_time;
 		this.impair_type = impair_type;
 		this.foster_pay = foster_pay;
 		this.child_batrec = child_batrec;
@@ -169,13 +185,6 @@ public class UserFamily implements Serializable{
 		this.remaining_time = remaining_time;
 	}
 
-	public int getMonthly_time() {
-		return monthly_time;
-	}
-
-	public void setMonthly_time(int monthly_time) {
-		this.monthly_time = monthly_time;
-	}
 
 	public String getImpair_type() {
 		return impair_type;
@@ -219,7 +228,7 @@ public class UserFamily implements Serializable{
 				+ family_relationship + ", family_name=" + family_name + ", kor_yesno=" + kor_yesno + ", family_no="
 				+ family_no + ", family_gender=" + family_gender + ", family_blood=" + family_blood + ", dolbom_type="
 				+ dolbom_type + ", ad_level=" + ad_level + ", select_type=" + select_type + ", family_etc=" + family_etc
-				+ ", ad_date=" + ad_date + ", remaining_time=" + remaining_time + ", monthly_time=" + monthly_time
+				+ ", ad_date=" + ad_date + ", remaining_time=" + remaining_time 
 				+ ", impair_type=" + impair_type + ", foster_pay=" + foster_pay + ", child_batrec=" + child_batrec
 				+ ", child_carepay=" + child_carepay + "]";
 	}

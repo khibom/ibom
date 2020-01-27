@@ -28,7 +28,7 @@ public class IusersDao {
 	
 	// 비번 암호화 회원가입
 	public int insertIusers(Iusers iusers) {
-		return 0;
+		return session.insert("iusersMapper.insertIusers", iusers);
 	}
 	
 	//   아이디 중복 체크

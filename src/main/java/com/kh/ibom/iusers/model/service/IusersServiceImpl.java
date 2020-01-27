@@ -33,10 +33,10 @@ public class IusersServiceImpl implements IusersService{
 	}
 	
 	// 비번암호화 회원가입
-	@Override
-	public int insertIusers(Iusers iusers) {
-		return iusersDao.insertIusers(iusers);
-	}
+		@Override
+		public int insertIusers(Iusers iusers) {
+			return iusersDao.insertIusers(iusers);
+		}
 	
 	// 아이디 중복 체크
 	@Override

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kh.ibom.common.CommonPaging;
+import com.kh.ibom.interview.model.vo.InterUpdate;
 import com.kh.ibom.interview.model.vo.Interview;
 
 @Repository("interDao")
@@ -40,6 +41,16 @@ public class InterviewDao {
 	public ArrayList<Interview> InterviewIusersSearchList(HashMap<String, Object> map) {
 		List<Interview> list = session.selectList("interviewMapper.searchIusersList", map);
 		return (ArrayList<Interview>)list;
+	}
+	public ArrayList<InterUpdate> adminInterUpList(String service2_no) {
+		List<InterUpdate> list = session.selectList("interviewMapper.updateList", service2_no);
+		return (ArrayList<InterUpdate>)list;
+	}
+	public Interview selectOne(String service2_no) {
+		return session.selectOne("interviewMapper.selectone", service2_no);
+	}
+	public int interUpdateUp(Interview inter) {
+		return session.insert("interviewMapper.interUpdateUp",inter);
 	}
 	
 

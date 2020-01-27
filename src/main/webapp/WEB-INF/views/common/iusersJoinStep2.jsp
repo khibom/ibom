@@ -20,18 +20,50 @@
     <link rel="stylesheet" href="/ibom/resources/css/styles.css" />
 
 <!--  tab CSS 추가 -->
-<link rel="stylesheet" href="/ibom/resources/materialize/css/materialize.css" />
+<link rel="stylesheet" href="/ibom/resources/materialize/css/materialize22.css" />
 <style>
-
 .login-form {     width: 50%; }
 .login-form-text {    text-transform: uppercase;    letter-spacing: 2px;    font-size: 0.8rem;}
 .login-text {    margin-top: -6px;    margin-left: -6px !important;}
 .margin {    margin: 0 !important;}
 .pointer-events {    pointer-events: auto !important;}
 .input-field >.material-icons  {    padding-top:10px;}
-.input-field div.error, .input-field div.error1, .input-field div.error2, .input-field div.error3, .input-field div.error4, .input-field div.error5
-{    position: relative;    top: -1rem;    left: 3rem;
-    font-size: 0.8rem;    color:#FF4081;    -webkit-transform: translateY(0%);    -ms-transform: translateY(0%);    -o-transform: translateY(0%);    transform: translateY(0%);}
+.error_next_box {
+    display: block;
+    margin: 9px 0 -2px;
+    font-size: 12px;
+    line-height: 14px;
+    color: red;
+}
+.star {
+    display: inline-block;
+    float:right;
+    margin-top: 8px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 14px;
+    letter-spacing: -0.025em;
+    line-height: 1.5;
+    color: #f07e23;
+}
+.star:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 3px;
+    font-family: 'jt_font';
+    content: '\e936';
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1;
+}
+.join_s {
+    display: inline;
+    margin-bottom: 18px;
+    font-size: 16px;
+    letter-spacing: -0.025em;
+    color: #f07e23;
+    font-weight:600;
 </style>
 <!--  js -->
 <script src="/ibom/resources/js/jquery-3.4.1.min.js"></script>
@@ -52,70 +84,29 @@
 <script type="text/javascript" src="/ibom/resources/js/jt.js"></script>
 <script src="/ibom/resources/materialize/js/materialize.js"></script>
  <!-- 주소 추가 부분 시작 -->
- <script language="javascript">
-// opener관련 오류가 발생하는 경우 아래 주석을 해지하고, 사용자의 도메인정보를 입력합니다. ("팝업API 호출 소스"도 동일하게 적용시켜야 합니다.)
-//document.domain = "abc.go.kr";
-
-function goPopup(){
-	// 주소검색을 수행할 팝업 페이지를 호출합니다.
-	// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
-	var pop = window.open("${pageContext.servletContext.contextPath}/common/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
-	
-	// 모바일 웹인 경우, 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrMobileLinkUrl.do)를 호출하게 됩니다.
-    //var pop = window.open("/popup/jusoPopup.jsp","pop","scrollbars=yes, resizable=yes"); 
-}
-
-
-function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn,detBdNmList,bdNm,bdKdcd,siNm,sggNm,emdNm,liNm,rn,udrtYn,buldMnnm,buldSlno,mtYn,lnbrMnnm,lnbrSlno,emdNo){
-		// 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
-		document.form.roadFullAddr.value = roadFullAddr;
-		document.form.roadAddrPart1.value = roadAddrPart1;
-		document.form.roadAddrPart2.value = roadAddrPart2;
-		document.form.addrDetail.value = addrDetail;
-		document.form.engAddr.value = engAddr;
-		document.form.jibunAddr.value = jibunAddr;
-		document.form.zipNo.value = zipNo;
-		document.form.admCd.value = admCd;
-		document.form.rnMgtSn.value = rnMgtSn;
-		document.form.bdMgtSn.value = bdMgtSn;
-		document.form.detBdNmList.value = detBdNmList;
-		/** 2017년 2월 추가제공 **/
-		document.form.bdNm.value = bdNm;
-		document.form.bdKdcd.value = bdKdcd;
-		document.form.siNm.value = siNm;
-		document.form.sggNm.value = sggNm;
-		document.form.emdNm.value = emdNm;
-		document.form.liNm.value = liNm;
-		document.form.rn.value = rn;
-		document.form.udrtYn.value = udrtYn;
-		document.form.buldMnnm.value = buldMnnm;
-		document.form.buldSlno.value = buldSlno;
-		document.form.mtYn.value = mtYn;
-		document.form.lnbrMnnm.value = lnbrMnnm;
-		document.form.lnbrSlno.value = lnbrSlno;
-		/** 2017년 3월 추가제공 **/
-		document.form.emdNo.value = emdNo;
-		
-}
-
-</script>
+ 
  <!--  주소 추가 부분 끝 -->
 <!--  네이버 추가 js -->
 <script type="text/javascript" src="/ibom/resources/js/clickcr.js"></script>
 <script type="text/javascript">
 //region define, setter
-var idFlag = false;
+/* var idFlag = false;
 var pwFlag = false;
 var authFlag = false; // 인증번호
 var jusoFlag = false; // 주소
-var submitFlag = false;
+var submitFlag = false;  */ 
+ var idFlag = true;
+var pwFlag = true;
+var authFlag = true; // 인증번호
+var jusoFlag = true; // 주소
+var submitFlag = true;
 
 $(document).ready(function(){
 	defaultScript();
 	
 	// 주민번호(생년월일)
 	if($("#resident_no1").val() != ""){
-		checkResident();
+		checkResidentNo();
 	}
 	
 	// region unreal id
@@ -126,7 +117,7 @@ $(document).ready(function(){
 	
 	// 비밀번호
 	$("#user_pwd").blur(function(){
-		pwFlag = fasle;
+		pwFlag = false;
 		checkPswd1();
 	}).keyup(function(event){
 		checkShiftUp(event);
@@ -154,7 +145,7 @@ $(document).ready(function(){
 	
 	// 주민번호(생년월일)
 	$("#resident_no1").blur(function(){
-		checkResidentNo();  
+		checkResidentNo();
 	});
 	
 	// 주민번호(뒷자리)
@@ -169,7 +160,21 @@ $(document).ready(function(){
 		checkEmail();
 	}); // end user_email
 	
-	// 주소
+	// 주소검색
+	$("#zipNo").blur(function(){
+		checkJuso();
+	}); 
+	
+	// 우편번호 검색
+	$("#goJusoPopup").click(function(){
+		goJusoPopupButton();
+		return false;
+	});
+	
+	// 집전화번호
+	$("#user_tel").blur(function(){
+		checkTel();
+	});
 	
 	// 핸드폰번호
 	$("#user_phone").blur(function(){
@@ -191,9 +196,25 @@ $(document).ready(function(){
 	
 	// 주민등록번호 동의서
 	$("#agree4").click(function(){
-		viewAgree4();
+		checkAgree4();
 	}); // end agree4
 	// 다시 살표보기 바람
+	
+	// 취소 버튼
+	$("#btnCancel2").click(function(event) {
+		var result = confirm("회원가입을 취소하시겠습니까?")
+		if(result){
+			alert("이용자 등록이 완료되지 않아 우리i봄 서비스를 이용하실 수 없습니다.");
+			clickcr(this, 'tos.disagree', '', '', event);
+			   sessionStorage.clear();
+			   console.log(sessionStorage.length);
+			   submitDisagree();
+			   return false;
+		} else {
+			alert("우리i봄 서비스 신청 및 연계시 필요한 정보이므로, 기본정보, 가정현황, 이용사항, 요구사항 등의 정보를 정확하게 입력해 주시기 바랍니다.");				 
+		}   
+		
+	});
 	
 	$("#nextBtn2").click(function(event){
 		clickcr(this, 'sup.signup', '', '', event);
@@ -212,41 +233,107 @@ $(document).ready(function(){
  //region mainSubmit
     function mainSubmit() { 
 
-        if(idFlag && pwFlag && authFlag) {
+	// sessionStorage 값 설정하기 ==========================================
+	var user_id = $("#user_id").val();//아이디
+	var user_pwd = $("#user_pwd").val();// 비밀번호
+	var user_name = $("#user_name").val();
+	var no1 = $("#resident_no1").val();
+	var no2 = $("#resident_no2").val();
+	// 뒤에서 6개글자를 * 처리한다.
+	var pattern = /.{6}$/;
+	var no3 = no2.replace(pattern, "******");
+	var resident_no = no1 + "-" + no3; // 주민등록번호
+	var user_email = $("#user_email").val(); // 이메일
+	
+	var zipNo = $("#zipNo").val(); // 우편번호
+	var roadAddrPart1 = $("#roadAddrPart1").val();
+	var addrDetail = $("#addrDetail").val();
+	var roadAddrPart2 = $("#roadAddrPart2").val();
+	var user_address = zipNo + ", " + roadAddrPart1 + addrDetail + roadAddrPart2; // 주소	
+	var sinm = $("#siNm").val(); // 시도명
+	var sggnm = $("#sggNm").val(); // 시군구명
+	var user_tel = $("#user_tel").val(); // 집전화
+	var phone1 = $("#user_phone").val(); // 핸드폰 번호
+	var phone2 = JSON.stringify(phone1); // object HTMLInputElement 객체라서 string으로 변환
+	var user_phone = phone2.replace(/\"/gi, "");
+	//var phone = document.getElementById('user_phone').getAttribute('value');
+	var office_code = $("#sel option:selected").val(); // 서비스센터 코드	
+	var agree4 = document.getElementById('agree4');   // 주민번호 동의
+	//console.log(document.getElementById('agree4').getAttribute('agree4'));
+	//var agree4Value = $('input[name="agree4"]:checked').value;
+	var agree4Value = document.getElementById('agree4').getAttribute('value');
+	//console.log("값 확인 : " + agree4Value);
+	
+	sessionStorage.setItem("user_id", user_id);
+	sessionStorage.setItem("user_pwd", user_pwd);
+	sessionStorage.setItem("user_name", user_name);
+	sessionStorage.setItem("resident_no", resident_no);
+	sessionStorage.setItem("user_email", user_email);
+	sessionStorage.setItem("user_address", user_address);
+	sessionStorage.setItem("sinm", sinm);
+	sessionStorage.setItem("sggnm", sggnm);
+	sessionStorage.setItem("user_tel", user_tel);
+	sessionStorage.setItem("user_phone", user_phone);
+	sessionStorage.setItem("office_code", office_code);
+	sessionStorage.setItem("agree4", agree4Value);
+	
+	var data = {};
+	data.user_id = sessionStorage.getItem("user_id");
+	data.user_pwd = sessionStorage.getItem("user_pwd") 
+	data.user_name = sessionStorage.getItem("user_name");
+	data.resident_no = sessionStorage.getItem("resident_no");
+	data.user_email = sessionStorage.getItem("user_email");
+	data.user_address = sessionStorage.getItem("user_address");
+	data.sinm = sessionStorage.getItem("sinm");
+	data.sggnm = sessionStorage.getItem("sggnm");
+	data.user_tel = sessionStorage.getItem("user_tel"); 
+	data.user_phone = sessionStorage.getItem("user_phone");
+	data.office_code = sessionStorage.getItem("office_code");
+	data.agree1 =	sessionStorage.getItem("agree1");
+	data.agree2 =	sessionStorage.getItem("agree2");
+	data.agree3 =	sessionStorage.getItem("agree3");
+	data.agree4 =	sessionStorage.getItem("agree4");
+	
+	console.log(sessionStorage);
+    console.log(JSON.stringify(data));
+   
+	idFlag = true;
+  	pwFlag = true;
+    authFlag = true;
+    
+	if(idFlag && pwFlag && authFlag) {
             try {
                 desk.f(function(a) {
-                    $("#nid_kb2").val(a);
-                    $("#join_form").submit();
+                	$("#join_form").submit();
                 });
             } catch (e) {
-                $("#nid_kb2").val("join v2 error: " + e.name + ", " + e.message);
                 $("#join_form").submit();
             }
         } else {
-            submitOpen();
+        	submitOpen();
             return false;
         }
     }// end mainsubmit 
-	
+	 
     // input 값 검사    
-    function checkUnrealInput() {
-        if (checkId('join')
-        		& checkPswd1()
-        		& checkPswd2()
-                & checkName()
-                & checkResidentNo()
-                & checkEmail()
-                & checkAddress()
-                & checkPhone()
-                & checkKey()
-                & checkAgree4()
-        ) { 
-            return true;
-        } else {
-            return false;
-        }
-    }
-    
+     function checkUnrealInput() {
+         if (checkId('join')
+         		& checkPswd1()
+         		& checkPswd2()
+                 & checkName()
+                 & checkResidentNo()
+                 & checkEmail()
+                 & checkJuso()
+                 & checkTel()
+                 & checkPhone()
+                 & checkAuth()
+                 & checkAgree4()
+         ) { 
+             return true;
+         } else {
+             return false;
+         }
+     } 
     // endregion
     
     //region unreal 가입
@@ -263,9 +350,9 @@ $(document).ready(function(){
              return false;
          }
     	 
-    	 var isID = /^[a-z0-9_\-]{4-19}$/;
+    	 var isID = /^[a-zA-Z0-9]{4,12}$/;
     	 if(!isID.test(id)){
-    		 showErrorMsg(oMsg,"5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.");
+    		 showErrorMsg(oMsg,"5~13자의 영문 대소문자, 숫자만 사용 가능합니다.");
              setFocusToInputObject(oInput);
              return false;
     	 }
@@ -299,9 +386,9 @@ $(document).ready(function(){
     	if(pwFlag) return true;
     	
     	var id = $("#user_id").val();
-    	var pw = $("#user_pwd").val();
+    	var pw = $("#user_pwd").val();/* 
         var oImg = $("#pswImg");
-        var oSpan = $("#pswSpan");
+        var oSpan = $("#pswSpan"); */
     	var oMsg = $("#pwdMsg");
     	var oInput = $("#user_pwd");
     	
@@ -311,17 +398,37 @@ $(document).ready(function(){
             return false;
     	}
     	
-    	if(isValidPasswd(pw) != true){
-    		showPasswd1ImgByStep(oImg, oSpan, 1);
-            showErrorMsg(oMsg,"8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.");
+    	if(!/^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{6,12}$/.test(pw)){          
+    		showErrorMsg(oMsg,"숫자+영문자+특수문자 조합으로 6자리 이상 사용해야 합니다.");
+            setFocusToInputObject(oInput);
+            /* alert('숫자+영문자+특수문자 조합으로 8자리 이상 사용해야 합니다.');
+            $('#password').val('').focus(); */
+            return false;
+        }    
+        var checkNumber = pw.search(/[0-9]/g);
+        var checkEnglish = pw.search(/[a-z]/ig);
+        if(checkNumber <0 || checkEnglish <0){
+        	showErrorMsg(oMsg,"숫자와 영문자를 혼용하여야 합니다.");
             setFocusToInputObject(oInput);
             return false;
-    	} // end isValid
-    	
-    	/* pwFlag = false;
-    	$.ajax({
-    		
-    	}); // end ajax */
+        }
+        if(/(\w)\1\1\1/.test(pw)){
+        	showErrorMsg(oMsg,"같은 문자를 4번 이상 사용하실 수 없습니다.");
+            setFocusToInputObject(oInput);
+           /*  alert('같은 문자를 4번 이상 사용하실 수 없습니다.');
+            $('#password').val('').focus(); */
+            return false;
+        }
+            
+        if(pw.search(id) > -1){
+        	showErrorMsg(oMsg,"비밀번호에 아이디가 포함되었습니다.");
+            setFocusToInputObject(oInput);
+            /* alert("비밀번호에 아이디가 포함되었습니다.");
+            $('#password').val('').focus(); */
+            return false;
+        }
+        
+    	hideMsg(oMsg);
     	return true;
     	
     }// end checkPswd1()
@@ -379,7 +486,7 @@ $(document).ready(function(){
     	var resident_no;
     	var no1 = $("#resident_no1").val();
     	var no2 = $("#resident_no2").val();
-    	var oMsg = $("#resdient_noMsg");
+    	var oMsg = $("#resident_noMsg");
     	
     	var ono1 = $("#resident_no1");
     	var ono2 = $("#resident_no2");
@@ -395,59 +502,62 @@ $(document).ready(function(){
     		setFocusToInputObject(ono1);
     		return false;
     	}
+    	if(no1.length != 6 || no1.indexOf('e') != -1 || no1.indexOf('E') != -1){
+    		showErrorMsg(oMsg,"생년월일 6자리를 정확하게 입력하세요.");
+            setFocusToInputObject(no1);
+            return false;
+    	}
     	if( no2 == ""){
     		showErrorMsg(oMsg, "주민등록번호 뒷 자리를 정확하게 입력하세요.");
     		setFocusToInputObject(ono2);
     		return false;
     	}
-    	
-    	var totalResident = "" + no1 + no2;
-    	
-    	var residentArr = new Array();
-    	var sum = 0;
-    	var plus = 2;
-    	
-    	// 배열에 주민등록번호 입력 후 유효값 확인하기 위해  sum에 저장
-    	for(var i = 0; i < 12; i++){
-    		residentArr[i] = totalResident.charAt(i);
-    		if(i >= 0 && i <= 7){
-    			sum += totalResident[i] * plus;
-    			plus++;
-    			if(i == 7)
-    				plus = 2;
-    		} else {
-    			sum += totalResident[i] * plus;
-    			plus++;
-    		} 
-    	}
-    	// 주민등록번호 길이 확인하기
-    	if(residentArr.length < 12){
-    		/* var tag = "주민등록번호는 13자리입니다.";
-    		$("#error2").html("<span style='color:#f37233'> " + tag + "</span>"); */
-    		showErrorMsg(oMsg, "주민등록번호는 13자리입니다. 자리를 정확하게 입력하세요.");
-    		setFocusToInputObject(ono1);
-    		/*form.resident_no1.value= "";
-    		form.resident_no2.value = "";
-    		form.resident_no1.focus(); */
-    		return false;
+    	if(no2.length != 7 || no1.indexOf('e') != -1 || no1.indexOf('E') != -1){
+    		showErrorMsg(oMsg,"주민번호 뒷자리 7자리를 정확하게 입력하세요.");
+            setFocusToInputObject(no2);
+            return false;
     	}
     	
-    	// 주민등록번호가 유효한지 확인
-    	var result = 11 - (sum % 11) % 10;
-    	if (result != totalResident.charAt(12)){
-    		// 주민등록번호가 유효하지 않은 경우
-    		/* var tag = "유효하지 않은 주민등록번호 입니다.";
-    		$("#error2").html("<span style='color:#f37233'> " + tag + "</span>"); */
-    		showErrorMsg(oMsg, "주민등록번호를 정확하게 입력하세요.");
-    		setFocusToInputObject(ono1);
-    		form.resident_no1.value= "";
-    		form.resident_no2.value = "";
-    		return false;
-    	}
-    	hideMsg(oMsg);
+    	var num1 = document.getElementById("resident_no1");
+        var num2 = document.getElementById("resident_no2");
+
+        var arrNum1 = new Array(); // 주민번호 앞자리숫자 6개를 담을 배열
+        var arrNum2 = new Array(); // 주민번호 뒷자리숫자 7개를 담을 배열
+
+        // -------------- 주민번호 -------------
+
+        for (var i=0; i<num1.value.length; i++) {
+            arrNum1[i] = num1.value.charAt(i);
+        } // 주민번호 앞자리를 배열에 순서대로 담는다.
+
+        for (var i=0; i<num2.value.length; i++) {
+            arrNum2[i] = num2.value.charAt(i);
+        } // 주민번호 뒷자리를 배열에 순서대로 담는다.
+
+        var tempSum=0;
+
+        for (var i=0; i<num1.value.length; i++) {
+            tempSum += arrNum1[i] * (2+i);
+        } // 주민번호 검사방법을 적용하여 앞 번호를 모두 계산하여 더함
+
+        for (var i=0; i<num2.value.length-1; i++) {
+            if(i>=2) {
+                tempSum += arrNum2[i] * i;
+            }
+            else {
+                tempSum += arrNum2[i] * (8+i);
+            }
+        } // 같은방식으로 앞 번호 계산한것의 합에 뒷번호 계산한것을 모두 더함
+
+        if((11-(tempSum%11))%10!=arrNum2[6]) {
+        	showErrorMsg(oMsg,"올바른 주민번호가 아닙니다.");
+            setFocusToInputObject(no2);
+            return false;
+        }
+    	
+       	hideMsg(oMsg);
     	return true;
-    	
-    }
+   }
     
     // 이메일
     function checkEmail(){
@@ -460,7 +570,7 @@ $(document).ready(function(){
             return true;
     	} */
     	
-    	 var isEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    	var isEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         var isHan = /[ㄱ-ㅎ가-힣]/g;
         if (!isEmail.test(email) || isHan.test(email)) {
             showErrorMsg(oMsg,"이메일 주소를 다시 확인해주세요.");
@@ -470,6 +580,49 @@ $(document).ready(function(){
         return true;
     }// end 이메일
     
+    // 주소
+    function checkJuso(){
+    	var zipNo = $("#zipNo").val();
+    	var oMsg = $("#jusoMsg");
+    	var oInput = $("#zipNo");
+    	
+    	if( zipNo == ""){
+    		showErrorMsg(oMsg, "필수 정보입니다.");
+    		setFocusToInputObject(oInput);
+    		return false;
+    	}
+    	
+    	hideMsg(oMsg);
+    	return true;
+    	
+    }// end 주소
+    
+  // 집전화번호
+  function checkTel(){
+    	var tel = $("#user_tel").val();
+    	var oMsg = $("#telMsg");
+    	var oInput = $("#user_tel");
+    	
+	//필수가 아닐 경우
+  	 if(userTel = ""){
+  		hideMsg(oMsg);
+        return true;
+  	} 
+    
+  //	tel = tel.split('-').join('');
+  	var isTel = /^\d{2,3}-\d{3,4}-\d{4}$/;
+  	
+    if (!isTel.test(tel)) {
+        showErrorMsg(oMsg,"전화번호를 다시 확인해주세요.");
+        return false;
+    }
+    
+    hideMsg(oMsg);
+    return true;
+    
+    }// end 집전화번호
+    
+     
     // 핸드폰 번호
     function checkPhone(){
     	var phoneNo = $("#user_phone").val();
@@ -490,7 +643,7 @@ $(document).ready(function(){
     	var phoneNo = $("#user_phone").val();
     	var oMsg = $("#phoneNoMsg");
     	
-    	phoneNo = phoneNo.replace(/ /gi, "").replace(/-/gi, "");
+    	//phoneNo = phoneNo.replace(/ /gi, "").replace(/-/gi, "");
     	$("#user_phone").val(phoneNo);
     	authFlag = false;
     	
@@ -509,12 +662,12 @@ $(document).ready(function(){
     		success : function(result){
     			if(result == "ok"){
     				console.log("result : " + result );
-    				/* var tag = "인증번호를 발송하였습니다.";
-    				$("#error3").html("<span style='color:#f37233'> " + tag + "</span>"); */
     				showSuccessMsg(oMsg,"인증번호를 발송했습니다.<br>인증번호가 오지 않으면 입력하신 정보가 정확한지 확인하여 주세요.<br>이미 가입된 번호이거나, 가상전화번호는 인증번호를 받을 수 없습니다.");
+    				$("#key").attr("disabled", false);
+                    var oBox = $("#authNoBox");
+                    var oCode = $("#authNoCode");
+                    showAuthDefaultBox(oBox, oCode);
     			} else {
-    				/* var tag = "인증번호 전송 실패";
-    				$("#error3").html("<span style='color:#f37233'> " + tag + "</span>"); */
     				showErrorMsg(oMsg,"전화번호를 다시 확인해주세요.");
     			}
     		}
@@ -523,10 +676,13 @@ $(document).ready(function(){
     	return false;
     }// end sendSms()
     
+    // 인증번호 확인
     function checkAuth(){
     	var authNo = $("#key").val();
-    	var oMsg = $("#authNoMsg");
-    	var oInput = $("#key");
+    	 var oMsg = $("#authNoMsg");
+         var oBox = $("#authNoBox");
+         var oCode = $("#authNoCode");
+         var oInput = $("#key");
     	
     	if(authNo = ""){
     		showErrorMsg(oMsg, "인증이 필요합니다.");
@@ -536,52 +692,48 @@ $(document).ready(function(){
     	
     	if(authFlag){
     		showSuccessMsg(oMsg,"인증이 성공했습니다.");
-    		$("#phoneNoMsg").hide();
-    		return true;
+    		showAuthSuccessBox(oBox, oCode, "일치");
+            $("#phoneNoMsg").hide();
+            return true;
     	} else {
-    		checkAuthnoByAjax();
+    		//checkAuthnoByAjax();
+    		var authNo = $("#key").val();
+    		var oMsg = $("#authNoMsg");
+    	    var oBox = $("#authNoBox");
+    	    var oCode = $("#authNoCode");
+    	    var oInput = $("#key");
+        	
+        	$.ajax({
+        		url :  "smsCheck.do",
+        		type : "post",
+        		data : {	key : authNo 	},
+        		success : function(result){
+        			if(result == "ok") {
+        				//alert("번호 인증 성공");
+        				console.log("result : " + result );
+        				showSuccessMsg(oMsg,"인증이 성공했습니다.");
+                        showAuthSuccessBox(oBox, oCode, "일치");
+                        $("#phoneNoMsg").hide();
+                        authFlag = true;
+        			} else {
+        				showErrorMsg(oMsg,"인증번호를 다시 확인해주세요.");
+                        showAuthErrorBox(oBox, oCode, "불일치");
+                        setFocusToInputObject(oInput);
+        			}
+        		}
+        	 });
+        	  return true;
     	}
     	return true;
     } // 인증번호 체크
     
-    // 인증번호 확인하는 ajax
-    function checkAuthnoByAjax(){
-    	var authNo = $("#key").val();
-    	var oMsg = $("#authNoMsg");
-    	var oInput = $("#key");
-    	
-    	$.ajax({
-    		url :  "smsCheck.do",
-    		type : "post",
-    		data : {
-    			key : authoNo
-    		},
-    		success : function(result){
-    			if(result == "ok") {
-    				//alert("번호 인증 성공");
-    				console.log("result : " + result );
-    				/* var tag = " 번호 인증 성공";
-    				$("#error4").html("<span style='color:#f37233'> " + tag + "</span>"); */
-    				showSuccessMsg(oMsg,"인증이 성공했습니다.");
-    				$("#phoneNoMsg").hide();
-                    keyFlag = true;
-    			} else {
-    				//alert("번호 인증 실패");
-    				/* var tag = "번호 인증 실패!";
-    				$("#error4").html("<span style='color:#f37233'> " + tag + "</span>"); */
-    				showErrorMsg(oMsg,"인증번호를 다시 확인해주세요.");
-                    setFocusToInputObject(oInput);
-    			}
-    		}
-    	 });
-    	  return true;
-    } // 인증번호 확인 ajax
+   
    
     // 주민번호 동의 약관 4
     function checkAgree4(){
     	var oMsg = $("#agree4Msg");
     	if( !$("#agree4").is(":checked")){
-    		showErrorMsg(oMsg, "약관에 동의해주세요.");
+    		showErrorMsg(oMsg, "주민등록번호 처리에 동의해주세요.");
             return false;
     	}
     	hideMsg(oMsg);
@@ -603,36 +755,7 @@ $(document).ready(function(){
         }
     }
 
-    // 비밀번호
-     function isValidPasswd(str) {
-        var cnt = 0;
-        if (str == "") {
-            return false;
-        }
-
-        /* check whether input value is included space or not */
-        var retVal = checkSpace(str);
-        if (retVal) {
-            return false;
-        }
-        if (str.length < 8) {
-            return false;
-        }
-        for (var i = 0; i < str.length; ++i) {
-            if (str.charAt(0) == str.substring(i, i + 1))
-                ++cnt;
-        }
-        if (cnt == str.length) {
-            return false;
-        }
-
-        var isPW = /^[A-Za-z0-9`\-=\\\[\];',\./~!@#\$%\^&\*\(\)_\+|\{\}:"<>\?]{8,16}$/;
-        if (!isPW.test(str)) {
-            return false;
-        }
-
-        return true;
-    }// end 비밀번호 유효성
+   
     
     var isShift = false;
     function checkShiftUp(e) {
@@ -723,7 +846,7 @@ $(document).ready(function(){
        }
 
        function showSuccessMsg(obj, msg) {
-           obj.attr("class", "error_next_box green");
+           obj.attr("class", "error_next_box");
            obj.html(msg);
            obj.show();
        }
@@ -752,51 +875,83 @@ $(document).ready(function(){
            obj.hide();
        }
        
-    // 비밀번호 설정(미설정 아직 사용 불가)
-    /* function showPasswd1ImgByStep(oImg, oSpan, step) {
-        if("IE8" == "") {
-            return false;
-        }
-        if(step == 1) {
-            oImg.attr("class", "ps_box int_pass_step1");
-            oSpan.attr("class", "step_txt txt_red");
-            oSpan.html("사용불가");
-        } else if(step == 2) {
-            oImg.attr("class", "ps_box int_pass_step2");
-            oSpan.attr("class", "step_txt txt_orange");
-            oSpan.html("위험");
-        } else if(step == 3) {
-            oImg.attr("class", "ps_box int_pass_step3");
-            oSpan.attr("class", "step_txt txt_yellow");
-            oSpan.html("보통");
-        } else if(step == 4) {
-            oImg.attr("class", "ps_box int_pass_step4");
-            oSpan.attr("class", "step_txt txt_green");
-            oSpan.html("안전");
-        } else {
-            oImg.attr("class", "ps_box int_pass");
-            oSpan.attr("class", "step_txt");
-            oSpan.html("");
-        }
-    }
 
-    function showPasswd2ImgByDiff(oImg, diff) {
-        if("IE8" == "") {
-            return false;
-        }
-        if(diff == false) {
-            oImg.attr("class", "ps_box int_pass_check");
-        } else {
-            oImg.attr("class", "ps_box int_pass_check2");
-        }
-    } */
-//
 // 핸드폰 번호 유효성 검사
-       function isCellPhone(p) {
-           var regPhone = /^((01[1|6|7|8|9])[1-9][0-9]{6,7})$|(010[1-9][0-9]{7})$/;
-           return regPhone.test(p);
-       }
-       
+    function isCellPhone(p) {
+         var regPhone = /^((01[1|6|7|8|9])[1-9][0-9]{6,7})$|(010[1-9][0-9]{7})$/;
+         return regPhone.test(p);
+    }// end 핸드폰 유효성 검사
+    
+    
+    function goPopup(){
+    	// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
+        var pop = window.open("${pageContext.servletContext.contextPath }/jusoPopupPage.do","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+        
+    	// 모바일 웹인 경우, 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrMobileLinkUrl.do)를 호출하게 됩니다.
+        //var pop = window.open("/popup/jusoPopup.jsp","pop","scrollbars=yes, resizable=yes"); 
+    }
+    /** API 서비스 제공항목 확대 (2017.02) **/
+    function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn
+    						, detBdNmList, bdNm, bdKdcd, siNm, sggNm, emdNm, liNm, rn, udrtYn, buldMnnm, buldSlno, mtYn, lnbrMnnm, lnbrSlno, emdNo){
+    	// 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
+    	document.form.roadAddrPart1.value = roadAddrPart1;
+    	document.form.roadAddrPart2.value = roadAddrPart2;
+    	document.form.addrDetail.value = addrDetail;
+    	document.form.zipNo.value = zipNo;
+    	document.form.siNm.value = siNm;
+    	document.form.sggNm.value = sggNm;
+    	
+    	// 서비스 기관 등록
+    	var findString = "성남";
+    	var job = new Object();
+    	job.city_name = siNm.substring(0,2);
+    	if(sggNm.indexOf(findString) != -1){
+    		job.city_name2 = sggNm.substring(0,3);
+    	} else {
+    		job.city_name2 = sggNm;
+    	}
+    	console.log(job);  
+    	
+    	$.ajax({
+    		url : "officeSearch.do",
+     		type : "post",
+     		data : JSON.stringify(job),
+     		dataType : 'json',
+			contentType : "application/json; charset=utf-8",
+       		success: function(obj){
+    			console.log("전송 성공 : " + obj);   			
+    			
+    			//리턴된 객체를 문자열로 변환 처리
+				var objStr = JSON.stringify(obj);
+				//객체문자열을 json 으로 바꿈
+				var jsonObj = JSON.parse(objStr);
+				
+				//출력용 문자열 준비
+				//var outValues = $("#office_name").html();
+				$("#sel option").remove();
+				var ele = document.getElementById('sel');
+				//출력할 문자열 만들기
+				for(var i in jsonObj.list){
+					
+					/* outValues += jsonObj.list[i].office_code
+							+ ", " + decodeURIComponent(jsonObj.list[i].office_name.replace(/\+/gi, " "))
+							+ "<br>"; */							
+							ele.innerHTML = ele.innerHTML 
+							+ '<option value="' +   jsonObj.list[i].office_code
+							+ '">' + decodeURIComponent(jsonObj.list[i].office_name.replace(/\+/gi, " ")) + '</option>';  					
+				}
+				
+				//$("#office_name").html(outValues);
+			
+    		},
+    		error : function(request, status, errorData){
+    			console.log("error code : " + request.status 
+    					+ "\nMessage : " + request.responseText
+    					+ "\nError : " + errorData);
+    		}
+    		
+    	});  // end 서비스 기관 등록하기
+    }
 </script>
 </head>
 <body>
@@ -809,247 +964,235 @@ $(document).ready(function(){
    <!-- header 끝 -->
 <!--  회원가입 시작 =================================================================== -->
 <main id="main" >
-    <div id="main_container_inner">
+    <div id="main_container_inner" class="notice_list">
     	<div class="article">
-    	<!-- 타이틀 =================================================================== -->
-    	<div class="article_header">
-                <div class="wrap_narrow">
-                    <h1 data-font="secondary" class="article_title">회원가입</h1>
-                </div><!-- .wrap_narrow -->
-    		</div><!-- article_header -->
-    	<!-- 타이틀 끝 =========================================================================== -->
-<div class="article_body">
-	<div class="wrap_narrow">
-		<div class="join_content" align="center">		
-
-		<!-- 1.사용자 인증 -->
-		<!--================================================================================================================-->
-		
-			<h4>사용자 인증</h4>	
-			
-			<form class="join-form" id="join_form" action="iusersJoinStep2.do" name="form" method="post" onsubmit="return checkAll();"
-			style="width:50%;">
-			
-			 	<input type="hidden" id="token_sjoin" name="token_sjoin" value="6wrsbLOeemoSJB91">
-    			<input type="hidden" id="encPswd" name="encPswd" value="">
-    			<input type="hidden" id="encKey" name="encKey" value="">
-    			<input type="hidden" id="birthday" name="birthday" value="">
-    			<input type="hidden" id="joinMode" name="joinMode" value="unreal">
-    			<input type="hidden" id="pbirthday" name="pbirthday" value="">
-    			<input type="hidden" id="ipinFlag" name="ipinFlag" value="">
-    			<input type="hidden" id="nid_kb2" name="nid_kb2" value="">
-    			
-    			<!-- 아이디 ============================================== -->				
-				<div class="row margin">
-					<div class="input-field col s12">
-						<!-- <i class="mid-social-person-outline prefix"></i> -->
-						<i class="material-icons prefix">face</i>
-						<input type="text" name="user_id" id="user_id" class="validate" required/>
-						<label for="user_id">아이디</label>
-					</div><!-- input-field-->
-				</div><!--row, margin-->
-				 <span class="error_next_box" id="idMsg" style="display:none" aria-live="assertive"></span>
-				<!-- =================================================== -->
-    			
-    			<!-- 비밀번호 ============================================== -->				
-				<div class="row margin">
-					<div class="input-field col s12">
-						<!-- <i class="mid-social-person-outline prefix"></i> -->
+		    	<!-- 타이틀 =================================================================== -->
+		    	<div class="article_header">
+		                <div class="wrap">
+		                    <h1 data-font="secondary" class="article_title">회원가입</h1>
+		                     <p class="article_desc">우리i봄 서비스 신청 및 연계시 필요한 정보이므로, 기본정보, 가정현황, 이용사항, 요구사항 등의 정보를 정확하게 입력해 주시기 바랍니다.</p>
+		                </div><!-- .wrap_narrow -->
+		    		</div><!-- article_header -->
+		    	<!-- 타이틀 끝 =========================================================================== -->
+			<div class="article_body">
+					<div class="wrap">
+						<h5>
+							<span class="join_s">개인정보 입력 및 사용자 인증</span>	
+							<span class="star">"맞벌이여부, 다자녀가구여부" 수정은 이용자등록 완료 후 각 지역별 서비스 제공기관으로 문의하시기 바랍니다.</span>
+						</h5>
+						<div class="join_content" align="center">		
+				
+						<!-- 1.사용자 인증 -->
+						<!--================================================================================================================-->
+							
+							<form class="join-form" id="join_form" action="iusersJoinStep3.do" name="form" method="post" style="width:50%;">
+							
+				    			<input type="hidden" id="resident_no" name="resident_no" value="">
+				    			<input type="hidden" id="user_address" name="user_address" value="">
+				    			
+				    			<!-- 아이디 ============================================== -->				
+								<div class="row margin">
+									<div class="join_row input-field col s12">
+										<i class="material-icons prefix">face</i>
+										<input type="text" name="user_id" id="user_id" class="validate" title="ID" maxlength="20" required/>
+										<label for="user_id">아이디</label>
+									</div><!--input-field -->
+									         
+								</div><!--row, margin-->
+								<span class="error_next_box" id="idMsg" style="display:none" aria-live="assertive"></span>
+								<!-- =================================================== -->
+				    			
+				    			<!-- 비밀번호 ============================================== -->				
+								<div class="row margin">
+									<div class="join_row input-field col s12">
+										<!-- <i class="mid-social-person-outline prefix"></i> -->
+										
+											<span id="pwdSpan" class="step_txt"></span>
+											<i class="material-icons prefix">lock</i>
+											<input type="password" name="user_pwd" id="user_pwd" class="validate" title="비밀번호 입력" aria-describedby="pwdMsg" maxlength="12" required/>
+											<label for="user_pwd">비밀번호</label>
+										
+									</div><!-- input-field-->
+								</div><!--row, margin-->
+								 <span class="error_next_box" id="pwdMsg" style="display:none" aria-live="assertive">6~12자의 영문 소문자, 숫자와 특수기호(_)만 사용 가능합니다.</span>
+								<!-- =================================================== -->
+								
+								<!-- 비밀번호 재확인 ============================================== -->				
+								<div class="row margin">
+									<div class="join_row input-field col s12">
+										<!-- <i class="mid-social-person-outline prefix"></i> -->
+										
+										<i class="material-icons prefix">lock_outline</i>
+										<input type="password" name="user_pwd2" id="user_pwd2" class="validate" title="비밀번호 재확인 입력" aria-describedby="pwd2Blind" maxlength="12" required/>
+										<label for="user_pwd2">비밀번호 재확인</label>
+										<!-- <span id="pwd2Blind" class="wa_blind">설정하려는 비밀번호가 맞는지 확인하기 위해 다시 입력 해주세요.</span> -->
+									</div><!-- input-field-->
+								</div><!--row, margin-->
+								 <span class="error_next_box" id="pwd2Msg" style="display:none" aria-live="assertive"></span>
+								<!-- =================================================== -->
+								
+								<!-- 이름 ============================================== -->				
+								<div class="row margin">
+									<div class="join_row input-field col s12">
+										<!-- <i class="mid-social-person-outline prefix"></i> -->
+										<i class="material-icons prefix">keyboard</i>
+										<input type="text" name="user_name" id="user_name" class="validate" title="이름" maxlength="40" required/>
+										<label for="user_name">이름</label>
+									</div><!-- input-field-->
+								</div><!--row, margin-->
+								 <span class="error_next_box" id="nameMsg" style="display:none" aria-live="assertive"></span>
+								<!-- =================================================== -->
+								
+								<!-- 주민번호 ===============================================-->
+								<div class="row margin">
+				        			<div class="join_row input-field col s12" style="display:flex;">
+				          				<i class="material-icons prefix">date_range</i>
+										<input type="text" name="resident_no1" id="resident_no1" title="주민등록번호(생년월일)" class="validate" maxlength="6" required/>
+										<label for="resident_no1">주민등록번호</label>
+						 			 	<input id="resident_no2" type="text" class="validate" name="resident_no2" title="주민등록번호(뒷자리)" maxlength="7" required>
+				          				<!-- <label for="resident_no2">주민등록번호</label> -->
+				        			</div><!-- input-field -->
+				      			</div><!--row, margin-->
+				      			<span class="error_next_box" id="resident_noMsg" style="display:none" aria-live="assertive"></span>
+								<!-- ===================================================== -->
+								
+								
+								<!-- 이메일 ============================================== -->				
+								<div class="row margin">
+									<div class="join_row input-field col s12">
+										<!-- <i class="mid-social-person-outline prefix"></i> -->
+										<i class="material-icons prefix">mail</i>
+										<input type="email" name="user_email" id="user_email" title="이메일" class="validate"/>
+										<label for="user_email">이메일(선택)</label>
+									</div><!-- input-field-->
+								</div><!--row, margin-->
+								 <span class="error_next_box" id="emailMsg" style="display:none" aria-live="assertive"></span>
+								<!-- =================================================== -->
+								
+								<!-- 주소 ============================================== -->				
+								<div class="row margin">
+									<div class="join_row input-field col s12">
+										<!-- <i class="mid-social-person-outline prefix"></i> -->
+										 <i class="material-icons prefix">room </i>
+										<input type="hidden" id="confmKey" name="confmKey" value="">
+										<input type="text" name="zipNo" id="zipNo" class="validate" style="width:68%" readonly>
+										<input type="button" class="btn waves-effect orange darken-3" value="주소검색" onclick="goPopup();">  
+									     <!-- <a href="#" class="btn waves-effect orange darken-3" id="goJusoPopup" role="button">
+				                            <span class="">우편번호</span><i class="material-icons right">search</i>
+				                    	</a>  -->
+										<!-- <label for="user_address">우편번호</label> -->
+										
+										<input value="도로명주소" id="roadAddrPart1" type="text" class="validate" readonly>      					
+				      					<input type="text" id="addrDetail" style="width:90%" value="상세주소" readonly>
+										<input type="text" id="roadAddrPart2"  style="width:90%" value="" readonly> 
+										<input title="시도명" type="hidden" id="siNm" name="siNm" value="시도명" class="w150" readonly>
+										<input title="시군구명" type="hidden" id="sggNm" name="sggNm" value="시군구명" class="w150" readonly>
+									</div><!-- input-field-->
+								</div><!--row, margin-->
+								 <span class="error_next_box" id="jusoMsg" style="display:none" aria-live="assertive"></span>
+								<!-- =================================================== -->
+								
+								<!-- 서비스 제공기관 ============================================== -->				
+								<div class="row margin">
+									<div class="join_row input-field col s12">
+								 	<i class="material-icons left">location_city </i> 
+									<label for="office_code" style="left: 2.4rem;">서비스제공기관</label><br/>
+										<!-- <input type="text" name="office_code" id="office_code" class="validate"/ style=""> -->
+				     					<div id="office_name"></div>
+				  						<select class="browser-default" id="sel">
+				    							<option value="" >--- 집주소를 입력 후 선택하세요 ---</option> 
+				  							</select>    
+				  							         
+				  							
+				              		</div><!-- input-field -->
+								</div><!--row, margin-->
+								 <span class="error_next_box" id="emailMsg" style="display:none" aria-live="assertive"></span>
+								<!-- =================================================== -->
+								
+								
+								<!-- 집전화번호 ============================================== -->				
+								<div class="row margin">
+									<div class="join_row input-field col s12">
+										<!-- <i class="mid-social-person-outline prefix"></i> -->
+										<i class="material-icons prefix">local_phone</i>
+										<input type="text" name="user_tel" id="user_tel" class="validate"/>
+										<label for="user_tel">집전화번호(선택) 예시: 02-1234-1234</label>
+									</div><!-- input-field-->
+								</div><!--row, margin-->
+								 <span class="error_next_box" id="telMsg" style="display:none" aria-live="assertive"></span>
+								<!-- =================================================== -->
+								
+								<!-- 전화번호 입력=========================================== -->
+								<div class="row margin">
+						        			<div class="join_row input-field col s12">
+								          			<!-- <i class="mdi-action-lock-outline prefix"></i> -->
+								          			<i class="material-icons prefix">phonelink_lock</i>
+								          			<input type="text" name="user_phone" id="user_phone" class="validate"  style="width:56%;" value="" required/>
+													<label for="user_phone" style="left : 3rem;">핸드폰번호</label>
+													<a href="#" class="btn waves-effect orange darken-3" id="sendSms" role="button">
+								                            <span class="">인증번호 받기</span><i class="material-icons right">looks_6</i>
+								                    </a>
+													<!-- <button onclick="sendSms();" class="btn waves-effect orange darken-3" name="action" id="sendSms">인증번호받기
+													<i class="material-icons right">looks_6</i>
+													</button> -->
+						          			
+						        				</div>
+				      				</div>
+				
+				<!-- 인증번호 입력 ================================================================== -->
+				      <div class="ps_box_disable box_right_space" id="authNoBox">
+				          <input type="text" id="key" name="key" placeholder="인증번호 입력하세요" aria-label="인증번호 입력하세요" aria-describedby="wa_verify" class="int" disabled maxlength="6">
+				          <label id="wa_verify" for="key" class="lbl">
+				                 <span class="wa_blind">인증받은 후 인증번호를 입력해야 합니다.</span>
+				                 <span class="input_code" id="authNoCode" style="display:none;"></span>
+				           </label>
+				        </div> 
+				      	<span class="error_next_box" id="phoneNoMsg" style="display:none" aria-live="assertive"></span>
+				       <span class="error_next_box" id="authNoMsg" style="display:none" aria-live="assertive"></span>
+				       <span class="error_next_box" id="joinMsg" style="display:none" aria-live="assertive"></span>
+				      
+				      <!-- 주민번호 처리 동의 -->
+								 <div class="join_row row margin">				 	
+				      				<label>
+				        				<input type="checkbox" name="agree4" id="agree4" value="Y" class="filled-in" />
+				        				<span>주민등록번호 처리에 동의합니다.</span>
+				      				</label>
+				      				 <span class="error_next_box" id="agree4Msg" style="display:none" aria-live="assertive">필수 정보입니다.</span>
+				      				
+				    			</div><!-- join-row -->
+				
+								
+				    		
+								
+							</form><!-- login-form--> 
 						
-							<span id="pwdSpan" class="step_txt"></span>
-							<i class="material-icons prefix">lock</i>
-							<input type="password" name="user_pwd" id="user_pwd" class="validate" title="비밀번호 입력" aria-describedby="pwdMsg" required/>
-							<label for="user_pwd">비밀번호</label>
-						
-					</div><!-- input-field-->
-				</div><!--row, margin-->
-				 <span class="error_next_box" id="pwdMsg" style="display:none" aria-live="assertive">9~15자의 영문 소문자, 숫자와 특수기호(_)만 사용 가능합니다.</span>
-				<!-- =================================================== -->
+					
+						<!-- 사용자 인증 끝 -->
+						<!--================================================================================================================-->
 				
-				<!-- 비밀번호 재확인 ============================================== -->				
-				<div class="row margin">
-					<div class="input-field col s12">
-						<!-- <i class="mid-social-person-outline prefix"></i> -->
-						
-						<i class="material-icons prefix">lock_outline</i>
-						<input type="password" name="user_pwd2" id="user_pwd2" class="validate" title="비밀번호 재확인 입력" aria-describedby="pwd2Blind" required/>
-						<label for="user_pwd2">비밀번호 재확인</label>
-						<!-- <span id="pwd2Blind" class="wa_blind">설정하려는 비밀번호가 맞는지 확인하기 위해 다시 입력 해주세요.</span> -->
-					</div><!-- input-field-->
-				</div><!--row, margin-->
-				 <span class="error_next_box" id="pwd2Msg" style="display:none" aria-live="assertive"></span>
-				<!-- =================================================== -->
-				
-				<!-- 이름 ============================================== -->				
-				<div class="row margin">
-					<div class="input-field col s12">
-						<!-- <i class="mid-social-person-outline prefix"></i> -->
-						<i class="material-icons prefix">keyboard</i>
-						<input type="text" name="user_name" id="user_name" class="validate" required/>
-						<label for="user_name">이름</label>
-					</div><!-- input-field-->
-				</div><!--row, margin-->
-				 <span class="error_next_box" id="nameMsg" style="display:none" aria-live="assertive"></span>
-				<!-- =================================================== -->
-				
-				<!-- 주민번호 ===============================================-->
-				<div class="row margin">
-				<div class="row">
-        			<div class="input-field col s6">
-          				<i class="material-icons prefix">date_range</i>
-						<input type="text" name="resident_no1" id="resident_no1" class="validate" required/>
-						<label for="resident_no1">주민등록번호(생년월일)</label>
-        			</div>        			
-        			<div class="input-field col s6">
-          				<input id="resident_no2" type="text" class="validate" name="resident_no2" required>
-          				<label for="resident_no2">주민등록번호(나머지)</label>
-        			</div><!-- input-field -->
-      				</div><!-- row -->
-				</div><!--row, margin-->
-				<div id="error2"></div>
-				<span class="error_next_box" id="resident_noMsg" style="display:none" aria-live="assertive"></span>
-				<!-- ===================================================== -->
-				<!-- 주민번호 처리 동의 -->
-				 <div class="row margin">				 	
-      				<label>
-        				<input type="checkbox" name="agree4" id="agree4" value="true" class="filled-in" checked="checked" />
-        				<span>주민등록번호 처리에 동의합니다.</span>
-      				</label>
-      				 <span class="error_next_box" id="agree4Msg" style="display:none" aria-live="assertive">필수 정보입니다.</span>
-      				
-    			</div><!--  row -->
-				
-				<!-- 이메일 ============================================== -->				
-				<div class="row margin">
-					<div class="input-field col s12">
-						<!-- <i class="mid-social-person-outline prefix"></i> -->
-						<i class="material-icons prefix">mail</i>
-						<input type="email" name="user_email" id="user_email" class="validate"/>
-						<label for="user_email">이메일(선택)</label>
-					</div><!-- input-field-->
-				</div><!--row, margin-->
-				 <span class="error_next_box" id="emailMsg" style="display:none" aria-live="assertive"></span>
-				<!-- =================================================== -->
-				
-				<!-- 주소 ============================================== -->				
-				<div class="row margin">
-					<div class="input-field col s12">
-						<!-- <i class="mid-social-person-outline prefix"></i> -->
-						<i class="material-icons prefix">map </i>
-						<input type="text" name="user_address" id="user_address" class="validate"/ style="width:57%">
-						<a href="#" class="btn waves-effect orange darken-3" id="sendSms" role="button">
-                            <span class="">주소 검색</span><i class="material-icons right">search</i>
-                    	</a>
-						<label for="user_address">주소</label>
-						
-						<input value="기본주소" id="address2" type="text" class="validate">
-      					
-      					<input value="나머지주소" id="address3" type="text" class="validate">
-					</div><!-- input-field-->
-				</div><!--row, margin-->
-				 <span class="error_next_box" id="addressMsg" style="display:none" aria-live="assertive"></span>
-				<!-- =================================================== -->
-				
-				<!-- 서비스 제공기관 ============================================== -->				
-				<div class="row margin">
-					<div class="input-field col s12">
-					<!-- <i class="material-icons prefix">map </i> -->
-						<input type="text" name="office_code" id="office_code" class="validate"/ style="">
-     					
-  							<select class="browser-default">
-    							<option value="" disabled selected>---집주소를 입력 후 선택하세요---</option>
-    							<option value="1">Option 1</option>
-    							<option value="2">Option 2</option>
-    							<option value="3">Option 3</option>
-  							</select>                 
-  							<label for="office_code">서비스제공기관</label>
-              		</div><!-- input-field -->
-				</div><!--row, margin-->
-				 <span class="error_next_box" id="emailMsg" style="display:none" aria-live="assertive"></span>
-				<!-- =================================================== -->
-				
-				
-				<!-- 집전화번호 ============================================== -->				
-				<div class="row margin">
-					<div class="input-field col s12">
-						<!-- <i class="mid-social-person-outline prefix"></i> -->
-						<i class="material-icons prefix">local_phone</i>
-						<input type="text" name="user_tel" id="user_tel" class="validate"/>
-						<label for="user_tel">집전화번호(선택)</label>
-					</div><!-- input-field-->
-				</div><!--row, margin-->
-				 <span class="error_next_box" id="addressMsg" style="display:none" aria-live="assertive"></span>
-				<!-- =================================================== -->
-				
-				<!-- 전화번호 입력=========================================== -->
-				<div class="row margin">
-        			<div class="input-field col s12">
-          			<!-- <i class="mdi-action-lock-outline prefix"></i> -->
-          			<i class="material-icons prefix">phonelink_lock</i>
-          			<input type="text" name="user_phone" id="user_phone" class="validate"  style="width:57%;" required/>
-					<label for="user_phone">핸드폰번호</label>
-					<a href="#" class="btn waves-effect orange darken-3" id="sendSms" role="button">
-                            <span class="">인증번호 받기</span><i class="material-icons right">looks_6</i>
-                    </a>
-					<!-- <button onclick="sendSms();" class="btn waves-effect orange darken-3" name="action" id="sendSms">인증번호받기
-					<i class="material-icons right">looks_6</i>
-					</button> -->
-          			<!-- <div id="error3"></div> -->
-          			<span class="error_next_box" id="phoneNoMsg" style="display:none" aria-live="assertive"></span>
-                    <span class="error_next_box" id="authNoMsg" style="display:none" aria-live="assertive"></span>
-                    <span class="error_next_box" id="joinMsg" style="display:none" aria-live="assertive"></span>
-        		</div>
-      			</div>
+					</div><!-- join_content -->
 
-<!-- 인증번호 입력 ================================================================== -->
-      <div class="row margin">
-        <div class="input-field col s12">
-          <!-- <i class="mdi-action-lock-outline prefix"></i> -->
-          <i class="material-icons prefix">device_unknown</i>
-          <input type="text" name="key" id="key" class="validate" required/>
-          <label for="key">인증번호(숫자6자리)</label>         
-			<!-- <button onclick="phoneCheck();" class="btn waves-effect waves-light orange darken-3">인증번호입력
-		<i class="material-icons right">edit</i>
-		</button> -->
-        </div><!-- input-field -->
-        </div><!-- row -->
-       <!--  <div id="error4"></div> -->
-       <span class="error_next_box" id="phoneNoMsg" style="display:none" aria-live="assertive"></span>
-       <span class="error_next_box" id="authNoMsg" style="display:none" aria-live="assertive"></span>
-       <span class="error_next_box" id="joinMsg" style="display:none" aria-live="assertive"></span>
-      
+						<!-- 다음 버튼 -->
+						<div class="row">        			
+			           		<div class="btn_area double" align="center" style="margin-top:10px;">
+								<span>
+									<!-- tg-text=terms_button_cancel -->
+									<a href="#" id="btnCancel2"	class="waves-effect waves-light btn grey" role="button" style="width:15%;">취소</a>
+								</span> 
+								<span>
+									<!-- tg-text=terms_button_agree -->
+									<a href="#" id="nextBtn2" class="waves-effect waves-light btn orange darken-3" role="button" style="width:15%;">다음 단계</a>
+								</span>
+							</div>
+						  </div><!--  row -->
 
-				
-    		
-				<!-- 다음 버튼 -->
-				<div class="row">
-        			<!-- <div class="input-field col s12">
-          			<button type="submit" id="nextBtn1" class="btn waves-effect waves-light col s12 orange darken-4" >확인</button>
-           		</div>input_field -->
-           		<div class="btn_area double" align="center" style="margin-top:10px;">
-									<span>
-										<!-- tg-text=terms_button_cancel -->
-										<a href="#" id="btnCancel"	class="waves-effect waves-light btn grey" role="button" style="width:49%;">취소</a>
-									</span> 
-									<span>
-										<!-- tg-text=terms_button_agree -->
-										<a href="#" id="btnAgree" class="waves-effect waves-light btn orange darken-3" role="button" style="width:49%;">다음 단계</a>
-									</span>
-								</div>
-			 </div><!--  row -->
-			</form><!-- login-form--> 
-		
-	</div>
-		<!-- 사용자 인증 끝 -->
-		<!--================================================================================================================-->
+				</div><!--  wrap_narrow -->
+            </div><!-- .article_body -->
+        </div><!-- .article -->
 
-		
-</div><!-- join_content -->
-</div><!--  wrap_narrow -->
-</div><!-- article_body -->
-</div><!-- article -->
-</div><!--  main_container_inner -->
-</main>
+    </div><!-- #main_container_inner -->
+
+    </main><!-- .main_container -->
 <!-- footer id="footer" 시작 ==-->
 
 <c:import url="footer.jsp"/>

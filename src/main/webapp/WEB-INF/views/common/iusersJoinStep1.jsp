@@ -17,9 +17,10 @@
 <meta name="msapplication-TileImage"	content="/ibom/resources/images/favicon_300.png" />
 <!--Import Google Icon Font-->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"	rel="stylesheet">
-<!-- CSS -->
-<!-- CSS -->
-    <link rel="stylesheet" href="/ibom/resources/css/font.css" />
+ <!-- CSS -->
+<!--     <link rel="stylesheet" href="/ibom/resources/css/styles.css" /> -->
+
+<link rel="stylesheet" href="/ibom/resources/css/font.css" />
     <link rel="stylesheet" href="/ibom/resources/css/vendors/fullpage/jquery.fullPage.css" />
     <link rel="stylesheet" href="/ibom/resources/css/reset.css" />
     <link rel="stylesheet" href="/ibom/resources/css/layout.css" />
@@ -31,7 +32,40 @@
 	<link rel="stylesheet" href="/ibom/resources/css/V2Join.css" />
 
 <!--  tab CSS 추가 -->
-<link rel="stylesheet"	href="/ibom/resources/materialize/css/materialize.css" />
+<link rel="stylesheet"	href="/ibom/resources/materialize/css/materialize30.css" />
+<style type="text/css">
+.join_content {    padding: 42px 0 50px;    position: relative;}
+.join_content:before {    top: 0;    background-color: #f07e23;}
+.join_content:before, .join_content:after {    content: '';    display: block;    width: 100%;    height: 5px;    position: absolute;    left: 0;    border-radius: 25px;    overflow: hidden;}
+.join_content:after {    bottom: 0;    background-color: #222;}
+.join_content:before, .join_content:after {
+    content: '';    display: block;    width: 100%;    height: 5px;    position: absolute;
+    left: 0;    border-radius: 25px;    overflow: hidden;}
+
+/* **************************************** *
+ * CONTAINER
+ * **************************************** */
+.main_container {padding-top: 97px;padding-bottom: 157px;}
+
+.main_container_illust {width: 793px;height: 793px;position: absolute;left: -253px;top: -472px;}
+.main_container_illust img {display: block;width: 100%;height: auto;}
+
+
+
+/* **************************************** *
+ * PAGE
+ * **************************************** */
+/* PAGE HEADER */
+.article_header {/* padding: 92px 0 40px; */text-align: center;}
+.article_title {font-size: 36px;line-height: 1.25;letter-spacing: -0.05em;color: #f07e23;}
+.article_desc {margin-top: 8px;font-size: 16px;font-weight: 400;line-height: 1.75;letter-spacing: -0.025em;color: #666; word-break:keep-all;}
+.article_desc.secondary {color: #222;}
+.article_desc > span {color: #f07e23;}
+
+/* PAGE BODY */
+.article_body {position: relative;min-height: 360px;}
+</style>
+
 <!--  js -->
 <script src="/ibom/resources/js/jquery-3.4.1.min.js"></script>
 
@@ -45,13 +79,18 @@
 <script type="text/javascript" src="/ibom/resources/js/clickcr.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+	var sessionStorage = window.sessionStorage;   
+    if (!sessionStorage) {
+        alert("세션스토리지를 지원하지 않습니다.");
+    }
+    
 	 $("#chk_all").prop("checked",false);
      setTerms();
      
      $("#chk_all").click(function() {
          location.hash = 'agreeBottom';
          setTerms();
-     })
+     });
 
      $("#agree1").click(function() {
             viewTerms();
@@ -68,14 +107,49 @@ $(document).ready(function() {
 
 
 $("#btnCancel").click(function(event) {
-    clickcr(this, 'tos.disagree', '', '', event);
-    submitDisagree();
-    return false;
+	var result = confirm("회원가입을 취소하시겠습니까?")
+	if(result){
+		alert("이용자 등록이 완료되지 않아 우리i봄 서비스를 이용하실 수 없습니다.");
+		clickcr(this, 'tos.disagree', '', '', event);
+	    sessionStorage.clear();
+	    console.log(sessionStorage.length);
+	    submitDisagree();
+	    return false;
+	} else {
+		alert("우리i봄 서비스 신청 및 연계시 필요한 정보이므로, 약관 및 기본정보, 가정현황, 이용사항, 요구사항 등의 정보를 정확하게 입력해 주시기 바랍니다.");				 
+	}
+    
 });
 
  $("#btnAgree").click(function(event) {
-            clickcr(this, 'tos.agree', '', '', event);
+            clickcr(this, 'tos.agree', '', '', event);           
+            
             submitAgree();
+            sessionStorage.clear();
+            console.log(sessionStorage.length);
+            
+            var agree1 = document.getElementById('agree1');    
+            var agree2 = document.getElementById('agree2');
+            var agree3 = document.getElementById('agree3');
+            var agree1Value;
+            var agree2Value;
+            var agree3Value;
+            
+			if ($("#agree3").is(":checked") == false) {
+            	agree1Value = "Y";
+            	agree2Value = "Y";
+            	agree3Value = "N"; 
+            } else if ($("#agree3").is(":checked") == true) {
+            	agree1Value = "Y";
+                agree2Value = "Y";
+                agree3Value = "Y";
+            }
+			
+            sessionStorage.setItem("agree1", agree1Value);
+            sessionStorage.setItem("agree2", agree2Value);
+            sessionStorage.setItem("agree3", agree3Value);
+            console.log(sessionStorage);
+            //console.log(JSON.stringify(data));
             return false;
  });
  
@@ -91,7 +165,7 @@ function setTerms() {
         $("#agree2").prop("checked",false);
         $("#agree3").prop("checked",false);
     }
-
+    
     return true;
 }
 
@@ -120,21 +194,26 @@ function checkTerms() {
     }
 
     return res;
+    
 }
 
 function submitAgree() {
     if (checkTerms() != true) {
         return false;
     }
-
-    $("#join_form").submit();
-    return true;
+	
+  $("#join_form").submit();
+   return true;
 }
 
 function submitDisagree() {
     location.href = "main.do";
     return true;
 }
+
+
+
+
 
 </script>
 
@@ -152,16 +231,15 @@ function submitDisagree() {
 	
 	<!--  회원가입 시작 =================================================================== -->
 	<main id="main">
-	<div id="main_container_inner">
+	<div id="main_container">
 		<div class="article">
 			<!-- 타이틀 =================================================================== -->
 			<div class="article_header">
 				<div class="wrap_narrow">
 					<h1 data-font="secondary" class="article_title">회원가입</h1>
-				</div>
-				<!-- .wrap_narrow -->
-			</div>
-			<!-- article_header -->
+					<p class="article_desc">[등록완료] 이전 단계에서 인터넷 창을 닫거나 [종료] 버튼을 클릭하는 경우, 그 시점까지 입력된 정보는 모두 삭제됩니다. 이용자 등록을 원하시면 처음부터 새로 정보를 입력해야 합니다.</p>
+				</div><!-- .wrap_narrow -->
+			</div><!-- article_header -->
 			<!-- 타이틀 끝 =========================================================================== -->
 			<div class="article_body">
 				<div class="wrap_narrow">
@@ -176,7 +254,7 @@ function submitDisagree() {
 								<div class="terms_p">
 									<p class="terms_chk_all">
 										<span class="input_chk"> 
-										<input type="checkbox" id="chk_all" name="chk_all"> <!-- [D] ie7/8에서 checked일때 label에 클래스 on추가해주세요.  -->
+										<input type="checkbox" id="chk_all" name="chk_all" value=""> <!-- [D] ie7/8에서 checked일때 label에 클래스 on추가해주세요.  -->
 											<label for="chk_all">
 												<span class="chk_all_txt">이용약관, 개인정보 수집 및 이용,<br class="m_br"> 개인정보 제3자 제공에 대한 동의(선택)에 모두
 													동의합니다.	</span>
@@ -526,7 +604,7 @@ function submitDisagree() {
 											<!-- 필수 2 -->
 										<li class="terms_bx">
 										<span class="input_chk"> 
-										<input	type="checkbox" id="agree2" name="agree2" class="chk"> 
+										<input	type="checkbox" id="agree2" name="agree2" class="chk" value=""> 
 										<label for="agree2"	class="collect_personal">개인정보 수집 및 이용에 대한 안내<span	class="terms_necessary">(필수)</span>
 										</label> 
 										</span>
@@ -859,27 +937,35 @@ function submitDisagree() {
 								<!-- //약관동의 -->
 
 								<a href="#" name="agreeBottom"></a>
-								<div class="btn_area double" align="center" style="margin-top:10px;">
+								<!-- <div class="btn_area double" align="center" style="margin-top:10px;">
 									<span>
-										<!-- tg-text=terms_button_cancel -->
+										tg-text=terms_button_cancel
 										<a href="#" id="btnCancel"	class="waves-effect waves-light btn grey" role="button" style="width:49%;">취소</a>
 									</span> 
 									<span>
-										<!-- tg-text=terms_button_agree -->
+										tg-text=terms_button_agree
 										<a href="#" id="btnAgree" class="waves-effect waves-light btn orange darken-3" role="button" style="width:49%;">확인</a>
 									</span>
-								</div>
+								</div> -->
 							</form>
 
 
-					<!-- login-form-->
+					<!-- join-form-->
 						
-				</div>
+				</div><!-- join_form -->
 				<!-- 사용자 인증 끝 -->
 				<!--================================================================================================================-->
-
-
 			</div>			<!-- join_content -->
+							<div class="row">
+								<div class="btn_area double" align="center" style="margin-top:10px;">
+									<span>
+										<a href="#" id="btnCancel"	class="waves-effect waves-light btn grey" role="button" style="width:15%;">취소</a>
+									</span> 
+									<span>
+										<a href="#" id="btnAgree" class="waves-effect waves-light btn orange darken-3" role="button" style="width:15%;">확인</a>
+									</span>
+								</div>
+            				</div>
 		</div>		<!--  wrap_narrow -->
 	   </div><!-- .article_body -->
         </div><!-- .article -->
@@ -890,9 +976,6 @@ function submitDisagree() {
 	<!-- footer id="footer" 시작 ==-->
 
 <c:import url="footer.jsp" /> 
-
-
-
 
 </body>
 </html>

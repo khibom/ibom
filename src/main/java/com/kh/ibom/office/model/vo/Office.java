@@ -15,6 +15,12 @@ public class Office implements java.io.Serializable{
 	private String office_address;
 	
 	public Office () {}
+	
+	public Office(String city_name, String city_name2) {
+		super();
+		this.city_name = city_name;
+		this.city_name2 = city_name2;
+	}
 
 	public Office(String office_code, String city_name, String city_name2, String office_name, String office_area,
 			String office_tel, String office_postcode, String office_address) {

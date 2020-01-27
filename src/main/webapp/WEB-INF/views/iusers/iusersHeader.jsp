@@ -54,7 +54,7 @@
                         <ul class="menu_child_group">
                             <li class=""><a href="/Contents/Series"   ><span>서비스 조회</span></a></li>
                             <li class=""><a href="${ pageContext.request.contextPath }/iusers/moveApplyPage.do"><span>서비스 신청</span></a></li>
-                            <li class=""><a href="/Contents/Music"    ><span>서비스 조회(달력)</span></a></li>
+                            <li class=""><a href="*"    ><span>서비스 조회(달력)</span></a></li>
                             <li class=""><a href="${userinter }"><span>돌보미 면접조회</span></a></li>
                         </ul><!-- .menu_child_group-->
                     </li> 

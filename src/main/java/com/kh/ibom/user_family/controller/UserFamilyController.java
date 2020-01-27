@@ -56,16 +56,16 @@ public class UserFamilyController {
 	}
 
 	// 가족 정보 목록
-	@RequestMapping(value = "iusers/userFamily.do", method = RequestMethod.POST)
+	/*@RequestMapping(value = "iusers/userFamily.do", method = RequestMethod.POST)
 	public ModelAndView userFamilyList(ModelAndView mv) {
 
 		ArrayList<UserFamily> list = ufamilyService.selectAll();
-		/*
+		
 		 * if(list != null) { mv.addObject("list", list); 
 		 * mv.setViewName("목록페이지 만들면");
 		 * }else { mv.addObject("message", "이용자 리스트  조회 실패!");
 		 * mv.setViewName("common/error"); }
-		 */
+		 
 		mv.setViewName("iusers/userFamilyList");
 		return mv;
 	}
@@ -75,17 +75,17 @@ public class UserFamilyController {
 	public ModelAndView adminUserFamilyList(ModelAndView mv) {
 
 		ArrayList<UserFamily> list = ufamilyService.selectAll();
-		/*
+		
 		 * if(list != null) { mv.addObject("list", list); mv.setViewName("목록페이지 만들면");
 		 * }else { mv.addObject("message", "이용자 리스트  조회 실패!");
 		 * mv.setViewName("common/error"); }
-		 */
+		 
 		mv.setViewName("admin/userFamilyList");
 		return mv;
-	}
+	}*/
 
 	// 가족정보등록
-	@RequestMapping(value = "iusers/userFamilyAdd.do", method = RequestMethod.POST)
+	/*@RequestMapping(value = "iusers/userFamilyAdd.do", method = RequestMethod.POST)
 	public String iuserFamilyAdd(UserFamily userfamily, Model model) {
 		// 서비스로 전송하고 결과 받기
 		int result = ufamilyService.insertuserFamily(userfamily);
@@ -99,7 +99,7 @@ public class UserFamilyController {
 		  }
 		 
 		return viewFileName;
-	}
+	}*/
 
 	// 가족정보수정
 	@RequestMapping(value = "iusers/userFamilyUp.do", method = RequestMethod.POST)

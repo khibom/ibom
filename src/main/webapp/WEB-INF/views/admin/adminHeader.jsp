@@ -139,7 +139,10 @@ $(function(){
                         </div>
                     </li>
                     <!--================================================================================-->
-                    	<c:url var="interlist" value="/admin/interList.do">
+                    <c:url var="alldayServlist" value="/admin/alldaySerList.do">
+						<c:param name="currentPage" value="1"/>
+					</c:url>
+                    <c:url var="interlist" value="/admin/interList.do">
 						<c:param name="page" value="1"/>
 					</c:url>
                     <!--1. 이용자 관리 -->
@@ -150,10 +153,10 @@ $(function(){
                                 <a href="flot.html"><i class="fa fa-user fa-fw"></i>&nbsp;이용자관리</a>
                             </li>
                             <li>
-                                <a href="morris.html"><i class="fa fa-list-alt fa-fw"></i>&nbsp;서비스관리</a>
+                                <a href="*"><i class="fa fa-list-alt fa-fw"></i>&nbsp;서비스관리</a>
                             </li>
                             <li>
-                                <a href="morris.html"><i class="fa fa-share-square-o fa-fw"></i>&nbsp;종일제대기관리</a>
+                                <a href="${alldayServlist }"><i class="fa fa-share-square-o fa-fw"></i>&nbsp;종일제대기관리</a>
                             </li>
                             <li>
                                 <a href="${interlist}"><i class="fa fa-eye fa-fw"></i>&nbsp;돌보미면접신청관리</a>
@@ -182,10 +185,13 @@ $(function(){
                                 <a href="${pageContext.request.contextPath}/admin/moveAcloglist.do"><i class="fa fa-edit fa-fw"></i>&nbsp;돌보미일지관리</a>
                             </li>
                             <li>
-                                <a href=""><i class="fa fa-puzzle-piece fa-fw"></i>&nbsp;돌보미배치관리</a>
+                             <c:url var="adminAssign" value="/admin/dolAssignList.do">
+                            	<c:param name="currentPage" value="1"/>
+                            </c:url>
+                                <a href="${adminAssign}"><i class="fa fa-puzzle-piece fa-fw"></i>&nbsp;돌보미배치관리</a>
                             </li>
                             <li>
-                                <a href="morris.html"><i class="fa fa-list-ol fa-fw"></i>&nbsp;돌보미등급설정</a>
+                                <a href="${pageContext.request.contextPath}/admin/dolGradeList.do"><i class="fa fa-list-ol fa-fw"></i>&nbsp;돌보미등급설정</a>
                             </li>
                             <li>
                                 <a href="${pageContext.request.contextPath}/admin/moveSalary.do"><i class="fa fa-won fa-fw"></i>&nbsp;급여관리</a>

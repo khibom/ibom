@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kh.ibom.common.CommonPaging;
 import com.kh.ibom.dol_pass.model.vo.DolPass;
 import com.kh.ibom.dolbomi.model.dao.DolbomiDao;
 import com.kh.ibom.dolbomi.model.vo.Dolbomi;
@@ -19,8 +20,8 @@ public class DolbomiServiceImpl implements DolbomiService{
 	public DolbomiServiceImpl() {}
 
 	@Override
-	public ArrayList<Dolbomi> dolbomiSelectList() {
-		return dDao.dolbomiSelectList();
+	public ArrayList<Dolbomi> dolbomiSelectList(CommonPaging paging) {
+		return dDao.dolbomiSelectList(paging);
 	}
 
 	@Override
@@ -109,6 +110,10 @@ public class DolbomiServiceImpl implements DolbomiService{
 		return dDao.dolbomiSalarySelectList();
 	}
 	
-	
+	@Override
+	public int dolbomiListCount(CommonPaging page) {
+		// 돌보미 페이징처리 리스트 카운트
+		return dDao.dolbomiListCount(page);
+	}
 
 }// end class

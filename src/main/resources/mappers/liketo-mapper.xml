@@ -17,5 +17,8 @@
 		select count(*) from liketo where service2_no = #{value}
 	</select>
 	
+	<select id="selectList" parameterType="string" resultType="Liketo">
+		select A.dol_id, B.dol_name, A.LASTMODIFIED from liketo A, dolbomi B where A.dol_id = B.dol_id and service2_no = #{value}
+	</select>
 
 </mapper>

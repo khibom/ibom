@@ -58,7 +58,7 @@ public class LikeToController {
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
 		String count = Integer.toString(cou);
-		System.out.println("count : "+count);
+		
 		out.append(count);
 		out.flush();
 		out.close();

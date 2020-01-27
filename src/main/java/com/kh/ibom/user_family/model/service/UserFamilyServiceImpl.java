@@ -1,6 +1,7 @@
 package com.kh.ibom.user_family.model.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,17 +17,17 @@ public class UserFamilyServiceImpl implements UserFamilyService {
 	
 	public UserFamilyServiceImpl() {}
 
-	@Override
-	public ArrayList<UserFamily> selectAll() {
-		
-		return ufamilyDao.selectAll();
-	}
+	// 가족 정보 조회
+		@Override
+		public List<UserFamily> selectUserFamilyList(String user_id) {
+			return ufamilyDao.selectUserFamilyList(user_id);
+		}
 
-	@Override
-	public int insertuserFamily(UserFamily userfamily) {
-		// TODO Auto-generated method stub
-		return ufamilyDao.insertuserFamily(userfamily);
-	}
+		// 가족 정보 입력
+		@Override
+		public int insertUserFamily(UserFamily userfamily) {
+			return ufamilyDao.insertuserFamily(userfamily);
+		}
 
 	// 가족정보 수정
 	@Override
