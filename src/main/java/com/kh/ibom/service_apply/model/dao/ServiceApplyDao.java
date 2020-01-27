@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 import com.kh.ibom.service_apply.model.vo.ServiceApply1;
 import com.kh.ibom.service_apply.model.vo.ServiceApply2;
 import com.kh.ibom.service_apply.model.vo.ServiceApply3;
-import com.kh.ibom.service_apply.model.vo.ServiceApplyNumbers;
 import com.kh.ibom.service_apply.model.vo.ServiceCalendar;
 import com.kh.ibom.synthesis_actlog.model.vo.SynthesisActLog;
 
@@ -102,8 +101,8 @@ public class ServiceApplyDao {
 		return session.selectOne("applyMapper.selectAdminActLogService", service2_no);
 	}
 
-	public ArrayList<ServiceCalendar> selectServiceCalendar(String dolId) {
-		List<ServiceCalendar> list = session.selectList("applyMapper.selectServiceCalendar", dolId);
+	public ArrayList<ServiceCalendar> selectServiceCalendar(ServiceCalendar sc) {
+		List<ServiceCalendar> list = session.selectList("applyMapper.selectServiceCalendar", sc);
 		
 		return (ArrayList<ServiceCalendar>)list;
 	}

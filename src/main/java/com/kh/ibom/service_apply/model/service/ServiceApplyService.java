@@ -43,7 +43,7 @@ public interface ServiceApplyService {
 
 	ServiceApply2 selectAdminActLogService(String service2_no);
 
-	ArrayList<ServiceCalendar> selectServiceCalendar(String dolId);
+	ArrayList<ServiceCalendar> selectServiceCalendar(ServiceCalendar result);
 	//돌보미 일지제출후 서비스2 서비스완료처리
 	int updateLogCategory2(ServiceApply2 ap2);
 	// 이번달 총근무시간 조회

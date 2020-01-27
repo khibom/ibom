@@ -10,7 +10,6 @@ public interface ActListViewService {
 	
 	
 	ArrayList<ActListView> selectActListView(CommonPaging com);
-	int getListCount(String dolId);
+	int getListCount(CommonPaging comid);
 	ArrayList<ActListView> searchDolActList(ActLogSearchDate actSr);
-
 }

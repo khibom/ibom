@@ -5,18 +5,30 @@
 <mapper namespace="actListViewMapper">
 	
 	<select id="selectActListView" parameterType="CommonPaging" resultType="ActListView">
-		<![CDATA[
 			select * from (
 				select rownum rnum, apply_date, transferor, apply_status, 
 				dol_type, service_type, family_name, dolbomi_id, care_day,
 				start_time, end_time,total_pay, dolbom_place,log_category, service2_no,family_code
        		    from ACT_LIST_VIEW
-       		    where dolbomi_id = #{ibom_id})
+       		    where 
+       		    <if test="ibom_id != null">
+				dolbomi_id = #{ibom_id}
+				</if>
+				<if test="user_id != null">
+				user_id = #{user_id}
+				</if>)
+		<![CDATA[
 				where rnum >= #{startList} and rnum <= #{endList}
 		]]>
 	</select>
-	<select id="getListCount" parameterType="string" resultType="_int">
-		select count(*) from ACT_LIST_VIEW where dolbomi_id = #{value}
+	<select id="getListCount" parameterType="CommonPaging" resultType="_int">
+		select count(*) from ACT_LIST_VIEW where 
+		<if test="ibom_id != null">
+		dolbomi_id = #{ibom_id}
+		</if>
+		<if test="user_id != null">
+		user_id = #{user_id}
+		</if>
 	</select>
 	
 	<select id="searchDolActList" parameterType="AsDate" resultType="ActListView">

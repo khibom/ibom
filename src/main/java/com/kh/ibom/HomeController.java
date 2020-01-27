@@ -182,11 +182,12 @@ public class HomeController {
 			}
 			
 			int limit = 10;	//한 페이지에 출력할 목록 갯수
-			int listCount = actListViewService.getListCount(dol.getDol_id()); 	//테이블의 전체 목록 갯수 조회
-			
+			CommonPaging comid = new CommonPaging();
+			comid.setIbom_id(dol.getDol_id());
+			int listCount = actListViewService.getListCount(comid); 	//테이블의 전체 목록 갯수 조회
 			CommonPaging comPage = new CommonPaging(limit,5,listCount,currentPage);
 			comPage.setIbom_id(dol.getDol_id());
-			ArrayList<ActListView> alist = actListViewService.selectActListView(comPage);
+			ArrayList<ActListView> alist = commonPaging(comPage);
 			//일지 미제출건 조회
 			int reuslt = applyService.LogCount(dol.getDol_id());
 			Date date = new Date();
@@ -224,6 +225,26 @@ public class HomeController {
 				mv.setViewName("common/error");
 				return mv;
 			}
+			int currentPage = 1;
+			if(request.getParameter("page") != null){
+				currentPage = Integer.parseInt(request.getParameter("page"));
+				
+			}
+			CommonPaging comid = new CommonPaging();
+			comid.setUser_id(iuser.getUser_id());
+			
+			int limit = 10;	//한 페이지에 출력할 목록 갯수
+			int listCount = actListViewService.getListCount(comid); 	//테이블의 전체 목록 갯수 조회
+			
+			CommonPaging comPage = new CommonPaging(limit,5,listCount,currentPage);
+			comPage.setUser_id(iuser.getUser_id());
+			ArrayList<ActListView> alist = commonPaging(comPage);
+			
+			mv.addObject("alist", alist);
+			mv.addObject("commonPage", comPage);
+			
+			
+			
 			if(session.getAttribute("loginIuser") == null) {
 			session.setAttribute("loginIuser", iuser);
 			}
@@ -231,6 +252,13 @@ public class HomeController {
 			return mv;
 		}
 		
+	}
+	
+	
+	public ArrayList<ActListView> commonPaging(CommonPaging comPage){
+		System.out.println("조회해봄============" + comPage);
+		ArrayList<ActListView> list = actListViewService.selectActListView(comPage);
+		return list;
 	}
 	
 	@RequestMapping("ibom.do")

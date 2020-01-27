@@ -76,40 +76,36 @@ public class ActLogConroller {
 	
 	@RequestMapping(value="dolbomi/sCalendar.do",method=RequestMethod.POST)
 	@ResponseBody
-	public String sCalendarList(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+	public String dolCalendarList(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+		logger.info("돌보미캘린더");
 		String dolId = request.getParameter("dol_id");
-		System.out.println("캘린더 에이작스 실행됨" + dolId);
-		ArrayList<ServiceCalendar> slist2 = applyService.selectServiceCalendar(dolId);
-		JSONObject sendJson = new JSONObject();
-		//list 안의 객체들을 저장할 json 배열 객체 생성
 		
-		JSONArray jarr = new JSONArray();
-		
-		//캘린더 날짜형식이 맞지 않아 바꿔주는 작업함.
-		SimpleDateFormat fmt = new SimpleDateFormat("YYYY-MM-dd");
-		for(ServiceCalendar d : slist2) {
-			
-			JSONObject job = new JSONObject();
-				
-				job.put("start", fmt.format(d.getApply_date()).toString());
-				job.put("title", d.getLog_category());
-				job.put("id1", d.getService1_no());
-				job.put("id2", d.getService2_no());
-				job.put("fmCode", d.getFamily_code());
-			
-			jarr.add(job);
-			
+		ServiceCalendar sc = new ServiceCalendar();
+		String dol = "dol";
+		String result = "";
+		if(dolId != null) {
+			sc.setDol_id(dolId);
+		 result = commonCalendar(sc, dol);
 		}
-		
-		//json 배열은 전송할 수 없음
-		//전송용 객체에 배열을 저장함
-		sendJson.put("list", jarr);
-		
-		
-		
-		
-		return sendJson.toJSONString();
+		return result;
 	}
+	
+	@RequestMapping(value="iusers/sCalendar.do",method=RequestMethod.POST)
+	@ResponseBody
+	public String userCalendarList(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+		logger.info("유저 캘린더");
+		String userId = request.getParameter("user_id");
+		ServiceCalendar sc = new ServiceCalendar();
+		String user = "user";
+		String result = "";
+		if(userId != null) {
+			sc.setUser_id(userId);
+			result = commonCalendar(sc, user);	
+		}
+
+		return result;
+	}
+	
 	
 	@RequestMapping("dolbomi/moveAct.do")
 	public ModelAndView alldayActPage(HttpServletRequest request, ModelAndView mv) {
@@ -140,10 +136,46 @@ public class ActLogConroller {
 		return mv;
 	}
 	
+	public String commonCalendar(ServiceCalendar sc, String ibom_id) {
+		//캘린더 중복 제거용 메소드
+		ArrayList<ServiceCalendar> slist2 = applyService.selectServiceCalendar(sc);
+		
+		JSONObject sendJson = new JSONObject();
+		//list 안의 객체들을 저장할 json 배열 객체 생성
+		
+		JSONArray jarr = new JSONArray();
+		
+		//캘린더 날짜형식이 맞지 않아 바꿔주는 작업함.
+		SimpleDateFormat fmt = new SimpleDateFormat("YYYY-MM-dd");
+		for(ServiceCalendar d : slist2) {
+			
+			JSONObject job = new JSONObject();
+				
+				job.put("start", fmt.format(d.getApply_date()).toString());
+				if(ibom_id.trim().equals("dol")) {
+				job.put("title", d.getLog_category());
+				}else {
+				job.put("title", d.getApply_status());	
+				}
+				job.put("id1", d.getService1_no());
+				job.put("id2", d.getService2_no());
+				job.put("fmCode", d.getFamily_code());
+			
+			jarr.add(job);
+			
+		}
+		
+		//json 배열은 전송할 수 없음
+		//전송용 객체에 배열을 저장함
+		sendJson.put("list", jarr);
+
+		return sendJson.toJSONString();
+	}
+	
 	@RequestMapping(value="dolbomi/dolSearchAct.do",method=RequestMethod.POST)
 	public ModelAndView searchDolActMethod(ActLogSearchDate actSr, HttpServletRequest request, ModelAndView mv) {
 		logger.info("돌보미 활동일지 검색");
-		System.out.println("돌보미 일지 검색 값날아옴 =" + actSr);
+		
 		ArrayList<ActListView> av =  actListViewService.searchDolActList(actSr);
 		
 		int currentPage = 1;
@@ -160,7 +192,7 @@ public class ActLogConroller {
 		mv.addObject("commonPage", comPage);
 		mv.addObject("count", reuslt);
 		mv.addObject("alist", av);
-		
+		mv.addObject("Y", "Y");
 		mv.setViewName("dolbomi/dolMain");
 		
 		return mv;
@@ -169,6 +201,38 @@ public class ActLogConroller {
 	@RequestMapping("dolbomi/moveDetailReturnAct.do")
 	public ModelAndView dolActListPage(String value, ModelAndView mv) {
 		logger.info("돌보미 반려일지 상세보기로 이동");
+		String logCategory = "";
+		String dol = "dol";
+		mv = commonDetailLog(value, logCategory, dol);
+				
+		return mv;
+		
+	}
+	
+	@RequestMapping("admin/actDetailLog.do")
+	public ModelAndView adminDetailActLog(String service2_no, String logCategory, ModelAndView mv) {
+		logger.info("관리자 활동일지 상세보기처리");
+		String admin = "admin";
+		mv = commonDetailLog(service2_no, logCategory, admin);
+		
+		return mv;
+	}
+	@RequestMapping("iusers/moveAct.do")
+	public ModelAndView userDetailActLogPage(String serviceId, ModelAndView mv) {
+		logger.info("이용자 일지 확인 상세보기로 이동");
+		String logCategory = "";
+		String user = "user";
+		System.out.println("이용자 디테일 값 확인함 ------==========>" + serviceId);
+		mv = commonDetailLog(serviceId, logCategory, user);
+				
+		return mv;
+		
+	}
+	
+	
+	public ModelAndView commonDetailLog(String value,String logCategory, String who) {
+		//로그 디테일 조회부분 공통코드 처리 메소드
+		ModelAndView mv = new ModelAndView();
 		String[] service_noAndFmCode =  value.split(",");
 		ServiceApply2 ap2 = applyService.selectAdminActLogService(service_noAndFmCode[0]);
 		ServiceApply1 ap1 = applyService.selectOneDetailAct(ap2.getService1_no());
@@ -176,7 +240,11 @@ public class ActLogConroller {
 		sc.setFamily_code(service_noAndFmCode[1]);
 		sc.setService2_no(ap2.getService2_no());
 		sc.setService1_no(ap1.getService1_no());
-		sc.setLog_category(service_noAndFmCode[2]);
+		if(logCategory.equals("")) {
+			sc.setLog_category(ap2.getService_type());
+		}else {
+		sc.setLog_category(logCategory);
+		}
 		ServiceApply3 ap3 = applyService.selectOneA3DetailAct(sc);
 		
 		UserFamily uFm = ufamilyService.userServiceList(ap3.getFamily_code());
@@ -184,7 +252,6 @@ public class ActLogConroller {
 		Iusers user = iusersService.selectOne(ap2.getUser_id());
 		Dolbomi dol = dService.selectLoginOne(ap2.getDolbomi_id());
 		SalaryDay sal = saldayService.selectOne();
-		System.out.println(sal);
 		mv.addObject("sal", sal);
 		mv.addObject("ap2", ap2);
 		mv.addObject("ap1", ap1);
@@ -195,10 +262,16 @@ public class ActLogConroller {
 			if(uFm.getSelect_type().trim().equals("일반형")) {
 				NomalActLog na = nomalActService.selectOne(sc);
 				mv.addObject("nomal", na);
-				mv.setViewName("dolbomi/actLog/detailReturnNomalActPage");
+				if(who.equals("admin")) {
+					mv.setViewName("admin/actLog/detailNomalActPage");
+				}else if(who.equals("dol")) {
+					mv.setViewName("dolbomi/actLog/detailReturnNomalActPage");
+				}else if(who.equals("user")) {
+					mv.setViewName("iusers/actLog/userDetailNomalActLog");
+				}
 			}else { 
 				SynthesisActLog sa = synActService.selectOne(sc);
-				
+				if(sa != null) {
 				HashMap<String, String> map = new HashMap<String, String>();
 				String[] ac_time = sa.getAc_time().split(",");
 				String[] ac_content = sa.getAc_content().split(",");
@@ -206,25 +279,42 @@ public class ActLogConroller {
 				for(int i = 0; i < ac_time.length; i++) {
 					map.put(ac_time[i], ac_content[i]);
 				}
-				
 				mv.addObject("ac", map);
 				mv.addObject("syn", sa);
-				mv.setViewName("dolbomi/actLog/detailReturnSynthesisActPage");
+				
+				}// null check close
+				
+				if(who.equals("admin")) {
+					mv.setViewName("admin/actLog/detailSynthesisActPage");
+				}else if(who.equals("dol")) {
+					mv.setViewName("dolbomi/actLog/detailReturnSynthesisActPage");
+				}else if(who.equals("user")) {
+					mv.setViewName("iusers/actLog/userDetailSynActLog");
+				}
 			}
 			
 		}else if(uFm.getDolbom_type().trim().equals("종일제")){
-			
 			AlldayActLog aa = alldayActService.selectOne(sc);
+			if(aa != null) {
 			String[] dosageTime = aa.getDosage_time().split(",");
 			String[] dosage = aa.getDosage().split(",");
 			mv.addObject("dosageTime", dosageTime);
 			mv.addObject("dosage", dosage);
 			mv.addObject("allday", aa);
-		mv.setViewName("dolbomi/actLog/detailReturnAllDayActPage");	
+			}
+			if(who.equals("admin")) {
+				mv.setViewName("admin/actLog/detailAllDayActPage");
+			}else if(who.equals("dol")) {
+				mv.setViewName("dolbomi/actLog/detailReturnAllDayActPage");
+			}else if(who.equals("user")) {
+				mv.setViewName("iusers/actLog/userDetailAlldayActLog");
+			}
+		
+				
+			
 		}
 		
 		return mv;
-		
 	}
 	
 	
@@ -336,7 +426,7 @@ public class ActLogConroller {
 	
 	
 	public ArrayList<ReturnActVo> commonReturnAct(AlldayActLog acLog){
-		
+		//중복코드 빼서 처리
 		ArrayList<ReturnActVo> alist = null;
 		ArrayList<ReturnActVo> nlist = null;
 		ArrayList<ReturnActVo> slist = null;
@@ -569,67 +659,6 @@ public class ActLogConroller {
 		return"";
 	}
 	
-	@RequestMapping("admin/actDetailLog.do")
-	public ModelAndView adminDetailActLog(String service2_no, String logCategory, ModelAndView mv) {
-		logger.info("관리자 활동일지 상세보기처리");
-		String[] service_noAndFmCode =  service2_no.split(",");
-		ServiceApply2 ap2 = applyService.selectAdminActLogService(service_noAndFmCode[0]);
-		ServiceApply1 ap1 = applyService.selectOneDetailAct(ap2.getService1_no());
-		ServiceCalendar sc = new ServiceCalendar();
-		sc.setFamily_code(service_noAndFmCode[1]);
-		sc.setService2_no(ap2.getService2_no());
-		sc.setService1_no(ap1.getService1_no());
-		sc.setLog_category(logCategory);
-		ServiceApply3 ap3 = applyService.selectOneA3DetailAct(sc);
-		
-		UserFamily uFm = ufamilyService.userServiceList(ap3.getFamily_code());
-		
-		Iusers user = iusersService.selectOne(ap2.getUser_id());
-		Dolbomi dol = dService.selectLoginOne(ap2.getDolbomi_id());
-		SalaryDay sal = saldayService.selectOne();
-		System.out.println(sal);
-		mv.addObject("sal", sal);
-		mv.addObject("ap2", ap2);
-		mv.addObject("ap1", ap1);
-		mv.addObject("uFm", uFm);
-		mv.addObject("user", user);
-		mv.addObject("dol", dol);
-		if(uFm.getDolbom_type().trim().equals("시간제")) {
-			if(uFm.getSelect_type().trim().equals("일반형")) {
-				NomalActLog na = nomalActService.selectOne(sc);
-				mv.addObject("nomal", na);
-				mv.setViewName("admin/actLog/detailNomalActPage");
-			}else { 
-				SynthesisActLog sa = synActService.selectOne(sc);
-				if(sa != null) {
-				HashMap<String, String> map = new HashMap<String, String>();
-				String[] ac_time = sa.getAc_time().split(",");
-				String[] ac_content = sa.getAc_content().split(",");
-				
-				for(int i = 0; i < ac_time.length; i++) {
-					map.put(ac_time[i], ac_content[i]);
-				}
-				mv.addObject("ac", map);
-				mv.addObject("syn", sa);
-				
-				}// null check close
-				mv.setViewName("admin/actLog/detailSynthesisActPage");
-			}
-			
-		}else if(uFm.getDolbom_type().trim().equals("종일제")){
-			AlldayActLog aa = alldayActService.selectOne(sc);
-			if(aa != null) {
-			String[] dosageTime = aa.getDosage_time().split(",");
-			String[] dosage = aa.getDosage().split(",");
-			mv.addObject("dosageTime", dosageTime);
-			mv.addObject("dosage", dosage);
-			mv.addObject("allday", aa);
-			}
-		mv.setViewName("admin/actLog/detailAllDayActPage");	
-		}
-		
-		return mv;
-	}
 	@RequestMapping(value="admin/actNomalAccept.do", method=RequestMethod.POST)
 	public void actAcceptMethod(Dolbomi dol,String sal, HttpServletRequest request, String time_no, HttpServletResponse response) throws IOException {
 		logger.info("일반형활동일지 승인");

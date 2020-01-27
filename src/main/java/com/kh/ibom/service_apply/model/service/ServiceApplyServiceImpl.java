@@ -114,9 +114,9 @@ public class ServiceApplyServiceImpl implements ServiceApplyService{
 	}
 
 	@Override
-	public ArrayList<ServiceCalendar> selectServiceCalendar(String dolId) {
+	public ArrayList<ServiceCalendar> selectServiceCalendar(ServiceCalendar sc) {
 		// 캘린더 축력조회형 서비스
-		return applyDao.selectServiceCalendar(dolId);
+		return applyDao.selectServiceCalendar(sc);
 	}
 
 	@Override

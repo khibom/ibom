@@ -105,7 +105,7 @@ public class DepositController {
 		ArrayList<Deposit> list = depoService.selectSearchList(act);
 		RefundAccount re = reaccountService.selectOne(act.getIbom_id());
 		String message = "";
-		
+		mv.addObject("Y", "Y");
 		if(list.size() > 0) {
 			if(re != null) {
 				ArrayList<Deposit> dList = depoService.selectList(act.getIbom_id());

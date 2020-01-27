@@ -22,14 +22,15 @@ public class ActListViewDao {
 
 
 	public ArrayList<ActListView> selectActListView(CommonPaging com) {
+		System.out.println("dao 조회해봄 ====================" + com);
 		List<ActListView> actList = session.selectList("actListViewMapper.selectActListView",com);
 		return (ArrayList<ActListView>)actList;
 	}
 
 
-	public int getListCount(String dolId) {
-		
-		return session.selectOne("actListViewMapper.getListCount", dolId);
+	public int getListCount(CommonPaging com) {
+		// 돌보미 메인 페이지 리스트 조회 카운트
+		return session.selectOne("actListViewMapper.getListCount", com);
 	}
 
 
@@ -38,10 +39,7 @@ public class ActListViewDao {
 		List<ActListView> actList = session.selectList("actListViewMapper.searchDolActList",com);
 		return (ArrayList<ActListView>)actList;
 	}
-	
-	
-	
-	
-	
 
+
+	
 }

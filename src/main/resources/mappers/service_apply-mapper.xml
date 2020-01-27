@@ -27,7 +27,7 @@
 		where SERVICE2_NO = #{service2_no} AND FAMILY_CODE = #{family_code}
 	</update>
 	<update id="updateLogCategory2" parameterType="ActListView">
-		update SERVICE_APPLY2 set APPLY_STATUS = '서비스완료'
+		update SERVICE_APPLY2 set APPLY_STATUS = '서비스 완료'
 		where service1_no = #{service1_no} and service2_no = #{service2_no}
 	</update>
 	<select id="LogCount" parameterType="string" resultType="_int">
@@ -41,11 +41,18 @@
 		from SERVICE_APPLY2 
 		where service2_no = #{value}
 	</select>
-	<select id="selectServiceCalendar" parameterType="string" resultType="ServiceCalendar">
-		select APPLY_DATE, D.SERVICE2_NO, E.SERVICE1_NO, E.LOG_CATEGORY,E.FAMILY_CODE
+	<select id="selectServiceCalendar" parameterType="ServiceCalendar" resultType="ServiceCalendar">
+		select APPLY_DATE, D.SERVICE2_NO, E.SERVICE1_NO, E.LOG_CATEGORY,E.FAMILY_CODE,D.APPLY_STATUS
 		from SERVICE_APPLY2 D
 		LEFT JOIN SERVICE_APPLY3 E ON D.SERVICE2_NO = E.SERVICE2_NO
-		where dolbomi_id = #{value}
+		where 
+		<if test="dol_id != null">
+		dolbomi_id = #{dol_id}
+		</if>
+		<if test="user_id != null">
+		user_id = #{user_id}
+		</if>
+		
 	</select>
 	<select id="selectTotalUsingTime" parameterType="string" resultType="int">
 		SELECT sum(USING_TIME)

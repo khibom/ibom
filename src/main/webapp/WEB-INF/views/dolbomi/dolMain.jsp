@@ -142,7 +142,13 @@ $(function(){
 </script>
 <script type="text/javascript">
 $(function(){
-	
+	var searchTarget = "${Y}";
+	if(searchTarget != ""){
+		var scrollPosition = $("#listTarget").offset().top;
+ 		$("html,body").animate({
+ 		scrollTop: scrollPosition    //id가 target 인 일레먼트의 상단위치로 페이지 스크롤
+	}, 0);
+	}
 	
 	$("#calendars").click(function(){
 	var scrollPosition = $("#listTarget").offset().top;
