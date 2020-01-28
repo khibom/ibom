@@ -27,9 +27,9 @@ public class ActListViewServiceImpl implements ActListViewService{
 
 
 	@Override
-	public int getListCount(String dolId) {
+	public int getListCount(CommonPaging com) {
 		
-		return actListDao.getListCount(dolId);
+		return actListDao.getListCount(com);
 	}
 
 
@@ -38,10 +38,6 @@ public class ActListViewServiceImpl implements ActListViewService{
 		
 		return actListDao.searchDolActList(com);
 	}
-	
-	
-	
-	
 	
 
 }
