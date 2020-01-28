@@ -21,90 +21,31 @@ thead tr th, tbody tr td { text-align : center;}
 <script type="text/javascript"
 	src="/ibom/resources/js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
+
+
 $(function(){
+	$('table tbody tr').on('click', function() {		
+        var tr = $(this);
+		var td = tr.children();
+		
+		var service2_no = td.eq(0).text();
+		var when = td.eq(2).children('span').eq(0).text();
+		var time = td.eq(2).children('span').eq(1).text();
+		var status = td.eq(3).text();
+		
+    	var cp =  "${paging.currentPage}";
+    	var url = "${pageContext.request.contextPath}/admin/interUpList.do?stitle="+service2_no+"&currentPage="+cp;
+        var name = "interUpdatePop";
+        var option = "width = 500, height = 500, top = 100, left = 200, location = no";
+        window.open(url, name, option);
+		
+		
+		
+
+    }); 
 	
 	
 	
-	//날짜 바꾸면 db수정 ajax
-	$(".interDate").on('change',function(){
-		
-		//내가 일자를 바꾸고 싶어 그럼 그 인터뷰 건의 고유키를 가져와야하잖아
-		var interNo = $(this).attr('id');
-		//바꾼 일자 값
-		var dateVal = $(this).val();
-		console.log(interNo+", "+dateVal)
-		
-		$.ajax({
-			url:"${ pageContext.request.contextPath }/admin/interUpdate.do",
-			data:{inter_no:$(this).attr('id'), inter_date:dateVal},
-			type:"post",
-			success:function(result){
-				if(result == "ok"){
-					alert("수정성공");					
-				}else{
-					alert("수정실패");	
-				}
-			},
-			error: function(request, status, errorData){
-				console.log("error code : "+request.status+"\nMessage : "+request.responseText+"\nError : "+errorData);
-			}
-			
-			
-		})//ajax종료
-	})
-	//시간 바꾸면 db수정 ajax
-	$(".interTime").on('change',function(){
-		
-		var interNo = $(this).attr('id');
-		//바꾼 시간 값
-		var timeVal = $(this).val();
-		var timeV = String(timeVal);
-		
-		console.log("interNo : "+interNo+", timeV :"+timeV)
-		$.ajax({
-			url:"${ pageContext.request.contextPath }/admin/interUpdate.do",
-			data:{inter_no:$(this).attr('id'), inter_time:timeV},
-			type:"post",
-			success:function(result){
-				if(result == "ok"){
-					alert("수정성공");					
-				}else{
-					alert("수정실패");	
-				}
-			},
-			error: function(request, status, errorData){
-				console.log("error code : "+request.status+"\nMessage : "+request.responseText+"\nError : "+errorData);
-			}
-			
-			
-		})//ajax종료		
-		
-		
-	})
-   	//상태 바꾸면 db수정 ajax
-	$(".interStatus").on('change',function(){
-		
-		var interNo = $(this).attr('id');
-		//바꾼 상태 값
-		var timeVal = $(this).val();
-		$.ajax({
-			url:"${ pageContext.request.contextPath }/admin/interUpdate.do",
-			data:{inter_no:$(this).attr('id'), inter_status:$(this).val()},
-			type:"post",
-			success:function(result){
-				if(result == "ok"){
-					alert("수정성공");					
-				}else{
-					alert("수정실패");	
-				}
-			},
-			error: function(request, status, errorData){
-				console.log("error code : "+request.status+"\nMessage : "+request.responseText+"\nError : "+errorData);
-			}
-			
-			
-		})//ajax종료			
-	})
     	
     //검색 부분
 	showDiv();
@@ -249,7 +190,7 @@ function showDiv() {
 										type="hidden" name="keyword" value="">
 									<div class="input-group"
 										style="margin-left: 5px; display: inline-flex;">
-										<c:if test="${ !empty commonPage.begin and !empty commonPage.end}">
+										<c:if test="${ !empty paging.date_begin and !empty date_paging.end}">
 										<input type="date" name="date_begin"
 											class="form-control form-control-sm"
 											style="width: 160px; border-radius: 3px;"> &nbsp; ～
@@ -257,7 +198,7 @@ function showDiv() {
 											class="form-control form-control-sm"
 											style="width: 160px; border-radius: 3px;"> 
 										</c:if>
-										<c:if test="${ empty commonPage.begin and empty commonPage.end}">
+										<c:if test="${ empty paging.date_begin and empty paging.date_end}">
 											<input type="date" name="date_begin"
 											class="form-control form-control-sm"
 											style="width: 160px; border-radius: 3px;"> &nbsp; ～
@@ -390,47 +331,12 @@ function showDiv() {
 								<tr><td colspan="7" align="center"><b>조회 할 면접 건이 없습니다.</b></td></tr>
 								</c:if>
 								<c:forEach items="${requestScope.list }" var="adminInter">
-
-									<tr>
-										<td>${adminInter.inter_no }</td>
+									<tr data-toggle="modal" data-target="#myModal">
+										<td><a class="upup" id="${adminInter.inter_no }">
+										${adminInter.inter_no }</a></td>
 										<td>${adminInter.inter_user_id }(${adminInter.inter_user_name })</td>
-										<td><input type="date"
-											value="${adminInter.inter_date}" name="inter_date"
-											class="interDate" id="${adminInter.inter_no }">
-											&nbsp; <select name="inter_time" class="interTime"
-											id="${adminInter.inter_no }">
-												<option value="9"
-													${adminInter.inter_time eq '9'?"selected":"" }>9</option>
-												<option value="10"
-													${adminInter.inter_time eq '10'?"selected":"" }>10</option>
-												<option value="11"
-													${adminInter.inter_time eq '11'?"selected":"" }>11</option>
-												<option value="12"
-													${adminInter.inter_time eq '12'?"selected":"" }>12</option>
-												<option value="13"
-													${adminInter.inter_time eq '13'?"selected":"" }>13</option>
-												<option value="14"
-													${adminInter.inter_time eq '14'?"selected":"" }>14</option>
-												<option value="15"
-													${adminInter.inter_time eq '15'?"selected":"" }>15</option>
-												<option value="16"
-													${adminInter.inter_time eq '16'?"selected":"" }>16</option>
-												<option value="17"
-													${adminInter.inter_time eq '17'?"selected":"" }>17</option>
-
-										</select> 시
-										</td>
-										<td><select name="inter_status" class="interStatus"
-											id="${adminInter.inter_no }">
-												<option value="1"
-													${adminInter.inter_status eq '돌보미배정중'?"selected":""}>돌보미배정중</option>
-												<option value="2"
-													${adminInter.inter_status eq '면접예정'?"selected":""}>면접예정</option>
-												<option value="3"
-													${adminInter.inter_status eq '면접완료'?"selected":""}>면접완료</option>
-												<option value="0"
-													${adminInter.inter_status eq '면접취소'?"selected":""}>면접취소</option>
-										</select></td>
+										<td><span>${adminInter.inter_date}</span>&nbsp; &nbsp;<span>${adminInter.inter_time}</span>시</td>
+										<td>${adminInter.inter_status }</td>
 										<td>${adminInter.inter_bomi_id }(${adminInter.inter_bomi_name })</td>
 										<td>${adminInter.inter_req_date }</td>
 										<td>${adminInter.inter_center  }</td>
@@ -438,6 +344,21 @@ function showDiv() {
 								</c:forEach>
 							</tbody>
 						</table>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 						<!-- 페이징 시작 -->
                   <div class="col-sm-6">
                      <div class="dataTables_paginate paging_simple_numbers"
@@ -575,10 +496,10 @@ function showDiv() {
                               <a href="${sOther1}">&lt;&lt;</a>
                            </li>
                            <li tabindex="0" class="paginate_button previous" id="dataTables-example_previous" aria-controls="dataTables-example">
-                           <c:if test="${(paging.beginPage-commonPage.pageSize)<= 1}">
+                           <c:if test="${(paging.beginPage-paging.pageSize)<= 1}">
                                  <a href="${sOther1}">&lt;</a>
                               </c:if> 
-                              <c:if test="${(paging.beginPage-commonPage.pageSize) > 1}">
+                              <c:if test="${(paging.beginPage-paging.pageSize) > 1}">
                               <c:url var="sOther2" value="/admin/interSearch.do">
                                  <c:param name="page" value="${paging.beginPage-paging.pageSize}"/><c:param name="search" value="${option }"/>
                                  <c:param name="keyword" value="${requestScope.keyword}"/>
@@ -601,13 +522,13 @@ function showDiv() {
                                  </c:if>
                               </c:forEach>
                            <li tabindex="0" class="paginate_button next" id="dataTables-example_next" aria-controls="dataTables-example">
-                           <c:if test="${(paging.endPage+commonPage.pageSize) > paging.maxPage }">
+                           <c:if test="${(paging.endPage+paging.pageSize) > paging.maxPage }">
                               <c:url var="sOther4" value="/admin/interSearch.do">
                                  <c:param name="page" value="${paging.maxPage}"/><c:param name="search" value="${option }"/>
                                  <c:param name="keyword" value="${requestScope.keyword}"/>
                               </c:url>
                                  <a href="${   sOther4}">&gt;</a>
-                              </c:if> <c:if test="${(paging.endPage+commonPage.pageSize) <= paging.maxPage }">
+                              </c:if> <c:if test="${(paging.endPage+paging.pageSize) <= paging.maxPage }">
                               <c:url var="sOther5" value="/admin/interSearch.do">
                                  <c:param name="page" value="${paging.endPage + paging.pageSize}"/><c:param name="search" value="${option }"/>
                                  <c:param name="keyword" value="${requestScope.keyword}"/>
@@ -630,8 +551,10 @@ function showDiv() {
                   <!-- 페이징 끝 -->
 					</div>
 					<!-- /.table-responsive -->
-				</div>
+				</div><!-- /.panel body -->
 				<!-- 여기까지 -->
+				
+				</div><!-- /.panel panel-default -->
 			</div>
 			<!-- /#page-wrapper -->
 			<!-- ======================================================================================================= -->

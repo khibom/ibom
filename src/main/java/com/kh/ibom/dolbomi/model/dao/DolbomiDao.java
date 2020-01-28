@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.kh.ibom.common.CommonPaging;
 import com.kh.ibom.dol_pass.model.vo.DolPass;
 import com.kh.ibom.dolbomi.model.vo.Dolbomi;
 
@@ -16,8 +17,8 @@ public class DolbomiDao {
 	@Autowired
 	private SqlSessionTemplate session;
 
-	public ArrayList<Dolbomi> dolbomiSelectList() {
-		List<Dolbomi> list = session.selectList("dolbomiMapper.selectList");
+	public ArrayList<Dolbomi> dolbomiSelectList(CommonPaging paging) {
+		List<Dolbomi> list = session.selectList("dolbomiMapper.selectList",paging);
 		return (ArrayList<Dolbomi>) list;
 	}
 
@@ -95,6 +96,9 @@ public class DolbomiDao {
 		return (ArrayList<Dolbomi>) list;
 	}
 	
-	
+	public int dolbomiListCount(CommonPaging page) {
+		// 돌보미 전체 리스트 페이징처리
+		return session.selectOne("dolbomiMapper.listCount",page);
+	}
 	
 } // end class

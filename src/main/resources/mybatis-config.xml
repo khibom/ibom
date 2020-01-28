@@ -3,6 +3,12 @@
 "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+<!--  oracle null 처리  -->
+   <settings>
+        <setting name="cacheEnabled" value="false" />
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
+    
 	<typeAliases>
 		<typeAlias type="com.kh.ibom.iusers.model.vo.Iusers"	alias="Iusers" />
 		<typeAlias type="com.kh.ibom.emp.model.vo.Emp" alias="Emp" />
@@ -63,6 +69,9 @@
 
 		<typeAlias type="com.kh.ibom.interview.model.vo.Interview"
 			alias="Interview" />
+			
+		<typeAlias type="com.kh.ibom.interview.model.vo.InterUpdate"
+		alias="InterUpdate" />
 
 		<typeAlias
 			type="com.kh.ibom.alldayserv_ap.model.vo.AlldayServAp"

@@ -9,15 +9,17 @@ public class LikeTo implements java.io.Serializable{
 	
 	private String service2_no;
 	private String dol_id;
-	private String lastModified;
+	private String dol_name;
+	private String lastmodified;
 	
 	public LikeTo() {}
 
-	public LikeTo(String service2_no, String dol_id, String lastModified) {
+	public LikeTo(String service2_no, String dol_id, String dol_name, String lastmodified) {
 		super();
 		this.service2_no = service2_no;
 		this.dol_id = dol_id;
-		this.lastModified = lastModified;
+		this.dol_name = dol_name;
+		this.lastmodified = lastmodified;
 	}
 
 	public String getService2_no() {
@@ -36,12 +38,20 @@ public class LikeTo implements java.io.Serializable{
 		this.dol_id = dol_id;
 	}
 
-	public String getLastModified() {
-		return lastModified;
+	public String getDol_name() {
+		return dol_name;
 	}
 
-	public void setLastModified(String lastModified) {
-		this.lastModified = lastModified;
+	public void setDol_name(String dol_name) {
+		this.dol_name = dol_name;
+	}
+
+	public String getLastmodified() {
+		return lastmodified;
+	}
+
+	public void setLastmodified(String lastmodified) {
+		this.lastmodified = lastmodified;
 	}
 
 	public static long getSerialversionuid() {
@@ -50,8 +60,12 @@ public class LikeTo implements java.io.Serializable{
 
 	@Override
 	public String toString() {
-		return "LikeTo [service2_no=" + service2_no + ", dol_id=" + dol_id + ", lastModified=" + lastModified + "]";
+		return "LikeTo [service2_no=" + service2_no + ", dol_id=" + dol_id + ", dol_name=" + dol_name
+				+ ", lastmodified=" + lastmodified + "]";
 	}
+
+
+	
 	
 
 	

@@ -19,18 +19,18 @@ public class DolJudgradeController {
 	@Autowired
 	public DolJudgradeService djgService;
 	//돌보미 판정등급 리스트 조회
-	@RequestMapping(value="admin/dolGradeList.do", method=RequestMethod.POST)
+	@RequestMapping("admin/dolGradeList.do")//(value="admin/dolGradeList.do", method=RequestMethod.POST)
 	public ModelAndView dolJubGradeSelectList(ModelAndView mv) {
 		ArrayList<DolJudgrade> list = djgService.dolJubGradeSelectList();
-		/*
+		
 		if(list != null) {
 			mv.addObject("list", list);
-			mv.setViewName("목록페이지 만들면");
+			mv.setViewName("admin/dolbomiJubGrade/dolGradeList");
 		}else {
 			mv.addObject("message", "돌보미가 볼 신청서  조회 실패!");
-			mv.setViewName("(common/error)에러페이지 만들면");
+			mv.setViewName("common/error");
 		}
-		*/
+		
 		return mv;
 	}
 	

@@ -19,15 +19,15 @@ public class UserFamilyDao {
 	public UserFamilyDao() {}
 
 
-	public ArrayList<UserFamily> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<UserFamily> selectUserFamilyList(String user_id) {
+		// 가족정보 조회
+		return session.selectList("user_familyMapper.selectUserFmailyList", user_id);
 	}
 
 
 	public int insertuserFamily(UserFamily userfamily) {
-		// TODO Auto-generated method stub
-		return 0;
+		// 가족정보 입력
+		return session.insert("user_familyMapper.insertuserFamily", userfamily);
 	}
 
 	// 가족 정보 수정

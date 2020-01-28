@@ -126,10 +126,10 @@ html.ie .jt_board_list3 .jt_board_new:after {position: absolute; top: 50%; left:
 
 html.ie .jt_board_list3_wrap {display: block; position: relative;}
 html.ie .jt_board_list3_wrap:before {content: '';display: block;width: 100%;height: 5px;position: absolute;top: 0;left: 0;background-color: #f07e23;border-radius: 25px;overflow: hidden;}
-html.desktop .jt_board_list3 tr:hover th {
+/* html.desktop .jt_board_list3 tr:hover th {
 	background: none;
 	cursor: default;
-}
+} */
 .choose {
 	padding: 10px 0; font-size: 12px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
 	background: #eee;
@@ -277,4 +277,311 @@ html.desktop .jt_board_list3 tr:hover th {
     outline: none;
     cursor: pointer;
    
+}
+/* serviceApply2 child table th */
+.allCheck {
+	padding: 10px 0 5px 0; font-size: 15px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+
+}
+.family_name {
+	padding: 10px 0 5px 0; font-size: 15px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+
+}
+.ad_date {
+	padding: 10px 0 5px 0; font-size: 15px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+
+}
+.family_gender {
+	padding: 10px 0 5px 0; font-size: 15px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+
+}
+.ad_level {
+	padding: 10px 0 5px 0; font-size: 15px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+
+}
+.dolbom_type {
+	padding: 10px 0 5px 0; font-size: 15px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+	margin-top:5px;
+}
+.remaining_time {
+	padding: 10px 0 5px 0; font-size: 15px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+	margin-top:5px;
+}
+/* serviceApply2 child table td */
+.checkOwn{
+	text-align: center;
+}
+.family_name_cont{
+	text-align:center;
+}
+.ad_date_cont{
+	text-align:center;
+}
+.family_gender_cont{
+	text-align:center;
+}
+.ad_level_cont{
+	text-align:center;
+}
+.dolbom_type_cont{
+	text-align:center;
+}
+.remaining_time_cont{
+	text-align:center;
+}
+#family_CheckBox{
+	margin-top:7px;
+	cursor:pointer;
+}
+/* allcheck checkbox css */
+#allCheck{
+	margin-top:7px;
+	cursor:pointer;
+}
+/* childList_wrapper */
+.childList_wrapper{
+	width:100%;
+	height:45px;
+	display:block;
+}
+.child_select:hover {
+    background: #7d7d7d;
+    border-color: #7d7d7d;
+    color:#fff;
+}
+.child_select {
+	float:right;
+    display: block;
+    vertical-align: top;
+    width: 80px;
+    height: 35px;
+    padding: 0 0 3px;
+    font-size: 9pt;
+    font-weight: bold;
+    color: #7d7d7d;
+    border: 1px solid #7d7d7d;
+    border-radius: 4px;
+    background: #fff;
+    outline: none;
+    cursor: pointer;
+}
+/* 돌봄일정 추가 버튼 */
+.dolbom_add_btn:hover {
+    background: #cf3e07;
+    border-color: #cf3e07;
+}
+.dolbom_add_btn {
+	margin-left:10px;
+	float:right;
+    display: block;
+    vertical-align: top;
+    width: 100px;
+    height: 35px;
+    padding: 0 0 3px;
+    font-size: 9pt;
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid #f37233;
+    border-radius: 4px;
+    background: #f37233;
+    outline: none;
+    cursor: pointer;
+}
+/* 면접 신청 버튼 */
+.interview_add_btn:hover {
+    background: #7d7d7d;
+    border-color: #7d7d7d;
+    color:#fff;
+}
+.interview_add_btn {
+	float:right;
+    display: block;
+    vertical-align: top;
+    width: 80px;
+    height: 35px;
+    padding: 0 0 3px;
+    font-size: 9pt;
+    font-weight: bold;
+    color: #7d7d7d;
+    border: 1px solid #7d7d7d;
+    border-radius: 4px;
+    background: #fff;
+    outline: none;
+    cursor: pointer;
+}
+/* allcheck_apply checkbox css */
+.allcheck_apply{
+	padding: 10px 0 5px 0;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    color: #888;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    -webkit-transition: background 300ms;
+    transition: background 300ms;
+    background: #eee;
+}
+/* 돌봄일정 추가 */
+#allCheck_apply{
+	margin-top:7px;
+	cursor:pointer;
+}
+.apply_date {
+	padding: 10px 0 5px 0; font-size: 15px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+}
+.apply_family {
+	padding: 10px 0 5px 0; font-size: 15px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+}
+.service_type {
+	padding: 10px 0 5px 0; font-size: 15px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+}
+.start_time {
+	padding: 10px 0 5px 0; font-size: 15px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+}
+.end_time {
+	padding: 10px 0 5px 0; font-size: 15px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+}
+.using_time {
+	padding: 10px 0 5px 0; font-size: 15px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+}
+.support_time {
+	padding: 10px 0 5px 0; font-size: 15px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+}
+.interview_yn {
+	padding: 10px 0 5px 0; font-size: 15px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+}
+.apply_date_cont{
+	text-align:center;
+}
+.apply_family_cont {
+	text-align:center;
+}
+.service_type_cont {
+	text-align:center;
+}
+.start_time_cont {
+	text-align:center;
+}
+.end_time_cont {
+	text-align:center;
+}
+.using_time_cont {
+	text-align:center;
+}
+.support_time_cont {
+	text-align:center;
+}
+.interview_yn_cont{
+	text-align:center;
+}
+/* 먼접 신청 팝업 */
+.interview_users {
+	padding: 15px 0; font-size: 12px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	font-weight:bold;
+}
+.interview_date {
+	padding: 15px 0; font-size: 12px;font-weight: 400;text-align: center;color: #888;vertical-align: middle;border-bottom: 1px solid #ddd;cursor: pointer;-webkit-transition: background 300ms;transition: background 300ms;
+	background: #eee;
+	width:50px; 
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	font-weight:bold;
+}
+.interview_usersName{
+	border-bottom: 1px solid #ddd;
+	font-size: 14px;
+	font-weight: 400;
+	text-align:center;
+	vertical-align: middle;
+}
+.interview_date_hour{
+	border-bottom: 1px solid #ddd;
+	font-size: 14px;
+	font-weight: 400;
+	text-align:center;
+	vertical-align: middle;
+}
+#interviewPop_close:hover {
+    background: #7d7d7d;
+    border-color: #7d7d7d;
+}
+#interviewPop_close {
+	margin:5px 5px 5px 5px;
+	vertical-align:middle;
+	text-align:center;
+	float:right;
+    display: block;
+    vertical-align: top;
+    width: 70px;
+    height: 35px;
+    padding: 0 0 2px;
+    font-size: 9pt;
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid #696969;
+    border-radius: 4px;
+    background: #696969; 
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: background 300ms, border-color 300ms;
+    transition: background 300ms, border-color 300ms;
+}
+.interview_send:hover {
+    background: #cf3e07;
+    border-color: #cf3e07;
+}
+.interview_send {
+	margin:5px 0 5px 0;
+	float:right;
+    display: block;
+    vertical-align: top;
+    width: 70px;
+    height: 35px;
+    padding: 0 0 2px;
+    font-size: 9pt;
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid #f37233;
+    border-radius: 4px;
+    background: #f37233;
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: background 300ms, border-color 300ms;
+    transition: background 300ms, border-color 300ms;
 }

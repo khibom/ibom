@@ -2,8 +2,9 @@ package com.kh.ibom.common;
 
 import java.sql.Date;
 
-public class CommonPaging {
-
+public class CommonPaging implements java.io.Serializable{
+	private final static long serialVersionUID = 5500L;
+	
 	private int listCount; // 전체 페이지 갯수
 	private int listSize; // 페이지당 목록수
 	private int pageSize; // 페이지바의 페이지 갯수
@@ -25,45 +26,20 @@ public class CommonPaging {
 	private String in_status;
 	private String in_center;
 	
+	private String search;
+	private String name;
+	private String keyword;
+	
 	//민제 추가
 	private String user_name;
 	private String dol_name;
 	
-	public CommonPaging() {
-	}
-
-	public CommonPaging(int listsize, int pagesize, int listcount, int currentpage) {
-		this.listSize = listsize;
-		this.pageSize = pagesize;
-		this.listCount = listcount;
-		this.currentPage = currentpage;
-
-		maxPage = listCount / listSize;
-		// 최대페이지수는 전체글 / 페이지당목록수 ex) 35개글이면 35/10 3페이지까지..
-		// 1페이지 1~10 2페이지 11~20 3페이지 21~30 4페이지 이므로
-		if (listCount % listSize > 0)
-			maxPage++; // 나눈값이 0보다 클경우엔 +1페이지를 해준다
-
-		beginPage = (currentPage / pageSize) * pageSize + 1;
-		// 시작페이지는 현재페이지/페이지를 나누고 페이지갯수를 곱한거의+1 ex)1페이지는 1/10*10+1=1, 3페이지도 1
-		// 근데 10페이지도 페이지바안에 1로 나와야함 1~10 근데 10/10*10+1은 11이나온다 그러므로
-		if (currentPage % pageSize == 0)
-			beginPage -= pageSize; // 현재페이지와 페이지사이즈가 동일할경우 10,20.. 10을뺴주면 1 11, 21,....이나온다
-
-		endPage = beginPage + (pageSize - 1);
-		// 목록의 마지막페이지는 시작페이지에서 마지막페이지-1하고 더해준다 ex)10 = 1+10-1
-		// 근데 마지막페이지가 20이나왓는데 최대페이지가 15가나오면
-		if (endPage > maxPage)
-			endPage = maxPage; // 최대페이지로 바꾸어준다
-
-		startList = (currentPage * listSize) - (listSize - 1); // 시작목록#{startList}
-		endList = currentPage * listSize; // 마지막목록#{endList}
-
-	}
-
+	public CommonPaging() {}
+	
 	public CommonPaging(int listCount, int listSize, int pageSize, int currentPage, int maxPage, int beginPage,
 			int endPage, int startList, int endList, String stitle, String ibom_id, String user_id, Date date_begin,
-			Date date_end, String in_id, String in_status, String in_center, String user_name, String dol_name) {
+			Date date_end, String in_id, String in_status, String in_center, String search, String name, String keyword,
+			String user_name, String dol_name) {
 		super();
 		this.listCount = listCount;
 		this.listSize = listSize;
@@ -82,9 +58,15 @@ public class CommonPaging {
 		this.in_id = in_id;
 		this.in_status = in_status;
 		this.in_center = in_center;
+		this.search = search;
+		this.name = name;
+		this.keyword = keyword;
 		this.user_name = user_name;
 		this.dol_name = dol_name;
 	}
+
+	
+
 
 	public int getListCount() {
 		return listCount;
@@ -221,7 +203,31 @@ public class CommonPaging {
 	public void setIn_center(String in_center) {
 		this.in_center = in_center;
 	}
-	
+
+	public String getSearch() {
+		return search;
+	}
+
+	public void setSearch(String search) {
+		this.search = search;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
 	public String getUser_name() {
 		return user_name;
 	}
@@ -229,7 +235,7 @@ public class CommonPaging {
 	public void setUser_name(String user_name) {
 		this.user_name = user_name;
 	}
-	
+
 	public String getDol_name() {
 		return dol_name;
 	}
@@ -237,18 +243,53 @@ public class CommonPaging {
 	public void setDol_name(String dol_name) {
 		this.dol_name = dol_name;
 	}
-	
-	
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	
+	
 	@Override
 	public String toString() {
 		return "CommonPaging [listCount=" + listCount + ", listSize=" + listSize + ", pageSize=" + pageSize
 				+ ", currentPage=" + currentPage + ", maxPage=" + maxPage + ", beginPage=" + beginPage + ", endPage="
 				+ endPage + ", startList=" + startList + ", endList=" + endList + ", stitle=" + stitle + ", ibom_id="
 				+ ibom_id + ", user_id=" + user_id + ", date_begin=" + date_begin + ", date_end=" + date_end
-				+ ", in_id=" + in_id + ", in_status=" + in_status + ", in_center=" + in_center + ", user_name=" + user_name + ", dol_name=" + dol_name +"]";
+				+ ", in_id=" + in_id + ", in_status=" + in_status + ", in_center=" + in_center + ", search=" + search
+				+ ", name=" + name + ", keyword=" + keyword + ", user_name=" + user_name + ", dol_name=" + dol_name
+				+ "]";
+	}
+
+	public CommonPaging(int listsize, int pagesize, int listcount, int currentpage) {
+		this.listSize = listsize;
+		this.pageSize = pagesize;
+		this.listCount = listcount;
+		this.currentPage = currentpage;
+
+		maxPage = listCount / listSize;
+		// 최대페이지수는 전체글 / 페이지당목록수 ex) 35개글이면 35/10 3페이지까지..
+		// 1페이지 1~10 2페이지 11~20 3페이지 21~30 4페이지 이므로
+		if (listCount % listSize > 0)
+			maxPage++; // 나눈값이 0보다 클경우엔 +1페이지를 해준다
+
+		beginPage = (currentPage / pageSize) * pageSize + 1;
+		// 시작페이지는 현재페이지/페이지를 나누고 페이지갯수를 곱한거의+1 ex)1페이지는 1/10*10+1=1, 3페이지도 1
+		// 근데 10페이지도 페이지바안에 1로 나와야함 1~10 근데 10/10*10+1은 11이나온다 그러므로
+		if (currentPage % pageSize == 0)
+			beginPage -= pageSize; // 현재페이지와 페이지사이즈가 동일할경우 10,20.. 10을뺴주면 1 11, 21,....이나온다
+
+		endPage = beginPage + (pageSize - 1);
+		// 목록의 마지막페이지는 시작페이지에서 마지막페이지-1하고 더해준다 ex)10 = 1+10-1
+		// 근데 마지막페이지가 20이나왓는데 최대페이지가 15가나오면
+		if (endPage > maxPage)
+			endPage = maxPage; // 최대페이지로 바꾸어준다
+
+		startList = (currentPage * listSize) - (listSize - 1); // 시작목록#{startList}
+		endList = currentPage * listSize; // 마지막목록#{endList}
+
 	}
 
 	
 
-}
+} // end class

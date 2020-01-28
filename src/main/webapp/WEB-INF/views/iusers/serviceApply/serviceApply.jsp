@@ -24,11 +24,10 @@
 
 <!-- CSS -->
 <link rel="stylesheet" href="/ibom/resources/css/styles.css" />
+<link rel="stylesheet" href="/ibom/resources/materialize/css/materialize3.css" />
 
 <!--  js -->
 <script src="/ibom/resources/js/jquery-3.4.1.min.js"></script>
-
-<!-- JS -->
 <script>
 	if ((/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i)
 			.test(navigator.userAgent || navigator.vendor || window.opera)) {
@@ -45,7 +44,7 @@
 	src="/ibom/resources/js/vendors/jquery.ajaxQueue.min.js"></script>
 <script type="text/javascript" src="/ibom/resources/js/common.js"></script>
 <script type="text/javascript" src="/ibom/resources/js/jt.js"></script>
-
+<script src="/ibom/resources/materialize/js/materialize.js"></script> 
 <!-- 이용자 서약 관련 팝업 스크립트 -->
 <script>
 	function userPledgePop(){
@@ -106,6 +105,31 @@
 			}
 		});
 	});//before_req, interview_req
+	$(function(){
+	    $("#applyFrm").submit(function(event){
+	        if($("#apply_reason").val() == ""){
+	        	alert("신청 사유를 선택해 주세요.");
+	        	$("#apply_reason").focus();
+	        	return false;
+	        }
+	        if($("#transferor").val() == "" || $("#transferor_2").val() == ""){
+	        	alert("인계자 성명 및 가족관계를 확인해 주세요.");
+	        	$("#transferor_1").focus();
+	        	return false;
+	        }
+	        if($("#apply_space").val() == ""){
+	        	alert("돌봄 장소를 선택해 주세요.");
+	        	$("#apply_space").focus();
+	        	return false;
+	        }
+	        if($("#apply1_card").val() == ""){
+	        	alert("결제할 카드를 선택해 주세요.")
+	        	return false;
+	        }
+	       
+	    });
+	});
+
 </script>
 
 </head>
@@ -147,7 +171,7 @@
 						서비스 신청서 작성
 						</h2>
 						<br> <img style="width:100%"
-							src="/ibom/resources/images/serviceApply/timeLine_aplly1.png">
+							src="/ibom/resources/images/serviceApply/timeLine_aplly3.png">
 				</div>
 				<!-- .wrap_narrow -->
 			</div>
@@ -206,7 +230,7 @@
 
 
 		<div class="jt_board_list_wrap"> 
-		<form action="apply1.do" method="post">
+		<form action="apply1.do" method="post" id="applyFrm">
 			<table class="jt_board_list apply1">
             <caption>게시판 목록</caption>
             <colgroup>
@@ -319,7 +343,7 @@
                     						(서비스제공기관)
                     </td>
                     <td class="apply1_content">
-                        <textarea name="req_institution" class="feedback-input" id="comment" placeholder="내용입력"></textarea>
+                        <textarea name="req_institution" class="feedback-input" id="req_institution" placeholder="내용입력"></textarea>
                     </td>
                   
                 </tr>
@@ -328,7 +352,7 @@
                     						(돌보미)
                     </td>
                     <td class="apply1_content">
-                       <textarea name="req_dolbomi" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="내용입력"></textarea>
+                       <textarea name="req_dolbomi" class="validate[required,length[6,300]] feedback-input" id="req_dolbomi" placeholder="내용입력"></textarea>
                     </td>
                    
                 </tr>

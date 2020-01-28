@@ -8,10 +8,10 @@ import org.springframework.stereotype.Component;
 public class AlldayServAp implements java.io.Serializable {
 	
 	private static final long serialVersionUID = 5900L;
-	
 	private String adsa_no;
 	private String office_name;
 	private String user_id;
+	private String user_name;
 	private String baby_rela;
 	private String user_email;
 	private String user_phone;
@@ -22,28 +22,27 @@ public class AlldayServAp implements java.io.Serializable {
 	private java.sql.Date baby_birth;
 	private String fam_typ_choi1;
 	private String fam_typ_choi2;
-	private String fam_typ_choi3_1;
-	private String fam_typ_choi3_2;
+	private String fam_typ_choi3;
 	private String fam_typ_choi4;
 	private String fam_typ_choi5;
 	private String fam_typ_choi6;
 	private java.sql.Date req_date;
 	private String waiting_no;
+	private String apply_status;
 	private java.sql.Date receipt_date;
 	
 	public AlldayServAp() {}
-	
-	
 
-	public AlldayServAp(String adsa_no, String office_name, String user_id, String baby_rela, String user_email,
-			String user_phone, String user_tel, String baby_type, String start_hope_month, String baby_name,
-			Date baby_birth, String fam_typ_choi1, String fam_typ_choi2, String fam_typ_choi3_1, String fam_typ_choi3_2,
+	public AlldayServAp(String adsa_no, String office_name, String user_id, String user_name, String baby_rela,
+			String user_email, String user_phone, String user_tel, String baby_type, String start_hope_month,
+			String baby_name, Date baby_birth, String fam_typ_choi1, String fam_typ_choi2, String fam_typ_choi3,
 			String fam_typ_choi4, String fam_typ_choi5, String fam_typ_choi6, Date req_date, String waiting_no,
-			Date receipt_date) {
+			String apply_status, Date receipt_date) {
 		super();
 		this.adsa_no = adsa_no;
 		this.office_name = office_name;
 		this.user_id = user_id;
+		this.user_name = user_name;
 		this.baby_rela = baby_rela;
 		this.user_email = user_email;
 		this.user_phone = user_phone;
@@ -54,29 +53,15 @@ public class AlldayServAp implements java.io.Serializable {
 		this.baby_birth = baby_birth;
 		this.fam_typ_choi1 = fam_typ_choi1;
 		this.fam_typ_choi2 = fam_typ_choi2;
-		this.fam_typ_choi3_1 = fam_typ_choi3_1;
-		this.fam_typ_choi3_2 = fam_typ_choi3_2;
+		this.fam_typ_choi3 = fam_typ_choi3;
 		this.fam_typ_choi4 = fam_typ_choi4;
 		this.fam_typ_choi5 = fam_typ_choi5;
 		this.fam_typ_choi6 = fam_typ_choi6;
 		this.req_date = req_date;
 		this.waiting_no = waiting_no;
+		this.apply_status = apply_status;
 		this.receipt_date = receipt_date;
 	}
-
-
-
-	public String getOffice_name() {
-		return office_name;
-	}
-
-
-
-	public void setOffice_name(String office_name) {
-		this.office_name = office_name;
-	}
-
-
 
 	public String getAdsa_no() {
 		return adsa_no;
@@ -86,12 +71,28 @@ public class AlldayServAp implements java.io.Serializable {
 		this.adsa_no = adsa_no;
 	}
 
+	public String getOffice_name() {
+		return office_name;
+	}
+
+	public void setOffice_name(String office_name) {
+		this.office_name = office_name;
+	}
+
 	public String getUser_id() {
 		return user_id;
 	}
 
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;
+	}
+
+	public String getUser_name() {
+		return user_name;
+	}
+
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
 	public String getBaby_rela() {
@@ -174,20 +175,12 @@ public class AlldayServAp implements java.io.Serializable {
 		this.fam_typ_choi2 = fam_typ_choi2;
 	}
 
-	public String getFam_typ_choi3_1() {
-		return fam_typ_choi3_1;
+	public String getFam_typ_choi3() {
+		return fam_typ_choi3;
 	}
 
-	public void setFam_typ_choi3_1(String fam_typ_choi3_1) {
-		this.fam_typ_choi3_1 = fam_typ_choi3_1;
-	}
-
-	public String getFam_typ_choi3_2() {
-		return fam_typ_choi3_2;
-	}
-
-	public void setFam_typ_choi3_2(String fam_typ_choi3_2) {
-		this.fam_typ_choi3_2 = fam_typ_choi3_2;
+	public void setFam_typ_choi3(String fam_typ_choi3) {
+		this.fam_typ_choi3 = fam_typ_choi3;
 	}
 
 	public String getFam_typ_choi4() {
@@ -230,6 +223,14 @@ public class AlldayServAp implements java.io.Serializable {
 		this.waiting_no = waiting_no;
 	}
 
+	public String getApply_status() {
+		return apply_status;
+	}
+
+	public void setApply_status(String apply_status) {
+		this.apply_status = apply_status;
+	}
+
 	public java.sql.Date getReceipt_date() {
 		return receipt_date;
 	}
@@ -238,18 +239,24 @@ public class AlldayServAp implements java.io.Serializable {
 		this.receipt_date = receipt_date;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
 	@Override
 	public String toString() {
 		return "AlldayServAp [adsa_no=" + adsa_no + ", office_name=" + office_name + ", user_id=" + user_id
-				+ ", baby_rela=" + baby_rela + ", user_email=" + user_email + ", user_phone=" + user_phone
-				+ ", user_tel=" + user_tel + ", baby_type=" + baby_type + ", start_hope_month=" + start_hope_month
-				+ ", baby_name=" + baby_name + ", baby_birth=" + baby_birth + ", fam_typ_choi1=" + fam_typ_choi1
-				+ ", fam_typ_choi2=" + fam_typ_choi2 + ", fam_typ_choi3_1=" + fam_typ_choi3_1 + ", fam_typ_choi3_2="
-				+ fam_typ_choi3_2 + ", fam_typ_choi4=" + fam_typ_choi4 + ", fam_typ_choi5=" + fam_typ_choi5
+				+ ", user_name=" + user_name + ", baby_rela=" + baby_rela + ", user_email=" + user_email
+				+ ", user_phone=" + user_phone + ", user_tel=" + user_tel + ", baby_type=" + baby_type
+				+ ", start_hope_month=" + start_hope_month + ", baby_name=" + baby_name + ", baby_birth=" + baby_birth
+				+ ", fam_typ_choi1=" + fam_typ_choi1 + ", fam_typ_choi2=" + fam_typ_choi2 + ", fam_typ_choi3="
+				+ fam_typ_choi3 + ", fam_typ_choi4=" + fam_typ_choi4 + ", fam_typ_choi5=" + fam_typ_choi5
 				+ ", fam_typ_choi6=" + fam_typ_choi6 + ", req_date=" + req_date + ", waiting_no=" + waiting_no
-				+ ", receipt_date=" + receipt_date + "]";
+				+ ", apply_status=" + apply_status + ", receipt_date=" + receipt_date + "]";
 	}
+	
+	
+	
 	
 	
 

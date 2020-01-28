@@ -2,12 +2,13 @@ package com.kh.ibom.dolbomi.model.service;
 
 import java.util.ArrayList;
 
+import com.kh.ibom.common.CommonPaging;
 import com.kh.ibom.dol_pass.model.vo.DolPass;
 import com.kh.ibom.dolbomi.model.vo.Dolbomi;
 
 public interface DolbomiService {
 
-	ArrayList<Dolbomi> dolbomiSelectList();
+	ArrayList<Dolbomi> dolbomiSelectList(CommonPaging paging);
 
 	Dolbomi dolbomiSelectOne(String dol_id);
 
@@ -44,6 +45,7 @@ public interface DolbomiService {
 		
 // --은수 추가 끝 =========================================
 
+		int dolbomiListCount(CommonPaging page);
 
 		
 

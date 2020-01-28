@@ -1,17 +1,18 @@
 package com.kh.ibom.user_family.model.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
-import com.kh.ibom.iusers.model.vo.Iusers;
 import com.kh.ibom.user_family.model.vo.UserFamily;
 
 public interface UserFamilyService {
 	
-	// 가족 목록
-	ArrayList<UserFamily> selectAll();
-	// 가족등록
-	int insertuserFamily(UserFamily userfamily);
-
+	// 가족 목록 조회
+	List<UserFamily> selectUserFamilyList(String user_id);
+		
+		// 가족등록
+	int insertUserFamily(UserFamily userfamily);
+	
 	// 가족정보 수정
 	int userFamilyUp(UserFamily userfamily);
 	// 가족정보 삭제

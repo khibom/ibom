@@ -52,4 +52,5 @@ public interface IusersService {
 		String selectMaxDolEnroll(String date);
 		//이용자 회원가입수 카운트
 		int selectDateCount(String rollDate);
-}
+		
+}// end class

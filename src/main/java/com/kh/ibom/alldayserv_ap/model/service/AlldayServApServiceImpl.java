@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.kh.ibom.alldayserv_ap.model.dao.AlldayServApDao;
 import com.kh.ibom.alldayserv_ap.model.vo.AlldayServAp;
+import com.kh.ibom.common.CommonPaging;
 
 @Service("asaServive")
 public class AlldayServApServiceImpl implements AlldayServApService{
@@ -22,7 +23,7 @@ public class AlldayServApServiceImpl implements AlldayServApService{
 		return asaDao.allDayApplyInsert(asa);
 	}
 	@Override
-	public AlldayServAp allDayApplySelectOne(int adsa_no) {
+	public AlldayServAp allDayApplySelectOne(String adsa_no) {
 		return asaDao.allDayApplySelectOne(adsa_no);
 	}
 	@Override
@@ -31,8 +32,21 @@ public class AlldayServApServiceImpl implements AlldayServApService{
 	}
 	@Override
 	public ArrayList<AlldayServAp> allDayApplySelectList(String user_id) {
-		// TODO Auto-generated method stub
 		return asaDao.allDayApplySelectList(user_id);
+	}
+	//목록 갯수
+	@Override
+	public int adminAlldayServListCount(CommonPaging page) {
+		return asaDao.adminAlldayServListCount(page);
+	}
+	@Override
+	public ArrayList<AlldayServAp> allDayApplyAdminSelectList(CommonPaging paging) {
+		return asaDao.allDayApplyAdminSelectList(paging);
+	}
+	@Override
+	public int allDayApplyReceipt(String adsa_no) {
+		// 종일제 관리자가 접수하기
+		return asaDao.allDayApplyReceipt(adsa_no);
 	}
 
 }
