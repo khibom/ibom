@@ -1,0 +1,1133 @@
+[00:07:23][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[00:07:35][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 12372 ms
+[00:07:35][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[00:07:40][INFO ][FrameworkServlet.java:546]- Completed initialization in 4524 ms
+[00:45:10][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[00:45:20][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10194 ms
+[00:45:20][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[00:45:24][INFO ][FrameworkServlet.java:546]- Completed initialization in 3836 ms
+[00:48:10][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[00:48:20][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9929 ms
+[00:48:20][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[00:48:24][INFO ][FrameworkServlet.java:546]- Completed initialization in 4183 ms
+[00:56:37][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[00:56:47][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10265 ms
+[00:56:47][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[00:56:51][INFO ][FrameworkServlet.java:546]- Completed initialization in 4008 ms
+[01:08:18][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[01:08:27][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9332 ms
+[01:08:27][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[01:08:32][INFO ][FrameworkServlet.java:546]- Completed initialization in 4925 ms
+[01:14:32][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[01:14:42][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9517 ms
+[01:14:42][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[01:14:46][INFO ][FrameworkServlet.java:546]- Completed initialization in 3957 ms
+[02:06:44][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[02:06:56][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 11957 ms
+[02:06:56][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[02:07:01][INFO ][FrameworkServlet.java:546]- Completed initialization in 4946 ms
+[02:33:53][WARN ][DispatcherServlet.java:1248]- No mapping for GET /ibom/iusersJoinStep5.do
+[02:38:54][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[02:39:04][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10178 ms
+[02:39:04][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[02:39:08][INFO ][FrameworkServlet.java:546]- Completed initialization in 4119 ms
+[03:55:05][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[03:55:15][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9739 ms
+[03:55:15][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[03:55:19][INFO ][FrameworkServlet.java:546]- Completed initialization in 4169 ms
+[05:04:37][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[05:04:48][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10989 ms
+[05:04:48][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[05:04:53][INFO ][FrameworkServlet.java:546]- Completed initialization in 4483 ms
+[13:36:56][INFO ][ContextLoader.java:271]- Root WebApplicationContext: initialization started
+[13:37:04][INFO ][ContextLoader.java:307]- Root WebApplicationContext initialized in 7568 ms
+[13:37:04][INFO ][FrameworkServlet.java:525]- Initializing Servlet 'appServlet'
+[13:37:07][INFO ][FrameworkServlet.java:547]- Completed initialization in 3434 ms
+[13:37:42][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'user01'
+[13:37:43][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|--------|--------------|-------------|
+[13:37:43][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY |ENABLED |ENABLED_COUNT |RECENT_LOGIN |
+[13:37:43][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|--------|--------------|-------------|
+[13:37:43][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |user01   |ROLE_USER |true    |0             |[unread]     |
+[13:37:43][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|--------|--------------|-------------|
+[13:37:43][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]update AUTHORITY set IBOM_PWD = '$2a$10$X2EdiViygXA0cf96O/o4YOzTJbmAU7p6YO7trBTtk7FT.OSLAsEFC'
+	where IBOM_ID = 'user01'
+[13:37:43][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]UPDATE AUTHORITY SET RECENT_LOGIN = SYSDATE
+		WHERE IBOM_ID = 'user01'
+[13:37:43][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]UPDATE AUTHORITY SET ENABLED_COUNT = 0
+		WHERE IBOM_ID = 'user01'
+[13:37:43][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from iusers
+ where user_id = 'user01'
+[13:37:43][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[13:37:43][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |RESIDENT_NO    |USER_PWD |USER_NAME |USER_TEL     |USER_PHONE  |USER_EMAIL       |USER_ADDRESS                          |SINM     |SGGNM    |CCTV_ALTER |PET_ALTER |MULTICULTURAL_ALTER |LATCHKEY_ALTER |MULTICHILD_ALTER |FATHER_ALTER |MATHER_ALTER |GRAND_ALTER |BASICLIFE_ALTER |MEDICAL_ALTER |WORKING_ALTER |DISABLED_ALTER |SECOND_CLASS |ETC_REARING |PLACE_AGREE |REQST_COURS |CARD_SMS |LICENSE_ALTER |SERVICE_PLACE |LIMIT_CODE |IGRADE_NO |OFFICE_CODE |ENROLL_DATE |USER_LASTMODIFIED |DEL_DATE |AGREE1   |AGREE2   |AGREE3   |AGREE4   |DEPO_PAY |
+[13:37:43][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[13:37:43][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |800101-2543425 |user01   |김엄마       |02-5304-2030 |01080016812 |ibom01@naver.com |06126, 서울특별시 강남구 역삼동 607-17 (역삼칼라아파트) |[unread] |[unread] |Y          |N         |N                   |Y              |Y                |N            |[unread]     |N           |N               |N             |Y             |N              |N            |N           |[unread]    |주변권유        |Y        |보육관련자격소지자     |이용자가정         |LG001      |UG004     |SC0001      |2020-01-24  |2020-01-24        |null     |[unread] |[unread] |[unread] |[unread] |38000    |
+[13:37:43][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[13:37:51][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from iusers
+ where user_id = 'user01'
+[13:37:51][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[13:37:51][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |RESIDENT_NO    |USER_PWD |USER_NAME |USER_TEL     |USER_PHONE  |USER_EMAIL       |USER_ADDRESS                          |SINM     |SGGNM    |CCTV_ALTER |PET_ALTER |MULTICULTURAL_ALTER |LATCHKEY_ALTER |MULTICHILD_ALTER |FATHER_ALTER |MATHER_ALTER |GRAND_ALTER |BASICLIFE_ALTER |MEDICAL_ALTER |WORKING_ALTER |DISABLED_ALTER |SECOND_CLASS |ETC_REARING |PLACE_AGREE |REQST_COURS |CARD_SMS |LICENSE_ALTER |SERVICE_PLACE |LIMIT_CODE |IGRADE_NO |OFFICE_CODE |ENROLL_DATE |USER_LASTMODIFIED |DEL_DATE |AGREE1   |AGREE2   |AGREE3   |AGREE4   |DEPO_PAY |
+[13:37:51][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[13:37:51][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |800101-2543425 |user01   |김엄마       |02-5304-2030 |01080016812 |ibom01@naver.com |06126, 서울특별시 강남구 역삼동 607-17 (역삼칼라아파트) |[unread] |[unread] |Y          |N         |N                   |Y              |Y                |N            |[unread]     |N           |N               |N             |Y             |N              |N            |N           |[unread]    |주변권유        |Y        |보육관련자격소지자     |이용자가정         |LG001      |UG004     |SC0001      |2020-01-24  |2020-01-24        |null     |[unread] |[unread] |[unread] |[unread] |38000    |
+[13:37:51][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[13:37:53][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from iusers
+ where user_id = 'user01'
+[13:37:53][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[13:37:53][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |RESIDENT_NO    |USER_PWD |USER_NAME |USER_TEL     |USER_PHONE  |USER_EMAIL       |USER_ADDRESS                          |SINM     |SGGNM    |CCTV_ALTER |PET_ALTER |MULTICULTURAL_ALTER |LATCHKEY_ALTER |MULTICHILD_ALTER |FATHER_ALTER |MATHER_ALTER |GRAND_ALTER |BASICLIFE_ALTER |MEDICAL_ALTER |WORKING_ALTER |DISABLED_ALTER |SECOND_CLASS |ETC_REARING |PLACE_AGREE |REQST_COURS |CARD_SMS |LICENSE_ALTER |SERVICE_PLACE |LIMIT_CODE |IGRADE_NO |OFFICE_CODE |ENROLL_DATE |USER_LASTMODIFIED |DEL_DATE |AGREE1   |AGREE2   |AGREE3   |AGREE4   |DEPO_PAY |
+[13:37:53][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[13:37:53][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |800101-2543425 |user01   |김엄마       |02-5304-2030 |01080016812 |ibom01@naver.com |06126, 서울특별시 강남구 역삼동 607-17 (역삼칼라아파트) |[unread] |[unread] |Y          |N         |N                   |Y              |Y                |N            |[unread]     |N           |N               |N             |Y             |N              |N            |N           |[unread]    |주변권유        |Y        |보육관련자격소지자     |이용자가정         |LG001      |UG004     |SC0001      |2020-01-24  |2020-01-24        |null     |[unread] |[unread] |[unread] |[unread] |38000    |
+[13:37:53][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[13:37:58][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from iusers
+ where user_id = 'user01'
+[13:37:58][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[13:37:58][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |RESIDENT_NO    |USER_PWD |USER_NAME |USER_TEL     |USER_PHONE  |USER_EMAIL       |USER_ADDRESS                          |SINM     |SGGNM    |CCTV_ALTER |PET_ALTER |MULTICULTURAL_ALTER |LATCHKEY_ALTER |MULTICHILD_ALTER |FATHER_ALTER |MATHER_ALTER |GRAND_ALTER |BASICLIFE_ALTER |MEDICAL_ALTER |WORKING_ALTER |DISABLED_ALTER |SECOND_CLASS |ETC_REARING |PLACE_AGREE |REQST_COURS |CARD_SMS |LICENSE_ALTER |SERVICE_PLACE |LIMIT_CODE |IGRADE_NO |OFFICE_CODE |ENROLL_DATE |USER_LASTMODIFIED |DEL_DATE |AGREE1   |AGREE2   |AGREE3   |AGREE4   |DEPO_PAY |
+[13:37:58][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[13:37:58][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |800101-2543425 |user01   |김엄마       |02-5304-2030 |01080016812 |ibom01@naver.com |06126, 서울특별시 강남구 역삼동 607-17 (역삼칼라아파트) |[unread] |[unread] |Y          |N         |N                   |Y              |Y                |N            |[unread]     |N           |N               |N             |Y             |N              |N            |N           |[unread]    |주변권유        |Y        |보육관련자격소지자     |이용자가정         |LG001      |UG004     |SC0001      |2020-01-24  |2020-01-24        |null     |[unread] |[unread] |[unread] |[unread] |38000    |
+[13:37:58][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[13:38:42][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from iusers
+ where user_id = 'user01'
+[13:38:42][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[13:38:42][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |RESIDENT_NO    |USER_PWD |USER_NAME |USER_TEL     |USER_PHONE  |USER_EMAIL       |USER_ADDRESS                          |SINM     |SGGNM    |CCTV_ALTER |PET_ALTER |MULTICULTURAL_ALTER |LATCHKEY_ALTER |MULTICHILD_ALTER |FATHER_ALTER |MATHER_ALTER |GRAND_ALTER |BASICLIFE_ALTER |MEDICAL_ALTER |WORKING_ALTER |DISABLED_ALTER |SECOND_CLASS |ETC_REARING |PLACE_AGREE |REQST_COURS |CARD_SMS |LICENSE_ALTER |SERVICE_PLACE |LIMIT_CODE |IGRADE_NO |OFFICE_CODE |ENROLL_DATE |USER_LASTMODIFIED |DEL_DATE |AGREE1   |AGREE2   |AGREE3   |AGREE4   |DEPO_PAY |
+[13:38:42][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[13:38:42][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |800101-2543425 |user01   |김엄마       |02-5304-2030 |01080016812 |ibom01@naver.com |06126, 서울특별시 강남구 역삼동 607-17 (역삼칼라아파트) |[unread] |[unread] |Y          |N         |N                   |Y              |Y                |N            |[unread]     |N           |N               |N             |Y             |N              |N            |N           |[unread]    |주변권유        |Y        |보육관련자격소지자     |이용자가정         |LG001      |UG004     |SC0001      |2020-01-24  |2020-01-24        |null     |[unread] |[unread] |[unread] |[unread] |38000    |
+[13:38:42][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[13:47:04][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from notice
+[13:47:04][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[13:47:04][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[13:47:04][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[13:47:04][INFO ][ResultSetCollectorPrinter.java:108]- |5        |
+[13:47:04][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[13:47:04][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, notice_no, emp_name, notice_title, original_filepath, rename_filepath, notice_date, notice_check, notice_content
+          
+ from 
+ (select *
+ from notice
+                     
+                   
+                    order by notice_date desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[13:47:04][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[13:47:04][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH |RENAME_FILEPATH |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT |
+[13:47:04][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[13:47:04][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1         |김관리      |공지사항1        |null              |null            |2020-01-24  |0            |이렇습니다1         |
+[13:47:04][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2         |이관리      |공지사항2        |null              |null            |2020-01-24  |0            |이렇습니다2         |
+[13:47:04][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5         |이관리      |공지사항5        |null              |null            |2020-01-24  |0            |이렇습니다5         |
+[13:47:04][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4         |김관리      |공지사항4        |null              |null            |2020-01-24  |0            |이렇습니다4         |
+[13:47:04][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3         |박관리      |공지사항3        |null              |null            |2020-01-24  |0            |이렇습니다3         |
+[13:47:04][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[14:11:05][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[14:11:17][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 11818 ms
+[14:11:17][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[14:11:21][INFO ][FrameworkServlet.java:546]- Completed initialization in 4743 ms
+[14:51:34][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[14:51:47][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 12602 ms
+[14:51:47][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[14:51:51][INFO ][FrameworkServlet.java:546]- Completed initialization in 4440 ms
+[15:39:30][INFO ][ContextLoader.java:271]- Root WebApplicationContext: initialization started
+[15:39:38][INFO ][ContextLoader.java:307]- Root WebApplicationContext initialized in 8118 ms
+[15:39:38][INFO ][FrameworkServlet.java:525]- Initializing Servlet 'appServlet'
+[15:39:42][INFO ][FrameworkServlet.java:547]- Completed initialization in 3440 ms
+[15:39:50][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from notice
+[15:39:50][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:39:50][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:39:50][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:39:50][INFO ][ResultSetCollectorPrinter.java:108]- |5        |
+[15:39:50][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:39:50][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, notice_no, emp_name, notice_title, original_filepath, rename_filepath, notice_date, notice_check, notice_content
+          
+ from 
+ (select *
+ from notice
+                     
+                   
+                    order by notice_date desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:39:50][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:39:50][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH |RENAME_FILEPATH |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT |
+[15:39:50][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:39:50][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1         |김관리      |공지사항1        |null              |null            |2020-01-24  |0            |이렇습니다1         |
+[15:39:50][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2         |이관리      |공지사항2        |null              |null            |2020-01-24  |0            |이렇습니다2         |
+[15:39:50][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5         |이관리      |공지사항5        |null              |null            |2020-01-24  |0            |이렇습니다5         |
+[15:39:50][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4         |김관리      |공지사항4        |null              |null            |2020-01-24  |0            |이렇습니다4         |
+[15:39:50][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3         |박관리      |공지사항3        |null              |null            |2020-01-24  |0            |이렇습니다3         |
+[15:39:50][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:39:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]update notice set notice_check = notice_check + 1
+			where notice_no = 1
+[15:39:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from notice
+			where notice_no = 1
+[15:39:55][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:39:55][INFO ][ResultSetCollectorPrinter.java:108]- |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH |RENAME_FILEPATH |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT |
+[15:39:55][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:39:55][INFO ][ResultSetCollectorPrinter.java:108]- |1         |김관리      |공지사항1        |null              |null            |2020-01-24  |1            |이렇습니다1         |
+[15:39:55][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:39:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]update notice set notice_check = notice_check + 1
+			where notice_no = 1
+[15:39:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from notice
+			where notice_no = 1
+[15:39:55][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:39:55][INFO ][ResultSetCollectorPrinter.java:108]- |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH |RENAME_FILEPATH |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT |
+[15:39:55][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:39:55][INFO ][ResultSetCollectorPrinter.java:108]- |1         |김관리      |공지사항1        |null              |null            |2020-01-24  |2            |이렇습니다1         |
+[15:39:55][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:40:01][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from notice
+[15:40:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:01][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:40:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:01][INFO ][ResultSetCollectorPrinter.java:108]- |5        |
+[15:40:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:01][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, notice_no, emp_name, notice_title, original_filepath, rename_filepath, notice_date, notice_check, notice_content
+          
+ from 
+ (select *
+ from notice
+                     
+                   
+                    order by notice_date desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:40:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:40:01][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH |RENAME_FILEPATH |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT |
+[15:40:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:40:01][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1         |김관리      |공지사항1        |null              |null            |2020-01-24  |2            |이렇습니다1         |
+[15:40:01][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2         |이관리      |공지사항2        |null              |null            |2020-01-24  |0            |이렇습니다2         |
+[15:40:01][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5         |이관리      |공지사항5        |null              |null            |2020-01-24  |0            |이렇습니다5         |
+[15:40:01][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4         |김관리      |공지사항4        |null              |null            |2020-01-24  |0            |이렇습니다4         |
+[15:40:01][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3         |박관리      |공지사항3        |null              |null            |2020-01-24  |0            |이렇습니다3         |
+[15:40:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:40:02][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]update notice set notice_check = notice_check + 1
+			where notice_no = 3
+[15:40:02][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from notice
+			where notice_no = 3
+[15:40:02][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:40:02][INFO ][ResultSetCollectorPrinter.java:108]- |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH |RENAME_FILEPATH |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT |
+[15:40:02][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:40:02][INFO ][ResultSetCollectorPrinter.java:108]- |3         |박관리      |공지사항3        |null              |null            |2020-01-24  |1            |이렇습니다3         |
+[15:40:02][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:40:07][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from notice
+[15:40:07][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:07][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:40:07][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:07][INFO ][ResultSetCollectorPrinter.java:108]- |5        |
+[15:40:07][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:07][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, notice_no, emp_name, notice_title, original_filepath, rename_filepath, notice_date, notice_check, notice_content
+          
+ from 
+ (select *
+ from notice
+                     
+                   
+                    order by notice_date desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:40:07][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:40:07][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH |RENAME_FILEPATH |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT |
+[15:40:07][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:40:07][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1         |김관리      |공지사항1        |null              |null            |2020-01-24  |2            |이렇습니다1         |
+[15:40:07][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2         |이관리      |공지사항2        |null              |null            |2020-01-24  |0            |이렇습니다2         |
+[15:40:07][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5         |이관리      |공지사항5        |null              |null            |2020-01-24  |0            |이렇습니다5         |
+[15:40:07][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4         |김관리      |공지사항4        |null              |null            |2020-01-24  |0            |이렇습니다4         |
+[15:40:07][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3         |박관리      |공지사항3        |null              |null            |2020-01-24  |1            |이렇습니다3         |
+[15:40:07][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:40:12][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]update notice set notice_check = notice_check + 1
+			where notice_no = 2
+[15:40:12][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from notice
+			where notice_no = 2
+[15:40:12][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:40:12][INFO ][ResultSetCollectorPrinter.java:108]- |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH |RENAME_FILEPATH |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT |
+[15:40:12][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:40:12][INFO ][ResultSetCollectorPrinter.java:108]- |2         |이관리      |공지사항2        |null              |null            |2020-01-24  |1            |이렇습니다2         |
+[15:40:12][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:40:18][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from notice
+[15:40:18][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:18][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:40:18][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:18][INFO ][ResultSetCollectorPrinter.java:108]- |5        |
+[15:40:18][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:18][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, notice_no, emp_name, notice_title, original_filepath, rename_filepath, notice_date, notice_check, notice_content
+          
+ from 
+ (select *
+ from notice
+                     
+                   
+                    order by notice_date desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:40:18][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:40:18][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH |RENAME_FILEPATH |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT |
+[15:40:18][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:40:18][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1         |김관리      |공지사항1        |null              |null            |2020-01-24  |2            |이렇습니다1         |
+[15:40:18][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2         |이관리      |공지사항2        |null              |null            |2020-01-24  |1            |이렇습니다2         |
+[15:40:18][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5         |이관리      |공지사항5        |null              |null            |2020-01-24  |0            |이렇습니다5         |
+[15:40:18][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4         |김관리      |공지사항4        |null              |null            |2020-01-24  |0            |이렇습니다4         |
+[15:40:18][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3         |박관리      |공지사항3        |null              |null            |2020-01-24  |1            |이렇습니다3         |
+[15:40:18][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:40:29][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'user01'
+[15:40:29][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|--------|--------------|-------------|
+[15:40:29][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY |ENABLED |ENABLED_COUNT |RECENT_LOGIN |
+[15:40:29][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|--------|--------------|-------------|
+[15:40:29][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |user01   |ROLE_USER |true    |0             |[unread]     |
+[15:40:29][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|--------|--------------|-------------|
+[15:40:29][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]update AUTHORITY set IBOM_PWD = '$2a$10$1hmEroyQ4elLh3NjmPETSe5rOZvUm/lHjyOogmBhuAIC8vN6YmOiK'
+	where IBOM_ID = 'user01'
+[15:40:30][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]UPDATE AUTHORITY SET RECENT_LOGIN = SYSDATE
+		WHERE IBOM_ID = 'user01'
+[15:40:30][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]UPDATE AUTHORITY SET ENABLED_COUNT = 0
+		WHERE IBOM_ID = 'user01'
+[15:40:30][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from iusers
+ where user_id = 'user01'
+[15:40:30][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[15:40:30][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |RESIDENT_NO    |USER_PWD |USER_NAME |USER_TEL     |USER_PHONE  |USER_EMAIL       |USER_ADDRESS                          |SINM     |SGGNM    |CCTV_ALTER |PET_ALTER |MULTICULTURAL_ALTER |LATCHKEY_ALTER |MULTICHILD_ALTER |FATHER_ALTER |MATHER_ALTER |GRAND_ALTER |BASICLIFE_ALTER |MEDICAL_ALTER |WORKING_ALTER |DISABLED_ALTER |SECOND_CLASS |ETC_REARING |PLACE_AGREE |REQST_COURS |CARD_SMS |LICENSE_ALTER |SERVICE_PLACE |LIMIT_CODE |IGRADE_NO |OFFICE_CODE |ENROLL_DATE |USER_LASTMODIFIED |DEL_DATE |AGREE1   |AGREE2   |AGREE3   |AGREE4   |DEPO_PAY |
+[15:40:30][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[15:40:30][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |800101-2543425 |user01   |김엄마       |02-5304-2030 |01080016812 |ibom01@naver.com |06126, 서울특별시 강남구 역삼동 607-17 (역삼칼라아파트) |[unread] |[unread] |Y          |N         |N                   |Y              |Y                |N            |[unread]     |N           |N               |N             |Y             |N              |N            |N           |[unread]    |주변권유        |Y        |보육관련자격소지자     |이용자가정         |LG001      |UG004     |SC0001      |2020-01-24  |2020-01-24        |null     |[unread] |[unread] |[unread] |[unread] |38000    |
+[15:40:30][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[15:40:33][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from iusers
+ where user_id = 'user01'
+[15:40:33][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[15:40:33][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |RESIDENT_NO    |USER_PWD |USER_NAME |USER_TEL     |USER_PHONE  |USER_EMAIL       |USER_ADDRESS                          |SINM     |SGGNM    |CCTV_ALTER |PET_ALTER |MULTICULTURAL_ALTER |LATCHKEY_ALTER |MULTICHILD_ALTER |FATHER_ALTER |MATHER_ALTER |GRAND_ALTER |BASICLIFE_ALTER |MEDICAL_ALTER |WORKING_ALTER |DISABLED_ALTER |SECOND_CLASS |ETC_REARING |PLACE_AGREE |REQST_COURS |CARD_SMS |LICENSE_ALTER |SERVICE_PLACE |LIMIT_CODE |IGRADE_NO |OFFICE_CODE |ENROLL_DATE |USER_LASTMODIFIED |DEL_DATE |AGREE1   |AGREE2   |AGREE3   |AGREE4   |DEPO_PAY |
+[15:40:33][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[15:40:34][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |800101-2543425 |user01   |김엄마       |02-5304-2030 |01080016812 |ibom01@naver.com |06126, 서울특별시 강남구 역삼동 607-17 (역삼칼라아파트) |[unread] |[unread] |Y          |N         |N                   |Y              |Y                |N            |[unread]     |N           |N               |N             |Y             |N              |N            |N           |[unread]    |주변권유        |Y        |보육관련자격소지자     |이용자가정         |LG001      |UG004     |SC0001      |2020-01-24  |2020-01-24        |null     |[unread] |[unread] |[unread] |[unread] |38000    |
+[15:40:34][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|---------|---------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|---------|---------|---------|---------|---------|
+[15:40:35][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:40:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:35][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:40:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:35][INFO ][ResultSetCollectorPrinter.java:108]- |5        |
+[15:40:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:35][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+ where user_name = '김엄마' or dol_name = NULL
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:40:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------|-----------|----------|------------------------|----------|-----------|
+[15:40:35][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE         |QNA_DATE   |QNA_STATE |QNA_CONTENT             |USER_NAME |QNA_ANSWER |
+[15:40:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------|-----------|----------|------------------------|----------|-----------|
+[15:40:35][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1      |서비스 변경         |서비스를 변경해주시길 바랍니다. |2020-01-24 |처리완료      |이러한 이유로 서비스를 변경하고 싶습니다. |김엄마       |null       |
+[15:40:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------|-----------|----------|------------------------|----------|-----------|
+[15:40:38][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from questions
+		where qna_no = 1
+[15:40:38][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------|-----------|----------|------------------------|-----------|----------|---------|----------|
+[15:40:38][INFO ][ResultSetCollectorPrinter.java:108]- |QNA_NO |PERSONAL_INFO |USE_SERVICE |CIVIL_PETITION |QNA_TITLE         |QNA_DATE   |QNA_STATE |QNA_CONTENT             |QNA_ANSWER |USER_NAME |DOL_NAME |TERM_CODE |
+[15:40:38][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------|-----------|----------|------------------------|-----------|----------|---------|----------|
+[15:40:38][INFO ][ResultSetCollectorPrinter.java:108]- |1      |Y             |[unread]    |서비스 변경         |서비스를 변경해주시길 바랍니다. |2020-01-24 |처리완료      |이러한 이유로 서비스를 변경하고 싶습니다. |null       |김엄마       |null     |T003      |
+[15:40:38][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------|-----------|----------|------------------------|-----------|----------|---------|----------|
+[15:40:48][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:40:48][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:48][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:40:48][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:48][INFO ][ResultSetCollectorPrinter.java:108]- |5        |
+[15:40:48][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:40:48][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+ where user_name = '김엄마' or dol_name = NULL
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:40:48][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------|-----------|----------|------------------------|----------|-----------|
+[15:40:48][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE         |QNA_DATE   |QNA_STATE |QNA_CONTENT             |USER_NAME |QNA_ANSWER |
+[15:40:48][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------|-----------|----------|------------------------|----------|-----------|
+[15:40:48][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1      |서비스 변경         |서비스를 변경해주시길 바랍니다. |2020-01-24 |처리완료      |이러한 이유로 서비스를 변경하고 싶습니다. |김엄마       |null       |
+[15:40:48][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------|-----------|----------|------------------------|----------|-----------|
+[15:41:25][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into questions values (questions_seq.nextval, 'Y', NULL, '서비스 신청', '', sysdate, '미처리', '', null, '김엄마', null, 'T003')
+[15:41:26][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:41:26][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:41:26][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:41:26][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:41:26][INFO ][ResultSetCollectorPrinter.java:108]- |6        |
+[15:41:26][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:41:26][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+ where user_name = '김엄마' or dol_name = NULL
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:41:26][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------|-----------|----------|------------------------|----------|-----------|
+[15:41:26][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE         |QNA_DATE   |QNA_STATE |QNA_CONTENT             |USER_NAME |QNA_ANSWER |
+[15:41:26][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------|-----------|----------|------------------------|----------|-----------|
+[15:41:26][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |6      |서비스 신청         |null              |2020-01-24 |미처리       |null                    |김엄마       |null       |
+[15:41:26][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1      |서비스 변경         |서비스를 변경해주시길 바랍니다. |2020-01-24 |처리완료      |이러한 이유로 서비스를 변경하고 싶습니다. |김엄마       |null       |
+[15:41:26][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|------------------|-----------|----------|------------------------|----------|-----------|
+[15:41:50][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'admin01'
+[15:41:50][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|--------|--------------|-------------|
+[15:41:50][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY  |ENABLED |ENABLED_COUNT |RECENT_LOGIN |
+[15:41:50][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|--------|--------------|-------------|
+[15:41:50][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01  |ROLE_ADMIN |true    |0             |[unread]     |
+[15:41:50][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|--------|--------------|-------------|
+[15:41:50][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]update AUTHORITY set IBOM_PWD = '$2a$10$1F8FMo49yN8dhQdox360jeHvgTDrrwiJutxWwkFCiZyUyY3qVeTJW'
+	where IBOM_ID = 'admin01'
+[15:41:51][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]UPDATE AUTHORITY SET RECENT_LOGIN = SYSDATE
+		WHERE IBOM_ID = 'admin01'
+[15:41:51][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]UPDATE AUTHORITY SET ENABLED_COUNT = 0
+		WHERE IBOM_ID = 'admin01'
+[15:41:51][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from emp
+ where emp_id = 'admin01'
+[15:41:51][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[15:41:51][INFO ][ResultSetCollectorPrinter.java:108]- |EMP_ID  |EMP_PWD |EMP_NAME |EMP_TEL    |EMP_PHONE   |EMP_EMAIL         |EMP_ADDRESS              |ENROLL_DATE |LASTMODIFIED |
+[15:41:51][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[15:41:51][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01 |김관리      |0250302032 |01080016812 |ADMIN01@NAVER.COM |06232, 서울특별시 강남구 역삼동 858 |2020-01-24  |2020-01-24   |
+[15:41:51][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[15:41:52][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT max(SUBSTR(DOL_ENROLLDATE,4,2))
+	 FROM DOLBOMI
+	 WHERE DOL_ENROLLDATE LIKE '%'|| '20' ||'%'
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |--------------------------------|
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |MAX(SUBSTR(DOL_ENROLLDATE,4,2)) |
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |--------------------------------|
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |null                            |
+[15:41:52][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |--------------------------------|
+[15:41:52][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT max(SUBSTR(ENROLL_DATE,4,2))
+	 FROM IUSERS
+	 WHERE ENROLL_DATE LIKE '%'|| '20' || '%'
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |-----------------------------|
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |MAX(SUBSTR(ENROLL_DATE,4,2)) |
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |-----------------------------|
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |01                           |
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |-----------------------------|
+[15:41:52][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT COUNT(*)
+	 FROM DOLBOMI
+	 WHERE DOL_ENROLLDATE LIKE '%'|| '20/01' ||'%'
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |0        |
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:41:52][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT count(*)
+	 FROM IUSERS
+	 WHERE ENROLL_DATE LIKE '%'|| '20/01' || '%'
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |20       |
+[15:41:52][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:41:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from notice
+[15:41:55][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:41:55][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:41:55][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:41:55][INFO ][ResultSetCollectorPrinter.java:108]- |5        |
+[15:41:55][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:41:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, notice_no, emp_name, notice_title, original_filepath, rename_filepath, notice_date, notice_check, notice_content
+          
+ from 
+ (select *
+ from notice
+                     
+                   
+                    order by notice_date desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:41:55][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:41:55][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH |RENAME_FILEPATH |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT |
+[15:41:55][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:41:55][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1         |김관리      |공지사항1        |null              |null            |2020-01-24  |2            |이렇습니다1         |
+[15:41:55][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2         |이관리      |공지사항2        |null              |null            |2020-01-24  |1            |이렇습니다2         |
+[15:41:55][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5         |이관리      |공지사항5        |null              |null            |2020-01-24  |0            |이렇습니다5         |
+[15:41:55][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4         |김관리      |공지사항4        |null              |null            |2020-01-24  |0            |이렇습니다4         |
+[15:41:55][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3         |박관리      |공지사항3        |null              |null            |2020-01-24  |1            |이렇습니다3         |
+[15:41:55][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:41:56][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:41:56][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:41:56][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:41:56][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:41:56][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:41:56][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:42:04][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]update notice set notice_check = notice_check + 1
+			where notice_no = 1
+[15:42:04][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from notice
+			where notice_no = 1
+[15:42:04][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:42:04][INFO ][ResultSetCollectorPrinter.java:108]- |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH |RENAME_FILEPATH |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT |
+[15:42:04][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:42:04][INFO ][ResultSetCollectorPrinter.java:108]- |1         |김관리      |공지사항1        |null              |null            |2020-01-24  |3            |이렇습니다1         |
+[15:42:04][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:42:05][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:42:05][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:42:05][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:42:05][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:42:05][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:42:05][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:42:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]update notice set notice_check = notice_check + 1
+			where notice_no = 1
+[15:42:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from notice
+			where notice_no = 1
+[15:42:55][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:42:55][INFO ][ResultSetCollectorPrinter.java:108]- |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH |RENAME_FILEPATH |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT |
+[15:42:55][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:42:55][INFO ][ResultSetCollectorPrinter.java:108]- |1         |김관리      |공지사항1        |null              |null            |2020-01-24  |4            |이렇습니다1         |
+[15:42:55][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:42:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:42:55][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:42:55][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:42:55][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:42:55][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:42:55][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:02][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from notice
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |5        |
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:02][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, notice_no, emp_name, notice_title, original_filepath, rename_filepath, notice_date, notice_check, notice_content
+          
+ from 
+ (select *
+ from notice
+                     
+                   
+                    order by notice_date desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH |RENAME_FILEPATH |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT |
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1         |김관리      |공지사항1        |null              |null            |2020-01-24  |4            |이렇습니다1         |
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2         |이관리      |공지사항2        |null              |null            |2020-01-24  |1            |이렇습니다2         |
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5         |이관리      |공지사항5        |null              |null            |2020-01-24  |0            |이렇습니다5         |
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4         |김관리      |공지사항4        |null              |null            |2020-01-24  |0            |이렇습니다4         |
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3         |박관리      |공지사항3        |null              |null            |2020-01-24  |1            |이렇습니다3         |
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |---------|----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:43:02][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:43:02][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:04][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]update notice set notice_check = notice_check + 1
+			where notice_no = 3
+[15:43:04][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from notice
+			where notice_no = 3
+[15:43:04][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:43:04][INFO ][ResultSetCollectorPrinter.java:108]- |NOTICE_NO |EMP_NAME |NOTICE_TITLE |ORIGINAL_FILEPATH |RENAME_FILEPATH |NOTICE_DATE |NOTICE_CHECK |NOTICE_CONTENT |
+[15:43:04][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:43:04][INFO ][ResultSetCollectorPrinter.java:108]- |3         |박관리      |공지사항3        |null              |null            |2020-01-24  |2            |이렇습니다3         |
+[15:43:04][INFO ][ResultSetCollectorPrinter.java:108]- |----------|---------|-------------|------------------|----------------|------------|-------------|---------------|
+[15:43:05][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:43:05][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:05][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:43:05][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:05][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:43:05][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:12][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from written_complaint
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |5        |
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:12][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, com_no, emp_name, com_title, com_date, com_content
+          
+ from 
+ (select *
+ from written_complaint
+                     
+                   
+                    order by com_date desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------|----------|-----------|------------|
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |COM_NO |EMP_NAME |COM_TITLE |COM_DATE   |COM_CONTENT |
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------|----------|-----------|------------|
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1      |김관리      |제목입니다1.   |2020-01-24 |내용입니다5.     |
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2      |이관리      |제목입니다2.   |2020-01-24 |내용입니다4.     |
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5      |이관리      |제목입니다5.   |2020-01-24 |내용입니다1.     |
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4      |김관리      |제목입니다4.   |2020-01-24 |내용입니다2.     |
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |박관리      |제목입니다3.   |2020-01-24 |내용입니다3.     |
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------|----------|-----------|------------|
+[15:43:12][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:43:12][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:14][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from written_complaint
+		where com_no = 2
+[15:43:14][INFO ][ResultSetCollectorPrinter.java:108]- |-------|---------|-----------|----------|------------|
+[15:43:14][INFO ][ResultSetCollectorPrinter.java:108]- |COM_NO |EMP_NAME |COM_DATE   |COM_TITLE |COM_CONTENT |
+[15:43:14][INFO ][ResultSetCollectorPrinter.java:108]- |-------|---------|-----------|----------|------------|
+[15:43:14][INFO ][ResultSetCollectorPrinter.java:108]- |2      |이관리      |2020-01-24 |제목입니다2.   |내용입니다4.     |
+[15:43:14][INFO ][ResultSetCollectorPrinter.java:108]- |-------|---------|-----------|----------|------------|
+[15:43:14][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:43:14][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:14][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:43:14][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:14][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:43:14][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:21][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from written_complaint
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |5        |
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:21][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, com_no, emp_name, com_title, com_date, com_content
+          
+ from 
+ (select *
+ from written_complaint
+                     
+                   
+                    order by com_date desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------|----------|-----------|------------|
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |COM_NO |EMP_NAME |COM_TITLE |COM_DATE   |COM_CONTENT |
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------|----------|-----------|------------|
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1      |김관리      |제목입니다1.   |2020-01-24 |내용입니다5.     |
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2      |이관리      |제목입니다2.   |2020-01-24 |내용입니다4.     |
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5      |이관리      |제목입니다5.   |2020-01-24 |내용입니다1.     |
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4      |김관리      |제목입니다4.   |2020-01-24 |내용입니다2.     |
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |박관리      |제목입니다3.   |2020-01-24 |내용입니다3.     |
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------|----------|-----------|------------|
+[15:43:21][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:43:21][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:24][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:43:24][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:24][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:43:24][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:24][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:43:24][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:54][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:43:54][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:54][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:43:54][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:54][INFO ][ResultSetCollectorPrinter.java:108]- |6        |
+[15:43:54][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:43:54][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:43:54][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-----------------------|-----------|----------|-------------------------------|----------|-----------|
+[15:43:54][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE              |QNA_DATE   |QNA_STATE |QNA_CONTENT                    |USER_NAME |QNA_ANSWER |
+[15:43:54][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-----------------------|-----------|----------|-------------------------------|----------|-----------|
+[15:43:54][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |6      |서비스 신청         |null                   |2020-01-24 |미처리       |null                           |김엄마       |null       |
+[15:43:54][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5      |서비스 변경         |서비스가 만족스럽지 않습니다.       |2020-01-24 |처리완료      |이러한 이유로 서비스가 만족스럽지 않습니다.       |박엄마       |null       |
+[15:43:54][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4      |기타             |돌보미 활동조회 취소해주시길 바랍니다.  |2020-01-24 |미처리       |이러한 이유로 돌보미 활동 조회를 취소해주시길바랍니다. |null      |null       |
+[15:43:54][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |서비스 취소         |서비스를 취소해주시길 바랍니다       |2020-01-24 |처리완료      |이러한 이유로 서비스를 취소해주시길바랍니다.       |null      |이엄마        |
+[15:43:54][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2      |서비스 신청         |서비스를 신청해주시길 바랍니다.      |2020-01-24 |미처리       |이러한 이유로 서비스를 신청해주셨으면 합니다.      |null      |null       |
+[15:43:54][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1      |서비스 변경         |서비스를 변경해주시길 바랍니다.      |2020-01-24 |처리완료      |이러한 이유로 서비스를 변경하고 싶습니다.        |김엄마       |null       |
+[15:43:54][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-----------------------|-----------|----------|-------------------------------|----------|-----------|
+[15:43:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:43:55][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:55][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:43:55][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:55][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:43:55][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:59][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from questions
+		where qna_no = 1
+[15:43:59][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------|-----------|----------|------------------------|-----------|----------|---------|----------|
+[15:43:59][INFO ][ResultSetCollectorPrinter.java:108]- |QNA_NO |PERSONAL_INFO |USE_SERVICE |CIVIL_PETITION |QNA_TITLE         |QNA_DATE   |QNA_STATE |QNA_CONTENT             |QNA_ANSWER |USER_NAME |DOL_NAME |TERM_CODE |
+[15:43:59][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------|-----------|----------|------------------------|-----------|----------|---------|----------|
+[15:43:59][INFO ][ResultSetCollectorPrinter.java:108]- |1      |Y             |[unread]    |서비스 변경         |서비스를 변경해주시길 바랍니다. |2020-01-24 |처리완료      |이러한 이유로 서비스를 변경하고 싶습니다. |null       |김엄마       |null     |T003      |
+[15:43:59][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------|-----------|----------|------------------------|-----------|----------|---------|----------|
+[15:43:59][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:43:59][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:59][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:43:59][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:43:59][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:43:59][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:06][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]update questions set qna_answer = 'ytttttttt', qna_state = '처리완료'
+ where qna_no = '1'
+[15:44:06][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |6        |
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:44:06][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-----------------------|-----------|----------|-------------------------------|----------|-----------|
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE              |QNA_DATE   |QNA_STATE |QNA_CONTENT                    |USER_NAME |QNA_ANSWER |
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-----------------------|-----------|----------|-------------------------------|----------|-----------|
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |6      |서비스 신청         |null                   |2020-01-24 |미처리       |null                           |김엄마       |null       |
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5      |서비스 변경         |서비스가 만족스럽지 않습니다.       |2020-01-24 |처리완료      |이러한 이유로 서비스가 만족스럽지 않습니다.       |박엄마       |null       |
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4      |기타             |돌보미 활동조회 취소해주시길 바랍니다.  |2020-01-24 |미처리       |이러한 이유로 돌보미 활동 조회를 취소해주시길바랍니다. |null      |null       |
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |서비스 취소         |서비스를 취소해주시길 바랍니다       |2020-01-24 |처리완료      |이러한 이유로 서비스를 취소해주시길바랍니다.       |null      |이엄마        |
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2      |서비스 신청         |서비스를 신청해주시길 바랍니다.      |2020-01-24 |미처리       |이러한 이유로 서비스를 신청해주셨으면 합니다.      |null      |null       |
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1      |서비스 변경         |서비스를 변경해주시길 바랍니다.      |2020-01-24 |처리완료      |이러한 이유로 서비스를 변경하고 싶습니다.        |김엄마       |ytttttttt  |
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-----------------------|-----------|----------|-------------------------------|----------|-----------|
+[15:44:06][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:44:06][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:10][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from questions
+		where qna_no = 6
+[15:44:10][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|----------|-----------|----------|------------|-----------|----------|---------|----------|
+[15:44:10][INFO ][ResultSetCollectorPrinter.java:108]- |QNA_NO |PERSONAL_INFO |USE_SERVICE |CIVIL_PETITION |QNA_TITLE |QNA_DATE   |QNA_STATE |QNA_CONTENT |QNA_ANSWER |USER_NAME |DOL_NAME |TERM_CODE |
+[15:44:10][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|----------|-----------|----------|------------|-----------|----------|---------|----------|
+[15:44:10][INFO ][ResultSetCollectorPrinter.java:108]- |6      |Y             |[unread]    |서비스 신청         |null      |2020-01-24 |미처리       |null        |null       |김엄마       |null     |T003      |
+[15:44:10][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|----------|-----------|----------|------------|-----------|----------|---------|----------|
+[15:44:11][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:44:11][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:11][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:44:11][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:11][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:44:11][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:14][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |6        |
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:44:14][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-----------------------|-----------|----------|-------------------------------|----------|-----------|
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE              |QNA_DATE   |QNA_STATE |QNA_CONTENT                    |USER_NAME |QNA_ANSWER |
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-----------------------|-----------|----------|-------------------------------|----------|-----------|
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |6      |서비스 신청         |null                   |2020-01-24 |미처리       |null                           |김엄마       |null       |
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5      |서비스 변경         |서비스가 만족스럽지 않습니다.       |2020-01-24 |처리완료      |이러한 이유로 서비스가 만족스럽지 않습니다.       |박엄마       |null       |
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4      |기타             |돌보미 활동조회 취소해주시길 바랍니다.  |2020-01-24 |미처리       |이러한 이유로 돌보미 활동 조회를 취소해주시길바랍니다. |null      |null       |
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |서비스 취소         |서비스를 취소해주시길 바랍니다       |2020-01-24 |처리완료      |이러한 이유로 서비스를 취소해주시길바랍니다.       |null      |이엄마        |
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2      |서비스 신청         |서비스를 신청해주시길 바랍니다.      |2020-01-24 |미처리       |이러한 이유로 서비스를 신청해주셨으면 합니다.      |null      |null       |
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1      |서비스 변경         |서비스를 변경해주시길 바랍니다.      |2020-01-24 |처리완료      |이러한 이유로 서비스를 변경하고 싶습니다.        |김엄마       |ytttttttt  |
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-----------------------|-----------|----------|-------------------------------|----------|-----------|
+[15:44:14][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:44:14][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:21][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from questions
+		where qna_no = 2
+[15:44:21][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------|-----------|----------|--------------------------|-----------|----------|---------|----------|
+[15:44:21][INFO ][ResultSetCollectorPrinter.java:108]- |QNA_NO |PERSONAL_INFO |USE_SERVICE |CIVIL_PETITION |QNA_TITLE         |QNA_DATE   |QNA_STATE |QNA_CONTENT               |QNA_ANSWER |USER_NAME |DOL_NAME |TERM_CODE |
+[15:44:21][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------|-----------|----------|--------------------------|-----------|----------|---------|----------|
+[15:44:21][INFO ][ResultSetCollectorPrinter.java:108]- |2      |Y             |[unread]    |서비스 신청         |서비스를 신청해주시길 바랍니다. |2020-01-24 |미처리       |이러한 이유로 서비스를 신청해주셨으면 합니다. |null       |null      |김돌봄      |T003      |
+[15:44:21][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------|-----------|----------|--------------------------|-----------|----------|---------|----------|
+[15:44:21][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:44:21][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:21][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:44:21][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:21][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:44:21][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:27][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]update questions set qna_answer = 'eiqugkrkrkrkk', qna_state = '처리완료'
+ where qna_no = '2'
+[15:44:27][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from questions
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |6        |
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[15:44:27][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+     
+ from 
+ (select rownum rnum, qna_no, civil_petition, qna_title, qna_date, qna_state, qna_content, user_name, qna_answer
+          
+ from 
+ (select *
+ from questions
+                     
+                   
+                    order by qna_no desc))
+                     
+       
+ where rnum >= 1
+ and rnum <= 10
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-----------------------|-----------|----------|-------------------------------|----------|--------------|
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |QNA_NO |CIVIL_PETITION |QNA_TITLE              |QNA_DATE   |QNA_STATE |QNA_CONTENT                    |USER_NAME |QNA_ANSWER    |
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-----------------------|-----------|----------|-------------------------------|----------|--------------|
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |6      |서비스 신청         |null                   |2020-01-24 |미처리       |null                           |김엄마       |null          |
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |5      |서비스 변경         |서비스가 만족스럽지 않습니다.       |2020-01-24 |처리완료      |이러한 이유로 서비스가 만족스럽지 않습니다.       |박엄마       |null          |
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |4      |기타             |돌보미 활동조회 취소해주시길 바랍니다.  |2020-01-24 |미처리       |이러한 이유로 돌보미 활동 조회를 취소해주시길바랍니다. |null      |null          |
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |3      |서비스 취소         |서비스를 취소해주시길 바랍니다       |2020-01-24 |처리완료      |이러한 이유로 서비스를 취소해주시길바랍니다.       |null      |이엄마           |
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2      |서비스 신청         |서비스를 신청해주시길 바랍니다.      |2020-01-24 |처리완료      |이러한 이유로 서비스를 신청해주셨으면 합니다.      |null      |eiqugkrkrkrkk |
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |1      |서비스 변경         |서비스를 변경해주시길 바랍니다.      |2020-01-24 |처리완료      |이러한 이유로 서비스를 변경하고 싶습니다.        |김엄마       |ytttttttt     |
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-------|---------------|-----------------------|-----------|----------|-------------------------------|----------|--------------|
+[15:44:27][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:44:27][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:33][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from questions
+		where qna_no = 2
+[15:44:33][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------|-----------|----------|--------------------------|--------------|----------|---------|----------|
+[15:44:33][INFO ][ResultSetCollectorPrinter.java:108]- |QNA_NO |PERSONAL_INFO |USE_SERVICE |CIVIL_PETITION |QNA_TITLE         |QNA_DATE   |QNA_STATE |QNA_CONTENT               |QNA_ANSWER    |USER_NAME |DOL_NAME |TERM_CODE |
+[15:44:33][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------|-----------|----------|--------------------------|--------------|----------|---------|----------|
+[15:44:33][INFO ][ResultSetCollectorPrinter.java:108]- |2      |Y             |[unread]    |서비스 신청         |서비스를 신청해주시길 바랍니다. |2020-01-24 |처리완료      |이러한 이유로 서비스를 신청해주셨으면 합니다. |eiqugkrkrkrkk |null      |김돌봄      |T003      |
+[15:44:33][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------------|------------|---------------|------------------|-----------|----------|--------------------------|--------------|----------|---------|----------|
+[15:44:34][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:44:34][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:34][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:44:34][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:44:34][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:44:34][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:48:31][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[15:48:41][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9829 ms
+[15:48:41][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[15:48:45][INFO ][FrameworkServlet.java:546]- Completed initialization in 3980 ms
+[16:10:58][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[16:11:08][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10021 ms
+[16:11:08][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[16:11:12][INFO ][FrameworkServlet.java:546]- Completed initialization in 4019 ms
+[16:43:18][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[16:43:28][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9426 ms
+[16:43:28][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[16:43:32][INFO ][FrameworkServlet.java:546]- Completed initialization in 3934 ms
+[18:01:18][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[18:01:29][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 11248 ms
+[18:01:29][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[18:01:34][INFO ][FrameworkServlet.java:546]- Completed initialization in 4959 ms
+[18:03:08][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'user01'
+[18:03:09][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-------------------------------------------------------------|----------|---------|--------------|-------------|
+[18:03:09][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD                                                     |AUTHORITY |ENABLED  |ENABLED_COUNT |RECENT_LOGIN |
+[18:03:09][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-------------------------------------------------------------|----------|---------|--------------|-------------|
+[18:03:09][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |$2a$10$1hmEroyQ4elLh3NjmPETSe5rOZvUm/lHjyOogmBhuAIC8vN6YmOiK |ROLE_USER |[unread] |[unread]      |[unread]     |
+[18:03:09][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-------------------------------------------------------------|----------|---------|--------------|-------------|
+[18:03:09][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from iusers
+ where user_id = 'user01'
+[18:03:09][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|-----|------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|-------|-------|-------|-------|---------|
+[18:03:09][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |RESIDENT_NO    |USER_PWD |USER_NAME |USER_TEL     |USER_PHONE  |USER_EMAIL       |USER_ADDRESS                          |SINM |SGGNM |CCTV_ALTER |PET_ALTER |MULTICULTURAL_ALTER |LATCHKEY_ALTER |MULTICHILD_ALTER |FATHER_ALTER |MATHER_ALTER |GRAND_ALTER |BASICLIFE_ALTER |MEDICAL_ALTER |WORKING_ALTER |DISABLED_ALTER |SECOND_CLASS |ETC_REARING |PLACE_AGREE |REQST_COURS |CARD_SMS |LICENSE_ALTER |SERVICE_PLACE |LIMIT_CODE |IGRADE_NO |OFFICE_CODE |ENROLL_DATE |USER_LASTMODIFIED |DEL_DATE |AGREE1 |AGREE2 |AGREE3 |AGREE4 |DEPO_PAY |
+[18:03:09][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|-----|------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|-------|-------|-------|-------|---------|
+[18:03:09][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |800101-2543425 |user01   |김엄마       |02-5304-2030 |01080016812 |ibom01@naver.com |06126, 서울특별시 강남구 역삼동 607-17 (역삼칼라아파트) |서울   |강남구   |Y          |N         |N                   |Y              |Y                |N            |[unread]     |N           |N               |N             |Y             |N              |N            |N           |[unread]    |주변권유        |Y        |보육관련자격소지자     |이용자가정         |LG001      |UG004     |SC0001      |2020-01-24  |2020-01-24        |null     |Y      |Y      |Y      |Y      |38000    |
+[18:03:09][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|-----|------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|-------|-------|-------|-------|---------|
+[18:03:48][WARN ][AbstractHandlerExceptionResolver.java:197]- Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+[18:29:14][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[18:29:25][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 11208 ms
+[18:29:25][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[18:29:29][INFO ][FrameworkServlet.java:546]- Completed initialization in 4326 ms
+[18:32:50][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[18:33:01][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 11326 ms
+[18:33:01][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[18:33:06][INFO ][FrameworkServlet.java:546]- Completed initialization in 4719 ms
+[22:35:53][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[22:36:04][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10596 ms
+[22:36:04][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[22:36:10][INFO ][FrameworkServlet.java:546]- Completed initialization in 5952 ms
+[23:04:05][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[23:04:15][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9458 ms
+[23:04:15][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[23:04:19][INFO ][FrameworkServlet.java:546]- Completed initialization in 4147 ms
+[23:08:59][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[23:09:08][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9583 ms
+[23:09:09][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[23:09:12][INFO ][FrameworkServlet.java:546]- Completed initialization in 3947 ms
+[23:10:39][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[23:10:48][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9337 ms
+[23:10:48][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[23:10:52][INFO ][FrameworkServlet.java:546]- Completed initialization in 3783 ms
+[23:25:54][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[23:26:06][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 11365 ms
+[23:26:06][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[23:26:10][INFO ][FrameworkServlet.java:546]- Completed initialization in 4453 ms
+[23:27:01][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[23:27:10][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9529 ms
+[23:27:10][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[23:27:14][INFO ][FrameworkServlet.java:546]- Completed initialization in 3807 ms
+[23:27:34][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user99'
+[23:27:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[23:27:35][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[23:27:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[23:27:35][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[23:27:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[23:28:35][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[23:28:35][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[23:28:35][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[23:28:35][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[23:28:35][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[23:28:35][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[23:29:06][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into certified values ( '993070', 
+ 		TO_CHAR(SYSDATE, 'yyyy-mm-dd hh:mi:ss'),
+ 		to_char(sysdate+1/24/12, 'yyyy-mm-dd hh24:mi:ss') )
+[23:29:23][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(key)
+ from certified
+ where key = '993070'
+[23:29:23][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|
+[23:29:23][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(KEY) |
+[23:29:23][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|
+[23:29:23][INFO ][ResultSetCollectorPrinter.java:108]- |1          |
+[23:29:23][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|
+[23:29:23][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]delete
+ from certified
+ where key = '993070'
+[23:32:29][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[23:32:39][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10570 ms
+[23:32:39][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[23:32:43][INFO ][FrameworkServlet.java:546]- Completed initialization in 3908 ms
+[23:35:17][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[23:35:27][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9987 ms
+[23:35:27][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[23:35:31][INFO ][FrameworkServlet.java:546]- Completed initialization in 4380 ms
+[23:36:12][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user99'
+[23:36:12][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[23:36:12][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[23:36:12][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[23:36:12][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[23:36:12][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[23:36:54][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '경기' || '%'
+		AND CITY_NAME2 like '%' || '성남시' || '%'
+		order by office_code
+[23:36:54][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[23:36:54][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[23:36:54][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[23:36:54][INFO ][ResultSetCollectorPrinter.java:108]- |SC0079      |성남시건강가정지원센터 |
+[23:36:54][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[23:37:13][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into certified values ( '674406', 
+ 		TO_CHAR(SYSDATE, 'yyyy-mm-dd hh:mi:ss'),
+ 		to_char(sysdate+1/24/12, 'yyyy-mm-dd hh24:mi:ss') )
+[23:37:16][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(key)
+ from certified
+ where key = ''
+[23:37:16][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|
+[23:37:16][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(KEY) |
+[23:37:16][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|
+[23:37:16][INFO ][ResultSetCollectorPrinter.java:108]- |0          |
+[23:37:16][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|
+[23:37:33][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(key)
+ from certified
+ where key = '674406'
+[23:37:33][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|
+[23:37:33][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(KEY) |
+[23:37:33][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|
+[23:37:33][INFO ][ResultSetCollectorPrinter.java:108]- |1          |
+[23:37:33][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|
+[23:37:33][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]delete
+ from certified
+ where key = '674406'
+[23:43:02][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[23:43:12][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10910 ms
+[23:43:13][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[23:43:17][INFO ][FrameworkServlet.java:546]- Completed initialization in 3992 ms
+[23:44:28][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user99'
+[23:44:29][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[23:44:29][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[23:44:29][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[23:44:29][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[23:44:29][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[23:45:10][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '경기' || '%'
+		AND CITY_NAME2 like '%' || '성남시' || '%'
+		order by office_code
+[23:45:10][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[23:45:10][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[23:45:10][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[23:45:10][INFO ][ResultSetCollectorPrinter.java:108]- |SC0079      |성남시건강가정지원센터 |
+[23:45:10][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[23:48:15][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[23:48:25][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10439 ms
+[23:48:25][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[23:48:30][INFO ][FrameworkServlet.java:546]- Completed initialization in 4627 ms
+[23:50:38][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user99'
+[23:50:38][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[23:50:38][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[23:50:38][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[23:50:38][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[23:50:38][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[23:51:16][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '경기' || '%'
+		AND CITY_NAME2 like '%' || '성남시' || '%'
+		order by office_code
+[23:51:16][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[23:51:16][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[23:51:16][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[23:51:16][INFO ][ResultSetCollectorPrinter.java:108]- |SC0079      |성남시건강가정지원센터 |
+[23:51:16][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[23:53:58][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[23:54:08][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9793 ms
+[23:54:08][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[23:54:12][INFO ][FrameworkServlet.java:546]- Completed initialization in 4301 ms
+[23:54:30][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user88'
+[23:54:30][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[23:54:30][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[23:54:30][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[23:54:30][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[23:54:30][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|

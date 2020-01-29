@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="certifiedMapper">
+
+	<!--  인증키 저장 -->
+	 <insert id="insertAuthCode" parameterType="Certified">
+	<![CDATA[
+ 		insert into certified values ( #{user_phone}, #{key}, 
+ 		TO_CHAR(SYSDATE, 'yyyy-mm-dd hh:mi:ss'),
+ 		to_char(sysdate+1/24/12, 'yyyy-mm-dd hh24:mi:ss') )
+ 		]]>
+	</insert> 
+	<!-- <insert id="insertAuthCode" parameterType="Certified">
+	 		insert into certified values ( #{user_phone}, #{key}) 	
+	</insert>
+	
+	<insert id="insertCode" parameterType="Certified">
+		insert into certified values (#{user_phone}, #{key})
+	</insert> -->
+
+	<!--   인증키 확인 -->
+	<select id="selectKey" parameterType="string" resultType="_int">
+		select count(key) from certified where key = #{value}
+	</select>
+
+	<!-- 인증키 삭제 -->
+	<delete id="deleteCerti" parameterType="string">
+		delete from certified where key = #{key}
+	</delete>
+
+</mapper>

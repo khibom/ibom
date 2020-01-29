@@ -1,0 +1,19 @@
+[03:57:52][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[03:58:02][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9900 ms
+[03:58:02][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[03:58:06][INFO ][FrameworkServlet.java:546]- Completed initialization in 4245 ms
+[03:58:38][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'user01'
+[03:58:39][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[03:58:39][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY |
+[03:58:39][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[03:58:39][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |user01   |ROLE_USER |
+[03:58:39][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|----------|
+[03:58:40][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from iusers
+ where user_id = 'user01'
+[03:58:40][INFO ][ResultSetCollectorPrinter.java:108]- |--------|------------|---------|----------|---------|-----------|-----------|-------------|-----|------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---|---|---------|-------|-------|-------|-------|---------|
+[03:58:40][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |RESIDENT_NO |USER_PWD |USER_NAME |USER_TEL |USER_PHONE |USER_EMAIL |USER_ADDRESS |SINM |SGGNM |CCTV_ALTER |PET_ALTER |MULTICULTURAL_ALTER |LATCHKEY_ALTER |MULTICHILD_ALTER |FATHER_ALTER |MATHER_ALTER |GRAND_ALTER |BASICLIFE_ALTER |MEDICAL_ALTER |WORKING_ALTER |DISABLED_ALTER |SECOND_CLASS |ETC_REARING |REQST_COURS |CARD_SMS |LICENSE_ALTER |SERVICE_PLACE |LIMIT_CODE |IGRADE_NO |OFFICE_CODE |ENROLL_DATE |USER_LASTMODIFIED |LA |LO |DEL_DATE |AGREE1 |AGREE2 |AGREE3 |AGREE4 |DEPO_PAY |
+[03:58:40][INFO ][ResultSetCollectorPrinter.java:108]- |--------|------------|---------|----------|---------|-----------|-----------|-------------|-----|------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---|---|---------|-------|-------|-------|-------|---------|
+[03:58:40][INFO ][ResultSetCollectorPrinter.java:108]- |--------|------------|---------|----------|---------|-----------|-----------|-------------|-----|------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---|---|---------|-------|-------|-------|-------|---------|

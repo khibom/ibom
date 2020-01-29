@@ -1,0 +1,351 @@
+@charset "utf-8";
+
+/*
+ * File       : rwd_adventure.css
+ * Author     : STUDIO-JT (KMS, Hee)
+ * Guideline  : JTstyle.1.1
+ *
+ * SUMMARY:
+ * 01) 1380px
+ * 02) 1200px
+ * 03) 1023px
+ * 04) 768px
+ * 05) 640px
+ * 06) 540px
+ * 07) 480px
+ * 08) 380px
+ * 09) 360px
+ */
+
+
+
+/* **************************************** *
+ * 1380px
+ * **************************************** */
+@media (max-width: 1380px){
+    /* THEMA */
+    .thema_list_content {padding-left: 4.5%;}
+    .thema_list_title br, .thema_list_album br, .thema_list_desc br {display: none;}
+
+    .thema_lyrics_data {width: 535px;}
+    .thema_lyrics_data_body {height: 470px;}
+
+	/* SERIES */
+	.series_list {margin-left: -15px; margin-right: -15px; margin-bottom: -15px;}
+	.series_item {padding: 15px;}
+	.series_content {padding: 31px 25px 38px;}
+    .series_desc br {display: none;}
+
+	/* CHARACTER */
+	.character_slideshow_wrap {padding-bottom: 100px;}
+	.character_slider_item h2 {font-size: 69px;}
+	.character_relationship_wrap {padding-top: 97px;}
+	.character_relationship_wrap h2 {font-size: 36px;}
+	.character_relationship_wrap figure {margin: 0 6.5%;}
+
+	/* VIDEO */
+	.jt_video_list_wrap {padding-top: 50px;}
+	.jt_video_type {width: 42px; height: 42px; font-size: 22px; line-height: 42px;}
+}
+
+
+
+/* **************************************** *
+ * 1200px
+ * **************************************** */
+@media (max-width: 1200px){
+	/* CHARACTER */
+	.character_relationship_wrap figure {margin: 0 3%;}
+}
+
+
+
+/* **************************************** *
+ * 1023px
+ * **************************************** */
+@media (max-width: 1023px){
+    /* THEMA */
+    .thema_list:before {height: 3px;}
+    .thema_list_item > div {padding-top: 34px;padding-bottom: 34px;}
+    .thema_list_item:first-child > div {padding-top: 44px;}
+    .thema_list_thumb {width: 50%;}
+    .thema_list_content {width: 50%;padding-left: 3.5%;padding-right: 50px;}
+    .thema_list_title {font-size: 26px;}
+    .thema_list_state {margin-right: 10px;}
+    .thema_list_volume {right: -50px;}
+
+    .thema_lyrics_data_head > b {font-size: 22px;}
+    .thema_lyrics_data_head > p {font-size: 13px;}
+    .thema_lyrics_data_head > p:before {font-size: 13px;}
+
+	/* SERIES */
+	.series_list_wrap {padding-top: 22px;}
+	.series_list_wrap:before {height: 3px;}
+	.series_title > span {font-size: 22px;}
+
+	/* CHARACTER */
+	.character_slideshow_wrap {padding-top: 40px;}
+	.character_slideshow_wrap:before {height: 3px;}
+	.character_slider_item h2 { font-size: 60px; height: 310px;}
+	.character_slider_item figure {width: 340px; margin-left: -170px;}
+	.character_slider_item.genie figure .genie_lamp {bottom: 12%; right: 12%; width: 16.8%; height: 10%;}
+	.character_slider_item.shuri figure .shuri_light { top: 9.5%; left: 32%; width: 11%; height: 11%;}
+	.character_slider_item_content {margin-top: 100px;}
+	.character_slider_item_content h3 {font-size: 26px;}
+
+	.character_slider_thumb p {font-size: 15px;}
+
+	.character_relationship_wrap h2 {font-size: 32px;}
+	.character_relationship_wrap figure {margin: 0 30px;}
+
+	/* VIDEO */
+	.jt_video_list_wrap:before {height: 3px;}
+	.jt_video_list_wrap {padding-top: 44px;}
+	.jt_video_list {margin: 0 -8px; margin-bottom: -45px;}
+	.jt_video_item {padding: 0 8px;}
+}
+
+
+
+/* **************************************** *
+ * 768px
+ * **************************************** */
+@media (max-width: 768px){
+    /* THEMA */
+    .thema_list_content {padding-right: 38px;}
+    .thema_list_category {padding: 13px 16px;font-size: 13px;}
+    html.ios .thema_list_category {padding-top: 12px;}
+    .thema_list_title {font-size: 24px;}
+    .thema_list_album {padding-left: 18px;font-size: 13px;}
+    .thema_list_album:after {font-size: 14px;}
+    .thema_list_meta {padding: 14px 0 11px;}
+    .thema_list_meta > li {padding-right: 16px;font-size: 15px;}
+    .thema_list_meta > li:after {right: 7px;}
+    .thema_list_desc {font-size: 15px;}
+    .thema_list_action {margin-top: 25px;}
+    .thema_list_state {width: 46px;height: 46px;margin-right: 8px;}
+    .thema_state_btn:after {font-size: 18px;line-height: 42px;}
+    html.ios .thema_state_btn:after {line-height: 41px;}
+    .thema_list_lyrics {height: 46px;padding: 15px 26px;font-size: 14px;}
+    html.ios .thema_list_lyrics {padding-top: 14px;}
+    .thema_list_lyrics > span {padding-right: 34px;}
+    .thema_list_lyrics > span:after {font-size: 14px;}
+    .thema_list_volume {width: 26px;height: 26px;right: -38px;}
+    .thema_list_volume_inner {width: 11px;height: 11px;bottom: 6px;left: 6px;}
+    .thema_list_volume_line_02 {left: 3px;}
+    .thema_list_volume_line_03 {left: 6px;}
+    .thema_list_volume_line_04 {left: 9px;}
+
+    .thema_lyrics_data {width: 90%;max-width: 420px;}
+    .thema_lyrics_data_head {padding: 27px;}
+    .thema_lyrics_data_head > b {font-size: 20px;}
+    .thema_lyrics_data_body {height: 55vh;padding: 22px 0;}
+    .thema_lyrics_data_body .nicescroll_area_outer {padding: 0 25px;}
+    .thema_lyrics_data_body p {font-size: 15px;}
+    .thema_lyrics_data_body p + p {margin-top: 20px;}
+
+	/* SERIES */
+	.series_list_wrap {padding-top: 17px;}
+    .series_item_inner {padding-bottom: 53px;}
+    .series_content {padding: 24px 25px 31px;}
+	.series_title > h2 {font-size: 12px;}
+	.series_title > span {margin-right: 8px;font-size: 18px;}
+	.series_meta > * {font-size: 12px;}
+	.series_meta b {margin-right: 20px;}
+	.series_meta b:after {right: -11px; height: 11px; margin-top: -5px;}
+    .series_desc {margin-top: 24px;padding-top: 21px;font-size: 14px;}
+	.series_btn_link {font-size: 15px; padding: 17px 0 14px;}
+	.series_btn_link i {margin-right: 28px;}
+	.series_btn_link i:after {font-size: 19px;}
+	.series_btn_link span:before {height: 16px; top: 2px;left: -13px;}
+	.series_btn_arrow {top: 0;}
+    html.ios .series_btn_link span:before {top: 0;}
+    html.ios .series_meta b:after {height: 10px;margin-top: -6px; }
+
+	/* CHARACTER */
+	.character_slideshow_wrap {padding-top: 32px; padding-bottom: 70px;}
+	.character_slider_item h2 {height: 260px; font-size: 52px;}
+	.character_slider_item figure { width: 280px; margin-left: -140px;}
+	.character_slider_item_content {margin-top: 85px;}
+	.character_slider_item_content h3 {font-size: 24px;}
+	.character_slider_item_content p {font-size: 15px; line-height: 1.6; word-break: keep-all;}
+	.character_slider_item_content p br {display: none;}
+	.character_slider_for .slick-arrow { width: 56px; height: 56px; top: 102px;}
+	.character_slider_for .slick-arrow:before { line-height: 56px; }
+	.character_slider_for .slick-arrow.slick-prev { left: 30px;}
+	.character_slider_for .slick-arrow.slick-next { right: 30px; }
+
+	.character_slider_nav {margin-left: -10px; margin-right: -10px; margin-top: 50px;}
+	.character_slider_thumb {width: 20%; padding: 0 10px;}
+	.character_slider_thumb p {font-size: 14px; margin-top: 12px;}
+
+	.character_relationship_wrap {padding-top: 67px;}
+	.character_relationship_wrap h2 {font-size: 28px;}
+
+	/* VIDEO */
+	.jt_video_item {margin-bottom: 45px;}
+	.jt_video_content {padding: 20px 0 0;}
+	.jt_video_type { width: 36px; height: 36px; font-size: 18px; line-height: 36px; }
+	.jt_video_container {border-radius: 10px;}
+	.jt_video_poster_overlay_btn {width: 58px; height: 58px; margin-left: -29px; margin-right: -29px;}
+	.jt_video_poster_overlay_btn:after {line-height: 58px;}
+	html.ios .jt_video_type {padding-top: 1px;}
+}
+
+
+
+/* **************************************** *
+ * 640px
+ * **************************************** */
+@media (max-width: 640px){
+    /* THEMA */
+    .thema_list {display: block;padding: 35px 0;border-bottom: 3px solid #222;}
+    .thema_list_item {display: block;}
+    .thema_list_item + .thema_list_item {margin-top: 50px;}
+    .thema_list_item > div {display: block;padding-top: 0;padding-bottom: 0;border-bottom: none;}
+    .thema_list_item:first-child > div {padding-top: 0;}
+    .thema_list_thumb {width: 100%;}
+    .thema_list_content {width: 100%;padding-left: 0;padding-right: 0;}
+    .thema_list_content_inner {margin-top: 25px;padding-right: 38px;}
+    .thema_list_lyrics {padding: 15px 26px;color: #222;background: none;border-color: #ddd;}
+    html.ios .thema_list_lyrics {padding-top: 14px;}
+    .thema_list_volume {right: 0;}
+
+	/* CHARACTER */
+	.character_slider_item h2 {font-size: 45px;}
+
+	/* VIDEO */
+	.jt_video_list_wrap {padding-top: 35px;}
+}
+
+
+
+/* **************************************** *
+ * 540px
+ * **************************************** */
+@media (max-width: 540px){
+    /* THEMA */
+    .thema_list {padding: 32px 0;}
+    .thema_list_category {padding: 11px 12px;font-size: 12px;}
+    html.ios .thema_list_category {padding-top: 10px;}
+    .thema_list_content_inner {margin-top: 20px;}
+    .thema_list_title {font-size: 22px;}
+    .thema_list_meta > li {font-size: 14px;}
+    .thema_list_meta > li:after {height: 10px;margin-top: -4px;}
+    html.ios .thema_list_meta > li:after {margin-top: -6px;}
+    .thema_list_desc {font-size: 14px;}
+    .thema_list_action {margin-top: 20px;}
+    .thema_list_state {width: 44px;height: 44px;margin-right: 6px;}
+    .thema_state_btn:after {line-height: 40px;}
+    html.ios .thema_state_btn:after {line-height: 39px;}
+    .thema_state_btn.icon_play:after {text-indent: 1px;}
+    .thema_list_lyrics {height: 44px;padding: 14px 23px;}
+    html.ios .thema_list_lyrics {padding-top: 13px;}
+    .thema_list_lyrics > span {padding-right: 28px;}
+    .thema_list_lyrics > span:after {margin-top: -7px;font-size: 12px;}
+    html.ios .thema_list_lyrics > span:after {margin-top: -6px;}
+
+    .thema_lyrics_data_head {padding: 22px 19px;}
+    .thema_lyrics_data_head > b {font-size: 18px;}
+    .thema_lyrics_data_head > p {padding-left: 18px;font-size: 12px;}
+    .thema_lyrics_data_head > p:before {font-size: 12px;}
+    .thema_lyrics_data_body {padding: 15px 0;}
+    .thema_lyrics_data_body .nicescroll_area_outer {padding: 0 18px;}
+    .thema_lyrics_data_body p {font-size: 14px;}
+    .thema_lyrics_data_body p + p {margin-top: 15px;}
+
+	.thema_list_album {margin-top: 6px;}
+	.thema_list_meta {padding: 14px 0 8px;}
+	.thema_list_category {padding-right: 13px;}
+
+	/* SERIES */
+	.series_list_wrap {padding-top: 19px;}
+	.series_list {margin: 0 0; margin-bottom: 0;}
+	.series_item {width: 100%;padding: 0;}
+    .series_item + .series_item {margin-top: 25px;}
+    .series_desc {margin-top: 22px;padding-top: 17px;}
+	.series_btn_link {font-size: 14px;}
+	.series_btn_link i {margin-right: 23px; width: 16px; height: 16px; line-height: 16px;}
+	.series_btn_link i:after {font-size: 16px; top: -1px;}
+	.series_btn_link span {padding-right: 25px;}
+	.series_btn_link span:before {left: -10px;}
+	.series_btn_arrow:before {font-size: 18px; line-height: 18px;}
+
+	/* CHARACTER */
+	.character_slideshow_wrap {padding-top: 27px;padding-bottom: 60px;}
+	.character_slider_item h2 { height: 200px;}
+	.character_slider_item figure { width: 220px; margin-left: -110px; top: 18px; }
+	.character_slider_item_content {margin-top: 65px;}
+	.character_slider_item_content h3 {font-size: 22px;}
+	.character_slider_item_content p {font-size: 14px;}
+	.character_slider_for .slick-arrow { width: 40px; height: 40px; top: 70px; }
+	.character_slider_for .slick-arrow:before { line-height: 40px; font-size: 10px; }
+	.character_slider_for .slick-arrow.slick-prev { left: 15px; padding-right: 0;}
+	.character_slider_for .slick-arrow.slick-next { right: 15px; padding-left: 2px;}
+
+	.character_slider_nav {margin-top: 35px;}
+	.character_slider_thumb p {font-size: 13px; margin-top: 10px;}
+
+	.character_relationship_wrap {padding-top: 57px; margin-bottom: -50px}
+	.character_relationship_wrap h2 {margin-bottom: 25px;}
+	.character_relationship_wrap h2 {font-size: 24px;}
+	.character_relationship_wrap figure {margin: 0 15px;}
+
+    .character_relationship_wrap figure.large {display: none;}
+    .character_relationship_wrap figure.small {display: block;}
+
+	/* VIDEO */
+	.jt_video_container {margin-bottom: 29px; border-radius: 6px;}
+	.jt_video_list_wrap {padding-top: 32px;}
+	.jt_video_content {padding-top: 16px;}
+	.jt_video_content h2 {font-size: 16px; line-height: 1.62;}
+	.jt_video_content p {font-size: 14px; line-height: 1.6;}
+	.jt_video_poster_overlay_btn { width: 50px; height: 50px; margin-left: -25px; margin-right: -25px; margin-top: -25px; }
+	.jt_video_poster_overlay_btn:after { line-height: 50px; font-size: 22px; }
+}
+
+
+
+/* **************************************** *
+ * 480px
+ * **************************************** */
+@media (max-width: 480px){
+	/* SERIES */
+	.series_content {padding: 15px;}
+	.series_content h2 {font-size: 15px;}
+    .series_desc {margin-top: 20px;padding-top: 15px;}
+	.series_btn_link {padding: 15px 0 14px;}
+	.series_btn_link i { margin-right: 16px; width: 14px; height: 14px; line-height: 14px; }
+	.series_btn_link i:after { font-size: 14px; top: 0px; }
+	.series_btn_link span { padding-right: 14px; }
+	.series_btn_link span:before { height: 12px; top: 4px; left: -7px; }
+	.series_btn_arrow { right: -11px; }
+    html.ios .series_btn_link span:before {top: 2px;}
+
+	/* CHARACTER */
+	.character_slider_item h2 { height: 180px; }
+	.character_slider_item h2 span { padding-top: 4px; }
+	.character_slider_item figure { width: 200px; margin-left: -100px; top: 18px; }
+	.character_slider_nav { margin-left: -8px; margin-right: -8px; margin-bottom: -25px;}
+	.character_slider_thumb {width: 100px; margin-bottom: 25px; padding: 0 8px;}
+
+	/* VIDEO */
+	.jt_video_list {margin: 0;}
+ 	.jt_video_item {width: 100%; padding: 0; margin-bottom: 36px;}
+ 	.jt_video_item:last-child {margin-bottom: 0;}
+	.jt_video_content h2 {display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; max-height: 3.24em; white-space: normal;}
+	.jt_video_content p {display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; max-height: 3.2em; white-space: normal;}
+}
+
+
+
+/* **************************************** *
+ * 380px
+ * **************************************** */
+@media (max-width: 380px){
+	.series_content {padding: 24px 15px 23px;}
+	.series_content h2 {margin-top: 4px;}
+	.series_content figure {width: 70%;}
+	.series_btn_link i:after {top: -1px;}
+	.series_btn_link span {padding-right: 18px;}
+}

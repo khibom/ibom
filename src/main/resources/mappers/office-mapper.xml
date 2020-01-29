@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="officeMapper">
+	<select id="selectOne" parameterType="string" resultType="Office">
+		select * from office where OFFICE_CODE = #{value}
+	</select>
+	
+	<!-- 회원가입시 서비스 센터 조회 -->
+	<select id="selectOfficeList" parameterType="string" resultType="Office">
+		SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || #{city_name} || '%'
+		AND CITY_NAME2 like '%' || #{city_name2} || '%'
+		order by office_code
+	</select>
+	
+</mapper>

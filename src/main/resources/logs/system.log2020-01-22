@@ -1,0 +1,316 @@
+[16:19:40][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[16:19:50][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9682 ms
+[16:19:50][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[16:19:54][INFO ][FrameworkServlet.java:546]- Completed initialization in 3659 ms
+[16:20:14][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'dol01'
+[16:20:14][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-------------------------------------------------------------|-------------|---------|--------------|-------------|
+[16:20:14][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD                                                     |AUTHORITY    |ENABLED  |ENABLED_COUNT |RECENT_LOGIN |
+[16:20:14][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-------------------------------------------------------------|-------------|---------|--------------|-------------|
+[16:20:14][INFO ][ResultSetCollectorPrinter.java:108]- |dol01   |$2a$10$xOdG86QbwQ2NJjCr4aKHoei2B8L1ttLE46MtEaw8e6z1YeeHaLQ3m |ROLE_DOLBOMI |[unread] |[unread]      |[unread]     |
+[16:20:14][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-------------------------------------------------------------|-------------|---------|--------------|-------------|
+[16:20:15][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from dolbomi
+ where dol_id = 'dol01'
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |DOL_ID |DOL_PWD |DOL_NAME |RESIDENT_NO    |DOL_PHONE   |TERM_CODE |DOL_TERMYESNO |DOL_EMAIL         |DOL_ADDRESS                                   |DOL_ENROLLDATE |DOL_LASTMODIFIED |BANK |DOL_ACCOUNT  |DOL_TOTALTIME |SALARY |LICENSE_CODE |OFFICE_CODE |DGRADE_NO |
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |dol01  |dol01   |김돌봄      |640830-2475697 |01080016812 |[unread]  |Y             |dolbom01@ibom.com |06121, 서울특별시 강남구 논현동 196 거평프리젠아파트 2303동 1902호 |2019-12-01     |2020-01-20       |신한은행 |110170879001 |40            |336000 |s_02         |SC0001      |DG001     |
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[16:20:15][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from ACT_LIST_VIEW
+ where dolbomi_id = 'dol01'
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |227      |
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:20:15][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from (
+				select rownum rnum, apply_date, transferor, apply_status, 
+				dolbom_type, service_type, family_name, dolbomi_id, care_day,
+				start_time, end_time, total_pay, dolbom_place, user_address, dol_address, service1_no,log_category
+       		   
+ from ACT_LIST_VIEW)
+				
+ where rnum >= 1
+ and rnum <= 10
+ and dolbomi_id = 'dol01'
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-----------|-----------|-------------|------------|-------------|------------|-----------|---------|-----------|---------|----------|-------------|--------------------------------------|----------------------------------------------|------------|-------------|
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |APPLY_DATE |TRANSFEROR |APPLY_STATUS |DOLBOM_TYPE |SERVICE_TYPE |FAMILY_NAME |DOLBOMI_ID |CARE_DAY |START_TIME |END_TIME |TOTAL_PAY |DOLBOM_PLACE |USER_ADDRESS                          |DOL_ADDRESS                                   |SERVICE1_NO |LOG_CATEGORY |
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-----------|-----------|-------------|------------|-------------|------------|-----------|---------|-----------|---------|----------|-------------|--------------------------------------|----------------------------------------------|------------|-------------|
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2019-12-01 |김엄마 모      |서비스대기        |[unread]    |[unread]     |김대한         |dol01      |일        |08 00      |10 00    |22612     |이용자가정        |06126, 서울특별시 강남구 역삼동 607-17 (역삼칼라아파트) |06121, 서울특별시 강남구 논현동 196 거평프리젠아파트 2303동 1902호 |ser1_001    |N            |
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2019-12-01 |김엄마 모      |서비스대기        |[unread]    |[unread]     |김민국         |dol01      |일        |08 00      |10 00    |22612     |이용자가정        |06126, 서울특별시 강남구 역삼동 607-17 (역삼칼라아파트) |06121, 서울특별시 강남구 논현동 196 거평프리젠아파트 2303동 1902호 |ser1_001    |N            |
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2019-12-01 |김엄마 모      |서비스대기        |[unread]    |[unread]     |김만세         |dol01      |일        |08 00      |10 00    |22612     |이용자가정        |06126, 서울특별시 강남구 역삼동 607-17 (역삼칼라아파트) |06121, 서울특별시 강남구 논현동 196 거평프리젠아파트 2303동 1902호 |ser1_001    |N            |
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-----------|-----------|-------------|------------|-------------|------------|-----------|---------|-----------|---------|----------|-------------|--------------------------------------|----------------------------------------------|------------|-------------|
+[16:20:15][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT COUNT(*)
+		FROM SERVICE_APPLY2
+		JOIN SERVICE_APPLY3 USING(SERVICE2_NO)
+		WHERE LOG_CATEGORY = 'N' AND DOLBOMI_ID  = 'dol01'
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |21       |
+[16:20:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:20:16][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select APPLY_DATE, D.SERVICE2_NO, E.SERVICE1_NO, E.LOG_CATEGORY,E.FAMILY_CODE
+		from SERVICE_APPLY2 D
+		LEFT JOIN SERVICE_APPLY3 E ON D.SERVICE2_NO = E.SERVICE2_NO
+		where dolbomi_id = 'dol01'
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|------------|------------|-------------|------------|
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |APPLY_DATE |SERVICE2_NO |SERVICE1_NO |LOG_CATEGORY |FAMILY_CODE |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|------------|------------|-------------|------------|
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2019-12-01 |ser2_001    |ser1_001    |N            |F0001       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2019-12-01 |ser2_001    |ser1_001    |N            |F0002       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2019-12-01 |ser2_001    |ser1_001    |N            |F0003       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2019-12-07 |ser2_0016   |ser1_0016   |N            |F0012       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-01 |ser2_0022   |ser1_0018   |N            |F0002       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-03 |ser2_0023   |ser1_0018   |N            |F0002       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-06 |ser2_0024   |ser1_0018   |N            |F0002       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-08 |ser2_0025   |ser1_0018   |N            |F0002       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-08 |ser2_0025   |ser1_0018   |N            |F0003       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-10 |ser2_0026   |ser1_0018   |N            |F0001       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-13 |ser2_0027   |ser1_0018   |N            |F0001       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-14 |ser2_0028   |ser1_0018   |N            |F0003       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-16 |ser2_0029   |ser1_0018   |N            |F0003       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-22 |ser2_0030   |ser1_0018   |N            |F0003       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-24 |ser2_0031   |ser1_0018   |N            |F0003       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-27 |ser2_0032   |ser1_0018   |N            |F0001       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-27 |ser2_0032   |ser1_0018   |N            |F0002       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-27 |ser2_0032   |ser1_0018   |N            |F0003       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-29 |ser2_0033   |ser1_0018   |N            |F0002       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-29 |ser2_0033   |ser1_0018   |N            |F0003       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-31 |ser2_0034   |ser1_0018   |N            |F0001       |
+[16:20:16][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|------------|------------|-------------|------------|
+[16:20:58][WARN ][DispatcherServlet.java:1248]- No mapping for GET /ibom/dolMain.do
+[16:21:01][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from dolbomi
+ where dol_id = 'dol01'
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |DOL_ID |DOL_PWD |DOL_NAME |RESIDENT_NO    |DOL_PHONE   |TERM_CODE |DOL_TERMYESNO |DOL_EMAIL         |DOL_ADDRESS                                   |DOL_ENROLLDATE |DOL_LASTMODIFIED |BANK |DOL_ACCOUNT  |DOL_TOTALTIME |SALARY |LICENSE_CODE |OFFICE_CODE |DGRADE_NO |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |dol01  |dol01   |김돌봄      |640830-2475697 |01080016812 |[unread]  |Y             |dolbom01@ibom.com |06121, 서울특별시 강남구 논현동 196 거평프리젠아파트 2303동 1902호 |2019-12-01     |2020-01-20       |신한은행 |110170879001 |40            |336000 |s_02         |SC0001      |DG001     |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |-------|--------|---------|---------------|------------|----------|--------------|------------------|----------------------------------------------|---------------|-----------------|-----|-------------|--------------|-------|-------------|------------|----------|
+[16:21:01][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(*)
+ from ACT_LIST_VIEW
+ where dolbomi_id = 'dol01'
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |227      |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:21:01][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from (
+				select rownum rnum, apply_date, transferor, apply_status, 
+				dolbom_type, service_type, family_name, dolbomi_id, care_day,
+				start_time, end_time, total_pay, dolbom_place, user_address, dol_address, service1_no,log_category
+       		   
+ from ACT_LIST_VIEW)
+				
+ where rnum >= 1
+ and rnum <= 10
+ and dolbomi_id = 'dol01'
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-----------|-----------|-------------|------------|-------------|------------|-----------|---------|-----------|---------|----------|-------------|--------------------------------------|----------------------------------------------|------------|-------------|
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |RNUM     |APPLY_DATE |TRANSFEROR |APPLY_STATUS |DOLBOM_TYPE |SERVICE_TYPE |FAMILY_NAME |DOLBOMI_ID |CARE_DAY |START_TIME |END_TIME |TOTAL_PAY |DOLBOM_PLACE |USER_ADDRESS                          |DOL_ADDRESS                                   |SERVICE1_NO |LOG_CATEGORY |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-----------|-----------|-------------|------------|-------------|------------|-----------|---------|-----------|---------|----------|-------------|--------------------------------------|----------------------------------------------|------------|-------------|
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2019-12-01 |김엄마 모      |서비스대기        |[unread]    |[unread]     |김대한         |dol01      |일        |08 00      |10 00    |22612     |이용자가정        |06126, 서울특별시 강남구 역삼동 607-17 (역삼칼라아파트) |06121, 서울특별시 강남구 논현동 196 거평프리젠아파트 2303동 1902호 |ser1_001    |N            |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2019-12-01 |김엄마 모      |서비스대기        |[unread]    |[unread]     |김민국         |dol01      |일        |08 00      |10 00    |22612     |이용자가정        |06126, 서울특별시 강남구 역삼동 607-17 (역삼칼라아파트) |06121, 서울특별시 강남구 논현동 196 거평프리젠아파트 2303동 1902호 |ser1_001    |N            |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |[unread] |2019-12-01 |김엄마 모      |서비스대기        |[unread]    |[unread]     |김만세         |dol01      |일        |08 00      |10 00    |22612     |이용자가정        |06126, 서울특별시 강남구 역삼동 607-17 (역삼칼라아파트) |06121, 서울특별시 강남구 논현동 196 거평프리젠아파트 2303동 1902호 |ser1_001    |N            |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|-----------|-----------|-------------|------------|-------------|------------|-----------|---------|-----------|---------|----------|-------------|--------------------------------------|----------------------------------------------|------------|-------------|
+[16:21:01][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT COUNT(*)
+		FROM SERVICE_APPLY2
+		JOIN SERVICE_APPLY3 USING(SERVICE2_NO)
+		WHERE LOG_CATEGORY = 'N' AND DOLBOMI_ID  = 'dol01'
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(*) |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |21       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |---------|
+[16:21:01][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select APPLY_DATE, D.SERVICE2_NO, E.SERVICE1_NO, E.LOG_CATEGORY,E.FAMILY_CODE
+		from SERVICE_APPLY2 D
+		LEFT JOIN SERVICE_APPLY3 E ON D.SERVICE2_NO = E.SERVICE2_NO
+		where dolbomi_id = 'dol01'
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|------------|------------|-------------|------------|
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |APPLY_DATE |SERVICE2_NO |SERVICE1_NO |LOG_CATEGORY |FAMILY_CODE |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|------------|------------|-------------|------------|
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2019-12-01 |ser2_001    |ser1_001    |N            |F0001       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2019-12-01 |ser2_001    |ser1_001    |N            |F0002       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2019-12-01 |ser2_001    |ser1_001    |N            |F0003       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2019-12-07 |ser2_0016   |ser1_0016   |N            |F0012       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-01 |ser2_0022   |ser1_0018   |N            |F0002       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-03 |ser2_0023   |ser1_0018   |N            |F0002       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-06 |ser2_0024   |ser1_0018   |N            |F0002       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-08 |ser2_0025   |ser1_0018   |N            |F0002       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-08 |ser2_0025   |ser1_0018   |N            |F0003       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-10 |ser2_0026   |ser1_0018   |N            |F0001       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-13 |ser2_0027   |ser1_0018   |N            |F0001       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-14 |ser2_0028   |ser1_0018   |N            |F0003       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-16 |ser2_0029   |ser1_0018   |N            |F0003       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-22 |ser2_0030   |ser1_0018   |N            |F0003       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-24 |ser2_0031   |ser1_0018   |N            |F0003       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-27 |ser2_0032   |ser1_0018   |N            |F0001       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-27 |ser2_0032   |ser1_0018   |N            |F0002       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-27 |ser2_0032   |ser1_0018   |N            |F0003       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-29 |ser2_0033   |ser1_0018   |N            |F0002       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-29 |ser2_0033   |ser1_0018   |N            |F0003       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |2020-01-31 |ser2_0034   |ser1_0018   |N            |F0001       |
+[16:21:01][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|------------|------------|-------------|------------|
+[16:22:38][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[16:22:38][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[16:22:38][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[16:22:38][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[16:22:38][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[16:22:38][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[16:23:49][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '경기' || '%'
+		AND CITY_NAME2 like '%' || '성남시' || '%'
+		order by office_code
+[16:23:49][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[16:23:49][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[16:23:49][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[16:23:49][INFO ][ResultSetCollectorPrinter.java:108]- |SC0079      |성남시건강가정지원센터 |
+[16:23:49][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[16:25:56][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '서울' || '%'
+		AND CITY_NAME2 like '%' || '강남구' || '%'
+		order by office_code
+[16:25:56][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[16:25:56][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[16:25:56][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[16:25:56][INFO ][ResultSetCollectorPrinter.java:108]- |SC0001      |강남구건강가정지원센터 |
+[16:25:56][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[16:28:06][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user88'
+[16:28:06][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:28:06][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[16:28:06][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:28:06][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[16:28:06][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:29:35][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into certified values ( '885032', 
+ 		TO_CHAR(SYSDATE, 'yyyy-mm-dd hh:mi:ss'),
+ 		to_char(sysdate+1/24/12, 'yyyy-mm-dd hh24:mi:ss') )
+[16:30:27][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(key)
+ from certified
+ where key = '885032'
+[16:30:27][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|
+[16:30:27][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(KEY) |
+[16:30:27][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|
+[16:30:27][INFO ][ResultSetCollectorPrinter.java:108]- |1          |
+[16:30:27][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|
+[16:30:27][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]delete
+ from certified
+ where key = '885032'
+[16:32:21][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user88'
+[16:32:21][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:32:21][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[16:32:21][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:32:21][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[16:32:21][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:32:36][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user88'
+[16:32:36][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:32:36][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[16:32:36][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:32:36][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[16:32:36][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:32:44][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user88'
+[16:32:44][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:32:44][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[16:32:44][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:32:44][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[16:32:44][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:33:10][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user01'
+[16:33:10][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:33:10][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[16:33:10][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:33:10][INFO ][ResultSetCollectorPrinter.java:108]- |1              |
+[16:33:10][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:38:20][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[16:38:30][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9735 ms
+[16:38:30][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[16:38:34][INFO ][FrameworkServlet.java:546]- Completed initialization in 3976 ms
+[17:30:53][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'user01'
+[17:30:53][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-------------------------------------------------------------|----------|---------|--------------|-------------|
+[17:30:53][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD                                                     |AUTHORITY |ENABLED  |ENABLED_COUNT |RECENT_LOGIN |
+[17:30:53][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-------------------------------------------------------------|----------|---------|--------------|-------------|
+[17:30:53][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |$2a$10$pwWQCAKiL712nWX2/CibWOgV0iZi/2eF3uHbR64V8DU6O18gxjruq |ROLE_USER |[unread] |[unread]      |[unread]     |
+[17:30:53][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-------------------------------------------------------------|----------|---------|--------------|-------------|
+[17:30:54][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from iusers
+ where user_id = 'user01'
+[17:30:54][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|-----|------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|-------|-------|-------|-------|---------|
+[17:30:54][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |RESIDENT_NO    |USER_PWD |USER_NAME |USER_TEL     |USER_PHONE  |USER_EMAIL       |USER_ADDRESS                          |SINM |SGGNM |CCTV_ALTER |PET_ALTER |MULTICULTURAL_ALTER |LATCHKEY_ALTER |MULTICHILD_ALTER |FATHER_ALTER |MATHER_ALTER |GRAND_ALTER |BASICLIFE_ALTER |MEDICAL_ALTER |WORKING_ALTER |DISABLED_ALTER |SECOND_CLASS |ETC_REARING |REQST_COURS |CARD_SMS |LICENSE_ALTER |SERVICE_PLACE |LIMIT_CODE |IGRADE_NO |OFFICE_CODE |ENROLL_DATE |USER_LASTMODIFIED |DEL_DATE |AGREE1 |AGREE2 |AGREE3 |AGREE4 |DEPO_PAY |
+[17:30:54][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|-----|------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|-------|-------|-------|-------|---------|
+[17:30:54][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |800101-2543425 |user01   |김엄마       |02-5304-2030 |01080016812 |ibom01@naver.com |06126, 서울특별시 강남구 역삼동 607-17 (역삼칼라아파트) |서울   |강남구   |Y          |N         |N                   |Y              |Y                |N            |[unread]     |N           |N               |N             |Y             |N              |N            |N           |주변권유        |Y        |보육관련자격소지자     |이용자가정         |LG001      |UG004     |SC0001      |2020-01-20  |2020-01-20        |null     |Y      |Y      |Y      |Y      |38000    |
+[17:30:54][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------------|---------|----------|-------------|------------|-----------------|--------------------------------------|-----|------|-----------|----------|--------------------|---------------|-----------------|-------------|-------------|------------|----------------|--------------|--------------|---------------|-------------|------------|------------|---------|--------------|--------------|-----------|----------|------------|------------|------------------|---------|-------|-------|-------|-------|---------|
+[17:31:06][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from deposit
+ where user_id = 'user01'
+[17:31:06][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-----------|--------------|--------|---------|
+[17:31:06][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |USE_DAY    |DEPO_CATEGORY |USE_PAY |DEPO_ETC |
+[17:31:06][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-----------|--------------|--------|---------|
+[17:31:06][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |2019-12-01 |적립금사용         |18000   |null     |
+[17:31:06][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |2019-11-01 |적립금사용         |12800   |null     |
+[17:31:06][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |2019-11-28 |적립금변경         |16300   |null     |
+[17:31:06][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-----------|--------------|--------|---------|
+[17:31:06][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from REFUND_ACCOUNT
+ where user_id = 'user01'
+[17:31:06][INFO ][ResultSetCollectorPrinter.java:108]- |--------|----------|---------------|------------|
+[17:31:06][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |BANK_NAME |REFUND_ACCOUNT |REFUND_NAME |
+[17:31:06][INFO ][ResultSetCollectorPrinter.java:108]- |--------|----------|---------------|------------|
+[17:31:06][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |신한은행      |110179***001   |김엄마         |
+[17:31:06][INFO ][ResultSetCollectorPrinter.java:108]- |--------|----------|---------------|------------|
+[17:31:14][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from deposit
+ where user_id = 'user01'
+[17:31:14][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-----------|--------------|--------|---------|
+[17:31:14][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |USE_DAY    |DEPO_CATEGORY |USE_PAY |DEPO_ETC |
+[17:31:14][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-----------|--------------|--------|---------|
+[17:31:14][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |2019-12-01 |적립금사용         |18000   |null     |
+[17:31:14][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |2019-11-01 |적립금사용         |12800   |null     |
+[17:31:14][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |2019-11-28 |적립금변경         |16300   |null     |
+[17:31:14][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-----------|--------------|--------|---------|
+[17:31:14][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from REFUND_ACCOUNT
+ where user_id = 'user01'
+[17:31:14][INFO ][ResultSetCollectorPrinter.java:108]- |--------|----------|---------------|------------|
+[17:31:14][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |BANK_NAME |REFUND_ACCOUNT |REFUND_NAME |
+[17:31:14][INFO ][ResultSetCollectorPrinter.java:108]- |--------|----------|---------------|------------|
+[17:31:14][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |신한은행      |110179***001   |김엄마         |
+[17:31:14][INFO ][ResultSetCollectorPrinter.java:108]- |--------|----------|---------------|------------|
+[17:31:19][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from deposit
+ where user_id = 'user01'
+[17:31:19][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-----------|--------------|--------|---------|
+[17:31:19][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |USE_DAY    |DEPO_CATEGORY |USE_PAY |DEPO_ETC |
+[17:31:19][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-----------|--------------|--------|---------|
+[17:31:19][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |2019-12-01 |적립금사용         |18000   |null     |
+[17:31:19][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |2019-11-01 |적립금사용         |12800   |null     |
+[17:31:19][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |2019-11-28 |적립금변경         |16300   |null     |
+[17:31:19][INFO ][ResultSetCollectorPrinter.java:108]- |--------|-----------|--------------|--------|---------|
+[17:31:19][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from REFUND_ACCOUNT
+ where user_id = 'user01'
+[17:31:19][INFO ][ResultSetCollectorPrinter.java:108]- |--------|----------|---------------|------------|
+[17:31:19][INFO ][ResultSetCollectorPrinter.java:108]- |USER_ID |BANK_NAME |REFUND_ACCOUNT |REFUND_NAME |
+[17:31:19][INFO ][ResultSetCollectorPrinter.java:108]- |--------|----------|---------------|------------|
+[17:31:19][INFO ][ResultSetCollectorPrinter.java:108]- |user01  |신한은행      |110179***001   |김엄마         |
+[17:31:19][INFO ][ResultSetCollectorPrinter.java:108]- |--------|----------|---------------|------------|
+[23:39:32][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[23:39:45][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 12402 ms
+[23:39:45][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[23:39:50][INFO ][FrameworkServlet.java:546]- Completed initialization in 5041 ms

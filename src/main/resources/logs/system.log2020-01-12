@@ -1,0 +1,76 @@
+[15:26:44][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[15:27:07][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 23168 ms
+[15:27:07][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[15:28:31][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[15:28:44][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 13187 ms
+[15:28:44][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[15:28:52][INFO ][FrameworkServlet.java:546]- Completed initialization in 7461 ms
+[15:32:58][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from authority
+ where ibom_id = 'admin01'
+[15:32:59][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[15:32:59][INFO ][ResultSetCollectorPrinter.java:108]- |IBOM_ID |IBOM_PWD |AUTHORITY  |
+[15:32:59][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[15:32:59][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01  |ROLE_ADMIN |
+[15:32:59][INFO ][ResultSetCollectorPrinter.java:108]- |--------|---------|-----------|
+[15:33:00][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from emp
+ where emp_id = 'admin01'
+[15:33:00][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[15:33:00][INFO ][ResultSetCollectorPrinter.java:108]- |EMP_ID  |EMP_PWD |EMP_NAME |EMP_TEL    |EMP_PHONE   |EMP_EMAIL         |EMP_ADDRESS              |ENROLL_DATE |LASTMODIFIED |
+[15:33:00][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[15:33:00][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01 |김관리      |0250302032 |01080016812 |ADMIN01@NAVER.COM |06232, 서울특별시 강남구 역삼동 858 |2020-01-10  |2020-01-10   |
+[15:33:00][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[15:33:02][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:33:02][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:33:02][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:33:02][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:33:02][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:33:02][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:33:08][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from emp
+ where emp_id = 'admin01'
+[15:33:08][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[15:33:08][INFO ][ResultSetCollectorPrinter.java:108]- |EMP_ID  |EMP_PWD |EMP_NAME |EMP_TEL    |EMP_PHONE   |EMP_EMAIL         |EMP_ADDRESS              |ENROLL_DATE |LASTMODIFIED |
+[15:33:08][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[15:33:08][INFO ][ResultSetCollectorPrinter.java:108]- |admin01 |admin01 |김관리      |0250302032 |01080016812 |ADMIN01@NAVER.COM |06232, 서울특별시 강남구 역삼동 858 |2020-01-10  |2020-01-10   |
+[15:33:08][INFO ][ResultSetCollectorPrinter.java:108]- |--------|--------|---------|-----------|------------|------------------|-------------------------|------------|-------------|
+[15:33:09][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:33:09][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:33:09][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:33:09][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:33:09][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:33:09][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:33:10][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select ALLDAY_NO, SERVICE2_NO,FAMILY_CODE, DOL_NAME, CREATE_DATE, DOSAGE_TIME, DOSAGE, SYMOTOM, DOS_METHOD, STG_CONDITION, ETC, 
+		BODYTEMP_TIME, BODYTEMP, HEALTHANDPSY, POOP_CNT, SLEEP_CNT, RICE_CNT, AC_CNT, PASS_CNT, OBSERVE_CNT, VENTIRATION, VEN_TIME,
+		VEN_TEMP, VEN_HUMIDITY, COND_DATE, PROCESS_CTGRY, COND_CONTENT
+		
+ from ALLDAY_ACTLOG 
+     	JOIN DOLBOMI  using(dol_id)
+[15:33:10][INFO ][ResultSetCollectorPrinter.java:108]- |----------|------------|------------|---------|------------|------------|-------|--------|-----------|--------------|----|--------------|---------|-------------|---------|----------|---------|-------|---------|------------|------------|---------|---------|-------------|----------|--------------|-------------|
+[15:33:10][INFO ][ResultSetCollectorPrinter.java:108]- |ALLDAY_NO |SERVICE2_NO |FAMILY_CODE |DOL_NAME |CREATE_DATE |DOSAGE_TIME |DOSAGE |SYMOTOM |DOS_METHOD |STG_CONDITION |ETC |BODYTEMP_TIME |BODYTEMP |HEALTHANDPSY |POOP_CNT |SLEEP_CNT |RICE_CNT |AC_CNT |PASS_CNT |OBSERVE_CNT |VENTIRATION |VEN_TIME |VEN_TEMP |VEN_HUMIDITY |COND_DATE |PROCESS_CTGRY |COND_CONTENT |
+[15:33:10][INFO ][ResultSetCollectorPrinter.java:108]- |----------|------------|------------|---------|------------|------------|-------|--------|-----------|--------------|----|--------------|---------|-------------|---------|----------|---------|-------|---------|------------|------------|---------|---------|-------------|----------|--------------|-------------|
+[15:33:10][INFO ][ResultSetCollectorPrinter.java:108]- |----------|------------|------------|---------|------------|------------|-------|--------|-----------|--------------|----|--------------|---------|-------------|---------|----------|---------|-------|---------|------------|------------|---------|---------|-------------|----------|--------------|-------------|
+[15:33:10][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select SERVICE2_NO,DOL_NAME AS DOL_ID, CREATE_DATE,SYMOTOM, 
+        	  	VEN_TIME,  PROCESS_CTGRY, FAMILY_CODE
+        		from (
+				select rownum rnum, SERVICE2_NO, CREATE_DATE, VEN_TIME,DOL_id, 
+				SYMOTOM, PROCESS_CTGRY, FAMILY_CODE
+       		   
+ from ALLDAY_ACTLOG)
+ 				JOIN DOLBOMI USING (DOL_ID) 
+ 				where rnum >= 1
+ and rnum <= 10
+[15:33:10][INFO ][ResultSetCollectorPrinter.java:108]- |------------|-------|------------|--------|---------|--------------|------------|
+[15:33:10][INFO ][ResultSetCollectorPrinter.java:108]- |SERVICE2_NO |DOL_ID |CREATE_DATE |SYMOTOM |VEN_TIME |PROCESS_CTGRY |FAMILY_CODE |
+[15:33:10][INFO ][ResultSetCollectorPrinter.java:108]- |------------|-------|------------|--------|---------|--------------|------------|
+[15:33:10][INFO ][ResultSetCollectorPrinter.java:108]- |------------|-------|------------|--------|---------|--------------|------------|
+[15:33:13][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select *
+ from SALARY_DAY
+[15:33:13][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:33:13][INFO ][ResultSetCollectorPrinter.java:108]- |SALARY_DAY |DOL_TIME_PAY |
+[15:33:13][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|
+[15:33:13][INFO ][ResultSetCollectorPrinter.java:108]- |15         |8400         |
+[15:33:13][INFO ][ResultSetCollectorPrinter.java:108]- |-----------|-------------|

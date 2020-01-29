@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="interviewMapper">
+
+
+	<select id="selectAllListCount" parameterType="hashmap" resultType="int">
+		select count(*) from interview_maintain_view
+		<if test="date_begin != null and date_end != null">
+		where inter_date between #{date_begin} and #{date_end}
+		</if>
+		<if test="in_id != null and in_id !=''">
+		where inter_user_id like '%'||#{in_id}||'%' or inter_bomi_id like '%'||#{in_id}||'%'
+		</if>
+		<if test="in_status != null and in_status !=''">
+		where inter_status like '%'||#{in_status}||'%'
+		</if>
+		<if test="in_center != null and in_center !=''">
+		where inter_center like '%'||#{in_center}||'%'
+		</if>
+	</select>
+
+	<select id="dolSelectList" parameterType="string"
+		resultType="Interview">
+		select * from
+		(select rownum as num, inter_no, inter_user_id, inter_user_name,
+		to_char(inter_date, 'YYYY-MM-DD ') as inter_date, inter_time || '시' as
+		inter_time, inter_center , inter_status
+		from (select *
+		from
+		interview_maintain_view where inter_bomi_id = #{value} order by
+		inter_date))
+		order by num desc
+	</select>
+
+	<select id="userSelectList" parameterType="string"
+		resultType="Interview">
+		select * from
+		(select rownum as num, inter_no, inter_status, to_char(inter_date, 'YYYY-MM-DD ') as inter_date,
+		inter_time || '시' as inter_time, nvl(inter_bomi_name,'미배정') as inter_bomi_name,
+		INTER_CENTER, to_char(inter_req_date, 'YYYY-MM-DD ') as inter_req_date
+		from(select *
+		from interview_maintain_view where
+		inter_user_id = #{value} order by inter_req_date))
+		order by num desc
+	</select>
+
+	<select id="searchIusersList" resultType="Interview" parameterType="hashmap">
+		select * from
+		(select rownum as num, inter_no, inter_status, to_char(inter_date, 'YYYY-MM-DD ') as inter_date,
+		inter_time || '시' as inter_time, nvl(inter_bomi_name,'미배정') as inter_bomi_name,
+		INTER_CENTER, to_char(inter_req_date, 'YYYY-MM-DD ') as inter_req_date
+		from(select *
+		from interview_maintain_view where
+		inter_user_id = #{userid} 
+		<if test="search == 'dolname'">
+		and inter_bomi_name like '%'||#{dolname}||'%'
+		</if>
+		<if test="search == 'indate'">
+		and inter_date between #{date_begin} and #{date_end}
+		</if>
+		<if test="search == 'reqdate'">
+		and inter_req_date between #{date_begin} and #{date_end}
+		</if>
+		<if test="search == 'center'">
+		and inter_status like '%'||#{center}||'%'
+		</if>
+		order by inter_req_date)) order by num desc
+	</select>
+	
+	
+	<select id="adminSelectList" resultType="Interview" parameterType="com.kh.ibom.common.CommonPaging">
+		select * from
+		(select
+		rownum as num, inter_no, inter_user_id, inter_user_name, inter_date, inter_time, inter_status,
+		NVL(inter_bomi_id, '미배정') as inter_bomi_id,
+		NVL(inter_bomi_name, '미배정')
+		as inter_bomi_name, inter_req_date, inter_center
+		from(select *
+		from
+		interview_maintain_view 
+		<if test="date_begin != null and date_end != null">
+		where inter_date between #{date_begin} and #{date_end}
+		</if>
+		<if test="in_id != null and in_id !=''">
+		where inter_user_id like '%'||#{in_id}||'%' or inter_bomi_id like '%'||#{in_id}||'%'
+		</if>
+		<if test="in_status != null and in_status !=''">
+		where inter_status like '%'||#{in_status}||'%'
+		</if>
+		<if test="in_center != null and in_center !=''">
+		where inter_center like '%'||#{in_center}||'%'
+		</if>
+		order by inter_req_date desc, inter_date,
+		inter_time))
+		<![CDATA[
+        where num >= #{startList} and num <= #{endList}
+               ]]>
+		
+	</select>
+
+
+	<update id="updateInterDate" parameterType="Interview">
+		update interview_maintain_view
+		set inter_date = #{inter_date}, inter_time = #{inter_time}, inter_status = #{inter_status}		
+		where inter_no = #{inter_no}
+	</update>
+	
+	<select id="updateList" parameterType="string" resultType="InterUpdate">
+		select * from interupdate where service2_no = #{value} order by 6 desc
+	</select>
+	
+	<select id="selectone" parameterType="string" resultType="Interview">select * from INTERVIEW_MAINTAIN_VIEW where inter_no = #{value}</select>
+	
+	<insert id="interUpdateUp" parameterType="Interview">
+		insert into interupdate values(#{inter_no}, #{inter_date}, #{inter_time}, #{inter_status}, #{inter_user_id}, to_char(sysdate,'yyyy-mm-dd hh24:mi:ss'))
+	</insert>
+
+</mapper>

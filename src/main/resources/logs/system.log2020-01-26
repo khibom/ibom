@@ -1,0 +1,2077 @@
+[00:00:26][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user21'
+[00:00:26][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[00:00:26][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[00:00:26][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[00:00:26][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[00:00:26][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[00:01:14][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '경기' || '%'
+		AND CITY_NAME2 like '%' || '성남시' || '%'
+		order by office_code
+[00:01:14][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[00:01:14][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[00:01:14][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[00:01:14][INFO ][ResultSetCollectorPrinter.java:108]- |SC0079      |성남시건강가정지원센터 |
+[00:01:14][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[00:01:40][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into member( 
+   		user_id, resident_no, user_pwd, user_name, user_tel, 
+   		user_phone, user_email, user_address, sinm, sggnm,
+   		cctv_alter, pet_alter, multicultural_alter, latchkey_alter, multichild_alter,
+   		father_alter, mather_alter, grand_alter, basiclife_alter, medical_alter,
+   		working_alter, disabled_alter, second_class, etc_rearing, place_agree,
+   		reqst_cours, card_sms, license_alter, service_place, limit_code, 
+   		igrade_no, office_code, enroll_date, user_lastmodified,
+   		agree1, agree2, agree3, agree4, depo_pay
+   	)   	
+   	values (
+   		'user21', '761208-2536518', '$2a$10$fIK9T6igfQXeyJOY3wwSLuWmMiBiYYX3PhifhXbEtJo4TYL/0/c3q', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '13110, 경기도 성남시 수정구 모란로 8877(태평동)', '경기도', '성남시 수정구',
+   		'Y', 'N', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'주변권유', 'N', '보육관련소지자', '이용자가정', 'LG001', 
+   		'UG001', 'SC0079', sysdate, sysdate, 
+   		'Y', 'Y', NULL, 'Y', default
+   		)
+[00:01:40][ERROR][Slf4jSpyLogDelegator.java:120]- 3. PreparedStatement.execute() insert into member( 
+   		user_id, resident_no, user_pwd, user_name, user_tel, 
+   		user_phone, user_email, user_address, sinm, sggnm,
+   		cctv_alter, pet_alter, multicultural_alter, latchkey_alter, multichild_alter,
+   		father_alter, mather_alter, grand_alter, basiclife_alter, medical_alter,
+   		working_alter, disabled_alter, second_class, etc_rearing, place_agree,
+   		reqst_cours, card_sms, license_alter, service_place, limit_code, 
+   		igrade_no, office_code, enroll_date, user_lastmodified,
+   		agree1, agree2, agree3, agree4, depo_pay
+   	)   	
+   	values (
+   		'user21', '761208-2536518', '$2a$10$fIK9T6igfQXeyJOY3wwSLuWmMiBiYYX3PhifhXbEtJo4TYL/0/c3q', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '13110, 경기도 성남시 수정구 모란로 8877(태평동)', '경기도', '성남시 수정구',
+   		'Y', 'N', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'주변권유', 'N', '보육관련소지자', '이용자가정', 'LG001', 
+   		'UG001', 'SC0079', sysdate, sysdate, 
+   		'Y', 'Y', NULL, 'Y', default
+   		)
+java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:215)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:58)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:943)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3923)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1385)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at net.sf.log4jdbc.PreparedStatementSpy.execute(PreparedStatementSpy.java:418)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy15.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.kh.ibom.iusers.model.dao.IusersDao.insertIusers(IusersDao.java:31)
+	at com.kh.ibom.iusers.model.service.IusersServiceImpl.insertIusers(IusersServiceImpl.java:38)
+	at com.kh.ibom.iusers.controller.IusersController.moveIusersStep4(IusersController.java:168)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:808)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+[00:01:40][ERROR][Slf4jSpyLogDelegator.java:129]- 3. PreparedStatement.execute() insert into member( 
+   		user_id, resident_no, user_pwd, user_name, user_tel, 
+   		user_phone, user_email, user_address, sinm, sggnm,
+   		cctv_alter, pet_alter, multicultural_alter, latchkey_alter, multichild_alter,
+   		father_alter, mather_alter, grand_alter, basiclife_alter, medical_alter,
+   		working_alter, disabled_alter, second_class, etc_rearing, place_agree,
+   		reqst_cours, card_sms, license_alter, service_place, limit_code, 
+   		igrade_no, office_code, enroll_date, user_lastmodified,
+   		agree1, agree2, agree3, agree4, depo_pay
+   	)   	
+   	values (
+   		'user21', '761208-2536518', '$2a$10$fIK9T6igfQXeyJOY3wwSLuWmMiBiYYX3PhifhXbEtJo4TYL/0/c3q', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '13110, 경기도 성남시 수정구 모란로 8877(태평동)', '경기도', '성남시 수정구',
+   		'Y', 'N', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'주변권유', 'N', '보육관련소지자', '이용자가정', 'LG001', 
+   		'UG001', 'SC0079', sysdate, sysdate, 
+   		'Y', 'Y', NULL, 'Y', default
+   		)
+java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:215)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:58)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:943)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3923)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1385)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at net.sf.log4jdbc.PreparedStatementSpy.execute(PreparedStatementSpy.java:418)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy15.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.kh.ibom.iusers.model.dao.IusersDao.insertIusers(IusersDao.java:31)
+	at com.kh.ibom.iusers.model.service.IusersServiceImpl.insertIusers(IusersServiceImpl.java:38)
+	at com.kh.ibom.iusers.controller.IusersController.moveIusersStep4(IusersController.java:168)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:808)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+[00:01:40][ERROR][Slf4jSpyLogDelegator.java:139]- 3. PreparedStatement.execute() FAILED! insert into member( 
+   		user_id, resident_no, user_pwd, user_name, user_tel, 
+   		user_phone, user_email, user_address, sinm, sggnm,
+   		cctv_alter, pet_alter, multicultural_alter, latchkey_alter, multichild_alter,
+   		father_alter, mather_alter, grand_alter, basiclife_alter, medical_alter,
+   		working_alter, disabled_alter, second_class, etc_rearing, place_agree,
+   		reqst_cours, card_sms, license_alter, service_place, limit_code, 
+   		igrade_no, office_code, enroll_date, user_lastmodified,
+   		agree1, agree2, agree3, agree4, depo_pay
+   	)   	
+   	values (
+   		'user21', '761208-2536518', '$2a$10$fIK9T6igfQXeyJOY3wwSLuWmMiBiYYX3PhifhXbEtJo4TYL/0/c3q', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '13110, 경기도 성남시 수정구 모란로 8877(태평동)', '경기도', '성남시 수정구',
+   		'Y', 'N', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'주변권유', 'N', '보육관련소지자', '이용자가정', 'LG001', 
+   		'UG001', 'SC0079', sysdate, sysdate, 
+   		'Y', 'Y', NULL, 'Y', default
+   		) {FAILED after 10 msec}
+java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:215)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:58)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:943)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3923)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1385)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at net.sf.log4jdbc.PreparedStatementSpy.execute(PreparedStatementSpy.java:418)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy15.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.kh.ibom.iusers.model.dao.IusersDao.insertIusers(IusersDao.java:31)
+	at com.kh.ibom.iusers.model.service.IusersServiceImpl.insertIusers(IusersServiceImpl.java:38)
+	at com.kh.ibom.iusers.controller.IusersController.moveIusersStep4(IusersController.java:168)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:808)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+[00:03:18][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[00:03:28][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9786 ms
+[00:03:28][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[00:03:32][INFO ][FrameworkServlet.java:546]- Completed initialization in 3954 ms
+[00:04:45][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[00:04:55][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9951 ms
+[00:04:55][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[00:04:59][INFO ][FrameworkServlet.java:546]- Completed initialization in 4155 ms
+[00:05:13][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user21'
+[00:05:14][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[00:05:14][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[00:05:14][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[00:05:14][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[00:05:14][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[00:05:53][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '경기' || '%'
+		AND CITY_NAME2 like '%' || '성남시' || '%'
+		order by office_code
+[00:05:53][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[00:05:53][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[00:05:53][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[00:05:53][INFO ][ResultSetCollectorPrinter.java:108]- |SC0079      |성남시건강가정지원센터 |
+[00:05:53][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[00:06:10][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into iusers values (
+   		'user21', '761208-2536518', '$2a$10$QB5kj/mDcQNo0ZFHzYoDJeqqA13IfLKQiRWEQZVPSaMwCZ2bRX0Uq', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '13110, 경기도 성남시 수정구 모란로 8844(태평동)', '경기도', '성남시 수정구',
+   		'Y', 'N', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'신문방송', 'N', '보육관련소지자', 'null', 'LG001', 
+   		'UG001', 'SC0079', sysdate, sysdate,NULL,
+   		'Y', 'Y', NULL, 'Y', default
+   		)
+[00:16:17][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[00:16:26][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9304 ms
+[00:16:26][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[00:16:30][INFO ][FrameworkServlet.java:546]- Completed initialization in 3848 ms
+[01:41:47][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[01:41:56][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9875 ms
+[01:41:57][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[01:42:01][INFO ][FrameworkServlet.java:546]- Completed initialization in 4357 ms
+[01:42:41][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user21'
+[01:42:42][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[01:42:42][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[01:42:42][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[01:42:42][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[01:42:42][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[01:43:11][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '경기' || '%'
+		AND CITY_NAME2 like '%' || '성남시' || '%'
+		order by office_code
+[01:43:11][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[01:43:11][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[01:43:11][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[01:43:11][INFO ][ResultSetCollectorPrinter.java:108]- |SC0079      |성남시건강가정지원센터 |
+[01:43:11][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[01:43:36][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into iusers values (
+   		'user21', '761208-2536518', '$2a$10$4cTcx9WipXUvikFK7nK3vu1j1hizbozReY8x8HU1S1hB1DnAsxaT2', '로하', '0', 
+   		'01080016812', 'dd4444bb@naver.com', '13110, 경기도 성남시 수정구 모란로 8866(태평동)', '경기도', '성남시 수정구',
+   		'N', 'N', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'Y', 'N',
+   		'주변권유', 'N', '보육관련소지자', '이용자가정', 'LG001', 
+   		'UG001', 'SC0079', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+[01:50:33][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[01:50:43][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10204 ms
+[01:50:44][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[01:50:48][INFO ][FrameworkServlet.java:546]- Completed initialization in 4670 ms
+[01:51:00][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into iusers values (
+   		'user21', '761208-2536518', '$2a$10$znilQ0xQAgk1a5D20hC9Qu.uRLiF/3NCKM9iV69IlTBBk0BLB7b5C', '로하', '0', 
+   		'01080016812', 'dd4444bb@naver.com', '13110, 경기도 성남시 수정구 모란로 8866(태평동)', '경기도', '성남시 수정구',
+   		'Y', 'Y', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'null', 'N', 'null', 'null', 'LG001', 
+   		'UG001', 'SC0079', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+[01:51:00][ERROR][Slf4jSpyLogDelegator.java:120]- 1. PreparedStatement.execute() insert into iusers values (
+   		'user21', '761208-2536518', '$2a$10$znilQ0xQAgk1a5D20hC9Qu.uRLiF/3NCKM9iV69IlTBBk0BLB7b5C', '로하', '0', 
+   		'01080016812', 'dd4444bb@naver.com', '13110, 경기도 성남시 수정구 모란로 8866(태평동)', '경기도', '성남시 수정구',
+   		'Y', 'Y', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'null', 'N', 'null', 'null', 'LG001', 
+   		'UG001', 'SC0079', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (IBOM.PK_IUSERS) violated
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:215)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:58)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:943)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3923)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1385)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at net.sf.log4jdbc.PreparedStatementSpy.execute(PreparedStatementSpy.java:418)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy15.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.kh.ibom.iusers.model.dao.IusersDao.insertIusers(IusersDao.java:31)
+	at com.kh.ibom.iusers.model.service.IusersServiceImpl.insertIusers(IusersServiceImpl.java:38)
+	at com.kh.ibom.iusers.controller.IusersController.moveIusersStep4(IusersController.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:808)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+[01:51:00][ERROR][Slf4jSpyLogDelegator.java:129]- 1. PreparedStatement.execute() insert into iusers values (
+   		'user21', '761208-2536518', '$2a$10$znilQ0xQAgk1a5D20hC9Qu.uRLiF/3NCKM9iV69IlTBBk0BLB7b5C', '로하', '0', 
+   		'01080016812', 'dd4444bb@naver.com', '13110, 경기도 성남시 수정구 모란로 8866(태평동)', '경기도', '성남시 수정구',
+   		'Y', 'Y', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'null', 'N', 'null', 'null', 'LG001', 
+   		'UG001', 'SC0079', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (IBOM.PK_IUSERS) violated
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:215)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:58)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:943)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3923)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1385)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at net.sf.log4jdbc.PreparedStatementSpy.execute(PreparedStatementSpy.java:418)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy15.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.kh.ibom.iusers.model.dao.IusersDao.insertIusers(IusersDao.java:31)
+	at com.kh.ibom.iusers.model.service.IusersServiceImpl.insertIusers(IusersServiceImpl.java:38)
+	at com.kh.ibom.iusers.controller.IusersController.moveIusersStep4(IusersController.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:808)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+[01:51:00][ERROR][Slf4jSpyLogDelegator.java:139]- 1. PreparedStatement.execute() FAILED! insert into iusers values (
+   		'user21', '761208-2536518', '$2a$10$znilQ0xQAgk1a5D20hC9Qu.uRLiF/3NCKM9iV69IlTBBk0BLB7b5C', '로하', '0', 
+   		'01080016812', 'dd4444bb@naver.com', '13110, 경기도 성남시 수정구 모란로 8866(태평동)', '경기도', '성남시 수정구',
+   		'Y', 'Y', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'null', 'N', 'null', 'null', 'LG001', 
+   		'UG001', 'SC0079', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		) {FAILED after 37 msec}
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (IBOM.PK_IUSERS) violated
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:215)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:58)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:943)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3923)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1385)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at net.sf.log4jdbc.PreparedStatementSpy.execute(PreparedStatementSpy.java:418)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy15.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.kh.ibom.iusers.model.dao.IusersDao.insertIusers(IusersDao.java:31)
+	at com.kh.ibom.iusers.model.service.IusersServiceImpl.insertIusers(IusersServiceImpl.java:38)
+	at com.kh.ibom.iusers.controller.IusersController.moveIusersStep4(IusersController.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:808)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+[01:52:39][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[01:52:48][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9867 ms
+[01:52:49][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[01:52:53][INFO ][FrameworkServlet.java:546]- Completed initialization in 4292 ms
+[01:53:28][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user22'
+[01:53:29][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[01:53:29][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[01:53:29][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[01:53:29][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[01:53:29][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[01:53:56][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '경기' || '%'
+		AND CITY_NAME2 like '%' || '성남시' || '%'
+		order by office_code
+[01:53:56][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[01:53:56][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[01:53:56][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[01:53:56][INFO ][ResultSetCollectorPrinter.java:108]- |SC0079      |성남시건강가정지원센터 |
+[01:53:56][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[01:54:11][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into iusers values (
+   		'user22', '761208-2536518', '$2a$10$mqYCZlCJR1/ifVwHZANURuMZh1fz3Dh3qRVKTBrN9XpUD2F7fxxoa', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '13110, 경기도 성남시 수정구 모란로 8877(태평동)', '경기도', '성남시 수정구',
+   		'Y', 'Y', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'null', 'N', 'null', 'null', 'LG001', 
+   		'UG001', 'SC0079', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+[01:56:18][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[01:56:27][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9530 ms
+[01:56:28][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[01:56:32][INFO ][FrameworkServlet.java:546]- Completed initialization in 4158 ms
+[01:57:14][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user23'
+[01:57:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[01:57:15][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[01:57:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[01:57:15][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[01:57:15][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[01:57:43][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[01:57:43][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[01:57:43][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[01:57:43][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[01:57:43][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[01:57:43][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[01:58:04][WARN ][AbstractHandlerExceptionResolver.java:197]- Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+[01:58:04][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into iusers values (
+   		'user23', '761208-2536518', '$2a$10$9KIyC1CSrdLRqeYL/ubHNuEmjvqwhERyqz.n8.e6xgoT9a1D57UGO', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '34883, 대전광역시 중구 수침로106번길 14-1111(태평동)', '대전광역시', '중구',
+   		'Y', 'Y', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'null', 'N', 'null', 'null', 'LG001', 
+   		'UG001', 'SC0061', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+[02:03:30][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[02:03:39][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9374 ms
+[02:03:39][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[02:03:43][INFO ][FrameworkServlet.java:546]- Completed initialization in 3871 ms
+[02:04:21][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user23'
+[02:04:21][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:04:21][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[02:04:21][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:04:21][INFO ][ResultSetCollectorPrinter.java:108]- |1              |
+[02:04:21][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:04:24][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user23'
+[02:04:24][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:04:24][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[02:04:24][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:04:24][INFO ][ResultSetCollectorPrinter.java:108]- |1              |
+[02:04:24][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:04:29][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user24'
+[02:04:29][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:04:29][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[02:04:29][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:04:29][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[02:04:29][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:05:01][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '경기' || '%'
+		AND CITY_NAME2 like '%' || '성남시' || '%'
+		order by office_code
+[02:05:01][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:05:01][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[02:05:01][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:05:01][INFO ][ResultSetCollectorPrinter.java:108]- |SC0079      |성남시건강가정지원센터 |
+[02:05:01][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:05:20][WARN ][AbstractHandlerExceptionResolver.java:197]- Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+[02:05:20][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into iusers values (
+   		'user24', '761208-2536518', '$2a$10$omz0iF6gMdtYC/pVYwFLO.cXKsU.b6GDDN7J.Fno5CXOK2ySDE.R.', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '13110, 경기도 성남시 수정구 모란로 8866(태평동)', '경기도', '성남시 수정구',
+   		'N', 'Y', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'null', 'N', 'null', 'null', 'LG001', 
+   		'UG001', 'SC0079', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+[02:07:20][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[02:07:30][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9968 ms
+[02:07:30][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[02:07:34][INFO ][FrameworkServlet.java:546]- Completed initialization in 4241 ms
+[02:08:04][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user25'
+[02:08:05][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:08:05][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[02:08:05][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:08:05][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[02:08:05][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:08:33][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '경기' || '%'
+		AND CITY_NAME2 like '%' || '성남시' || '%'
+		order by office_code
+[02:08:33][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:08:33][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[02:08:33][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:08:33][INFO ][ResultSetCollectorPrinter.java:108]- |SC0079      |성남시건강가정지원센터 |
+[02:08:33][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:08:46][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into iusers values (
+   		'user25', '761208-2536518', '$2a$10$Pc9P1migiu6eDJHvkNHyXusx1/20tZlSCteNyOjPSqqz72wFFqkPS', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '13110, 경기도 성남시 수정구 모란로 8877(태평동)', '경기도', '성남시 수정구',
+   		'Y', 'Y', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'null', 'N', 'null', 'null', 'LG001', 
+   		'UG001', 'SC0079', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+[02:12:26][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[02:12:36][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9836 ms
+[02:12:36][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[02:12:40][INFO ][FrameworkServlet.java:546]- Completed initialization in 4325 ms
+[02:25:49][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user26'
+[02:25:49][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:25:49][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[02:25:49][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:25:49][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[02:25:49][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:26:24][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '경기' || '%'
+		AND CITY_NAME2 like '%' || '성남시' || '%'
+		order by office_code
+[02:26:24][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:26:24][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[02:26:24][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:26:24][INFO ][ResultSetCollectorPrinter.java:108]- |SC0079      |성남시건강가정지원센터 |
+[02:26:24][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:26:43][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into iusers values (
+   		'user26', '761208-2536518', '$2a$10$lJgtnt9H7ADJqcw47QFfEusVpkEj8fXggh90dZbACZ429R/fpEOOq', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '13110, 경기도 성남시 수정구 모란로 8866(태평동)', '경기도', '성남시 수정구',
+   		'Y', 'N', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'null', 'N', 'null', 'null', 'LG001', 
+   		'UG001', 'SC0079', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+[02:30:05][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[02:30:15][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10012 ms
+[02:30:15][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[02:30:20][INFO ][FrameworkServlet.java:546]- Completed initialization in 4506 ms
+[02:30:37][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user26'
+[02:30:37][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:30:37][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[02:30:37][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:30:37][INFO ][ResultSetCollectorPrinter.java:108]- |1              |
+[02:30:37][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:30:42][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user27'
+[02:30:42][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:30:42][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[02:30:42][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:30:42][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[02:30:42][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:31:10][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '경기' || '%'
+		AND CITY_NAME2 like '%' || '성남시' || '%'
+		order by office_code
+[02:31:10][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:31:10][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[02:31:10][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:31:10][INFO ][ResultSetCollectorPrinter.java:108]- |SC0079      |성남시건강가정지원센터 |
+[02:31:10][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:31:26][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into iusers values (
+   		'user27', '761208-2536518', '$2a$10$QFbCp492qjAPNlcuoMNUMOsrbVyZLX.rVryFoILptiD.TgqGHX5U2', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '13110, 경기도 성남시 수정구 모란로 8888(태평동)', '경기도', '성남시 수정구',
+   		'Y', 'Y', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'null', 'N', 'null', 'null', 'LG001', 
+   		'UG001', 'SC0079', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+[02:36:16][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[02:36:25][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9613 ms
+[02:36:26][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[02:36:29][INFO ][FrameworkServlet.java:546]- Completed initialization in 3767 ms
+[02:38:25][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[02:38:35][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10049 ms
+[02:38:35][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[02:38:39][INFO ][FrameworkServlet.java:546]- Completed initialization in 4436 ms
+[02:38:53][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user27'
+[02:38:53][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:38:53][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[02:38:53][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:38:53][INFO ][ResultSetCollectorPrinter.java:108]- |1              |
+[02:38:53][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:38:58][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user28'
+[02:38:58][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:38:58][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[02:38:58][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:38:58][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[02:38:58][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:39:30][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '경기' || '%'
+		AND CITY_NAME2 like '%' || '성남시' || '%'
+		order by office_code
+[02:39:30][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:39:30][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[02:39:30][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:39:30][INFO ][ResultSetCollectorPrinter.java:108]- |SC0079      |성남시건강가정지원센터 |
+[02:39:30][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:39:46][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into iusers values (
+   		'user28', '761208-2536518', '$2a$10$eY2EdS9UMmwBVbR/.d8diezVm4Sx02elFNNq6rP.u.0cSomTAq0hK', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '13110, 경기도 성남시 수정구 모란로 8877(태평동)', '경기도', '성남시 수정구',
+   		'Y', 'Y', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'null', 'N', 'null', 'null', 'LG001', 
+   		'UG001', 'SC0079', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+[02:43:37][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[02:43:48][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10700 ms
+[02:43:48][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[02:43:52][INFO ][FrameworkServlet.java:546]- Completed initialization in 4042 ms
+[02:44:10][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user30'
+[02:44:10][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:44:10][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[02:44:10][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:44:10][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[02:44:10][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:44:51][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '서울' || '%'
+		AND CITY_NAME2 like '%' || '동작구' || '%'
+		order by office_code
+[02:44:51][INFO ][ResultSetCollectorPrinter.java:108]- |------------|-----------------|
+[02:44:51][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME      |
+[02:44:51][INFO ][ResultSetCollectorPrinter.java:108]- |------------|-----------------|
+[02:44:51][INFO ][ResultSetCollectorPrinter.java:108]- |SC0012      |동작구건강가정다문화가족지원센터 |
+[02:44:51][INFO ][ResultSetCollectorPrinter.java:108]- |------------|-----------------|
+[02:46:15][WARN ][AbstractHandlerExceptionResolver.java:197]- Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public java.lang.String com.kh.ibom.iusers.controller.IusersController.moveIusersStep4(java.lang.String,org.springframework.ui.Model) throws org.json.simple.parser.ParseException,java.text.ParseException]
+[02:48:34][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[02:48:44][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10285 ms
+[02:48:45][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[02:48:49][INFO ][FrameworkServlet.java:546]- Completed initialization in 4278 ms
+[02:49:16][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user31'
+[02:49:16][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:49:16][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[02:49:16][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:49:16][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[02:49:16][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[02:49:56][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '전라' || '%'
+		AND CITY_NAME2 like '%' || '전주시 완산구' || '%'
+		order by office_code
+[02:49:56][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:49:56][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[02:49:56][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:49:56][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:50:33][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '충청' || '%'
+		AND CITY_NAME2 like '%' || '천안시 서북구' || '%'
+		order by office_code
+[02:50:33][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:50:33][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[02:50:33][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:50:33][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:51:10][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[02:51:10][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:51:10][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[02:51:10][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:51:10][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[02:51:10][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[02:51:27][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into iusers values (
+   		'user31', '761208-2536518', '$2a$10$s7ScdKz.qL/Tjv2QhaKE4OzRj6kYHBBdm1ZqRX3RYhfUo45GiYU.G', '로하', '', 
+   		'01080016812', 'dd3333bb@naver.com', '34875, 대전광역시 중구 수침로 13877(태평동, 유등마을아파트)', '대전광역시', '중구',
+   		'Y', 'Y', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'null', 'N', 'null', 'null', 'LG001', 
+   		'UG001', 'SC0061', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+[02:54:31][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[02:54:41][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9915 ms
+[02:54:41][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[02:54:45][INFO ][FrameworkServlet.java:546]- Completed initialization in 4421 ms
+[02:56:06][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[02:56:15][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9495 ms
+[02:56:15][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[02:56:19][INFO ][FrameworkServlet.java:546]- Completed initialization in 4003 ms
+[02:56:36][WARN ][AbstractHandlerExceptionResolver.java:197]- Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public java.lang.String com.kh.ibom.iusers.controller.IusersController.moveIusersStep4(java.lang.String,org.springframework.ui.Model) throws org.json.simple.parser.ParseException,java.text.ParseException]
+[02:59:06][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[02:59:16][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10087 ms
+[02:59:16][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[02:59:20][INFO ][FrameworkServlet.java:546]- Completed initialization in 4383 ms
+[02:59:35][WARN ][AbstractHandlerExceptionResolver.java:197]- Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public java.lang.String com.kh.ibom.iusers.controller.IusersController.moveIusersStep4(java.lang.String,org.springframework.ui.Model) throws org.json.simple.parser.ParseException,java.text.ParseException]
+[03:01:48][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[03:01:59][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10239 ms
+[03:01:59][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[03:02:03][INFO ][FrameworkServlet.java:546]- Completed initialization in 4380 ms
+[03:02:13][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[03:02:25][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 11993 ms
+[03:02:25][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[03:02:30][INFO ][FrameworkServlet.java:546]- Completed initialization in 5064 ms
+[03:10:06][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[03:10:16][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9667 ms
+[03:10:16][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[03:10:20][INFO ][FrameworkServlet.java:546]- Completed initialization in 4114 ms
+[03:12:15][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[03:12:26][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 11595 ms
+[03:12:26][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[03:12:31][INFO ][FrameworkServlet.java:546]- Completed initialization in 4397 ms
+[03:16:53][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[03:17:03][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10068 ms
+[03:17:03][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[03:17:08][INFO ][FrameworkServlet.java:546]- Completed initialization in 4419 ms
+[12:55:24][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[12:55:35][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 11245 ms
+[12:55:35][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[12:55:40][INFO ][FrameworkServlet.java:546]- Completed initialization in 4936 ms
+[12:55:50][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[12:56:00][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10351 ms
+[12:56:01][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[12:56:04][INFO ][FrameworkServlet.java:546]- Completed initialization in 3729 ms
+[13:02:24][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[13:02:34][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9554 ms
+[13:02:34][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[13:02:38][INFO ][FrameworkServlet.java:546]- Completed initialization in 3817 ms
+[13:05:21][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[13:05:30][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9071 ms
+[13:05:31][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[13:05:35][INFO ][FrameworkServlet.java:546]- Completed initialization in 4087 ms
+[13:06:02][WARN ][AbstractHandlerExceptionResolver.java:197]- Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public java.lang.String com.kh.ibom.iusers.controller.IusersController.moveIusersStep4(java.lang.String,org.springframework.ui.Model) throws org.json.simple.parser.ParseException,java.text.ParseException]
+[13:06:40][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[13:06:50][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9996 ms
+[13:06:50][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[13:06:54][INFO ][FrameworkServlet.java:546]- Completed initialization in 4318 ms
+[13:07:56][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[13:08:06][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9829 ms
+[13:08:06][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[13:08:10][INFO ][FrameworkServlet.java:546]- Completed initialization in 3908 ms
+[13:08:34][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[13:08:44][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9917 ms
+[13:08:44][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[13:08:48][INFO ][FrameworkServlet.java:546]- Completed initialization in 4091 ms
+[13:10:23][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[13:10:33][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9674 ms
+[13:10:33][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[13:10:37][INFO ][FrameworkServlet.java:546]- Completed initialization in 4184 ms
+[13:10:58][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user33'
+[13:10:58][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:10:58][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[13:10:58][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:10:58][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[13:10:58][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:12:10][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[13:12:10][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:12:10][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[13:12:10][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:12:10][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[13:12:10][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:19:37][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[13:19:47][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9804 ms
+[13:19:47][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[13:19:51][INFO ][FrameworkServlet.java:546]- Completed initialization in 3528 ms
+[13:20:01][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[13:20:11][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10944 ms
+[13:20:12][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[13:20:16][INFO ][FrameworkServlet.java:546]- Completed initialization in 4168 ms
+[13:20:39][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user36'
+[13:20:39][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:20:39][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[13:20:39][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:20:39][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[13:20:39][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:21:19][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[13:21:19][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:21:19][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[13:21:19][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:21:19][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[13:21:19][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:24:13][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[13:24:25][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 11559 ms
+[13:24:25][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[13:24:30][INFO ][FrameworkServlet.java:546]- Completed initialization in 5305 ms
+[13:24:45][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user35'
+[13:24:46][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:24:46][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[13:24:46][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:24:46][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[13:24:46][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:25:22][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[13:25:22][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:25:22][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[13:25:22][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:25:22][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[13:25:22][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:25:45][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into iusers values (
+   		'user35', '761208-2536518', '$2a$10$nQJzbAyaSHhx0ovoORJySeLwu5.HM9FzUn3ZkslLdpCjE9MEBMGxm', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '34875, 대전광역시 중구 수침로 13866(태평동, 유등마을아파트)', '대전광역시', '중구',
+   		'Y', 'Y', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'주변권유', 'N', '보육관련소지자', '이용자가정', 'LG001', 
+   		'UG001', 'SC0061', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+[13:29:06][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[13:29:16][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9674 ms
+[13:29:16][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[13:29:20][INFO ][FrameworkServlet.java:546]- Completed initialization in 3849 ms
+[13:29:38][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user36'
+[13:29:39][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:29:39][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[13:29:39][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:29:39][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[13:29:39][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:30:18][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[13:30:18][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:30:18][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[13:30:18][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:30:18][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[13:30:18][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:30:42][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into iusers values (
+   		'user36', '761208-2536518', '$2a$10$lNgze4vK/pPdBK97HPN5.uR4uqY3/6Ym/Gg2/Mm08zTyhYUcyab8W', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '34875, 대전광역시 중구 수침로 13855(태평동, 유등마을아파트)', '대전광역시', '중구',
+   		'Y', 'Y', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'Y', 'N',
+   		'주변권유', 'N', '보육관련소지자', '이용자가정', 'LG001', 
+   		'UG001', 'SC0061', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+[13:39:53][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[13:40:02][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9229 ms
+[13:40:02][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[13:40:06][INFO ][FrameworkServlet.java:546]- Completed initialization in 3871 ms
+[13:40:25][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user37'
+[13:40:25][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:40:25][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[13:40:25][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:40:25][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[13:40:25][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:41:15][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[13:41:15][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:41:15][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[13:41:15][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:41:15][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[13:41:15][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:41:30][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into iusers values (
+   		'user37', '761208-2536518', '$2a$10$8LEy5iQh4J9UT0.MmyYXD.zWKfKMAEMAdUQEF0kJdaoD0/8OyOPx2', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '34883, 대전광역시 중구 수침로106번길 14-1144(태평동)', '대전광역시', '중구',
+   		'null', 'null', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'null', 'N', 'null', 'null', 'LG001', 
+   		'UG001', 'SC0061', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+[13:41:30][ERROR][Slf4jSpyLogDelegator.java:120]- 3. PreparedStatement.execute() insert into iusers values (
+   		'user37', '761208-2536518', '$2a$10$8LEy5iQh4J9UT0.MmyYXD.zWKfKMAEMAdUQEF0kJdaoD0/8OyOPx2', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '34883, 대전광역시 중구 수침로106번길 14-1144(태평동)', '대전광역시', '중구',
+   		'null', 'null', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'null', 'N', 'null', 'null', 'LG001', 
+   		'UG001', 'SC0061', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+java.sql.SQLException: ORA-12899: value too large for column "IBOM"."IUSERS"."CCTV_ALTER" (actual: 4, maximum: 1)
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:215)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:58)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:943)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3923)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1385)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at net.sf.log4jdbc.PreparedStatementSpy.execute(PreparedStatementSpy.java:418)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy15.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.kh.ibom.iusers.model.dao.IusersDao.insertIusers(IusersDao.java:31)
+	at com.kh.ibom.iusers.model.service.IusersServiceImpl.insertIusers(IusersServiceImpl.java:38)
+	at com.kh.ibom.iusers.controller.IusersController.moveIusersStep4(IusersController.java:165)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:808)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+[13:41:30][ERROR][Slf4jSpyLogDelegator.java:129]- 3. PreparedStatement.execute() insert into iusers values (
+   		'user37', '761208-2536518', '$2a$10$8LEy5iQh4J9UT0.MmyYXD.zWKfKMAEMAdUQEF0kJdaoD0/8OyOPx2', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '34883, 대전광역시 중구 수침로106번길 14-1144(태평동)', '대전광역시', '중구',
+   		'null', 'null', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'null', 'N', 'null', 'null', 'LG001', 
+   		'UG001', 'SC0061', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+java.sql.SQLException: ORA-12899: value too large for column "IBOM"."IUSERS"."CCTV_ALTER" (actual: 4, maximum: 1)
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:215)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:58)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:943)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3923)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1385)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at net.sf.log4jdbc.PreparedStatementSpy.execute(PreparedStatementSpy.java:418)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy15.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.kh.ibom.iusers.model.dao.IusersDao.insertIusers(IusersDao.java:31)
+	at com.kh.ibom.iusers.model.service.IusersServiceImpl.insertIusers(IusersServiceImpl.java:38)
+	at com.kh.ibom.iusers.controller.IusersController.moveIusersStep4(IusersController.java:165)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:808)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+[13:41:30][ERROR][Slf4jSpyLogDelegator.java:139]- 3. PreparedStatement.execute() FAILED! insert into iusers values (
+   		'user37', '761208-2536518', '$2a$10$8LEy5iQh4J9UT0.MmyYXD.zWKfKMAEMAdUQEF0kJdaoD0/8OyOPx2', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '34883, 대전광역시 중구 수침로106번길 14-1144(태평동)', '대전광역시', '중구',
+   		'null', 'null', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'null', 'N', 'null', 'null', 'LG001', 
+   		'UG001', 'SC0061', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		) {FAILED after 14 msec}
+java.sql.SQLException: ORA-12899: value too large for column "IBOM"."IUSERS"."CCTV_ALTER" (actual: 4, maximum: 1)
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:215)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:58)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:943)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3923)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1385)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+	at net.sf.log4jdbc.PreparedStatementSpy.execute(PreparedStatementSpy.java:418)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy15.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at com.kh.ibom.iusers.model.dao.IusersDao.insertIusers(IusersDao.java:31)
+	at com.kh.ibom.iusers.model.service.IusersServiceImpl.insertIusers(IusersServiceImpl.java:38)
+	at com.kh.ibom.iusers.controller.IusersController.moveIusersStep4(IusersController.java:165)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:808)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+[13:43:50][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[13:43:59][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8718 ms
+[13:43:59][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[13:44:03][INFO ][FrameworkServlet.java:546]- Completed initialization in 3693 ms
+[13:44:28][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user38'
+[13:44:28][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:44:28][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[13:44:28][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:44:28][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[13:44:28][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:45:15][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[13:45:15][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:45:15][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[13:45:15][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:45:15][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[13:45:15][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:45:39][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into iusers values (
+   		'user38', '761208-2536518', '$2a$10$OKaRnFnZ4L8tsXCv1/nuheNQTdcr5Posia1.5pObzGFEuD1kUd1Kq', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '34875, 대전광역시 중구 수침로 13844(태평동, 유등마을아파트)', '대전광역시', '중구',
+   		'Y', 'Y', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'null', 'N',
+   		'주변권유', 'N', '보육관련소지자', '이용자가정', 'LG001', 
+   		'UG001', 'SC0061', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+[13:53:46][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[13:53:55][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9200 ms
+[13:53:55][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[13:54:00][INFO ][FrameworkServlet.java:546]- Completed initialization in 4522 ms
+[13:55:21][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user39'
+[13:55:22][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:55:22][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[13:55:22][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:55:22][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[13:55:22][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:56:16][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[13:56:16][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:56:16][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[13:56:16][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:56:16][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[13:56:16][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:56:40][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]insert into iusers values (
+   		'user39', '761208-2536518', '$2a$10$1JZzBMWX5D3ranFCOHjz2uISAreovOHWKJQl2ZSRlvb.ZJgaMktm2', '로하', '', 
+   		'01080016812', 'dd4444bb@naver.com', '34875, 대전광역시 중구 수침로 13833(태평동, 유등마을아파트)', '대전광역시', '중구',
+   		'Y', 'Y', 'Y', 'N', 'N',
+   		'N', 'N', 'N', 'N', 'N',
+   		'N', 'N', 'N', 'Y', 'N',
+   		'신문방송', 'N', '보육관련소지자', '이용자가정', 'LG001', 
+   		'UG001', 'SC0061', sysdate, sysdate,NULL,
+   		'Y', 'Y', 'Y', 'Y', default
+   		)
+[13:56:41][WARN ][AbstractHandlerExceptionResolver.java:197]- Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+[13:58:20][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[13:58:28][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8686 ms
+[13:58:28][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[13:58:32][INFO ][FrameworkServlet.java:546]- Completed initialization in 3994 ms
+[13:58:33][WARN ][AbstractHandlerExceptionResolver.java:197]- Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public java.lang.String com.kh.ibom.iusers.controller.IusersController.moveIusersStep4(java.lang.String,org.springframework.ui.Model) throws org.json.simple.parser.ParseException,java.text.ParseException]
+[13:59:03][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user38'
+[13:59:03][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:59:03][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[13:59:03][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:59:03][INFO ][ResultSetCollectorPrinter.java:108]- |1              |
+[13:59:03][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:59:07][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user39'
+[13:59:07][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:59:07][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[13:59:07][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:59:07][INFO ][ResultSetCollectorPrinter.java:108]- |1              |
+[13:59:07][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:59:14][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user40'
+[13:59:14][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:59:14][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[13:59:14][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:59:14][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[13:59:14][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[13:59:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[13:59:55][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:59:55][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[13:59:55][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[13:59:55][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[13:59:55][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[14:14:04][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[14:14:14][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9518 ms
+[14:14:14][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[14:14:18][INFO ][FrameworkServlet.java:546]- Completed initialization in 4616 ms
+[14:14:51][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user40'
+[14:14:52][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:14:52][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[14:14:52][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:14:52][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[14:14:52][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:16:33][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[14:16:33][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[14:16:33][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[14:16:33][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[14:16:33][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[14:16:33][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[14:18:28][WARN ][AbstractHandlerExceptionResolver.java:197]- Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public java.lang.String com.kh.ibom.iusers.controller.IusersController.moveIusersStep4(java.lang.String,org.springframework.ui.Model) throws org.json.simple.parser.ParseException,java.text.ParseException]
+[14:22:23][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[14:22:32][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9173 ms
+[14:22:32][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[14:22:36][INFO ][FrameworkServlet.java:546]- Completed initialization in 4107 ms
+[14:24:00][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[14:24:09][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9294 ms
+[14:24:09][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[14:24:13][INFO ][FrameworkServlet.java:546]- Completed initialization in 3976 ms
+[14:24:34][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user40'
+[14:24:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:24:35][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[14:24:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:24:35][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[14:24:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:25:06][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[14:25:06][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[14:25:06][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[14:25:06][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[14:25:06][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[14:25:06][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[14:28:26][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[14:28:36][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9847 ms
+[14:28:36][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[14:28:41][INFO ][FrameworkServlet.java:546]- Completed initialization in 4384 ms
+[14:28:55][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user40'
+[14:28:55][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:28:55][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[14:28:55][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:28:55][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[14:28:55][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:29:48][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[14:29:48][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[14:29:48][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[14:29:48][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[14:29:48][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[14:29:48][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[14:34:33][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[14:34:43][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9190 ms
+[14:34:43][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[14:34:46][INFO ][FrameworkServlet.java:546]- Completed initialization in 3772 ms
+[14:35:15][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[14:35:26][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10888 ms
+[14:35:26][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[14:35:30][INFO ][FrameworkServlet.java:546]- Completed initialization in 3989 ms
+[14:35:48][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'iuser40'
+[14:35:49][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:35:49][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[14:35:49][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:35:49][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[14:35:49][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:35:58][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user40'
+[14:35:58][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:35:58][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[14:35:58][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:35:58][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[14:35:58][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:36:31][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[14:36:31][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[14:36:31][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[14:36:31][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[14:36:31][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[14:36:31][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[14:47:46][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[14:47:56][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9849 ms
+[14:47:56][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[14:47:59][INFO ][FrameworkServlet.java:546]- Completed initialization in 3693 ms
+[14:51:07][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user40'
+[14:51:08][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:51:08][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[14:51:08][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:51:08][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[14:51:08][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[14:51:44][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]SELECT office_code, office_name FROM OFFICE 
+		WHERE CITY_NAME like '%' || '대전' || '%'
+		AND CITY_NAME2 like '%' || '중구' || '%'
+		order by office_code
+[14:51:44][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[14:51:44][INFO ][ResultSetCollectorPrinter.java:108]- |OFFICE_CODE |OFFICE_NAME |
+[14:51:44][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[14:51:44][INFO ][ResultSetCollectorPrinter.java:108]- |SC0061      |배재대학교가족지원센터 |
+[14:51:44][INFO ][ResultSetCollectorPrinter.java:108]- |------------|------------|
+[15:34:47][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[15:34:58][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10317 ms
+[15:34:58][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[15:35:02][INFO ][FrameworkServlet.java:546]- Completed initialization in 4109 ms
+[15:36:03][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[15:36:13][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9714 ms
+[15:36:13][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[15:36:18][INFO ][FrameworkServlet.java:546]- Completed initialization in 4433 ms
+[16:25:18][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user41'
+[16:25:18][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:25:18][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[16:25:18][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:25:18][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[16:25:18][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:31:34][WARN ][DispatcherServlet.java:1248]- No mapping for POST /ibom/iusersJoinStep4familySave.do
+[16:32:21][WARN ][DispatcherServlet.java:1248]- No mapping for POST /ibom/iusersJoinStep4familySave.do
+[16:43:53][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[16:44:03][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10235 ms
+[16:44:03][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[16:44:07][INFO ][FrameworkServlet.java:546]- Completed initialization in 4264 ms
+[16:44:30][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user40'
+[16:44:31][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:44:31][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[16:44:31][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:44:31][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[16:44:31][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[17:05:43][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[17:05:53][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9435 ms
+[17:05:53][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[17:05:57][INFO ][FrameworkServlet.java:546]- Completed initialization in 3954 ms
+[17:07:42][WARN ][DispatcherServlet.java:1248]- No mapping for POST /ibom/iusersJoinStep4familySave.do
+[17:10:58][WARN ][DispatcherServlet.java:1248]- No mapping for POST /ibom/iusersJoinStep4familySave.do
+[17:12:15][WARN ][DispatcherServlet.java:1248]- No mapping for POST /ibom/iusersJoinStep4familySave.do
+[17:13:30][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[17:13:41][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 10872 ms
+[17:13:41][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[17:13:46][INFO ][FrameworkServlet.java:546]- Completed initialization in 4759 ms
+[17:17:42][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[17:17:52][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9609 ms
+[17:17:52][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[17:17:56][INFO ][FrameworkServlet.java:546]- Completed initialization in 3995 ms
+[17:18:51][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user40'
+[17:18:51][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[17:18:51][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[17:18:51][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[17:18:51][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[17:18:51][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[17:31:55][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[17:32:07][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 11463 ms
+[17:32:07][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[17:32:11][INFO ][FrameworkServlet.java:546]- Completed initialization in 4227 ms
+[20:22:17][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[20:22:30][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 13302 ms
+[20:22:30][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[20:22:36][INFO ][FrameworkServlet.java:546]- Completed initialization in 5348 ms

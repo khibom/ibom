@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user_familyMapper">
+
+
+	<select id="selectServiceFmList" parameterType="string" resultType="UserFamily">
+		select * from USER_FAMILY where family_code = #{value}
+	</select>
+	
+	<!-- 서비스2에 아이 목록 조회해 오기 -->
+	<select id="selectChildList" parameterType="String" resultType="UserFamily">
+		select * from user_family where user_id = #{value}
+	</select>
+	
+	<!-- 가족정보 입력 -->
+	<insert id="insertuserFamily" parameterType="UserFamily">
+		 <!-- <selectKey keyProperty="family_SEQ" resultType="int" order="BEFORE">
+    		select family_SEQ.nexyval FROM DUAL
+  		</selectKey> -->
+		<![CDATA[
+		insert into user_family values (
+			'F00' || family_SEQ.NEXTVAL, #{user_id}, #{family_relationship}, #{family_name}, #{kor_yesno},
+			#{family_no}, #{family_gender}, #{family_blood}, #{dolbom_type}, #{ad_level},
+			#{select_type}, #{family_etc}, sysdate, 720, default,
+			default, default, default
+		)
+		]]>
+	</insert>
+	
+	<!-- 회원가입단 리스트 조회 -->
+	<select id="selectUserFmailyList" parameterType="String" resultType="UserFamily">
+	 	select * from user_family  where user_id = #{value}
+	</select>
+	
+</mapper>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="depositMapper">
+	
+	
+	<select id="selectList" parameterType="string" resultType="Deposit">
+	 	select * from deposit where user_id = #{value} order by use_day desc
+	</select>
+	
+	<select id="selectSearchList" parameterType="CommonSearchDate" resultType="Deposit">
+		select *
+		from deposit 
+		where USE_DAY BETWEEN #{stDate} AND #{endDate} AND USER_ID = #{ibom_id}
+	</select>
+	
+	<insert id="insertDeposit" parameterType="Deposit">
+		insert into deposit values(#{user_id},sysdate, #{depo_category}, default, #{depo_etc})
+	
+	</insert>
+	<select id="selecRefundList" parameterType="string" resultType="DepositAdmin">
+		select user_id, user_name, use_day, depo_category, use_pay, depo_etc, bank_name, refund_account, refund_name, depo_pay
+		from deposit
+		join iusers using(user_id)
+		join REFUND_ACCOUNT using(user_id)
+		where depo_category = #{value}
+	</select>
+	
+	<update id="updateDepositCategory" parameterType="string">
+	update deposit set depo_category = '환불완료'
+	where user_id = #{value} and depo_category = '환불요청'
+	</update>
+	<update id="updateDepositCancelCategory" parameterType="string">
+	update deposit set depo_category = '환불취소'
+	where user_id = #{value} and depo_category = '환불요청'
+	</update>
+	<select id="searchAdminDepoName" parameterType="string" resultType="DepositAdmin">
+	select user_id, user_name, use_day, depo_category, use_pay, depo_etc, bank_name, refund_account, refund_name, depo_pay
+		from deposit
+		join iusers using(user_id)
+		join REFUND_ACCOUNT using(user_id)
+		where user_name like '%' || #{value} || '%' and  depo_category = '환불요청'
+	</select>
+	
+	
+	
+	
+</mapper>

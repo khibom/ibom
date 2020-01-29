@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/*
+ * File       : sub_communicate.css
+ * Author     : STUDIO-JT (JDY)
+ * Guideline  : JTstyle.1.1
+ *
+ * Dependency : css/reset.css
+ *              css/jt_strap.css
+ *
+ * SUMMARY:
+ * 01) 1280px
+ * 02) 768px
+ * 03) 540px
+ */
+
+
+
+/* **************************************** *
+ * 1280px
+ * **************************************** */
+@media (max-width:1280px) {
+	/* CONTACT */
+	.dankkum_sub_info {padding:28px 36px;}
+	.dankkum_sub_info b {margin-bottom: 14px;}
+}
+
+
+
+/* **************************************** *
+ * 768px
+ * **************************************** */
+@media (max-width:768px) {
+	/* CONTACT */
+	.contact_container {padding: 32px 0 26px;}
+	.contact_container:before, .contact_container:after {height: 3px;}
+	.dankkum_sub_info b {font-size: 16px;line-height: 1.6;}
+	.dankkum_sub_info p {font-size: 15px; line-height: 1.55;}
+	.dankkum_sub_info li:before {top: 9px;}
+	html.ios .dankkum_sub_info li:before {top: 8px;}
+	html.mac.desktop .dankkum_sub_info li:before {top: 8px;}
+	.contact_container .jt_form_data_wrap {padding-top: 26px;}
+	.contact_container .jt_form_data {padding-right:0;}
+}
+
+
+
+/* **************************************** *
+ * 540px
+ * **************************************** */
+@media (max-width:540px) {
+	/* CONTACT */
+	.contact_container {padding: 27px 0 30px;}
+	.dankkum_sub_info {padding: 22px 20px;}
+	.dankkum_sub_info li {padding-bottom:9px;}
+	.dankkum_sub_info b {margin-bottom: 10px;}
+	.dankkum_sub_info b br {display: none;}
+	.contact_container .jt_form_data_wrap {padding-top: 22px;}
+}

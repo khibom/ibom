@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="firstaidMapper">
+
+
+	<!-- <select id="loginCheck" parameterType="Iusers" resultType="Iusers">
+	select * from iusers where user_id= #{user_id} and user_pwd = #{user_pwd}
+	</select> -->
+	
+	<insert id="insertFirstaid" parameterType="Firstaid">
+		insert into firstaid values (
+		#{user_id}, #{protector_name1}, #{protector_name2}, #{protector_phone1}, #{protector_phone2}
+		, #{protector_phone3}, #{protector_phone4}, #{protector_phone5}, #{protector_phone6}, #{protector_relationship1}
+		,  #{protector_relationship2},  #{contact_time1},  #{contact_time2},  #{contact_time3},  #{contact_time4}
+		, #{medical_institution}, default, #{user_comply}
+		)
+	</insert>
+	
+	<select id="selectOne" parameterType="string" resultType="Firstaid">
+		SELECT * FROM FIRSTAID
+		WHERE USER_ID = #{value}
+	</select>
+	
+</mapper>

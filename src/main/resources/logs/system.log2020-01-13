@@ -1,0 +1,212 @@
+[15:30:52][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[15:31:10][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 17971 ms
+[15:31:10][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[15:31:14][INFO ][FrameworkServlet.java:546]- Completed initialization in 4658 ms
+[15:41:37][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[15:41:46][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9368 ms
+[15:41:46][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[15:41:50][INFO ][FrameworkServlet.java:546]- Completed initialization in 3837 ms
+[15:46:04][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[15:46:11][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 7580 ms
+[15:46:11][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[15:46:15][INFO ][FrameworkServlet.java:546]- Completed initialization in 3144 ms
+[15:48:13][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[15:48:22][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8768 ms
+[15:48:22][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[15:48:26][INFO ][FrameworkServlet.java:546]- Completed initialization in 3786 ms
+[15:53:03][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[15:53:12][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8997 ms
+[15:53:12][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[15:53:15][INFO ][FrameworkServlet.java:546]- Completed initialization in 3460 ms
+[15:58:41][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[15:58:50][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8211 ms
+[15:58:50][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[15:58:53][INFO ][FrameworkServlet.java:546]- Completed initialization in 3594 ms
+[16:19:00][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[16:19:09][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8317 ms
+[16:19:09][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[16:19:12][INFO ][FrameworkServlet.java:546]- Completed initialization in 3564 ms
+[16:22:45][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[16:22:54][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8500 ms
+[16:22:54][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[16:22:58][INFO ][FrameworkServlet.java:546]- Completed initialization in 3866 ms
+[16:32:21][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[16:32:30][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8861 ms
+[16:32:30][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[16:32:34][INFO ][FrameworkServlet.java:546]- Completed initialization in 3755 ms
+[16:37:40][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[16:37:49][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8685 ms
+[16:37:49][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[16:37:53][INFO ][FrameworkServlet.java:546]- Completed initialization in 3634 ms
+[16:42:12][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[16:42:21][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8581 ms
+[16:42:21][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[16:42:24][INFO ][FrameworkServlet.java:546]- Completed initialization in 3656 ms
+[16:42:35][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user01'
+[16:42:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:42:35][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[16:42:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:42:35][INFO ][ResultSetCollectorPrinter.java:108]- |1              |
+[16:42:35][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:42:36][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user01'
+[16:42:36][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:42:36][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[16:42:36][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:42:36][INFO ][ResultSetCollectorPrinter.java:108]- |1              |
+[16:42:36][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:42:38][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user01'
+[16:42:38][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:42:38][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[16:42:38][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:42:38][INFO ][ResultSetCollectorPrinter.java:108]- |1              |
+[16:42:38][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:42:53][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user133'
+[16:42:53][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:42:53][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[16:42:53][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:42:53][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[16:42:53][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:44:46][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user01'
+[16:44:46][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:44:46][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[16:44:46][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:44:46][INFO ][ResultSetCollectorPrinter.java:108]- |1              |
+[16:44:46][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:45:37][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[16:45:47][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9488 ms
+[16:45:47][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[16:45:50][INFO ][FrameworkServlet.java:546]- Completed initialization in 3603 ms
+[16:52:39][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user01'
+[16:52:39][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:52:39][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[16:52:39][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:52:39][INFO ][ResultSetCollectorPrinter.java:108]- |1              |
+[16:52:39][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:54:57][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[16:55:06][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8819 ms
+[16:55:06][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[16:55:10][INFO ][FrameworkServlet.java:546]- Completed initialization in 3611 ms
+[16:55:31][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user01'
+[16:55:32][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:55:32][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[16:55:32][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:55:32][INFO ][ResultSetCollectorPrinter.java:108]- |1              |
+[16:55:32][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:57:16][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user01'
+[16:57:16][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:57:16][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[16:57:16][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:57:16][INFO ][ResultSetCollectorPrinter.java:108]- |1              |
+[16:57:16][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:59:13][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user01'
+[16:59:13][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:59:13][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[16:59:13][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[16:59:13][INFO ][ResultSetCollectorPrinter.java:108]- |1              |
+[16:59:13][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[17:00:26][INFO ][Log4JdbcCustomFormatter.java:74]- [SQL]select count(user_id)
+ from iusers
+ where user_id = 'user1'
+[17:00:26][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[17:00:26][INFO ][ResultSetCollectorPrinter.java:108]- |COUNT(USER_ID) |
+[17:00:26][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[17:00:26][INFO ][ResultSetCollectorPrinter.java:108]- |0              |
+[17:00:26][INFO ][ResultSetCollectorPrinter.java:108]- |---------------|
+[17:07:09][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[17:07:18][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8735 ms
+[17:07:18][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[17:07:22][INFO ][FrameworkServlet.java:546]- Completed initialization in 3415 ms
+[17:13:17][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[17:13:25][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8348 ms
+[17:13:25][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[17:13:29][INFO ][FrameworkServlet.java:546]- Completed initialization in 3583 ms
+[17:23:36][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[17:23:46][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9632 ms
+[17:23:46][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[17:23:50][INFO ][FrameworkServlet.java:546]- Completed initialization in 3724 ms
+[17:46:07][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[17:46:15][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8497 ms
+[17:46:15][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[17:46:19][INFO ][FrameworkServlet.java:546]- Completed initialization in 3628 ms
+[18:01:28][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[18:01:37][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8609 ms
+[18:01:37][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[18:01:41][INFO ][FrameworkServlet.java:546]- Completed initialization in 3657 ms
+[18:02:53][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[18:03:02][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9148 ms
+[18:03:02][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[18:03:07][INFO ][FrameworkServlet.java:546]- Completed initialization in 5081 ms
+[19:03:40][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[19:03:47][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 7475 ms
+[19:03:48][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[19:03:51][INFO ][FrameworkServlet.java:546]- Completed initialization in 3145 ms
+[19:11:13][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[19:11:22][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9075 ms
+[19:11:22][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[19:11:26][INFO ][FrameworkServlet.java:546]- Completed initialization in 3953 ms
+[19:12:11][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[19:12:19][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8534 ms
+[19:12:19][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[19:12:23][INFO ][FrameworkServlet.java:546]- Completed initialization in 3534 ms
+[19:19:12][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[19:19:21][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9273 ms
+[19:19:21][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[19:19:25][INFO ][FrameworkServlet.java:546]- Completed initialization in 3966 ms
+[19:26:22][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[19:26:30][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 7910 ms
+[19:26:30][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[19:26:34][INFO ][FrameworkServlet.java:546]- Completed initialization in 3305 ms
+[19:29:07][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[19:29:16][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8391 ms
+[19:29:16][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[19:29:19][INFO ][FrameworkServlet.java:546]- Completed initialization in 3342 ms
+[19:31:00][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[19:31:09][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9864 ms
+[19:31:09][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[19:31:13][INFO ][FrameworkServlet.java:546]- Completed initialization in 3792 ms
+[19:32:45][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[19:32:55][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9589 ms
+[19:32:55][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[19:32:59][INFO ][FrameworkServlet.java:546]- Completed initialization in 3940 ms
+[19:34:14][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[19:34:24][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9521 ms
+[19:34:24][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[19:34:27][INFO ][FrameworkServlet.java:546]- Completed initialization in 3517 ms
+[19:39:09][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[19:39:17][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 7815 ms
+[19:39:17][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[19:39:20][INFO ][FrameworkServlet.java:546]- Completed initialization in 3276 ms
+[21:01:41][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[21:01:51][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 9593 ms
+[21:01:51][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[21:01:55][INFO ][FrameworkServlet.java:546]- Completed initialization in 4066 ms
+[21:07:08][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[21:07:17][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8820 ms
+[21:07:17][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[21:07:21][INFO ][FrameworkServlet.java:546]- Completed initialization in 4132 ms
+[21:17:04][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[21:17:12][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8383 ms
+[21:17:12][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[21:17:16][INFO ][FrameworkServlet.java:546]- Completed initialization in 3387 ms
+[21:20:11][INFO ][ContextLoader.java:270]- Root WebApplicationContext: initialization started
+[21:20:20][INFO ][ContextLoader.java:306]- Root WebApplicationContext initialized in 8817 ms
+[21:20:20][INFO ][FrameworkServlet.java:524]- Initializing Servlet 'appServlet'
+[21:20:24][INFO ][FrameworkServlet.java:546]- Completed initialization in 3724 ms

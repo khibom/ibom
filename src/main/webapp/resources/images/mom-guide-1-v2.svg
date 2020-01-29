@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="121" height="121" viewBox="0 0 121 121">
+    <defs>
+        <circle id="a" cx="53.5" cy="33.5" r="23.5"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(-464 -2149)">
+        <path fill="#EDEDED" d="M-4 1863h1928v734H-4z"/>
+        <rect width="208" height="322" x="420" y="2124" fill="#FFF" rx="4"/>
+        <g transform="translate(464 2149)">
+            <circle cx="60.5" cy="60.5" r="60.5" fill="#F6F6F6"/>
+            <g transform="translate(18 30)">
+                <path fill="#D0D0D0" d="M51 7h4v9h-4z"/>
+                <circle cx="50.5" cy="37.5" r="23.5" fill="#E4E4E4"/>
+                <rect width="19" height="32" x="44" y="1" stroke="#D0D0D0" stroke-width="2" rx="8"/>
+                <use fill="#FFF" xlink:href="#a"/>
+                <circle cx="53.5" cy="33.5" r="21.5" stroke="#979797" stroke-width="4"/>
+                <rect width="4" height="17" x="51" y="18" fill="#D0D0D0" rx="2"/>
+                <rect width="21" height="4" x="6" y="23" fill="#FF7626" rx="2"/>
+                <rect width="21" height="4" y="33" fill="#FF7626" rx="2"/>
+                <rect width="13" height="4" x="13" y="43" fill="#FF7626" rx="2"/>
+                <rect width="5" height="34" x="61" y="7" fill="#FF7626" rx="2.5" transform="rotate(45 63.5 24)"/>
+                <path fill="#FF7626" d="M79.682 8.318l-1.06 11.667L68.014 9.38z"/>
+            </g>
+        </g>
+        <text fill="#4F4F4F" font-family="NotoSansCJKkr-Bold, Noto Sans CJK KR" font-size="24" font-weight="bold">
+            <tspan x="471.432" y="2178">1</tspan>
+        </text>
+    </g>
+</svg>

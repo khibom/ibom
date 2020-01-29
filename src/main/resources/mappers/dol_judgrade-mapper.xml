@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="doljudgradeMapper">
+	<select id="selectList" resultType="DolJudgrade">
+	select A.dgrade_no, grade_name, grade_memo, access_allow, service_allow, lastmodified, count(dol_id) as usecount
+	from dol_judgrade A, dolbomi B where A.dgrade_no = B.dgrade_no(+) 
+  	group by A.dgrade_no, grade_name, grade_memo, access_allow, service_allow, lastmodified
+  	order by 1
+	</select>
+
+	
+
+	
+
+</mapper>

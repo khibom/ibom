@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+/*
+ * File       : rwd_member.css
+ * Author     : STUDIO-JT (JDY)
+ * Guideline  : JTstyle.1.1
+ *
+ * SUMMARY:
+ * 01) 1440px
+ * 02) 1280px
+ * 03) 1100px
+ * 04) 1023px
+ * 05) 860px
+ * 06) 768px
+ * 07) 640px
+ * 08) 540px
+ * 09) 480px
+ */
+
+
+
+/* **************************************** *
+ * 1440px
+ * **************************************** */
+@media (max-width: 1440px){
+	.project_list_post p br {display: none;}
+}
+
+
+
+/* **************************************** *
+ * 1280px
+ * **************************************** */
+@media (max-width: 1280px){
+	.project_list_comming_soon span {font-size: 86px;}
+	.project_list_comming_soon h2 {font-size: 20px;}
+
+	.project_list_post {padding: 40px 36px;}
+	.project_list_post .jt_btn_square {bottom: 40px;left: 36px;}
+}
+
+
+
+/* **************************************** *
+ * 1100px
+ * **************************************** */
+@media (max-width: 1100px){
+	.project_list_post p {margin-top:5px;}
+}
+
+
+
+/* **************************************** *
+ * 1023px
+ * **************************************** */
+@media (max-width: 1023px){
+	.project_list:before {height: 3px;}
+	.project_list b {padding-top: 20px;}
+	.project_list_post {padding: 22px 23px;}
+	.project_list_post span {font-size: 16px;}
+	.project_list_post p {line-height: 1.6;max-height: 4.8em;-webkit-line-clamp: 3;}
+	.project_list_post .jt_btn_square {padding: 10px 14px;bottom: 22px;left: 25px; font-size: 14px;}
+
+	.project_list_comming_soon p {display:none;}
+	.project_list_comming_soon span {font-size: 50px;}
+	.project_list_comming_soon h2 {font-size: 16px; padding-top:8px;}
+}
+
+
+
+/* **************************************** *
+ * 860px
+ * **************************************** */
+@media (max-width: 860px){
+	.project_list b {padding-top: 16px;}
+	.project_list_post span {font-size: 16px;}
+	.project_list_post p {font-size: 15px;}
+}
+
+
+
+/* **************************************** *
+ * 768px
+ * **************************************** */
+@media (max-width: 768px){
+	.jt_isotope_list {margin-bottom: -2%; margin-left: 0; margin-right: 0;}
+	.jt_isotope .isotope_grid_sizer {width: 32%;}
+	.jt_isotope .isotope_gutter_sizer {width: 2%;}
+	.jt_isotope .isotope_item {width: 32%;margin-bottom: 2%; margin-right: 0; padding-left: 0; padding-right: 0;}
+
+	.project_list {padding-top: 30px;margin-bottom:-26px;}
+	.project_list_thumbnail {border-radius: 4px 4px 0 0;}
+	.project_list_post {position: static; opacity: 1; visibility: visible; background: #fff; border: 1px solid #ddd; border-top: 0; border-radius: 0 0 4px 4px; padding: 20px 22px 27px;}
+	.project_list_post span {font-size: 13px; color: #2cb9bd; letter-spacing: -0.05em; margin-bottom: 7px; display: block; line-height: 1;}
+	.project_list_post h2 {display: block; font-size: 16px; color: #222; letter-spacing: -0.05em;}
+	.project_list_post p {font-size: 15px; line-height: 1.6; letter-spacing: -0.05em; color: #666; max-height: none; display: block; -webkit-line-clamp: unset; -webkit-box-orient: unset; margin-top: 7px;}
+	.project_list_post .jt_btn_square {display: none;}
+	.project_list b {display: none;}
+
+	.project_list_comming_soon_content {position: static; top: auto; left: auto; -webkit-transform: none; -ms-transform: none; transform: none; text-align: left; border: 1px solid #ddd; border-top: 0; border-radius: 0 0 4px 4px; padding: 20px 22px 22px;}
+	.project_list_comming_soon_content span {display: none;}
+	.project_list_comming_soon_content span.project_list_meta {display: block;}
+	.project_list_comming_soon h2 {font-size: 16px; padding-top: 0;}
+	.project_list_comming_soon p {display: block; font-size: 15px; line-height: 1.6; padding-top: 0; margin-top: 7px;}
+	.project_list_comming_soon p br {display: none;}
+
+}
+
+
+
+/* **************************************** *
+ * 640px
+ * **************************************** */
+@media (max-width: 640px){
+	.jt_isotope_list {margin-bottom: -4%;}
+	.jt_isotope .isotope_grid_sizer {width: 48%;}
+	.jt_isotope .isotope_gutter_sizer {width: 4%;}
+	.jt_isotope .isotope_item {width: 48%;margin-bottom: 4%; margin-right: 0;}
+
+	.project_list_post {padding: 24px 20px;}
+
+	.project_list_comming_soon_content {padding: 24px 20px;}
+}
+
+
+
+/* **************************************** *
+ * 540px
+ * **************************************** */
+@media (max-width: 540px){
+	.project_list {padding-top: 27px; margin-bottom: -17px;}
+}
+
+
+
+/* **************************************** *
+ * 480px
+ * **************************************** */
+@media (max-width: 480px){
+	.jt_isotope_list {margin-bottom: -15px;}
+	.jt_isotope .isotope_item {width: 100%;margin-bottom: 15px;}
+
+	.project_list_post {padding: 24px 18px;}
+	.project_list_post p {font-size: 14px; margin-top: 6px;}
+
+	.project_list_comming_soon_content {padding: 24px 18px;}
+	.project_list_comming_soon h2 {font-size: 15px;}
+	.project_list_comming_soon p {font-size: 14px; margin-top: 6px;}
+}
