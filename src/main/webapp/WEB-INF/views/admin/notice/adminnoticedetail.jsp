@@ -95,7 +95,7 @@
 			    </tr>
 			    <tr>
 			        <th scope="row" class="info2" style="line-height: 3;">첨부파일</th>
-			        <td colspan="4"><input type="file" name="upfile"><a href="fdown.do?fname=${dto.rename_filepath}">${dto.original_filepath}</a></td>
+			        <td colspan="4"><input type="file" name="upfile"><a href="${pageContext.request.contextPath}/fdown.do?fname=${dto.rename_filepath}">${dto.original_filepath}</a></td>
 			    </tr>
 			    <tr>
 			    	<th scope="row" class="info2" style="line-height: 20;">내용</th>
