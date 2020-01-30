@@ -19,14 +19,30 @@ public class ServiceApplyServiceImpl implements ServiceApplyService{
 	private ServiceApplyDao applyDao;
 
 	@Override
-	public int insertApply1(ServiceApply1 apply1) {
-		return applyDao.insertApply1(apply1);
+	   public int insertApply1(ServiceApply1 apply1) {
+	      return applyDao.insertApply1(apply1);
 	}
+	   
 
-	@Override
-	public int insertApply2(ServiceApply2 apply2) {
-		return applyDao.inserApply2(apply2);
-	}
+   @Override
+   public int insertApply2(ServiceApply2 apply2) {
+      return applyDao.insertApply2(apply2);
+   }
+   //서비스 3 번호 조회
+   @Override
+   public ServiceApply1 selectServiceNum() {
+      return applyDao.selectServiceNum();
+   }
+   //서비스 2 번호 조회
+   @Override
+   public ServiceApply2 selectServiceNum2() {
+      return applyDao.selectServiceNum2();
+   }
+   
+   @Override
+   public int insertApply3(ServiceApply3 apply3) {
+      return applyDao.insertApply3(apply3);
+   }
 
 	@Override
 	public ArrayList<ServiceApply2> serviceApplySelect(ServiceApply2 apply2) {

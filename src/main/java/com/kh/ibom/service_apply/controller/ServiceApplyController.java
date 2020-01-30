@@ -1,6 +1,10 @@
 package com.kh.ibom.service_apply.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -24,6 +28,7 @@ import com.kh.ibom.iusers.model.vo.Iusers;
 import com.kh.ibom.service_apply.model.service.ServiceApplyService;
 import com.kh.ibom.service_apply.model.vo.ServiceApply1;
 import com.kh.ibom.service_apply.model.vo.ServiceApply2;
+import com.kh.ibom.service_apply.model.vo.ServiceApply3;
 
 @Controller
 public class ServiceApplyController {
@@ -85,13 +90,195 @@ public class ServiceApplyController {
 
 	}
 	@RequestMapping(value="iusers/apply2.do", method=RequestMethod.POST)
-	public String apply2Method(ServiceApply2 apply2, Model model) {
-		int result = applyService.insertApply2(apply2);
-		
-		String viewName="apply3";
-		
-		return viewName;
-	}
+	   public ModelAndView apply2Method(
+	         String[] apply_date,
+	         String[] service_type,
+	         String[] care_day,
+	         String[] start_time,
+	         String[] end_time,
+	         String[] using_time,
+	         String[] using_charge,
+	         String[] interview_fee,
+	         String[] total_self_pay,
+	         String[] total_pay,
+	         String[] interview_date,
+	         String[] interview_time,
+	         String[] family_name,
+	         String[] family_code,
+	         String[] gov_fund,
+	         String[] personal_charge,
+	         String[] care_user_time,
+	         ServiceApply1 apply1, String user_id, ModelAndView mv) {
+	      
+	      if(apply1.getReq_dolbomi() == "") {
+	         apply1.setReq_dolbomi(null);
+	      }
+	      if(apply1.getReq_institution() == "") {
+	         apply1.setReq_institution(null);
+	      }
+	      if(apply1.getCancel_reason() == "") {
+	         apply1.setCancel_reason(null);
+	      }
+	      for(int i = 0; i < interview_fee.length; i++) {
+	         System.out.println(interview_fee[i]);
+	         if(interview_fee[i] == "") {
+	            interview_fee[i] = null;
+	         }
+	         if(interview_date[i] == "") {
+	            interview_date[i] = null;
+	         }
+	         if(interview_time[i] == "") {
+	            interview_time[i] = null;
+	         }
+	      }
+	      
+	   
+	      HashMap<String, String> map2 = new HashMap<String, String>();
+	        ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String,String>>();
+	     
+	        for(int i = 0; i < apply_date.length; i++) {
+	           System.out.println(apply_date[i]);
+	        }
+	        for(int k = 0; k < service_type.length; k++) {
+	           HashMap<String, String> map = new HashMap<String, String>();
+	           map.put("family_code", family_code[k]);
+	           map.put("family_name", family_name[k]);
+	           map.put("apply_date", apply_date[k]);
+	           map.put("service_type", service_type[k]);
+	           map.put("care_day", care_day[k]);
+	           map.put("start_time", start_time[k]);
+	           map.put("end_time", end_time[k]);
+	           map.put("using_time", using_time[k]);
+	           map.put("using_charge", using_charge[k]);
+	           map.put("interview_fee", interview_fee[k]);
+	           map.put("total_self_pay", total_self_pay[k]);
+	           map.put("total_pay", total_pay[k]);
+	           map.put("interview_date", interview_date[k]);
+	           map.put("interview_time", interview_time[k]);
+	           map.put("gov_fund", gov_fund[k]);
+	           map.put("personal_charge", personal_charge[k]);
+	           map.put("care_user_time", care_user_time[k]);   
+	           list.add(map);
+	      }
+	       
+	      //System.out.println(apply2list);
+	        System.out.println("list" + list);
+	      if(apply1 != null) {
+	            mv.addObject("apply1", apply1);           
+	            mv.addObject("list", list);
+	            mv.setViewName("iusers/serviceApply/serviceApply3");
+	            
+	       }else {
+	           mv.addObject("message", "페이지 넘기기 실패");
+	            mv.setViewName("common/error");
+	       }
+	      return mv;
+	   }
+	   @RequestMapping(value="iusers/apply3.do", method=RequestMethod.POST)
+	   public ModelAndView apply3Method(
+	         String[] apply_date,
+	         String[] service_type,
+	         String[] care_day,
+	         String[] start_time,
+	         String[] end_time,
+	         String[] using_time,
+	         String[] using_charge,
+	         String[] interview_fee,
+	         String[] total_self_pay,
+	         String[] total_pay,
+	         String[] interview_date,
+	         String[] interview_time,
+	         String[] family_name,
+	         String[] family_code,
+	         String[] gov_fund,
+	         String[] personal_charge,
+	         String[] care_user_time,
+	         ServiceApply1 apply1, String user_id, ModelAndView mv) throws ParseException {
+	      List<ServiceApply2> apply2list = new ArrayList<ServiceApply2>();
+	      System.out.println(family_code[0]);
+	      if(apply1.getReq_dolbomi() == "") {
+	         apply1.setReq_dolbomi(null);
+	      }
+	      if(apply1.getReq_institution() == "") {
+	         apply1.setReq_institution(null);
+	      }
+	      if(apply1.getCancel_reason() == "") {
+	         apply1.setCancel_reason(null);
+	      }
+	      for(int i = 0; i < interview_fee.length; i++) {
+	         System.out.println(interview_fee[i]);
+	         if(interview_fee[i] == "") {
+	            interview_fee[i] = null;
+	         }
+	         if(interview_date[i] == "") {
+	            interview_date[i] = null;
+	         }
+	         if(interview_time[i] == "") {
+	            interview_time[i] = null;
+	         }
+	      }
+	      SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+	      for(int k = 0; k < service_type.length; k++) {
+	         ServiceApply2 apply2 = new ServiceApply2();
+	         java.util.Date utilDate = format.parse(apply_date[k]);
+	          java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+	          java.util.Date utilDate2 = format.parse(interview_date[k]);
+	          java.sql.Date sqlDate2 = new java.sql.Date(utilDate2.getTime());
+	         apply2.setService_type(service_type[k]);
+	         apply2.setApply_date(sqlDate);
+	         apply2.setCare_day(care_day[k]);
+	         apply2.setStart_time(start_time[k]);
+	         apply2.setEnd_time(end_time[k]);
+	         apply2.setUsing_time(using_time[k]);
+	         apply2.setUsing_charge(Integer.parseInt(using_charge[k]));
+	         apply2.setInterview_fee(Integer.parseInt(interview_fee[k]));
+	         apply2.setTotal_self_pay(Integer.parseInt(total_self_pay[k]));
+	         apply2.setTotal_pay(Integer.parseInt(total_pay[k]));
+	         apply2.setInterview_date(sqlDate2); 
+	         apply2.setInterview_time(interview_time[k]);
+	         apply2list.add(apply2);      
+	      }
+	      
+	      System.out.println(apply2list);
+	      int result1 = applyService.insertApply1(apply1);
+	   
+	      if(result1 > 0) {
+	         ServiceApply1 ap1 = applyService.selectServiceNum();
+	         for(ServiceApply2 apply2 : apply2list) {
+	            apply2.setService1_no(ap1.getService1_no());
+	            apply2.setUser_id(ap1.getUser_id());
+	            int result2 = applyService.insertApply2(apply2);
+	            ServiceApply2 ap2 = applyService.selectServiceNum2();
+	            for(int j = 0; j < service_type.length; j++) {
+	               ServiceApply3 apply3 = new ServiceApply3();
+	               System.out.println("ap1"+ap1);
+	               System.out.println("ap2"+ap2);
+	               apply3.setService1_no(ap1.getService1_no());
+	               apply3.setService2_no(ap2.getService2_no());
+	               apply3.setFamily_code(family_code[j]);
+	               apply3.setGov_fund(Integer.parseInt(gov_fund[j]));
+	               apply3.setPersonal_charge(Integer.parseInt(personal_charge[j]));
+	               apply3.setCare_user_time(care_user_time[j]);
+	               if(result2 >0) {
+	                  int result3 = applyService.insertApply3(apply3);
+	               }
+	            }
+	         }
+	         
+	         
+	      }
+	      List<ServiceApply3> apply3list = new ArrayList<ServiceApply3>();
+	      
+	      if(apply1 != null) {
+	            mv.setViewName("iusers/serviceApply/serviceApply");
+	            
+	       }else {
+	           mv.addObject("message", "페이지 넘기기 실패");
+	            mv.setViewName("common/error");
+	       }
+	      return mv;
+	   }
+
 	
 	
 	@RequestMapping(value="iusers/card.do", method=RequestMethod.POST)

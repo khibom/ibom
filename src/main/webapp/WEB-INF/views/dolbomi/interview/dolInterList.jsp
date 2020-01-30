@@ -58,28 +58,15 @@
         <div class="article">
             <div class="article_header">
                 <div class="wrap_narrow">
-                    <h1 data-font="secondary" class="article_title">돌보미 면접 리스트 </h1>
-                    <p class="article_desc">${loginDolbomi.dol_name}님의 면접 리스트 입니다. </p>
+                    <h1 data-font="secondary" class="article_title">돌보미 면접 내역 </h1>
+                    <p class="article_desc">신청자와 면접봤던 일정을 조회할 수 있습니다.</p>
                 </div><!-- .wrap_narrow -->
             </div><!-- .article_header -->
 
             <div class="article_body">
                 <div class="wrap_narrow" id="result_wrap">
                 <!-- 여기서부터  -->
-                    <div class="jt_search preserve">
-                        <div class="jt_search_category jt_selectric_wrap" >
-                            <select name="search_type" class="jt_selectric search_data" style="height:49px;margin:0 49px 0 18px; line-height:49px;">
-                                <option value="all">전체</option>
-                                <option value="bo_title">제목</option>
-                                <option value="bo_content">내용</option>
-                            </select>
-                        </div><!-- .jt_search_category -->
-                        <div class="jt_search_field">
-                            <label class="jt_search_label"><input type="text" name="search_str" value="" class="jt_search_input jt_form_field search_data jq_keydown enter-search" placeholder="검색어를 입력하세요"/></label>
-                            <button class="jt_search_button jq_click search">검색하기</button>
-                        </div><!-- .jt_search_field -->
-                    </div><!-- .jt_search -->
-					<!-- 여기까지 검색부분 -->
+                    
 					
 					<div class="jt_board_list_wrap">
         <table class="jt_board_list">

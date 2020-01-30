@@ -185,7 +185,7 @@ $(function(){
 		$("#fam_choi1").attr("checked", true);
 	}
 	if(two == 'Y'){
-		$("#fam_choi1").attr("checked", true);
+		$("#fam_choi2").attr("checked", true);
 	}
 	if(three != null){
 		if(three=="one"){

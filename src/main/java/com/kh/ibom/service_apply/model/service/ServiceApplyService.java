@@ -12,8 +12,15 @@ import com.kh.ibom.synthesis_actlog.model.vo.SynthesisActLog;
 public interface ServiceApplyService {
 
 	int insertApply1(ServiceApply1 apply1);
-
+	
 	int insertApply2(ServiceApply2 apply2);
+	   
+	ServiceApply1 selectServiceNum();
+   
+	ServiceApply2 selectServiceNum2();
+   
+	int insertApply3(ServiceApply3 apply3);
+	
 
 	ArrayList<ServiceApply2> serviceApplySelect(ServiceApply2 apply2);
 

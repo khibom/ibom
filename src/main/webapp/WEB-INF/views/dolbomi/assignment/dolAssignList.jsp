@@ -31,7 +31,7 @@
 <style type="text/css">
 
 .div1 {
-	margin: 9px;
+	margin: 8px;
     border-radius: 3px;
     background-color: #fff;
     box-shadow: 0 0 3px 0 hsla(0,0%,67%,.5);
@@ -84,7 +84,7 @@
     vertical-align: top;
     line-height: 1.7;
     position: relative;
-    width: 70%;
+    width: 69%;
 }
 ._1fXb8{
     display: inline-flex;
@@ -220,7 +220,7 @@ $(function(){
 		$("input[type='checkbox']").on('click',function(){
 			<c:url var="list" value="/dolbomi/dolAssignSearchList.do">
 			<c:param name="search" value="Y"/>
-			<c:param name="currentPage" value="${paging.currentPage}"/>
+			<c:param name="currentPage" value="1"/>
 			<c:param name="in_center" value="${loginDolbomi.office_name}"/>
 			<c:param name="ibom_id" value="${loginDolbomi.dol_id}"/>
 		</c:url>
@@ -270,6 +270,9 @@ $(function(){
 		}//펑션종료
 	})//클릭이벤트종료
 	
+	
+	//보더해보기
+	//$(".div1").eq(0).attr("style","border: 2px solid red;")
 });//document ready끝
 
 </script>
@@ -319,28 +322,28 @@ $(function(){
 							<div class="LazyLoad is-visible" style="height: 64px; width: 64px;">
 							<!-- 영아 1명일때, 2명일때, 유아 1명일 떄, 2명일 때, 초등 1명일 때,   -->
 							<c:if test="${assign.baby_count eq 1 and assign.kid_count eq 0 and assign.child_count eq 0}">
-								<img src="/ibom/resources/images/assign/n-baby.png" width="64" height="64" alt="부모 사진">
+								<img src="/ibom/resources/images/assign/n-baby.png" width="64" height="64" alt="">
 							</c:if>
 							<c:if test="${assign.baby_count eq 2 and assign.kid_count eq 0 and assign.child_count eq 0}">
-								<img src="/ibom/resources/images/assign/n-baby-2.png" width="64" height="64" alt="부모 사진">
+								<img src="/ibom/resources/images/assign/n-baby-2.png" width="64" height="64" alt="">
 							</c:if>
 							<c:if test="${assign.baby_count eq 0 and assign.kid_count eq 1 and assign.child_count eq 0}">
-								<img src="/ibom/resources/images/assign/n-child.png" width="64" height="64" alt="부모 사진">
+								<img src="/ibom/resources/images/assign/n-child.png" width="64" height="64" alt="">
 							</c:if>
 							<c:if test="${assign.baby_count eq 0 and assign.kid_count eq 2 and assign.child_count eq 0}">
-								<img src="/ibom/resources/images/assign/n-child-2.png" width="64" height="64" alt="부모 사진">
+								<img src="/ibom/resources/images/assign/n-child-2.png" width="64" height="64" alt="">
 							</c:if>
 							<c:if test="${assign.baby_count eq 0 and assign.kid_count eq 0 and assign.child_count eq 1}">
-								<img src="/ibom/resources/images/assign/n-schoolchild.png" width="64" height="64" alt="부모 사진">
+								<img src="/ibom/resources/images/assign/n-schoolchild.png" width="64" height="64" alt="">
 							</c:if>
 							<c:if test="${assign.baby_count eq 0 and assign.kid_count eq 1 and assign.child_count eq 1}">
-								<img src="/ibom/resources/images/assign/n-schoolchild-child.png" width="64" height="64" alt="부모 사진">
+								<img src="/ibom/resources/images/assign/n-schoolchild-child.png" width="64" height="64" alt="">
 							</c:if>
 							<c:if test="${assign.baby_count eq 1 and assign.kid_count eq 1 and assign.child_count eq 0}">
-								<img src="/ibom/resources/images/assign/n-child-baby.png" width="64" height="64" alt="부모 사진">
+								<img src="/ibom/resources/images/assign/n-child-baby.png" width="64" height="64" alt="">
 							</c:if>
 							<c:if test="${assign.baby_count eq 1 and assign.kid_count eq 0 and assign.child_count eq 1}">
-								<img src="/ibom/resources/images/assign/n-schoolchild-child.png" width="64" height="64" alt="부모 사진">
+								<img src="/ibom/resources/images/assign/n-schoolchild-child.png" width="64" height="64" alt="">
 							</c:if>
 							</div>
 							<div class="xzVqv">
@@ -434,7 +437,7 @@ $(function(){
 					<!-- =========================================================================================================================지도 -->
 					<div class="jt_board_list_wrap" style="width:49%; display:inline-block; vertical-align:top; maring-left:5px;">
 					
-								<div id="map" style="width:99%;min-height:100vh; display:inline-block;"></div>
+								<div id="map" style="width:99%;min-height:99vh; display:inline-block;"></div>
 									
 								
 							
@@ -442,6 +445,7 @@ $(function(){
 					</div>
 					<!-- <div id="map" style="width:500px;height:400px;"></div> -->
 					<!-- ======================================================================================================================지도 스크립트 -->
+					
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9647683948e18a5959ac8a8a08fd5789&libraries=services"></script>
 	<script type="text/javascript">
 	var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
@@ -469,12 +473,12 @@ $(function(){
 	var array1 = "";
 	
 	<c:forEach items="${requestScope.list }" var="assign" varStatus="status">
-		array1 += '${assign.address}'+',';
+		array1 += '${assign.address}'+'/';
 	</c:forEach>
 	array1 = array1.substr(0,array1.length-1);
 	var arrayVal = [];
 	for(var i in array1){
-		arrayVal = array1.split(',');
+		arrayVal = array1.split('/');
 	}
 	//var array = [arrayVal];
 	//console.log(arrayVal);
@@ -484,6 +488,9 @@ $(function(){
 	
 	var points = "";
 	var ppoints = [];
+	
+	//
+	
 	
 	// 지도를 재설정할 범위정보를 가지고 있을 LatLngBounds 객체를 생성합니다
 	var bounds = new kakao.maps.LatLngBounds();   
@@ -502,19 +509,55 @@ $(function(){
                     position: coords
                 });
                 
-
+				//인포창
                 var infowindow = new kakao.maps.InfoWindow({
-                    content: '<div style="width:150px;text-align:center;padding:6px 0;">' + arrayVal[index] + '</div>',
+                   /*  content: '<div style="width:150px;text-align:center;padding:6px 0;">' + arrayVal[index] + '</div>', */
+                    content: arrayVal[index],
                     disableAutoPan: true
                 });
+				
                 
-                kakao.maps.event.addListener(marker, 'mouseover', function() {
+                //마커 클릭 시 
+                kakao.maps.event.addListener(marker, 'click', function(){
+                	$(".div1").removeAttr("style", "border:2px solid red");
+                	$(".div1").eq(index).attr("style", "border:2px solid red");
+                	
+                	
+                	
+                	/* ar.forEach(function(){
+						var aa = $(this).text().trim();
+						var ab = arrayVal[index];
+                		console.log("aa : "+aa);
+                		console.log("ab : "+ab);
+                		
+                	}) */
+                		/* if($(this).text().trim() == arrayVal[index]){
+                			
+                		} */
+                	
+                	/* $(".zWdMK").forEach(function(){
+                		if($(this).text().trim() == arrayVal[index]){
+                			$(this).parent('.1ej6Z').attr("style", "border:2px solid red");
+                		}
+                	}) */
+                	//alert($(".zWdMK").eq(index).text());
+                	
+                	
+                	
+                	//$(".div1").eq(0).attr("style", "border:2px solid red");
+                	
+                	
+                });//클릭이벤트 종료
+                
+				//마커 마우스오버 마우스아웃 이벤트 
+                /* kakao.maps.event.addListener(marker, 'mouseover', function() {
                 	infowindow.open(map, marker);
         		});
                 kakao.maps.event.addListener(marker, 'mouseout', function() {
                 	infowindow.close(map, marker);
-        		});
-                
+        		}); */
+                //
+              //중심좌표 다시 셋팅
                 map.setBounds(bounds);
                 //bounds.extend(coords);
                 

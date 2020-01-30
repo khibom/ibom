@@ -3,7 +3,64 @@
 "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="applyMapper">
-
+	<insert id="insertApply1" parameterType="ServiceApply1">
+      insert into service_apply1 values('ser1_00'||SERVICE1_SEQ.nextval, #{user_id}, #{apply_reason}, #{transferor}, #{dolbom_place}, #{apply1_card}, #{before_req}, #{interview_req}, 
+      <if test="req_institution != null">
+      #{req_institution},
+      </if>
+      <if test="req_institution == null">
+      null,   
+      </if>
+      <if test="req_dolbomi != null">
+       #{req_dolbomi},
+      </if>
+      <if test="req_dolbomi == null">
+      null,
+      </if>
+      
+      null)
+   </insert>
+   
+   <select id="selectServiceNum" resultType="ServiceApply1">
+      SELECT *
+      FROM SERVICE_APPLY1
+      WHERE SERVICE1_NO like 'ser1_00' || (SELECT MAX(TO_NUMBER(SUBSTR(SERVICE1_NO,8))) MAX_NUM
+                                                      FROM SERVICE_APPLY1)
+   </select>
+   
+   <select id="selectServiceNum2" resultType="ServiceApply2">
+      SELECT *
+      FROM SERVICE_APPLY2
+      WHERE SERVICE2_NO like 'ser2_00' || (SELECT MAX(TO_NUMBER(SUBSTR(SERVICE2_NO,8))) MAX_NUM
+                                                      FROM SERVICE_APPLY2)
+   </select>
+   
+   <insert id="insertApply2" parameterType="ServiceApply2">
+      insert into service_apply2 values('ser2_00'||SERVICE2_SEQ.nextval, 
+      #{service1_no},
+      #{user_id},
+      #{service_type},#{apply_date},#{care_day},#{start_time},
+      #{end_time},#{using_time},#{using_charge},#{interview_fee},
+      #{total_self_pay},#{total_pay},
+      <if test="interview_fee == 0">
+      null,null,null
+      </if>
+      <if test="interview_fee != 0">
+      #{interview_date},#{interview_time},'돌보미 배정중'
+      </if>
+      ,null,'시간제', '돌보미 배정중', sysdate)
+      
+   </insert>
+   <insert id="insertApply3" parameterType="ServiceApply3">
+      insert into service_apply3 values(
+      #{service2_no},
+      #{service1_no},
+      #{family_code}, 
+      'N', 
+      #{gov_fund}, 
+      #{personal_charge},
+      #{care_user_time})
+   </insert>
 	<!--  은수 시작 =============================================== -->
 	<select id="selectDolService1List" parameterType="string" resultType="ServiceApply1">
 		select * from SERVICE_APPLY1 where dolbomi_id = #{value}

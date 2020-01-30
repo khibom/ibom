@@ -143,8 +143,9 @@ function assignmentPop(){
 			                               			<thead>                     
 			                                			<tr><th>돌보미 아이디</th><th>돌보미 이름</th></tr>
 			                                		</thead>
-				                                    <tbody>
-				                                    	<tr><td><span id="dolid">${ass.dol_id }</span></td><td><span id="dolname">${ass.dol_name }</span></td></tr>
+				                                    <tbody>				                                    
+				                                    	<tr><td><span id="dolid">${ass.dol_id }</span></td>
+				                                    	<td><span id="dolname">${ass.dol_name }</span></td></tr>				                                    
 				                                    </tbody>
 				                                </table>
 				                            

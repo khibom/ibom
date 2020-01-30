@@ -46,10 +46,8 @@
 					data-font="secondary"><span>마이서비스</span></a>
 					
 					<ul class="menu_child_group">
-						<li class=""><a href="${interdol}"><span>돌보미
-									지정현황</span></a></li>
-						<li class=""><a href="${assigndol }"><span>돌보미서비스
-									신청현황</span></a></li>
+						<li class=""><a href="${interdol}"><span>돌보미 면접 조회</span></a></li>
+						<li class=""><a href="${assigndol }"><span>돌보미 서비스 신청현황</span></a></li>
 					</ul>
 					
 					<!-- .menu_child_group --></li>
@@ -155,10 +153,8 @@
 					<li class="menu_item_has_children "><a href="${interdol}"
 					data-font="secondary"><span>마이서비스</span></a>
 						<ul class="menu_child_group">
-							<li class=""><a href="${interdol}"><span>돌보미
-										지정현황</span></a></li>
-							<li class=""><a href="${assigndol }"><span>돌보미서비스
-										신청현황</span></a></li>
+							<li class=""><a href="${interdol}"><span>돌보미 면접 조회</span></a></li>
+							<li class=""><a href="${assigndol }"><span>돌보미 서비스 신청현황</span></a></li>
 						</ul>
 						<!-- .menu_child_group --></li>
 					<!-- ======================================================================================-->

@@ -14,6 +14,10 @@
     <meta name="author" content="">
 
     <title>ibom Admin</title>
+    <style type="text/css">
+
+table th, thead tr th, tbody tr td { text-align : center;}
+</style>
 <script type="text/javascript" src="/ibom/resources/js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
     
@@ -105,7 +109,7 @@ function showDiv() {
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">돌보미 관리 목록</h1>
+                <h2 class="page-header">돌보미 관리 목록</h2>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -193,7 +197,7 @@ function showDiv() {
             <!-- /.col-lg-12 -->
         </div>
         <!-- 여기서부터 -->
-        <div class="panel panel-default">
+        <div class="panel panel-warning">
                         <div class="panel-heading">
                             돌보미 목록
                         </div>
