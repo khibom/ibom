@@ -9,32 +9,28 @@
       parameterType="com.kh.ibom.common.CommonPaging">
       <![CDATA[
       select * 
-		from(	select  rownum as num,V.service2_no, V.user_id, V.user_name, V.service_typ, V.service_date, V.startt, V.endt, V.licen, V.interview,V.cctv, V.pet, V.address, V.apply_day, V.office_name, V.likedol, 
-		                  V.baby_count, V.kid_count, V.child_count, count(F.service2_no) as likecount, apply_status
-		        from (select service2_no, user_id, user_name, service_typ, service_date, startt, endt, licen, interview, cctv, pet, address, apply_day, office_name, likedol, apply_status,
-		                          sum(decode(baby_age, '영아', 1 , 0)) as baby_count, sum(decode(baby_age, '유아', 1 , 0)) as kid_count, sum(decode(baby_age, '초등', 1 , 0)) as child_count
-		                from (select A.service2_no, A.user_id, substr(C.user_name, 1, 1)||'O'||substr(C.user_name, 3, 1) as user_name, A.dolbom_type || '(' || A.service_type || ')' as service_typ, 
-		                                  A.apply_date as service_date, substr(A.start_time,1,2)||':'||substr(A.start_time,4,2) as startt, substr(A.end_time,1,2)||':'||substr(A.end_time,4,2) as endt, 
-		                                  C.license_alter as licen, decode(A.interview_fee, 12000, 'Y', 'N') as interview, C.cctv_alter as cctv, C.pet_alter as pet, substr(C.user_address, 8) as address, A.apply_status,
-		                                  A.apply_day, D.OFFICE_NAME, case when A.service2_no in (select service2_no from liketo  where dol_id = 'dol01') then 'Y' else 'N' end  as likedol,
-		                                  case when EXTRACT(YEAR FROM SYSDATE) - (DECODE(SUBSTR(E.family_no,7,1),'1', '19','2','19','20') || SUBSTR(E.family_no,1,2)) +1 <= 2 then '영아' 
-		                                  when EXTRACT(YEAR FROM SYSDATE) - (DECODE(SUBSTR(E.family_no,7,1),'1', '19','2','19','20') || SUBSTR(E.family_no,1,2)) +1 BETWEEN 3 and 7 then '유아'
-		                                  else '초등' end as baby_age
-		                        from service_apply2 A, service_apply3 B, iusers C, office D, user_family E
-		                        where A.service2_no = B.service2_no
-		                        and A.user_id = C.user_id
-		                       and C.office_code = D.office_code
-		                       and B.family_code = E.family_code
-		                       and A.apply_status = '돌보미 배정중'
-		                        order by service_date)
-		        group by service2_no, user_id, user_name, service_typ, service_date, startt, endt, licen, interview, cctv, pet, address, apply_day, office_name,likedol,apply_status
-		        order by service_date) V, liketo F
-				where V.service2_no = F.service2_no(+) ]]>
-				<if test="in_center != null">and office_name=#{in_center}</if>
-				<![CDATA[ group by rownum, V.service2_no, V.user_id, V.user_name, V.service_typ, V.service_date, V.startt, V.endt, V.licen, V.interview,V.cctv, V.pet, V.address, V.apply_day, V.office_name, V.likedol, 
-				V.baby_count, V.kid_count, V.child_count,V.apply_status order by 1)
+		from(select num, V.service2_no, V.user_id, V.user_name, V.service_typ, V.service_date, V.startt, V.endt, V.licen, 
+                  V.interview,V.cctv, V.pet, V.address, V.apply_day, V.office_name, V.likedol, V.baby_count, V.kid_count, V.child_count, count(F.service2_no) as likecount, V.apply_status
+        from (select rownum as num, service2_no, user_id, user_name, service_typ, service_date, startt, endt, licen, interview, cctv, pet, address, apply_day, office_name, likedol, apply_status,
+                          sum(decode(baby_age, '영아', 1 , 0)) as baby_count, sum(decode(baby_age, '유아', 1 , 0)) as kid_count, sum(decode(baby_age, '초등', 1 , 0)) as child_count
+                from  (select A.service2_no, A.user_id, substr(C.user_name, 1, 1)||'O'||substr(C.user_name, 3, 1) as user_name, A.dolbom_type || '(' || A.service_type || ')' as service_typ, 
+                                  A.apply_date as service_date, substr(A.start_time,1,2)||':'||substr(A.start_time,4,2) as startt, substr(A.end_time,1,2)||':'||substr(A.end_time,4,2) as endt, 
+                                  C.license_alter as licen, decode(A.interview_fee, 12000, 'Y', 'N') as interview, C.cctv_alter as cctv, C.pet_alter as pet, substr(C.user_address, 8) as address, A.apply_status,
+                                  A.apply_day, D.OFFICE_NAME, case when A.service2_no in  (select service2_no from liketo  where dol_id = #{ibom_id}) then 'Y' else 'N' end  as likedol,
+                                  case when EXTRACT(YEAR FROM SYSDATE) - (DECODE(SUBSTR(E.family_no,7,1),'1', '19','2','19','20') || SUBSTR(E.family_no,1,2)) +1 <= 2 then '영아' 
+                                  when EXTRACT(YEAR FROM SYSDATE) - (DECODE(SUBSTR(E.family_no,7,1),'1', '19','2','19','20') || SUBSTR(E.family_no,1,2)) +1 BETWEEN 3 and 7 then '유아'
+                                  else '초등' end as baby_age
+                          from service_apply2 A, service_apply3 B, iusers C, office D, user_family E
+                          where A.service2_no = B.service2_no and A.user_id = C.user_id and C.office_code = D.office_code and B.family_code = E.family_code and A.apply_status = '돌보미 배정중'
+                          ]]><if test="in_center != null">and office_name=#{in_center}</if>
+                            <![CDATA[order by A.apply_date)
+                group by rownum, service2_no, user_id, user_name, service_typ, service_date, startt, endt, licen, interview, cctv, pet, address, apply_day, office_name,likedol,apply_status
+                order by service_date) V, liketo F
+      where V.service2_no = F.service2_no(+)
+     group by num, V.service2_no, V.user_id, V.user_name, V.service_typ, V.service_date, V.startt, V.endt, V.licen, V.interview,V.cctv, V.pet, V.address, V.apply_day, V.office_name, V.likedol, 
+                    V.baby_count, V.kid_count, V.child_count,V.apply_status)	
 				where num >= #{startList} and num <= #{endList}]]>
-      
+      			order by 1	
    </select>
    
 <!-- 관리자가 보는 배정 목록-->

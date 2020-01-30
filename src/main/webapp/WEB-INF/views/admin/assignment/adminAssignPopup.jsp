@@ -27,58 +27,55 @@ $(function(){
 		var rowData = new Array(); 
 		var tdArr = new Array();
 		var checkbox = $("input[name=likeCheck]:checked");
-		var service2_no = '${paging.stitle }';
-		
-		// 체크된 체크박스 값을 가져온다
-		checkbox.each(function(i){
-			var tr = checkbox.parent().parent().eq(i);
-			var td = tr.children();
-			
-			//console.log("checkbox 값 : " + tr.text());
-			//체크된 row의 모든 값을 배열에 담는다.
-			rowData.push(tr.text());
-			
-			// td.eq(0)은 체크박스 이므로 td.eq(1)의 값부터 가져온다.
-			var dol_id = td.eq(1).text();
-			var dol_name = td.eq(2).text();
-			
-			//가져온 값을 배열에 담는다.
-			tdArr.push(dol_id);
-			tdArr.push(dol_name);
-			
-			//받아온 값 확인
-			if(confirm(dol_id+"("+dol_name+")으로 배정하시겠습니까?")){
-				window.opener.document.getElementById("dolid").innerHTML = dol_id;
-				window.opener.document.getElementById("dolname").innerHTML = dol_name;
-				window.opener.document.getElementById("status").innerHTML = '돌보미 배정완료';
-				 
-				 $.ajax({
-					 url:"${ pageContext.request.contextPath }/admin/assignmentUpdate.do",
-					 data:{service2_no:service2_no, dolbomi_id:dol_id},
-					 type:"post",
-					 success:function(result){
-							if(result == "ok"){
-								alert("배정 완료");					
-							}else{
-								alert("배정 실패");	
-							}
-						},
-					 error: function(request, status, errorData){
-							console.log("error code : "+request.status+"\nMessage : "+request.responseText+"\nError : "+errorData);
-						}
-				 })//ajax종료
-				 
-		        
-			}else{
+		var service2_no = '${paging.stitle }';		
+		var checkLen = checkbox.length;
+		if(checkLen > 0){
+			// 체크된 체크박스 값을 가져온다
+			checkbox.each(function(i){
+				var tr = checkbox.parent().parent().eq(i);
+				var td = tr.children();
 				
-			}
-			
-			
-		});
-		 
-		 
-		 window.self.close();
-	}); 
+				//console.log("checkbox 값 : " + tr.text());
+				//체크된 row의 모든 값을 배열에 담는다.
+				rowData.push(tr.text());
+				
+				// td.eq(0)은 체크박스 이므로 td.eq(1)의 값부터 가져온다.
+				var dol_id = td.eq(1).text();
+				var dol_name = td.eq(2).text();
+				
+				//가져온 값을 배열에 담는다.
+				tdArr.push(dol_id);
+				tdArr.push(dol_name);
+				
+				//받아온 값 확인
+				if(confirm(dol_id+"("+dol_name+")으로 배정하시겠습니까?")){
+					window.opener.document.getElementById("dolid").innerHTML = dol_id;
+					window.opener.document.getElementById("dolname").innerHTML = dol_name;
+					window.opener.document.getElementById("status").innerHTML = '돌보미 배정완료';
+					 
+					 $.ajax({
+						 url:"${ pageContext.request.contextPath }/admin/assignmentUpdate.do",
+						 data:{service2_no:service2_no, dolbomi_id:dol_id},
+						 type:"post",
+						 success:function(result){
+								if(result == "ok"){
+									alert("배정 완료");	
+									window.self.close();
+								}else{
+									alert("배정 실패");	
+									return false;
+								}
+							},
+						 error: function(request, status, errorData){
+								console.log("error code : "+request.status+"\nMessage : "+request.responseText+"\nError : "+errorData);
+							}
+					 })//ajax종료		        
+				}//if종료
+			});//체크된 값 가져온것
+		}else{
+			alert("배정할 돌보미를 선택해주세요");
+		}		
+	}); //배정버튼 눌렀을 때
 	
 	//내거
 	 //검색 부분

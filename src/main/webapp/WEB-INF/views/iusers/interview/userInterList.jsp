@@ -124,63 +124,7 @@ function showDiv() {
 
             <div class="article_body">
                 <div class="wrap_narrow" id="result_wrap">
-                    <div class="jt_search preserve">
-                        <div class="jt_search_category jt_selectric_wrap" >
-                            <select id=searchselect name="searchselect" class="jt_selectric search_data" style="height:49px;margin:0 49px 0 18px; line-height:49px;">
-                                <option value="all">돌보미 이름</option>
-                                <option value="bo_title">면접일시</option>
-                                <option value="bo_content">신청일자</option>
-                                <option value="bo_content">면접상태</option>
-                            </select>
-                        </div><!-- .jt_search_category -->
-                        <div class="jt_search_field" id="select1">
-                        	<form action="${ pageContext.request.contextPath }/iusers/interSearch.do" method="get" id="searchform1">
-                        	<input type="hidden" name="search" value="dolname">
-                        	<input type="hidden" name="userid" value="${loginIuser.user_id}">
-                            	<label class="jt_search_label">
-                            		<input type="text" name="keyword" value="" class="jt_search_input jt_form_field search_data jq_keydown enter-search" placeholder="1검색어를 입력하세요"/>
-                            	</label>
-                           
-                            	<button class="jt_search_button jq_click search" id="submitbtn1">검색하기</button>
-                            </form>
-                        </div>
-                        <div class="jt_search_field" id="select2">
-                        	<form action="${ pageContext.request.contextPath }/iusers/interSearch.do" method="get" id="searchform2">
-                        	<input type="hidden" name="search" value="indate">
-                        	<input type="hidden" name="userid" value="${loginIuser.user_id}">
-                            <label class="jt_search_label">
-                            <input type="date" name="date_begin" value="" class=""/>
-                            <input type="date" name="date_end" value="" class="" />
-                            </label>
-                           
-                            <button class="jt_search_button jq_click search" id="submitbtn2">검색하기</button>
-                            </form>
-                        </div>
-                        <div class="jt_search_field" id="select3">
-                        	<form action="${ pageContext.request.contextPath }/iusers/interSearch.do" method="get" id="searchform3">
-                        	<input type="hidden" name="search" value="reqdate">
-                        	<input type="hidden" name="userid" value="${loginIuser.user_id}">
-                            <label class="jt_search_label">
-                            <input type="date" name="date_begin" value="" class=""/>
-                            <input type="date" name="date_end" value="" class="" />
-                            </label>
-                           
-                            <button class="jt_search_button jq_click search" id="submitbtn3">검색하기</button>
-                            </form>
-                        </div>
-                        <div class="jt_search_field" id="select4">
-                        	<form action="${ pageContext.request.contextPath }/iusers/interSearch.do" method="get" id="searchform4">
-                        	<input type="hidden" name="search" value="center">
-                        	<input type="hidden" name="userid" value="${loginIuser.user_id}">
-                            <label class="jt_search_label">
-                            <input type="text" name="keyword" value="" class="jt_search_input jt_form_field search_data jq_keydown enter-search" placeholder="4검색어를 입력하세요"/>
-                            </label>
-                           
-                            <button class="jt_search_button jq_click search" id="submitbtn4">검색하기</button>
-                            </form>
-                        </div>
-                    </div><!-- .jt_search -->
-					
+                    
 					
 					<div class="jt_board_list2_wrap">
 	
@@ -192,7 +136,7 @@ function showDiv() {
 				                    <th scope="col" class="type">면접상태</th>
 				                    <th scope="col" class="date">요청일시</th>
 				                    <th scope="col" class="hit">돌보미명</th>
-				                    <th scope="col" class="hit">센터명</th>
+				                    <th scope="col" class="date">센터명</th>
 				                     <th scope="col" class="hit">신청일자</th>
 				                </tr>
 				            </thead>

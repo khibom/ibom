@@ -106,13 +106,13 @@ $(function(){
 										</select> 시  </td>
 										<td><select name="inter_status" id="inter_status" class="interStatus">
 												<option value="돌보미 배정중"
-													${adminInter.inter_status eq '돌보미 배정중'?"selected":""}>돌보미 배정중</option>
+													${inter.inter_status eq '돌보미 배정중'?"selected":""}>돌보미 배정중</option>
 												<option value="돌보미 배정완료"
-													${adminInter.inter_status eq '면접예정'?"selected":""}>돌보미 배정완료</option>
+													${inter.inter_status eq '면접예정'?"selected":""}>돌보미 배정완료</option>
 												<option value="면접완료"
-													${adminInter.inter_status eq '면접완료'?"selected":""}>면접완료</option>
+													${inter.inter_status eq '면접완료'?"selected":""}>면접완료</option>
 												<option value="면접취소"
-													${adminInter.inter_status eq '면접취소'?"selected":""}>면접취소</option>
+													${inter.inter_status eq '면접취소'?"selected":""}>면접취소</option>
 										</select></td> 
 										</tr>
 										

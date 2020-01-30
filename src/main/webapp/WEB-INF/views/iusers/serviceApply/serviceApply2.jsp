@@ -135,22 +135,15 @@ $(function(){
 			var endDate = $("#endDate").val();//종료일
 		    var startDate = $("#stDate").val(); //시작일
 		    var listDate = [];
-		    //var nowDate = new Date(fromDate);//오늘
-		    //nowDate = nowDate.toISOString().substr( 0, 10 ).replace(/-/g,"");
-		    //toDate = toDate.replace(/-/g,"");
-		    //fromDate = fromDate.replace(/-/g,"");
 		    var dateMove = new Date(startDate);
-		    console.log(dateMove);
-		    console.log(endDate);
+		    //console.log(dateMove);
+		    //console.log(endDate);
 		    var strDate = startDate;
-		    console.log("지역 변수 선언한 strDate 확인: " +strDate);
+		    //console.log("지역 변수 선언한 strDate 확인: " +strDate);
 		    var test1 = [];
 		    $("input[name=care_day_check]:checked").each(function() {
 		    	  var test = $(this).val();
 		    	  test1.push(test);
-				  console.log(test);	
-				  
-		    	  //alert("벨류값확인 : " + test);
 		    });
 		    console.log("test1="+test1);
 		    if(startDate != "" && endDate != "" && test1.length != 0){
@@ -175,14 +168,7 @@ $(function(){
 			        }else{ //신청일과 돌봄요일이 같지 않다면
 			        	alert("신청일과 요일을 확인해 주세요.");
 			        	return false;
-			        }
-			        
-			        
-			        console.log("요일 확인 : " + dayOfWeek);
-			    	console.log("if문에서 strDate 확인 : " + strDate);
-			    	console.log("배열값 확인 : " + listDate);
-			    	console.log(typeof(dayOfWeek));
-			    	//if(dayOfWeek == )
+			        }	  
 			    }else{
 			    	
 			    	while (strDate < endDate){
@@ -209,16 +195,16 @@ $(function(){
 				    	}
 				    		
 			    	}
-			    	console.log(apply_care_arr);
-			    	console.log(apply_date_arr);
-			    	console.log(care_day_arr);
+			    	//console.log(apply_care_arr);
+			    	//console.log(apply_date_arr);
+			    	//console.log(care_day_arr);
 			    	if(apply_care_arr == ""){
 			    		alert("신청일과 요일이 맞는지 확인해 주세요.");
 			    	}
 			    }//시작날짜와 종료날짜가 같지 않음
 		    }else{
 		    	alert("신청년월, 돌봄요일, 대상아동이 선택되어 있는지 확인해 주세요."
-		    			+" 만약 선택되지 않았다면 선택하고 다시 돌봄일정추가 버튼을 클릭해 주세요.");
+		    	+" 만약 선택되지 않았다면 선택하고 다시 돌봄일정추가 버튼을 클릭해 주세요.");
 		    }
 		    console.log('체크된 상태');
 	    }else if($("#family_CheckBox").is(":checked") == false){
@@ -307,8 +293,52 @@ $(function(){
 		//돌봄일정 리스트 추가
 		var list_date = ""; //신청일 요일
 		var dol_list = ""; //신청일 요일에 대한 서비스 리스트
-		var base_rate;//기본요금
-		var gov_fund;//정부지원금
+		//---------------------------가격표 시간제 일반형
+		var base_rate = 9650;//일반형 기본요금
+		var base_rate2 = 12550;//종합형 기본요금
+		var time_nomal_gov_fund_a_A = 8203;//시간제 일반형 정부지원금 가형 a
+		var time_nomal_gov_fund_b_A = 5308;//시간제 일반형 정부지원금 나형 a
+		var time_nomal_gov_fund_c_A = 1448;//시간제 일반형 정부지원금 다형 a
+		var time_nomal_gov_fund_d_A = 0;//시간제 일반형 정부지원금 라형 a
+		
+		var time_nomal_self_fund_a_A = 1447;//시간제 일반형 본인부담금 가형 a
+		var time_nomal_self_fund_b_A = 4342;//시간제 일반형 본인부담금 나형 a
+		var time_nomal_self_fund_c_A = 8202;//시간제 일반형 본인부담금 다형 a
+		var time_nomal_self_fund_d_A = 9650;//시간제 일반형 본인부담금 라형 a
+		
+		var time_nomal_gov_fund_a_B = 7238;//시간제 일반형 정부지원금 가형 b
+		var time_nomal_gov_fund_b_B = 1930;//시간제 일반형 정부지원금 나형 b
+		var time_nomal_gov_fund_c_B = 1448;//시간제 일반형 정부지원금 다형 b
+		var time_nomal_gov_fund_d_B = 0;//시간제 일반형 정부지원금 라형 b
+		
+		var time_nomal_self_fund_a_B = 2412;//시간제 일반형 본인부담금 가형 b
+		var time_nomal_self_fund_b_B = 7720;//시간제 일반형 본인부담금 나형 b
+		var time_nomal_self_fund_c_B = 8202;//시간제 일반형 본인부담금 다형 b
+		var time_nomal_self_fund_d_B = 9650;//시간제 일반형 본인부담금 라형 b
+		//---------------------------가격표 시간제 종합형
+		var time_synthesize_gov_fund_a_A = 8203;//시간제 종합형 정부지원금 가형 a
+		var time_synthesize_gov_fund_b_A = 5308;//시간제 종합형 정부지원금 나형 a
+		var time_synthesize_gov_fund_c_A = 1448;//시간제 종합형 정부지원금 다형 a
+		var time_synthesize_gov_fund_d_A = 0;//시간제 종합형 정부지원금 라형 a
+		
+		var time_synthesize_self_fund_a_A = 4347;//시간제 종합형 본인부담금 가형 a
+		var time_synthesize_self_fund_b_A = 7242;//시간제 종합형 본인부담금 나형 a
+		var time_synthesize_self_fund_c_A = 11102;//시간제 종합형 본인부담금 다형 a
+		var time_synthesize_self_fund_d_A = 12550;//시간제 종합형 본인부담금 라형 a
+		
+		var time_synthesize_gov_fund_a_B = 7238;//시간제 종합형 정부지원금 가형 b
+		var time_synthesize_gov_fund_b_B = 1930;//시간제 종합형 정부지원금 나형 b
+		var time_synthesize_gov_fund_c_B = 1448;//시간제 종합형 정부지원금 다형 b
+		var time_synthesize_gov_fund_d_B = 0;//시간제 종합형 정부지원금 라형 b
+		
+		var time_synthesize_self_fund_a_B = 5312;//시간제 종합형 본인부담금 가형 b
+		var time_synthesize_self_fund_b_B = 10620;//시간제 종합형 본인부담금 나형 b
+		var time_synthesize_self_fund_c_B = 11102;//시간제 종합형 본인부담금 다형 b
+		var time_synthesize_self_fund_d_B = 12550;//시간제 종합형 본인부담금 라형 b
+		//---------------------------영아 종일제
+		var alltime_gov_fund = 7720;//영아 종일제 정부지원금
+		var alltime_self_fund = 1930;//영아 종일제 본인부담금
+		var date = new Date();
 		var personal_charge;//본인부담금
 		var a = 0;
 		var u = 0;
@@ -333,24 +363,40 @@ $(function(){
 			dol_list = "";
 			list_date += "<tr><td class='checkOwn' rowspan='" + family_code_arr.length + "'>" + "<input type='checkbox' name='apply_CheckBox' id='apply_CheckBox"+i+"'>"
 			+ "</td><td class='apply_date_cont' id='apply_date_cont" + u + "' style='text-align:center;' rowspan='" + family_code_arr.length + "'>" + apply_date_arr[i] + " " + care_day_arr[i] 
-			+ "<input type='hidden' name='interview_date' id='interview_date" + i + "'>"
-			+ "<input type='hidden' name='interview_time' id='interview_time"+ i +"'>"
+			+ "<input type='hidden' name='interview_date' id='interview_date" + i + "' value=''>"
+			+ "<input type='hidden' name='interview_time' id='interview_time"+ i +"' value=''>"
+			+ "<input type='hidden' name='interview_fee' id='interview_fee"+ i +"' value=''>"
 			+ "<input type='hidden' name='apply_date' id='apply_date' value='"+ apply_date_arr[i] + "'>"
 			+ "<input type='hidden' name='care_day' id='care_day' value='"+ care_day_arr[i] + "'></td>"
 					for(var j = 0; j < family_name_cont_arr.length; j++){
 						if(dol_list == ""){
 							dol_list+= "<td class='apply_family_cont'>" +  family_name_cont_arr[j]
 							+ "<input type='hidden' name='family_code' value='" + family_code_arr[j] + "'>"
+							+ "<input type='hidden' name='family_name' value='"+ family_name_cont_arr[j]+"'>"
 							+ "</td><td class='service_type_cont' style='text-align:center;'>" + service_type_selectBox
+							+ "<input type='hidden' name='service_type' value='"+ service_type_selectBox +"'>"
 							+ "</td><td class='start_time_cont'>" + start_hour + " : " + start_minute
 							+ "</td><td class='end_time_cont'>" + end_hour + " : " + end_minute
 							+ "<input type='hidden' name='start_time' value='"+ start_hour + " " + start_minute + "'>"
 							+ "<input type='hidden' name='end_time' value='"+ end_hour + " " + end_minute + "'>"
 							+ "</td><td class='using_time_cont'>" + using_time
-							+ "<input type='hidden' name='using_time' value='"+ using_time +"'>"
+							+ "<input type='hidden' name='using_time' value='"+using_time+"'>"
 								if( ad_level_cont_arr[j] == "시간제-라형"){
 									dol_list += "</td><td class='support_time_cont'>" + "대상아님"
 									+ "<input type='hidden' name='care_user_time' value='0'>"
+									if(service_type_selectBox == "일반형"){
+										dol_list+= "<input type='hidden' name='using_charge' value='"+ (using_time*base_rate) +"'>"
+										+ "<input type='hidden' name='gov_fund' value='"+ time_nomal_gov_fund_d_A +"'>"
+										+ "<input type='hidden' name='personal_charge' value='"+ (using_time*time_nomal_self_fund_d_A) +"'>"
+										+ "<input type='hidden' name='total_self_pay' value='"+(using_time*time_nomal_self_fund_d_A)+"'>"
+										+ "<input type='hidden' name='total_pay' value='"+(using_time*time_nomal_self_fund_d_A)+"'>"
+									}else{
+										dol_list+= "<input type='hidden' name='using_charge' value='"+ (using_time*base_rate2) +"'>"
+										+ "<input type='hidden' name='gov_fund' value='"+ time_nomal_gov_fund_d_B +"'>"
+										+ "<input type='hidden' name='personal_charge' value='"+ (using_time*time_synthesize_self_fund_d_A) +"'>"
+										+ "<input type='hidden' name='total_self_pay' value='"+(using_time*time_synthesize_self_fund_d_A)+"'>"
+										+ "<input type='hidden' name='total_pay' value='"+(using_time*time_synthesize_self_fund_d_A)+"'>"
+									}
 								}else{
 									dol_list += "</td><td class='support_time_cont'>" + "<select name='care_user_hour' id='care_user_hour' style='height:28px; border: 1px solid #ccc; font-size:12pt;'>"
 									var c = 1;	
@@ -378,6 +424,19 @@ $(function(){
 								if( ad_level_cont_arr[j] == "시간제-라형"){
 									dol_list += "</td><td class='support_time_cont'>" + "대상아님"
 									+ "<input type='hidden' name='care_user_time' value='0'>"
+									if(service_type_selectBox == "일반형"){
+										dol_list+= "<input type='hidden' name='using_charge' value='"+ (using_time*base_rate) +"'>"
+										+ "<input type='hidden' name='gov_fund' value='"+ time_nomal_gov_fund_d_A +"'>"
+										+ "<input type='hidden' name='personal_charge' value='"+ (using_time*time_nomal_self_fund_d_A) +"'>"
+										+ "<input type='hidden' name='total_self_pay' value='"+(using_time*time_nomal_self_fund_d_A)+"'>"
+										+ "<input type='hidden' name='total_pay' value='"+(using_time*time_nomal_self_fund_d_A)+"'>"
+									}else{
+										dol_list+= "<input type='hidden' name='using_charge' value='"+ (using_time*base_rate2) +"'>"
+										+ "<input type='hidden' name='gov_fund' value='"+ time_nomal_gov_fund_d_B +"'>"
+										+ "<input type='hidden' name='personal_charge' value='"+ (using_time*time_synthesize_self_fund_d_A) +"'>"
+										+ "<input type='hidden' name='total_self_pay' value='"+(using_time*time_synthesize_self_fund_d_A)+"'>"
+										+ "<input type='hidden' name='total_pay' value='"+(using_time*time_synthesize_self_fund_d_A)+"'>"
+									}
 								}else{
 									dol_list += "</td><td class='support_time_cont'>" + "<select name='care_user_hour' id='care_user_hour' style='height:28px; border: 1px solid #ccc; font-size:12pt;'>"
 									var c = 1;	
@@ -440,10 +499,12 @@ $(function(){
 		});
 		$("#interview_send").on("click", function(){
 			//가족정보 리스트에서 row값 가져오기
+			var interview_fee = 12000;
 			var rowData = new Array(); 
 			var tdArr = new Array();
 			var checkbox = $("input[name=apply_CheckBox]:checked");
 			var interview_date_val_arr = new Array();
+			var check_by_id_arr = new Array();
 			// 체크된 체크박스 값을 가져온다
 			var tdddd = $("input[name='interview_date']").val();
 			checkbox.each(function(i){
@@ -453,9 +514,13 @@ $(function(){
 				// td.eq(0)은 체크박스 이므로 td.eq(1)의 값부터 가져온다.
 				var td1 = td.eq(1).find('input[name="interview_date"]').val(interview_date_pop);
 				var td2 = td.eq(1).find('input[name="interview_time"]').val(interview_time_pop);
+				var td4 = td.eq(1).find('input[name="interview_fee"]').val(interview_fee);
+				var td5 = td.eq(7).find('input[name="total_pay"]').val();
+				var td6 = Number(td5) + interview_fee;
+				td.eq(7).find('input[name="total_pay"]').val(td6);
 				var td3 = td.eq(8).text();
 				var interview_date_val = $("#interview_date" + i).val();
-				var name_by_id = $('input[name=apply_CheckBox]:checked').attr('id');
+				var check_by_id = td.eq(0).find('input[name="apply_CheckBox"]').attr('id');
 				//가져온 값을 배열에 담는다.
 				/* $("#modal1").css("display", "none");
 				$(".modal-overlay").css("display","none"); */
@@ -464,6 +529,7 @@ $(function(){
 				}else{
 					interview_yn_cont[n] = 'X';
 				}  */
+				check_by_id_arr.push(check_by_id);
 				interview_date_val_arr.push(interview_date_val);
 				console.log(interview_date_val);
 				console.log(interview_date_val_arr);
@@ -471,14 +537,15 @@ $(function(){
 				console.log("td1 = " + td1);
 				console.log("td2 = " + td2);
 				console.log("td3 = " + td3);
-				console.log("name_by_id" + name_by_id);
+				console.log("check_by_id_arr" + check_by_id_arr);
+				console.log("check_by_id" + check_by_id.substring(14));
 				//받아온 값 확인
 				for(var h = 0; h < interview_date_val_arr.length; h++){
 					var interview_yn_cont = $("#interview_yn_cont"+h).text();
 					
 					if(interview_date_val_arr[h] != null || interview_date_val_arr[h] == ""){
 						if(interview_yn_cont == "X"){
-							$(".interview_yn_cont"+h).html("O");
+							$(".interview_yn_cont"+check_by_id.substring(14)).html("O");
 						}
 					}
 				}
@@ -486,6 +553,15 @@ $(function(){
 			
 		});
 		
+		$(function(){
+		    $("#applyFrm2").submit(function(event){
+		    	var interview_date = $("input[name='interview_date']").val();
+		    	if(interview_date == "null"){
+		    	console.log(interview_date);
+				alert(interview_date);
+		    	}
+		    });
+		});
 		
 	//});
 });
@@ -672,7 +748,9 @@ $(function(){
     		<button type="button" id="dolbom_add_btn" class="dolbom_add_btn">돌봄일정추가</button>
     		<a class="waves-effect waves-light btn modal-trigger" href="#modal1">면접신청</a>
   		</div>
+  		<form action="apply2.do" method="post" id="applyFrm2">
   		<table class='jt_board_list3' id="service_apply_list">
+  		
 			<colgroup>
 			<col width="2%" />
 			<col width="*" />
@@ -697,13 +775,27 @@ $(function(){
 				<th class='interview_yn'>면접신청여부</th>
 				</tr>
 			</thead>
+			
 			<tbody id='dolbom_list'>
-				
+					
 			</tbody>	
+			
 		</table>
+		
 		<div class="service_next_footer" style="margin-top:30px;">
+			<input type="hidden" name="user_id" value="${apply1.user_id }">
+			<input type="hidden" name="apply_reason" value="${apply1.apply_reason }">
+			<input type="hidden" name="transferor" value="${apply1.transferor }">
+			<input type="hidden" name="dolbom_place" value="${apply1.dolbom_place }">
+			<input type="hidden" name="apply1_card" value="${apply1.apply1_card }">
+			<input type="hidden" name="before_req" value="${apply1.before_req }">
+			<input type="hidden" name="interview_req" value="${apply1.interview_req }">
+			<input type="hidden" name="req_institution" value="${apply1.req_institution }">
+			<input type="hidden" name="req_dolbomi" value="${apply1.req_dolbomi }">
+			<input type="hidden" name="cancel_reason" value="${apply1.cancel_reason }">
     		<input type="submit" id="service_next_btn" value="다음" class="service_next">
   		</div>  
+		</form>
 				</div> <!-- .wrap_narrow -->
 			</div> <!-- .article_body -->
 		</div>

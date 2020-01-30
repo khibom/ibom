@@ -22,12 +22,25 @@ public class ServiceApplyDao {
 	private SqlSessionTemplate session;
 
 	public int insertApply1(ServiceApply1 apply1) {
-		return session.insert("applyMapper.insertApply1", apply1);
-	}
+	      return session.insert("applyMapper.insertApply1", apply1);
+   }
 
-	public int inserApply2(ServiceApply2 apply2) {
-		return session.insert("applyMapper.insertApply2", apply2);
-	}
+   public int insertApply2(ServiceApply2 apply2) {
+   
+      return session.insert("applyMapper.insertApply2", apply2);
+   }
+   
+   public int insertApply3(ServiceApply3 apply3) {
+      return session.insert("applyMapper.insertApply3", apply3);
+   }
+
+   public ServiceApply1 selectServiceNum() {
+      return session.selectOne("applyMapper.selectServiceNum");
+   }
+
+   public ServiceApply2 selectServiceNum2() {
+      return session.selectOne("applyMapper.selectServiceNum2");
+   }
 
 	public ArrayList<ServiceApply2> serviceApplySelect(ServiceApply2 apply2) {
 		return null;

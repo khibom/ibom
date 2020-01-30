@@ -354,7 +354,7 @@ function checkradio(){
                        <span>영아</span>      
                     </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <label>              
-                       <input type="radio" id="baby_type2" name="baby_type" value="출산전" class="with-gap"/>
+                       <input type="radio" id="baby_type2" name="baby_type" value="출산 전" class="with-gap"/>
                        <span>출산 전</span>                      
                     </label>
                     </td>                        
