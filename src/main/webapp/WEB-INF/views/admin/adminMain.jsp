@@ -344,40 +344,25 @@ function detailQuestions(event){
                                         </div>
                                     </div>
                                     <div class="finedust-wrap">
-                                    <c:if test="${o3Value <= 0.03}">
-                                        <div id="air_cai" class="finedust-info air_green">
-                                            <div class="finedust-title two">오존(O<sub>3</sub>)</div>
+                                    <div id="air_cai" class="finedust-info air_blue">
+                                            <div class="finedust-title">오존(O<sub>3</sub>)</div>
                                             <ul>
                                                 <li class="air-txt-two o3"><span>${ o3Value}</span>ppm</li>
+                                                <c:if test="${o3Value <= 0.03}">
                                                 <li class="air-txt-one">좋음</li>
-                                            </ul>
-                                        </div>
-                                         </c:if>
-                                         <c:if test="${o3Value >= 0.031 && o3Value <= 0.09}">
-                                         <div id="air_cai" class="finedust-info air_gray">
-                                            <div class="finedust-title two">오존(O<sub>3</sub>)</div>
-                                            <ul>
+                                                </c:if>
+                                                <c:if test="${o3Value >= 0.031 && o3Value <= 0.09}">
                                                 <li class="air-txt-one">보통</li>
-                                            </ul>
-                                        </div>
-                                         </c:if>
-                                         <c:if test="${o3Value >= 0.091 && o3Value <= 0.15}">
-                                          <div id="air_cai" class="finedust-info air_blue">
-                                            <div class="finedust-title two">오존(O<sub>3</sub>)</div>
-                                            <ul>
+                                                </c:if>
+                                                 <c:if test="${o3Value >= 0.091 && o3Value <= 0.15}">
                                                 <li class="air-txt-one">나쁨</li>
-                                                 <li class="air-txt-one">보통</li>
-                                            </ul>
-                                        </div>
-                                        </c:if>
-                                         <c:if test="${o3Value > 0.151}">
-                                         <div id="air_cai" class="finedust-info air_red">
-                                            <div class="finedust-title two">오존(O<sub>3</sub>)</div>
-                                            <ul>
+                                                </c:if>
+                                                <c:if test="${o3Value > 0.151}">
                                                 <li class="air-txt-one">매우나쁨</li>
-                                               </ul>
+                                                </c:if>
+                                            </ul>
+
                                         </div>
-                                        </c:if>
                                     </div>
                                 </div>
                             </section>
