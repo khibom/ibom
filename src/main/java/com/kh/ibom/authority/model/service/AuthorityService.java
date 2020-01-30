@@ -9,7 +9,7 @@ public interface AuthorityService {
 	//해쉬함수 처리가 되어있지 않다면 해쉬함수 처리등록
 	int updatePwd(Authority au);
 	//비밀번호 틀린숫자 체크
-	int selectEnabledCount(String ibom_id);
+	Integer selectEnabledCount(String ibom_id);
 	//휴먼계정처리
 	void upEnabled(String ibom_id);
 	//최근 로그인 시간 등록

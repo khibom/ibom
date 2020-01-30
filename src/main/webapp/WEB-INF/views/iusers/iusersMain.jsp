@@ -238,8 +238,8 @@ function cencleService(event){
 				
 				if(arrayCheck[1] == "서비스 완료"){
 					alert("완료된 건은 취소가 불가 합니다.")
+					$(".chk").prop("checked", false);
 					return false;
-					
 				}
 				
 				arrayParam.push(check);
@@ -425,7 +425,7 @@ html.ie .jt_board_list_wrap:before {content: '';display: block;width: 100%;heigh
                     	<option value="돌보미 배정완료">돌보미 배정완료</option>
                     	<option value="돌보미 배정중">돌보미 배정중</option>
                     	<option value="서비스 완료">서비스 완료</option>
-                    	<option value="신청 취소">신청 취소</option>
+                    	<option value="취소 요청">취소 요청</option>
                     	<option value="서비스 취소">서비스 취소</option>
                     </select>
                     </td>
