@@ -480,16 +480,6 @@ $(function(){
 	for(var i in array1){
 		arrayVal = array1.split('/');
 	}
-	//var array = [arrayVal];
-	//console.log(arrayVal);
-	
-	
-	//좌표들을 담아보자
-	
-	var points = "";
-	var ppoints = [];
-	
-	//
 	
 	
 	// 지도를 재설정할 범위정보를 가지고 있을 LatLngBounds 객체를 생성합니다
@@ -500,53 +490,16 @@ $(function(){
     	geocoder.addressSearch(addr, function(result, status) {
         	if (status === kakao.maps.services.Status.OK) {
         		var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-        		//console.log("coords : "+coords);
-        		bounds.extend(coords);
-        		
+        		bounds.extend(coords);        	
 
                 var marker = new kakao.maps.Marker({
                     map: map,
                     position: coords
                 });
-                
-				//인포창
-                var infowindow = new kakao.maps.InfoWindow({
-                   /*  content: '<div style="width:150px;text-align:center;padding:6px 0;">' + arrayVal[index] + '</div>', */
-                    content: arrayVal[index],
-                    disableAutoPan: true
-                });
-				
-                
                 //마커 클릭 시 
                 kakao.maps.event.addListener(marker, 'click', function(){
                 	$(".div1").removeAttr("style", "border:2px solid red");
                 	$(".div1").eq(index).attr("style", "border:2px solid red");
-                	
-                	
-                	
-                	/* ar.forEach(function(){
-						var aa = $(this).text().trim();
-						var ab = arrayVal[index];
-                		console.log("aa : "+aa);
-                		console.log("ab : "+ab);
-                		
-                	}) */
-                		/* if($(this).text().trim() == arrayVal[index]){
-                			
-                		} */
-                	
-                	/* $(".zWdMK").forEach(function(){
-                		if($(this).text().trim() == arrayVal[index]){
-                			$(this).parent('.1ej6Z').attr("style", "border:2px solid red");
-                		}
-                	}) */
-                	//alert($(".zWdMK").eq(index).text());
-                	
-                	
-                	
-                	//$(".div1").eq(0).attr("style", "border:2px solid red");
-                	
-                	
                 });//클릭이벤트 종료
                 
 				//마커 마우스오버 마우스아웃 이벤트 
@@ -559,7 +512,6 @@ $(function(){
                 //
               //중심좌표 다시 셋팅
                 map.setBounds(bounds);
-                //bounds.extend(coords);
                 
         	}        	
         	

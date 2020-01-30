@@ -131,7 +131,7 @@ public class ServiceApplyController {
 	            interview_time[i] = null;
 	         }
 	      }
-	      
+	      System.out.println("family_code[0]===============================================:"+family_code[0]);
 	   
 	      HashMap<String, String> map2 = new HashMap<String, String>();
 	        ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String,String>>();

@@ -139,6 +139,7 @@ public class UserFamilyController {
 			for(UserFamily userfamily : list) {
 				JSONObject job = new JSONObject();
 					
+				job.put("family_code", userfamily.getFamily_code());
 				job.put("family_name", URLEncoder.encode(userfamily.getFamily_name(), "utf-8")); //아이 이름
 				job.put("ad_date", userfamily.getAd_date().toString()); //판정일자
 				job.put("family_gender", userfamily.getFamily_gender()); //성별
