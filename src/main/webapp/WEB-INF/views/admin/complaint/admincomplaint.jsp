@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -53,7 +54,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">고전화 서면민원 관리</h1>
+                <h1 class="page-header">고객전화 서면민원 관리</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -81,7 +82,7 @@
                     <div class="panel panel-default">
                     
                         <div class="panel-heading">
-                             고객전화 서면 민원
+                             고객전화 서면민원 목록
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
