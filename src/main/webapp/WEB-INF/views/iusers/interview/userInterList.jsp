@@ -38,59 +38,6 @@
 	} else {
 		document.getElementsByTagName("html")[0].className = " desktop";
 	}
-	
-$(function(){
-	//검색 부분
-	showDiv();
-	
-	$("select[name=searchselect]").on("change", function() {
-		showDiv();
-	});
-	
-	//검색 서브밋
-	 $("#submitbtn1").click(function(){
-	        $("#searchform1").submit();
-	    });
-	  $("#submitbtn2").click(function(){
-	        $("#searchform2").submit();
-	    });
-	  $("#submitbtn3").click(function(){
-	        $("#searchform3").submit();
-	    });
-	  $("#submitbtn4").click(function(){
-	        $("#searchform4").submit();
-	    });
-	  
-	  
-	  
-})
-function showDiv() {
-	if ($("#searchselect option:eq(0)").is(":selected")) {
-		$("#select1").css("display", "block");
-		$("#select2").css("display", "none");
-		$("#select3").css("display", "none");
-		$("#select4").css("display", "none");
-	}
-	
-	if ($("#searchselect option:eq(1)").is(":selected")) {
-		$("#select1").css("display", "none");
-		$("#select2").css("display", "block");
-		$("#select3").css("display", "none");
-		$("#select4").css("display", "none");
-	}
-	if ($("#searchselect option:eq(2)").is(":selected")) {
-		$("#select1").css("display", "none");
-		$("#select2").css("display", "none");
-		$("#select3").css("display", "block");
-		$("#select4").css("display", "none");
-	}
-	if ($("#searchselect option:eq(3)").is(":selected")) {
-		$("#select1").css("display", "none");
-		$("#select2").css("display", "none");
-		$("#select3").css("display", "none");
-		$("#select4").css("display", "block");
-	}
-}	
 </script>
 <script src="/ibom/resources/js/vendors/browser_selector.js"></script>
 
@@ -181,20 +128,3 @@ function showDiv() {
 <c:import url="../../common/footer.jsp"/>
 </body>
 </html>
-<%-- <h2>이용자 메인페이지</h2>
-<h3>안녕하세요!${loginIuser.user_name}님</h3>
-
-<nav>
-   <ul>
-      <li><a href="${ pageContext.request.contextPath }/admin/adminMain.do">어드민</a></li>
-      
-      <li><a  href="${ pageContext.request.contextPath }/dolbomi/dolbomi.do">유져</a></li>
-      <li><a href="${ pageContext.request.contextPath }/sendEmail.do?email=eunsoo8606@naver.com">이메일 발송</a></li>
-      <li><a>모든</a></li>
-   </ul>
-</nav>
-<c:if test="${loginIuser != null}">
-<form action="${ pageContext.request.contextPath }/logout" method="post">
-	<input type="submit" value="로그아웃">
-</form>
-</c:if> --%>
