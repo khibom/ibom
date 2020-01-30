@@ -122,10 +122,10 @@
                     <td class="date">${row.qna_date}</td>
                     <td class="hit">${row.qna_state}</td>
                     <c:choose>
-                    <c:when test="${row.qna_state == '미처리' || row.user_name == iuser.user_name || row.dol_name == dol.dol_name}">
+                    <c:when test="${row.qna_state == '미처리'}">
                     <td class="hit"><button type="button" id="button1" onclick="location.href='qnadelete.do?anum=${row.qna_no}'" class="jt_search3_button search">취소하기</button></td>
                     </c:when>
-                    <c:when test="${row.qna_state == '처리완료' || row.user_name != iuser.user_name || row.dol_name != dol.dol_name }">
+                    <c:when test="${row.qna_state == '처리완료'}">
                     <td class="hit"></td>
                     </c:when>
                     </c:choose>

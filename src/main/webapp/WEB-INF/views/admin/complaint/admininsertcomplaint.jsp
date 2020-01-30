@@ -78,9 +78,9 @@
         </div>
         <!-- /.row -->
         <div class="row">
+        <form action="${pageContext.request.contextPath}/admin/complaintinsert.do" id="writeForm" method="post" onsubmit="return comsubmit();">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-        		<form action="${pageContext.request.contextPath}/admin/complaintinsert.do" id="writeForm" method="post" onsubmit="return comsubmit();">
                 <table class="table">
 			    <tr>
 			        <th scope="row" class="info2">글쓴이</th>
@@ -99,14 +99,14 @@
 			    	<td colspan="4"><textarea style="width: 100%" rows="10" cols="10" class="form-control" name="com_content" id="content"></textarea></td>
 			    </tr>
 			</table>
+				</div>
+			</div>
 			<div style="text-align:right;">
 			<input type="submit" class="btn btn-warning" value="등록">
 			<input type="button" class="btn btn-default" onclick="location.href='${pageContext.request.contextPath}/moveadmincomplaint.do'" value="목록">
 			</div>
                </form>
                </div>
-            </div>
-           </div>
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
