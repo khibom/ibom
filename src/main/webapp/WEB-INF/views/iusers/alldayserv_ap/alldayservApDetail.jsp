@@ -244,15 +244,7 @@ $(function(){
 					<p style="text-indent: -1em; margin-left: 20px;">- 최소 15일 전까지 서비스 확정 신청&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons prefix">done</i></p>
 					<p style="text-indent: -1em; margin-left: 20px;">- 가정 유형의 확인절타를 거쳐 가점 조정(증감)&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons prefix">done</i></p>
 					<p style="text-indent: -1em; margin-left: 20px;">- 재신청 시 가점 부여 기준일은 재신청일&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons prefix">done</i></p>
-						
-						<!-- <p style="float:left;">임신기간, 출산휴가, 육아휴직 기간 등 종일제 서비스 이용제한 기간에도 향후 이용을 위한 대기 신청이 가능하며, 홈페이지에서 대기순번을 확인 할 수 있습니다.</p>
-	    				<br><br><br><p style="float:left;"><b>가점에 따른 우선순위 제공 및 연계</b></p><br><br>
-	    				<p style="float:left;">대기자가 있거나 예산 부족 등의 사유 발생 시 법에 의한 우선순위 자격요건(6개)에 따라 가점을 부여합니다. 요건에 해당시마다 가점 5점씩 부여하며, 대기 1개월마다 1점씩, 최대 5점까지 부여합니다.</p>
-	    				<br><br><br><p style="float:left; color:rgb(243, 114, 51)">영아종일제는 1회 3시간 이상(월 60~200시간) 사용이 원칙입니다. 3시간미만은 시간제 서비스를 이용하시기 바랍니다.
-						<br>(시간제 서비스는 대기신청이 필요하지 않으며, 언제부터 서비스 이용이 가능한지는 소속 서비스제공기관으로 문의해 보시기 바랍니다. )</p><br><br>
-						<br><br>    -->
-		
-         
+
          <div class="jt_board_list_wrap">   
          				
          <button id="movelist" class="btn waves-effect orange darken-3"style="float:right;" name="action">목록</button>
