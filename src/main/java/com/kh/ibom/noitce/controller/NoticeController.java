@@ -86,7 +86,12 @@ public class NoticeController {
 	}
 	
 	@RequestMapping("noticedetail.do")
-	public ModelAndView noitceDetailMethod(@RequestParam int anum, HttpSession session) throws Exception {
+	public ModelAndView noitceDetailMethod(@RequestParam int anum, HttpSession session, HttpServletRequest request, Model model) throws Exception {
+		HttpSession session1 = request.getSession(false);
+		
+		Dolbomi dol = (Dolbomi)session1.getAttribute("loginDolbomi");
+		Iusers iuser = (Iusers)session1.getAttribute("loginIuser");
+		
 		//조회수 s증가 처리
 		nservice.noitceViewCnt(anum, session);
 		//모델(데이터)+뷰(화면)를 함께 전달하는 객체
@@ -95,6 +100,8 @@ public class NoticeController {
 		mav.setViewName("notice/noticedetail");
 		//뷰에 전달할 데이터
 		mav.addObject("dto", nservice.noticeDetailView(anum));
+		model.addAttribute("dol", dol);
+	    model.addAttribute("user", iuser);
 		return mav;
 	}
 	
