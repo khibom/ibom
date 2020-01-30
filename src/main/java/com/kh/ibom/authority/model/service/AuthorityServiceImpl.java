@@ -40,7 +40,7 @@ public class AuthorityServiceImpl implements UserDetailsService,  AuthorityServi
 		}
 
 		@Override
-		public int selectEnabledCount(String ibom_id) {
+		public Integer selectEnabledCount(String ibom_id) {
 			// 비밀번호 틀린횟수 체크
 			return auDao.selectEnabledCount(ibom_id);
 		}

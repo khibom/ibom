@@ -27,20 +27,21 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-		
+		//로그인 시도한 유저 아이디비번 추출
 		String user_id = (String) authentication.getPrincipal();
         String user_pwd = (String) authentication.getCredentials();
-     
+        //디비에서 유저 권한 조회
         Authority au = (Authority)auService.loadUserByUsername(user_id);
         UsernamePasswordAuthenticationToken result = null;
         List<GrantedAuthority> roles = new ArrayList<GrantedAuthority>();
         
-        
         if(au == null) {
+        	//조회해온 아이디가 없다면
         	
         	throw new UsernameNotFoundException(user_id);
         }else {
-        //휴먼계정인지 확인
+        	
+        //휴먼계정인지 체크
        if(au.isEnabled() == false) {
     	   throw new DisabledException(user_id);
        }
@@ -55,8 +56,10 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         	//비교했을때 아니다면 인코더 매치로 다시한번 비교
         	boolean bom = bcryptPasswordEncoder.matches(user_pwd, au.getIbom_pwd());
         	if(bom == false) {
+        		//비밀번호가 틀렸다면
         		
         		throw new BadCredentialsException("비밀번호가 틀립니다.");
+        		
         	}else {
         		//비교한 결과가 맞다면 권한 및 유저정보 담아서 리턴
         		roles.add(new SimpleGrantedAuthority(au.getAuthority()));
@@ -65,11 +68,10 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
                 
                 return result;
         		
-        		}//bom == false close
-        	}//user_pwd.equals(au.getIbom_pwd()) close
+        		}//57 close
+        	}//49 close
        
-        }//au == null close
-        
+        }//39 close
             roles.add(new SimpleGrantedAuthority(au.getAuthority()));
             result = new UsernamePasswordAuthenticationToken(user_id, user_pwd, roles);
             result.setDetails(au);
