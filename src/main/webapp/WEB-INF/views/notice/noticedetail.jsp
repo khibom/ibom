@@ -96,7 +96,7 @@ pre{
                     <c:if test="${!empty dto.original_filepath}">
                    <ul style="margin-top: 10px; list-style: none; margin-bottom: 28px;">
                    		<li style="padding: 20px 100px 20px;">
-                       첨부파일 : <a href="fdown.do?fname=${dto.rename_filepath}">${dto.original_filepath}</a>
+                       첨부파일 : <a href="${pageContext.request.contextPath}/fdown.do?fname=${dto.rename_filepath}">${dto.original_filepath}</a>
                        </li>
                  	</ul>
                  	</c:if>
