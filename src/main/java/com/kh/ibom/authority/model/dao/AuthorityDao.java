@@ -27,7 +27,7 @@ public class AuthorityDao {
 			return session.update("authorityMapper.updatePwd", au);
 		}
 
-		public int selectEnabledCount(String ibom_id) {
+		public Integer selectEnabledCount(String ibom_id) {
 			//  비밀번호 틀린횟수 체크
 			return session.selectOne("authorityMapper.selectEnabledCount",ibom_id);
 		}

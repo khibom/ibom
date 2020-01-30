@@ -52,17 +52,23 @@ public class LoginFailureHandler implements AuthenticationFailureHandler{
         String password = request.getParameter(loginpwdname);
         String errormsg = null;
         String enabled = null;
-       
+        
+        //인셉션에 따른 메세지 전달처리
         if(exception instanceof UsernameNotFoundException){
         	errormsg = "아이디가 존재 하지 않습니다.";
 		}else if(exception instanceof BadCredentialsException) {
-			int auCount = auService.selectEnabledCount(username);
+			
+			Integer auCount = auService.selectEnabledCount(username);
+			if(auCount != null) {
+			//비밀번호가 4번 틀렸을시 휴면 계정처리
 			if(auCount == 4) {
 			auService.upEnabled(username);
 			enabled = "Y";
 			request.setAttribute("enabled", enabled);
 			}
+			
 			auService.insertCount(username);
+			}
             errormsg = "아이디나 비밀번호가 맞지 않습니다. 다시 확인해주세요.";
         } else if(exception instanceof InternalAuthenticationServiceException) {
             errormsg = "아이디나 비밀번호가 맞지 않습니다. 다시 확인해주세요.";
