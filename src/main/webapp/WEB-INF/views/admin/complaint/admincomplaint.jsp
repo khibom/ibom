@@ -53,7 +53,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">고갠전화 서면민원 관리</h1>
+                <h1 class="page-header">고전화 서면민원 관리</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -81,7 +81,7 @@
                     <div class="panel panel-default">
                     
                         <div class="panel-heading">
-                             활동일지 목록
+                             고객전화 서면 민원
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
