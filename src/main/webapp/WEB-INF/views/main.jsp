@@ -87,6 +87,7 @@
     "pluginKey": "28c3d596-e951-470d-9831-877c2b28ba28"
   });
 </script>
+
 <!-- End Channel Plugin -->
 </head>
 <body>
@@ -107,6 +108,7 @@
          <c:import url="../dolbomi/dolHeader.jsp"/>
       </c:if>
    </c:if> --%>
+   
 <c:import url="mainHeader.jsp"/> 
 	<!--  header 끝 ============================================= -->
 

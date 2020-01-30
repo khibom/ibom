@@ -187,7 +187,7 @@ function checkdolSal(){
                                    <tr>
                                    		<th>변경할  돌보미 시급</th>
                                    		<td>
-                                   			<input type="text" name="dol_time_pay" id="dol_time_pay"min="0"max="99999" class="text" style="border:none; width:60px;"> 원
+                                   			<input type="number" name="dol_time_pay" id="dol_time_pay"min="0"max="99999" class="text" style="border:none; width:60px;"> 원
                                    			<p style="color:rgb(243, 114, 51); display:inline-block;">&nbsp;&nbsp;",없이 숫자로만 입력해주세요"</p>
                                    		</td>
                                    </tr>
