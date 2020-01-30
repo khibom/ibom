@@ -1,6 +1,7 @@
 package com.kh.ibom;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -67,13 +68,17 @@ public class HomeController {
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
+	 * @throws IOException 
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String home(Locale locale, Model model,HttpServletRequest request,HttpServletResponse response) throws IOException {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		HttpSession session = request.getSession(false);
+		if(session != null)
+			response.sendRedirect("loginsuccess.do");
 		
 		String formattedDate = dateFormat.format(date);
 		
@@ -172,7 +177,7 @@ public class HomeController {
 			Dolbomi dol = dService.selectLoginOne(au.getIbom_id());
 			
 			if(dol == null) {
-				
+	
 				mv.setViewName("common/error");
 				return mv;
 			}
@@ -283,7 +288,27 @@ public class HomeController {
 	
 	
 	@RequestMapping("main.do")
-	public String mainMethod() {
+	public void mainMethod(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		HttpSession session = request.getSession(false);
+		
+		if(session == null) {
+			    response.sendRedirect("main2.do");
+		}else {
+			if(session.getAttribute("loginIuser") != null) {
+				response.sendRedirect("loginsuccess.do");
+			}else if(session.getAttribute("loginDolbomi") != null) {
+				response.sendRedirect("loginsuccess.do");	
+			}else if(session.getAttribute("loginAdmin") != null) {
+				response.sendRedirect("loginsuccess.do");
+			}else {
+				response.sendRedirect("main2.do");
+			}
+		}
+		
+		
+	}
+	@RequestMapping("main2.do")
+	public String main2Method(){
 		
 		return "main";
 	}
