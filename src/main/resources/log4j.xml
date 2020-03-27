@@ -21,7 +21,7 @@
 	</appender>
 	
 	<appender name="fileLogger" class="org.apache.log4j.DailyRollingFileAppender">
-		<param name="file" value="C:\\ibom_workspace\\ibom\\src\\main\\resources\\logs\\system.log" />
+		<param name="file" value="D:/serverdata/log/ibom/system.log" />
 		<param name="append" value="true" />
 		<param name="DatePattern" value="yyyy-MM-dd" />
 		<layout class="org.apache.log4j.PatternLayout">

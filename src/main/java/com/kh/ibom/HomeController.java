@@ -112,7 +112,7 @@ public class HomeController {
 				}
 				mv.setViewName("admin/adminMain");
 				
-				//미세먼지정보 가져오기
+				/*//미세먼지정보 가져오기
 				BufferedReader br = null;
 
 				String urlstr = "http://openapi.airkorea.or.kr/"
@@ -169,7 +169,7 @@ public class HomeController {
 					mv.addObject("dataTime", dataTime);
 					mv.addObject("pm10Value", pm10Value);
 					mv.addObject("o3Value", o3Value);
-					mv.addObject("pm25Value", pm25Value);
+					mv.addObject("pm25Value", pm25Value);*/
 				
 			return mv;
 			

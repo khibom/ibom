@@ -591,7 +591,7 @@
 	<script src="/ibom/resources/js/vendors/isotope/isotope.pkgd.min.js"></script>
 	<script src="/ibom/resources/js/vendors/clipboard/clipboard.min.js"></script>
 	<script src="/ibom/resources/js/player.js"></script>
-	<script src="/ibom/resources/js/main.js"></script>
+	<script src="/ibom/resources/js/main.js" charset="UTF-8"></script>
 
 	<!-- 추가 -->
 	<script src="/ibom/resources/LIB/js/js.cookie.js"></script>
