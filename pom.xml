@@ -261,7 +261,7 @@
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
-		    <version>2.9.10.1</version><!-- git 허브 경고로 수정함, 2.9.8에서  -->
+		    <version>2.9.10.8</version><!-- git 허브 경고로 수정함, 2.9.8에서  -->
 		</dependency>
 		<!-- Jackson-mapper -->
 		<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
