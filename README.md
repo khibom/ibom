@@ -27,3 +27,7 @@
 
 ▷ DB 설계 화면
 
+![initial](https://user-images.githubusercontent.com/47148492/145996395-b040fb9f-c5f1-4ff8-b89f-e6a0c6e6bf4d.png)
+
+
+▷ DB 설계 화면
