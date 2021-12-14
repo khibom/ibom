@@ -30,4 +30,19 @@
 ![initial](https://user-images.githubusercontent.com/47148492/145996395-b040fb9f-c5f1-4ff8-b89f-e6a0c6e6bf4d.png)
 
 
-▷ DB 설계 화면
+▷ 대표구현 기능 설명
+
+![initial](https://user-images.githubusercontent.com/47148492/145996525-4fed95a4-c996-443a-a912-3217b008b019.png)
+
+1. 제목과 글쓴이에 따라서 검색할 수 있다.
+
+
+2. JSP에 JSTL로 CHOOSE 를 사용했으며 답변이되었을때 체크 표시가되고 답변이 되지 않았을때 버튼이 표시가 된다.
+
+
+3. 클릭시 1:1문의 관리 상세보기 창으로 넘어가며 사용자가 쓴 글에대한 답변을 수정하거나 적을 수 있다.
+
+
+4. 페이징처리를 하여 글개수가 10개가 넘어갈시 다음 버튼이 생성되며글이 넘어간다.
+
+
